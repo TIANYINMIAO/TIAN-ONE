@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 潍坊风筝制作</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 800px; */
+            /* 控制最大宽度，避免太大 */
+            height: auto;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==== topbar start ==== -->
+    <!--[if lt IE 9]>
+      <p class="browserupgrade">
+         You are using an <strong>outdated</strong> browser. Please
+         <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+         your experience and security.
+      </p>
+      <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+    <div class="daohang">
+        <!-- logo 部分，设置为左侧 -->
+        <div class="logo">
+            <img src="assets/image/logo2.png" alt="Logo">
+        </div>
+        <!-- 导航栏部分 -->
+        <button class="mobile-menu-btn">☰</button>
+        <nav>
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="index%20copy.html">首页</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">子菜单1</a></li>
+                                                         <li><a href="#">子菜单2</a></li>
+                                                         <li><a href="#">子菜单3</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="3.1wenhua.html">文化篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                        <li><a href="3.1wenhua.html">传统技艺</a></li>
+                        <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                        <li><a href="3.1wenhua.html">传统音乐</a></li>
+                        <li><a href="3.1wenhua.html">传统体育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="renwu.html">治水篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="renwu.html">治水英雄颂</a></li>
+                        <li><a href="zsjy.html">治水技奇谈</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="shenhua.html">神话篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="shenhua.html">大禹治水</a></li>
+                        <li><a href="shenhua.html">黄河母亲</a></li>
+                        <li><a href="shenhua.html">女娲补天</a></li>
+                        <li><a href="shenhua.html">伏羲创世</a></li>
+                        <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="zhengce.html">政策篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="zhengce.html">要闻</a></li>
+                        <li><a href="zhengce.html">地方新闻</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="rhudong.html">趣味黄河</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">互动答题</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="chat.html">智慧AI</a>
+                    <!-- <ul class="sub-menu">
+                                                                           <li><a href="# ">互动答题</a></li>
+                                                                        </ul> -->
+                </li>
+            </ul>
+        </nav>
+        <div class="dengluzc">
+            <a href="shijianshu.html">黄河
+                史书</a>
+            <a href="dlzc.html">登录</a>
+            <a href="dlzc.html">注册</a>
+    
+        </div>
+    </div>
+        <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        </script>
+        <!-- ==== 主体部分 ==== -->
+        <section class="common-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="common-banner__content text-center">
+                        <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                        <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+                    </div>
+                </div>
+            </div>
+            <div class="banner-bg">
+                <video class="banner-video" autoplay muted loop playsinline>
+                    <source
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/325350085-f50a-4f2b-9ffc-61a43bcd5f17_1.1.mp4?Expires=1776598541&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2FHahssAKEgBUN6885nRoidGEVLY%3D"
+                        type="video/mp4">
+                    <source src="assets/videos/banner-video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="shape">
+                <img src="assets/images/shape.png" alt="Image">
+            </div>
+            <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+            </div>
+        </section>
+        <!-- ==== / banner section end ==== -->
+        <!-- ==== faq section start ==== -->
+        <section class="faq">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-8 col-xl-6">
+                        <div class="faq__content">
+                            <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                                <span class="sub-title"><i
+                                        class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;潍坊位于黄河下游，作为黄河文化的一部分，这里的人们从黄河流域的自然景观和民间信仰中汲取灵感。黄河不仅是当地的生命之源，也是潍坊风筝创作的源泉。潍坊的风筝图案中常常可以看到黄河的象征——龙、鱼、鸟等，甚至一些风筝的造型和色彩灵感来源于黄河流域的传统故事与传说。黄河文化通过这些独特的元素，在风筝艺术中留下了深深的印记，推动了潍坊风筝技艺的传承与创新。
+                                </span>
+                                <h2 class="title-animation">潍 坊 风 筝 的 <span>历 史 长 河</span>
+
+                                </h2>
+                            </div>
+                            <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="accordion" id="accordion">
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                什么是潍坊风筝制作技艺？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    潍坊风筝制作技艺是中国传统民间工艺之一，起源于山东省潍坊市。这项技艺至今已有千年以上的历史。潍坊风筝不仅具备实用功能，更具备艺术性和观赏性，是中国乃至世界著名的风筝文化代表。潍坊风筝的特点在于它精致的工艺、丰富的图案、独特的造型和鲜艳的色彩。风筝不仅是娱乐工具，也成为了民间节庆、文化活动的重要组成部分。潍坊风筝常常以动物、人物、花卉等为造型，结合多种传统手工艺技巧，如木工、漆艺和纸工等，制作出色彩斑斓、造型生动的风筝。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                潍坊风筝制作技艺的起源与发展阶段？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    潍坊风筝的起源可追溯至春秋战国时期，然而作为一项独特的民间技艺，潍坊风筝在历史上真正成型并得到广泛传播是在唐宋时期。风筝的雏形在春秋战国时期就有了，最早的风筝用途是军事侦察和试飞。唐宋时期，风筝成为了民间的娱乐工具，潍坊的风筝制作技艺开始逐渐发展。明清时期，潍坊风筝进入了艺术化的阶段，不仅注重制作技艺的提高，还开始注重风筝的艺术表现和文化寓意。到了清朝，潍坊风筝已经是当地的传统工艺之一，逐渐形成了独特的地方风格。20世纪后期，随着风筝文化的传承与发展，潍坊风筝在国内外风筝大赛中获得了广泛的关注，风筝技艺逐步融入现代艺术设计元素，潍坊风筝不仅保留了传统的风筝制作技艺，还结合现代科技创新，发展成为集艺术性、观赏性、娱乐性为一体的综合性工艺。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                潍坊风筝制作技艺的艺术风格与形式？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    潍坊风筝的造型丰富多样，既有象征吉祥的龙、凤，也有形态各异的动物和人物，甚至还会根据节令和风俗制作特别的主题风筝。比如，形象生动的龙形风筝，是潍坊风筝的代表性风格之一。潍坊风筝的装饰图案色彩鲜艳，通常采用传统中国画的技法，运用精细的绘画艺术装饰风筝，内容包括花鸟、山水、人物、历史故事等。风筝的装饰风格多变，既有传统的水墨画风格，也有现代的插画风格。潍坊风筝的制作过程注重每个环节的精细操作。从选材到风筝的骨架制作，再到上纸、绘画与修整，每个步骤都体现了工艺师的匠心独运。传统的潍坊风筝制作技巧要求精准无误，尤其是风筝的稳定性和飞行性能也要得到充分保证。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="false" aria-controls="collapseFour">
+                                                潍坊风筝制作技艺如何为黄河文化增光添彩？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    潍坊风筝制作技艺在与黄河文化的融合中，形成了独特的艺术表达。黄河是中华文明的发源地，其自然景观和人文背景为潍坊风筝提供了丰富的创作素材。例如，潍坊风筝常常采用龙、鱼、鸟等形象，这些形象与黄河流域的自然景观和神话传说密切相关。通过风筝的形式，黄河的历史、文化、传说和象征得以生动呈现，增强了黄河文化的艺术性和传承性。此外，潍坊风筝还常常作为黄河流域的传统节庆活动的重要组成部分，如春节、元宵节等，传递了浓厚的黄河文化气息。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                        <div class="faq__thumb d-none d-lg-block">
+                            <div class="faq__thumb-inner">
+                                <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b71b1828-41a0-44f3-8428-16ea2776f789_21.png?Expires=1776598564&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=P2f3VwJGaG0cMM%2BkfDni4ZPBNIQ%3D"
+                                        alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==== / faq section end ==== -->
+        <section class="blog-main cm-details">
+            <div class="container">
+                <div class="row gutter-60">
+                    <div class="col-12 col-xl-8">
+                        <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="#">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3590b3ec3-914f-4774-a5ea-1384dcdfb033_20.png?Expires=1776598580&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=GnDuEwk0jGvXmREkLYoXidxPwBk%3D"
+                                        alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="#"><i class="fa-solid fa-tags"></i>传播与影响</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="#">潍坊风筝：悠久历史与现代创新的文化象征 </a></h4>
+                                    <p>
+                                        潍坊风筝拥有悠久的历史和精湛的工艺，最初起源于人们的娱乐活动，寄托着人们的理想与愿望，具有深厚的文化内涵。其造型多模仿自然事物、社会生活和神话传说，色彩绚丽，象征着人们对美好生活的向往。放风筝作为一种易做且经济的娱乐方式，既能锻炼身体，又有助于身心健康。随着风筝文化的兴盛，潍坊风筝逐渐成为地方经济的重要组成部分，并在清代已有风筝作坊和店铺。如今，潍坊风筝不仅是当地的文化象征，还通过国际风筝节传播到世界各地，推动了潍坊市的经济发展，并且风筝制作工艺融合了传统技法与现代科技，进入了新的发展阶段。
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="c10.html">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/387a0ef28-2526-446e-81ff-bbe77192aad2_19.png?Expires=1776598613&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=w%2FcUv%2FVAv99S5qSpg55AO0%2BVjMQ%3D"
+                                        alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="c10.html"><i class="fa-solid fa-tags"></i>精湛工艺</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+                                <div class="blog__single-content">
+                                    <h4><a href="c10.html">潍坊风筝：多样形式与精湛工艺的完美结合 </a></h4>
+                                    <p>
+                                        潍坊风筝因其丰富的类型和独特的制作工艺而闻名于世。风筝不仅是人们喜爱的娱乐工具，也是展现中国传统艺术与工艺的载体。潍坊风筝的形式多样，可以大致分为串式、桶式、硬翅、软翅、板式和动态六大类，每一类风筝都有其独特的魅力与技术特点。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="c10.html" aria-label="blog details" title="blog details">🌍
+                                        了解更多<i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="assets/images/wenh/gansuqinqiang/12.png" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="gansujvmu.html"><i class="fa-solid fa-tags"></i>剧目</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="gansujvmu.html">秦腔的经典剧目 </a></h4>
+                                    <p>
+                                        甘肃秦腔作为西北戏曲艺术的瑰宝，其剧目体系历经数百年积淀，形成以历史纵深、地域风情、奇幻想象与时代创新为主轴的四大经典类别。四类剧目交织出从明清江湖到现代剧场的艺术长卷，既承载着丝绸之路上多民族文化交融的基因，又在当代舞台焕发新生，成为读懂甘肃人文精神与审美嬗变的鲜活注脚。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="gansujvmu.html" aria-label="blog details" title="blog details">🌍 经典欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="blog-main__sidebar">
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3590b3ec3-914f-4774-a5ea-1384dcdfb033_20.png?Expires=1776598580&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=GnDuEwk0jGvXmREkLYoXidxPwBk%3D"
+                                        alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>龙形风筝的由来</h6>
+                                    <p>很久以前，潍坊地区有一位技艺高超的风筝师傅，他深受村民们的喜爱。这个师傅不仅擅长制作传统风筝，还在自己的作品中融入了大量的民间传说和神话元素。有一年，他决定制作一只与众不同的风筝——一只巨大的龙形风筝，龙头上画着黄河母亲的形象。黄河母亲是黄河流域民间信仰的象征，象征着黄河的滋养与庇佑，风筝的龙头也代表着黄河流域的生命力和繁荣。
+                                    </p>
+                                    <p>当这只风筝制作完成时，村民们都被它的巨大和精致所震撼。这只风筝长约两米，龙头栩栩如生，背上雕刻着象征着五谷丰登、风调雨顺的图案。每年，在风筝节的时候，村民们都会将这只风筝放飞，传说每当风筝飞上蓝天，黄河流域的人民就能得到黄河母亲的庇佑，五谷丰登、风调雨顺。特别是有一年，这只龙形风筝在风筝节上飞得比往年更高，似乎与天空的风力相呼应，村民们纷纷认为这是黄河母亲的神力显现，风筝因此得名为“黄河之龙”。自此以后，这只风筝成了潍坊风筝的象征之一，代表着黄河文化的深厚根基。
+                                    </p>
+
+
+                                </div>
+                            </div>
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/387a0ef28-2526-446e-81ff-bbe77192aad2_19.png?Expires=1776598613&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=w%2FcUv%2FVAv99S5qSpg55AO0%2BVjMQ%3D"
+                                        alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>潍坊风筝与祈雨的关系</h6>
+                                    <p>潍坊的农村地区，尤其是黄河流域的农民，早在很久以前就将放风筝与祈求丰收、风调雨顺相联系。在这些地区，风筝不仅仅是一个娱乐工具，更是一种带有神圣寓意的祭祀物品。农民们相信，风筝飞得越高，天神的保佑就越强，带来的风雨也就会越及时。
+                                    </p>
+                                    <p>有一年，潍坊的一个小村庄遭遇了前所未有的干旱。村里的庄稼枯黄，河流的水位也急剧下降，村民们心急如焚。风筝节临近时，村民们决定举行一场特殊的风筝放飞活动，祈求天空降雨，给干旱的大地带来一场及时雨。
+
+                                        当天，村民们早早地聚集在村外的空地上，每个人手中都捧着一只精心制作的风筝。这些风筝造型各异，有飞翔的鸟、腾跃的龙，还有活泼的鱼形风筝。当所有的风筝放飞时，村民们屏住呼吸，目光紧紧跟随着那些翱翔的风筝。就在其中一只形似鱼儿的风筝飞向高空时，奇迹发生了——天边乌云迅速聚集，风起云涌，不久后，久违的雨水终于降临大地，滋润了干涸的土地。
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source
+                                    src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ead76491-6970-4d13-92f0-8b28fa6476dc_2.mp4?Expires=1776598662&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=vs70tO6sE01vsDv8fPjGEzUsTgQ%3D"
+                                    type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>2006年5月20日，风筝制作技艺（潍坊风筝）经中华人民共和国国务院批准列入第一批国家级非物质文化遗产名录，项目编号Ⅷ-88。
+                            </p>
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>
+                                潍坊风筝制作技艺在现代的发展过程中，逐步形成了风筝产业链，从传统的手工制作到现代的风筝设计、制作、展示等一体化发展。潍坊每年都会举办盛大的风筝节，吸引了来自世界各地的风筝爱好者和游客。此外，潍坊风筝制作也逐渐融入现代设计元素，与艺术、科技相结合，创作出了许多兼具传统与现代风格的风筝，继续保持其在国内外的影响力。
+
+
+                            </p>
+                            <p>这些发展使得潍坊风筝不仅仅是传统工艺，更成为了当地文化的名片之一，推动了潍坊的文化传播和经济发展。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37afb1d2a-641e-44ea-8bb5-7b9defaf7199_18.png?Expires=1776598683&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=oIuS8YdprsxBIDiFu8o%2FXtoGNSE%3D"
+                                    alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b3864c33-b6e4-4b25-be47-6bd70f40f105_17.png?Expires=1776598688&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Jkh8UbBWxPVLXuPySmAPVS5ltVc%3D"
+                                    alt=" Image">
+                            </div>
+                        </div>
+                        <!-- ==== custom cursor start ==== -->
+                        <div class="mouseCursor cursor-outer"></div>
+                        <div class="mouseCursor cursor-inner"></div>
+                        <!-- ==== / custom cursor end ==== -->
+                        <!-- ==== scroll to top start ==== -->
+                        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                            <span></span>
+                            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                            </svg>
+                        </button>
+                        <!-- ==== / scroll to top end ==== -->
+                        <!-- ==== / color switcher end ==== -->
+                    </div>
+                    <!-- ==== js dependencies start ==== -->
+                    <!-- jquery -->
+                    <script src="assets/js/jquery-3.7.1.min.js"></script>
+                    <!-- bootstrap five js -->
+                    <script src="assets/js/bootstrap.bundle.min.js"></script>
+                    <!-- nice select js -->
+                    <script src="assets/js/jquery.nice-select.min.js"></script>
+                    <!-- magnific popup js -->
+                    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                    <!-- swiper slider js -->
+                    <script src="assets/js/swiper-bundle.min.js"></script>
+                    <!-- viewport js -->
+                    <script src="assets/js/viewport.jquery.js"></script>
+                    <!-- odometer js -->
+                    <script src="assets/js/odometer.min.js"></script>
+                    <!-- vanilla tilt js -->
+                    <script src="assets/js/vanilla-tilt.min.js"></script>
+                    <!-- aos js -->
+                    <script src="assets/js/aos.js"></script>
+
+                    <!-- splittext js -->
+                    <script src="assets/js/SplitText.min.js"></script>
+                    <!-- scrollto js -->
+                    <script src="assets/js/ScrollToPlugin.min.js"></script>
+                    <!-- scrolltrigger js -->
+                    <script src="assets/js/ScrollTrigger.min.js"></script>
+                    <!-- gsap js -->
+                    <script src="assets/js/gsap.min.js"></script>
+                    <!-- ==== / js dependencies end ==== -->
+                    <!-- template settings js -->
+                    <script src="assets/js/template-settings.js"></script>
+                    <!-- main js -->
+                    <script src="assets/js/custom.js"></script>
+<!--                     <script src="utils.js"></script>-->
+<!--                    <script>-->
+<!--                        document.addEventListener('DOMContentLoaded', function () {-->
+<!--                            checkLogin();-->
+<!--                        });-->
+<!--                    </script>-->
+
+</body>
+
+</html>

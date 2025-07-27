@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>银饰制作</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/355cdaba4-b6a5-4798-95a3-d5a7c491ac97_6.1.png?Expires=1776599354&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=yU2IEu2zNLI%2BBGXE4E8EKff9mHA%3D">
+                    <span>铸造工艺</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/315f84855-1650-4159-aa2a-9c13014eb440_6.2.png?Expires=1776599432&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=mOlRNhYpZr2jvKj2VZ0mwo%2BsjOQ%3D">
+                    <span>雕刻工艺</span>
+                </div>
+                <div class="box">
+                    <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3fc5d86ec-b64e-4528-add9-92a130b95f18_6.3.png?Expires=1776599437&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=WonYULvUsuysplhgzXiwK6xOYGM%3D">
+                    <span>镶嵌工艺</span>
+                </div>
+                <div class="box">
+                    <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/326da089c-e525-4ee5-a4f9-3a5dcfb73cfb_6.4.png?Expires=1776599441&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=IlzbanmkJrnSK%2FWfuIR6P2xYqv4%3D">
+                    <span>打磨抛光</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>内蒙古银饰制作小课堂</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">铸造工艺</h3>
+                        <p>铸造是银饰制作中的基础工艺，几乎是所有银饰制作过程中不可缺少的环节。这个过程通过将银条或银粉熔化，再倒入模具中，冷却后形成基本的银饰形状。铸造技术要求非常精确，工匠需要根据设计图纸制作出适合的模具，并确保银的熔点控制在一个适当的范围，避免出现质量问题。铸造工艺通常用于制作大件的银饰品，如银项链、银戒指、手镯等。尤其在这些大件饰品的制作过程中，铸造工艺不仅能高效且精确地复制复杂的设计，还能保证饰品的结构稳固。铸造后的银饰品表面一般较为粗糙，需进一步加工。
+                        </p>
+
+                    </div>
+                    <!-- <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="assets/images/wenh/chuanjv/30.png" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="assets/images/wenh/chuanjv/31.png" alt=" Image">
+                        </div>
+                    </div> -->
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">雕刻工艺
+                        </h3>
+                        <p>
+                            雕刻是内蒙古银饰制作中的一个突出特色。它通过细致的手工雕刻，增加了银饰的艺术感和立体感。雕刻通常用于表现银饰品上的图案、纹理、以及细节的刻画。在内蒙古银饰中，常见的雕刻内容包括传统的蒙古图腾、动物形象（如马、鹰、鹿等）、吉祥物（如龙凤）等，这些图案往往富含丰富的象征意义。例如，马和鹰象征着自由与勇气，鹿则寓意着长寿和吉祥。雕刻工艺能够为银饰赋予更为细腻和生动的表现力，使其更加富有层次感。银饰雕刻不仅是艺术的体现，也往往承载着文化和情感，体现出蒙古族人民对大自然、动物以及神话传说的敬仰。
+                        </p>
+
+                    </div>
+                    <!-- <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="assets/images/wenh/chuanjv/6.webp" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="assets/images/wenh/chuanjv/7.webp" alt=" Image">
+                        </div>
+                    </div> -->
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">镶嵌工艺</h3>
+
+                        <p>在银饰制作中，镶嵌是一种非常重要的工艺，它不仅增加了银饰的视觉效果，也赋予了饰品更深刻的文化象征意义。银饰中常常镶嵌宝石、珐琅或其他装饰物，以提高其艺术价值和象征性。最常见的镶嵌材料包括绿松石、玉石、珐琅等。特别是绿松石和玉石，它们在蒙古族文化中具有特别的象征意义，常常代表着幸福、吉祥、长寿等美好寓意。通过将这些宝石镶嵌于银饰中，不仅提升了银饰的美感，还让银饰品与佩戴者的个人信仰和文化背景相契合。例如，绿松石在蒙古族文化中被视为吉祥的象征，被认为能带来好运和健康。
+                        </p>
+
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">打磨与抛光</h3>
+
+                        <p>打磨与抛光是银饰制作过程中的最后步骤，旨在使银饰表面更加光滑、亮丽，充分展现出其精致的工艺效果。打磨通常在铸造或雕刻完成后进行，工匠会使用不同粗细的磨具进行精细打磨，去除表面不平整的部分，确保每一件银饰的表面都光滑如镜。打磨后，接着进行抛光工艺。抛光的目的是通过抛光工具和抛光剂，将银饰表面进一步光亮、细腻，使其光泽感更强。这一过程不仅提升了银饰的外观质量，也增强了饰品的耐用性。在抛光完成后，银饰通常呈现出一种闪亮、温润的质感，让整个作品更加完美。
+                        </p>
+                        <p>
+                            内蒙古银饰的制作技艺结合了铸造、雕刻、镶嵌、打磨等多个精细工艺，展示了银匠的匠心和技艺。每一件银饰品不仅是美的载体，更承载了深厚的文化内涵和象征意义。银饰作品的每个细节，都体现了工匠对传统的敬重与对美好生活的追求，正是这些工艺与设计的巧妙结合，才使得内蒙古银饰成为了民族文化中不可或缺的一部分。
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

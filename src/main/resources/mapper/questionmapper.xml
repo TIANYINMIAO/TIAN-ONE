@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 映射文件根标签 -->
+<mapper namespace="com.mapper.questionmapper">  <!-- 替换为你的 Mapper 接口全限定名 -->
+ <!-- 根据 ID 列表查询题目 -->
+    <select id="getanswer" resultType="com.pojo.question">
+        SELECT id,content, option_a, option_b, option_c, option_d FROM question
+        <where>
+            <!-- 动态生成 IN 子句 -->
+            <if test="questionIds != null and !questionIds.isEmpty()">
+                id IN
+                <foreach item="id" collection="questionIds" open="(" separator="," close=")">
+                    #{id}  <!-- 安全参数绑定 -->
+                </foreach>
+            </if>
+        </where>
+        ORDER BY id
+    </select>
+</mapper>

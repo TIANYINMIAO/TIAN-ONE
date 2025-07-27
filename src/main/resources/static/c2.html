@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>唐卡绘画</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3004754fa-a208-44d5-8af5-a5af6b3e0a57_2.1.png?Expires=1776598955&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=wtvEUtlKs9c53D7O0iCyQA10fGA%3D">
+                    <span>尼泊尔画派</span>
+                </div>
+                <div class="box">
+                    <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/38b1c889b-7238-4a20-99a6-c36e935fb5f8_2.2.png?Expires=1776598958&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=3WkuGnPc%2BjlEbJZG7zQSOPcTI0c%3D">
+                    <span>齐岗画派</span>
+                </div>
+                <div class="box">
+                    <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35cd0f24c-952e-478f-8c7b-fbf255483033_2.3.png?Expires=1776598962&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=pvQzvBP2vei7jabXhqTqaKFIERQ%3D">
+                    <span>勉唐画派</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3edff4f68-1799-4e41-8770-bc117699b6b5_2.4.png?Expires=1776598964&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2B7Y0ruBlMDagpE%2F7AFis2Ii55EQ%3D">
+                    <span>钦则画派</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3240d4ebf-91b7-47c3-a324-3233af1dc45b_2.5.1.png?Expires=1776598968&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=jl%2FmWeDJymwgIDJVclP6qXmpeQk%3D">
+                    <span>新勉画派</span>
+                </div>
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>深入了解唐卡绘画</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">尼泊尔画派</h3>
+                        <p>尼泊尔画派主要流行于11世纪至13世纪，松赞干布娶了尼泊尔的尺尊公主，随同公主进藏的有尼泊尔艺术家，他们把尼泊尔的艺术风格融入于西藏本地艺术之中，形成了唐卡中的尼泊尔流派。这个流派的绘向以暖色调为主，画面中央的主尊占有很突出的地位，护法诸尊被安排在四周整齐的小方格内，造像较为简单，身段僵硬，着衣少而单薄，饰物沉重感强
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b77eea4d-9811-41ea-9018-cfce71492b75_2.5.png?Expires=1776598971&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=smo6aE7%2FhwuUIYBUBJq59XwPVRY%3D"
+                                alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ca31ee96-244d-4739-aa3a-685a7b32e943_2.6.png?Expires=1776598974&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=JPpaIwAi6SNHiZ28pKOFjnxvcGk%3D"
+                                alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">齐岗画派
+                        </h3>
+                        <p>
+                            齐岗画派由雅堆·齐乌岗巴创立，这一画派主要流行于13世纪的卫藏地区，它一方面继承了吐蕃时期和分治时期的绘画神韵，另一方面也吸收了尼泊尔画风的某些特色，主要在于构图上既继承了尼泊尔画派的构图，又稍有变化。中央的主尊所占有的位置相对减少，在色彩上仍然以暖色为主凋。在背景上，此画派喜欢用卷草纹作为装饰，更为生动细腻地描绘了人物的手指、脚趾等细微之处，也使人物的姿势、服饰等更为流畅、飘逸
+                            。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3f017787a-78fb-4b7a-a286-3c989b4d9d47_2.7.png?Expires=1776598982&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=RuuYeCCDtLQY2v1fBRaHoTd2rpY%3D"
+                                alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35f241bf5-020b-4103-b0af-fc187719740c_2.8.png?Expires=1776598986&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=QcvS68ik00wgZ21aSSfWPM%2BLMUw%3D"
+                                alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">勉唐画派</h3>
+
+                        <p>勉唐画派（另译门赤画派、勉塘画派）艺术产生并形成于赞普时代，兴盛于帕竹时代中期至甘丹颇章时代。画派出创始人为勉拉·顿珠嘉措，其传世之作《造像量度如意宝》，详细论述了绘画和雕塑的造像量度，指出了某些书籍在造像量度上出现的错误及由此带来的恶果，阐述了藏画的实践方法。并博采诸长，该画派造像法度精严，与传统的块面表现相比，尤其注重线条的运用，线条工整流畅，色调活泼鲜亮，变化丰富。旧勉唐画派的画风承袭了印度一尼泊尔绘画样式，但在背景处理上加进了带有地方特色的风景和花卉纹饰，线条匀称精到，浅淡施色加金线勾勒。
+                        </p>
+                        <p>17世纪末至18世纪初，勉唐画派进入鼎盛时期，优秀画师层出不穷。遗存在布达拉宫、罗布林卡、哲蚌寺、色拉寺、甘丹寺的壁画、唐卡多为勉唐画派画师所绘。西藏绘画发展到新勉唐画派时走向了成熟和繁荣。西藏历代画师经过若干世纪的实践，将早期流行的印度一尼泊尔样式与元以后汉地明清艺术因素的影响融会贯通，逐步形成了藏民族独特的宗教绘画样式。1949年至1966年为一转折期，1966年后开始冷落、沉寂。尽管20世纪80年代后地方政府做了不少抢救工作，但其绘画技艺依然处于难以为继的状态
+                            。</p>
+                    </div>
+
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">钦则画派</h3>
+
+                        <p>钦则画派形成于15世纪中叶以后，主要流行于后藏和山南地区，创始人是贡嘎岗堆·钦则钦莫（另译：贡嘎岗堆·钦泽切姆）。钦则钦莫自幼酷爱美术，在传统藏传尼泊尔派绘画的基础上吸收中原汉地、印度等地的绘画技法，创立了画派。钦则画派在构图上保持了印度-尼泊尔绘画传统中主尊像较大的特点，重点突出，周围众小像排列井然有序。但在风景表现中已开始融和汉地绘画的表现。
+                        </p>
+                        <p>据传山南多吉丹寺的壁画即出自钦则钦莫之手。对于勉钦两派，画界历来有“一文一武”之说，勉派尚“文”，钦派尚“武”。比较而言，钦派更擅长绘制怒相神，其面相威严孔武，人物造型丰满圆润，形象稳健而又多跃然舞姿，动中有静、刚柔相济，颇具阳刚之美；色彩表现沉着饱满，善于使用对比色，强烈而跳跃，配色细腻讲究，装饰味很强。钦则派还善于绘制坛城，样式独特，刻画精致绝伦，纹样繁密华丽。
+                        </p>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

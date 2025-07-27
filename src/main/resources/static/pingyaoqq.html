@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 平遥推光漆器</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 800px; */
+            /* 控制最大宽度，避免太大 */
+            height: auto;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+
+        /* 导航部分开始 */
+        /* 导航栏整体背景 */
+        .daohang {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 30, 30, 0.95) 100%);
+            padding: 15px 30px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Logo 样式 */
+        .daohang .logo {
+            width: 180px;
+        }
+
+        .daohang .logo img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        /* 导航菜单的样式 */
+        .daohang .main-nav {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-family: 'KaiTi', 'SimHei', serif;
+            flex: 1;
+            justify-content: center;
+        }
+
+        /* 每个菜单项 */
+        .daohang .nav-item {
+            position: relative;
+            margin: 0 15px;
+            text-align: center;
+        }
+
+        .daohang .nav-item>a {
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: block;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .daohang .nav-item>a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 8px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .daohang .nav-item>a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .daohang .nav-item>a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        /* 子菜单 */
+        .daohang .sub-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 30, 30, 0.95) 100%);
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            width: 200px;
+            z-index: 100;
+        }
+
+        /* 鼠标悬停时显示子菜单 */
+        .daohang .nav-item:hover .sub-menu {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .daohang .sub-menu li {
+            margin: 5px 0;
+            z-index: 100;
+        }
+
+        .daohang .sub-menu li a {
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .daohang .sub-menu li a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .daohang .sub-menu li a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .daohang .sub-menu li a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+        }
+
+        /* 登录注册按钮样式 */
+        .daohang .dengluzc {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-right: 50px;
+        }
+
+        .daohang .dengluzc a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            background: linear-gradient(45deg, rgba(139, 69, 19, 0.7), rgba(160, 82, 45, 0.7));
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-size: 16px;
+            font-weight: bold;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .daohang .dengluzc a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.5), rgba(255, 165, 0, 0.5));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .daohang .dengluzc a:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, rgba(139, 69, 19, 0.9), rgba(160, 82, 45, 0.9));
+            color: #fff;
+        }
+
+        .daohang .dengluzc a:hover::before {
+            opacity: 1;
+        }
+
+        /* 移动端按钮适配 */
+        @media (max-width: 768px) {
+            .dengluzc a {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .main-nav {
+                display: none;
+            }
+        }
+
+        /* 分隔线 */
+        .daohang .nav-divider {
+            height: 30px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 0 15px;
+        }
+
+        /* 导航部分结束 */
+    </style>
+</head>
+
+<body>
+    <!-- ==== topbar start ==== -->
+    <!--[if lt IE 9]>
+      <p class="browserupgrade">
+         You are using an <strong>outdated</strong> browser. Please
+         <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+         your experience and security.
+      </p>
+      <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+        <div class="daohang">
+            <!-- logo 部分，设置为左侧 -->
+            <div class="logo">
+                <img src="assets/image/logo2.png" alt="Logo">
+            </div>
+            <!-- 导航栏部分 -->
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul class="main-nav">
+                    <li class="nav-item">
+                        <a href="index%20copy.html">首页</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">子菜单1</a></li>
+                                                             <li><a href="#">子菜单2</a></li>
+                                                             <li><a href="#">子菜单3</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="3.1wenhua.html">文化篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                            <li><a href="3.1wenhua.html">传统技艺</a></li>
+                            <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                            <li><a href="3.1wenhua.html">传统音乐</a></li>
+                            <li><a href="3.1wenhua.html">传统体育</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="renwu.html">治水篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="renwu.html">治水英雄颂</a></li>
+                            <li><a href="zsjy.html">治水技奇谈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shenhua.html">神话篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="shenhua.html">大禹治水</a></li>
+                            <li><a href="shenhua.html">黄河母亲</a></li>
+                            <li><a href="shenhua.html">女娲补天</a></li>
+                            <li><a href="shenhua.html">伏羲创世</a></li>
+                            <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="zhengce.html">政策篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="zhengce.html">要闻</a></li>
+                            <li><a href="zhengce.html">地方新闻</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="rhudong.html">趣味黄河</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">互动答题</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="chat.html">智慧AI</a>
+                        <!-- <ul class="sub-menu">
+                                                                               <li><a href="# ">互动答题</a></li>
+                                                                            </ul> -->
+                    </li>
+                </ul>
+            </nav>
+            <div class="dengluzc">
+                <a href="shijianshu.html">黄河
+                    史书</a>
+                <a href="dlzc.html">登录</a>
+                <a href="dlzc.html">注册</a>
+
+            </div>
+        </div>
+        <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        </script>
+
+        <!-- ==== 主体部分 ==== -->
+        <section class="common-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="common-banner__content text-center">
+                        <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                        <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+                    </div>
+                </div>
+            </div>
+            <div class="banner-bg">
+                <video class="banner-video" autoplay muted loop playsinline>
+                    <source
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/336bde619-576c-4ae7-a80e-b7e1d0f98978_3.mp4?Expires=1776598027&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=FDAXQHPCBwK%2FTvCdsQiBq%2FnMwZg%3D"
+                        type="video/mp4">
+
+                </video>
+            </div>
+            <div class="shape">
+                <img src="assets/images/shape.png" alt="Image">
+            </div>
+            <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+            </div>
+        </section>
+        <!-- ==== / banner section end ==== -->
+        <!-- ==== faq section start ==== -->
+        <section class="faq">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-8 col-xl-6">
+                        <div class="faq__content">
+                            <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                                <span class="sub-title"><i
+                                        class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄河文化为平遥推光漆器的发展提供了丰富的文化滋养。平遥推光漆器在发展过程中吸收了黄河文化中其他民族文化元素，如蒙古族的军鼓乐风格，使其在艺术表现上更加丰富多样。同时，黄河文化的多元性和包容性也为平遥推光漆器的传承和发展提供了广阔的社会文化基础，使其在山西地区不断得到创新和发展。
+                                </span>
+                                <h2 class="title-animation">山 西 省 的 <span>历 史 长 河</span>
+
+                                </h2>
+                            </div>
+                            <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="accordion" id="accordion">
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                平遥推光漆器是什么？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    平遥推光漆器，素以制作工序复杂、工艺精湛、艺术风格独特而著称于世。它是中国四大名漆器之一，以手掌推光和描金彩绘技艺著称，具有流光溢彩的艺术效果。平遥推光漆器的制作需要经过木工、灰胎、漆工、画工、镶嵌等多道工序，每一件作品都凝聚了匠人的智慧和心血。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                平遥推光漆器的起源与发展阶段？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    平遥推光漆器的制作工艺始于唐开元年间，盛于明清，距今已有一千多年的历史。唐开元年间的平遥推光漆器主要受当地文化的影响，以简单的实用器物为主。随着晋商的崛起，平遥推光漆器得到了长足的发展，制作技艺更加精湛，产品种类更加丰富，开始出口到英、俄等国。在政府的保护和支持下，平遥推光漆器技艺得到了有效的传承和发扬。同时，现代设计理念和市场需求也推动了平遥推光漆器的创新和发展。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                平遥推光漆器的艺术风格与形式？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    制作过程精湛，需经木工、灰胎、漆工、画工、镶嵌等多道工序，每一道工序都要求严格，尤其是“手掌推光”和“描金彩绘”技艺，使漆器表面光亮如镜，图案精美。平遥推光漆器以黑红为主色调，装饰图案多为山水、花鸟、人物等，具有浓郁的民族风格和地方特色。美观与实用并重。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="false" aria-controls="collapseFour">
+                                                平遥推光漆器如何为黄河文化增光添彩？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    平遥推光漆器作为山西黄河流域文化的代表，丰富了黄河文化的内涵。它不仅展现了黄河文化的精神风貌和艺术魅力，还通过其独特的制作工艺和艺术风格，体现了黄河文化多元共生的特点。同时，平遥推光漆器在现代的传承和发展中，也成为了山西地区文化旅游的重要组成部分，为黄河文化的传播和发展做出了积极贡献。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                        <div class="faq__thumb d-none d-lg-block">
+                            <div class="faq__thumb-inner">
+                                <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/36b53a565-4e26-45e0-8b36-b66ee10ad8ec_3.png?Expires=1776598048&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=dLQhUbLKzQZglKaJrbzGwu2EDP8%3D"
+                                        alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==== / faq section end ==== -->
+        <section class="blog-main cm-details">
+            <div class="container">
+                <div class="row gutter-60">
+                    <div class="col-12 col-xl-8">
+                        <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="#">
+                                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37054054f-c0ab-44ef-be9b-c2d81c2967a4_1.png?Expires=1776598056&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=VOTVPFsCxKeEHNSZnijMctjGUbE%3D"
+                                        alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="#"><i class="fa-solid fa-tags"></i>工艺特征</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="#">工艺特征：细腻工艺，精致艺术 </a></h4>
+                                    <p>
+                                        平遥推光漆器的工艺特征集中体现在其精湛的漆艺制作工艺和独特的艺术风格。漆器的种类多样，包括箱柜、桌几、屏风、盘盒等，工艺上有描金彩绘、雕刻镶嵌、堆鼓罩漆等。漆器表面装饰上，采用了传统的大漆和精致的图案，金碧辉煌的绘饰以及细腻的手感，都是其工艺的标志。平遥推光漆器不仅在外观上具有视觉冲击力，还富有极强的文化价值和艺术价值。
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="c8.html">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/31c537179-727f-4d42-b148-a0dde5cc853b_7.png?Expires=1776598072&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=yckNeAGdOPj%2F5A8zBwQDDcImLCk%3D"
+                                        alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="c8.html"><i class="fa-solid fa-tags"></i>工艺流程</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+                                <div class="blog__single-content">
+                                    <h4><a href="c8.html">工艺流程：匠心独运，精益求精 </a></h4>
+                                    <p>
+                                        方寸幕布间，帝王将相、市井百姓、神魔传说皆可入戏。宁夏皮影以刀为笔、以光为墨，将《西游记》的奇幻、《三国演义》的豪情、《白蛇传》的缠绵，化作流淌的光影长卷。它不仅演绎故事，更传递着仁义礼智的中华精神。透过这扇古老的“动画之窗”，让我们读懂中国文化的深邃与鲜活。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="c8.html" aria-label="blog details" title="blog details">🌍
+                                        了解更多<i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="assets/images/wenh/gansuqinqiang/12.png" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="gansujvmu.html"><i class="fa-solid fa-tags"></i>剧目</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="gansujvmu.html">秦腔的经典剧目 </a></h4>
+                                    <p>
+                                        甘肃秦腔作为西北戏曲艺术的瑰宝，其剧目体系历经数百年积淀，形成以历史纵深、地域风情、奇幻想象与时代创新为主轴的四大经典类别。四类剧目交织出从明清江湖到现代剧场的艺术长卷，既承载着丝绸之路上多民族文化交融的基因，又在当代舞台焕发新生，成为读懂甘肃人文精神与审美嬗变的鲜活注脚。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="gansujvmu.html" aria-label="blog details" title="blog details">🌍 经典欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="blog-main__sidebar">
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/397263ee1-92c7-44a1-8d41-69af0791eec4_13.png?Expires=1776596666&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=kYwwAqdPBMxEUoNygU5bx2XgJuA%3D"
+                                        alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>漆器艺人的坚守</h6>
+                                    <p>一位平遥推光漆器艺人如何坚守传统技艺，传承漆器制作的故事。
+                                    </p>
+                                    <p>我是平遥的一名推光漆器艺人，从父亲那里学到了精湛的漆器制作技艺。随着时代的变迁，许多年轻人不再愿意学习这门手艺，我看着那些精美的漆器作品，心里充满了忧虑。为了传承这门技艺，我开始在社区举办漆器制作培训班，免费教年轻女孩学习漆器制作。虽然过程艰难，但我始终坚持着，因为我知道这是我们的文化瑰宝，不能让它失传。在政府的支持下，越来越多的人开始关注平遥推光漆器，我的培训班也逐渐有了起色，看到年轻一代对漆器的喜爱和投入，我感到无比欣慰。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/397263ee1-92c7-44a1-8d41-69af0791eec4_13.png?Expires=1776596666&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=kYwwAqdPBMxEUoNygU5bx2XgJuA%3D"
+                                        alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>漆器的创新之路</h6>
+                                    <p>一位平遥推光漆器艺人如何在传统与现代之间找到平衡，推动漆器制作创新发展的故事。
+                                    <p>
+                                        我是平遥的一名推光漆器艺人，一直致力于将传统平遥推光漆器与现代设计相结合。起初，我尝试在传统图案中加入一些现代元素，但遭到了一些传统派的反对，他们认为这样做会破坏漆器的纯粹性。但我坚信只有创新才能让漆器走得更远。于是，我不断学习现代设计理念，同时深入研究平遥传统文化，力求在两者之间找到最佳的结合点。经过多次尝试和改进，我设计出了一系列既保留传统韵味又符合现代审美的漆器作品。这些作品一经推出，就受到了市场的广泛欢迎，也让更多的人看到了平遥推光漆器的无限可能。
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="assets/images/wenh/gansuqinqiang/13.png" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>皮影小剧场：《月牙泉之恋》</h6>
+                                    <p>敦煌戍边将士阿郎与秦腔高手月儿跨越生死、以歌传情的凄美爱情故事</p>
+                                    <p>敦煌月牙泉旁，阿郎与月儿情定终身。阿郎是戍边将士，月儿是村中秦腔高手，歌声如泉。边疆战事起，阿郎出征，两人在泉边许下重逢誓言。月儿日复一日，在泉边以秦腔寄情。阿郎战场英勇，心系月儿。战后归来，阿郎却只见月牙泉，不见月儿身影，原来她已化作泉边一缕轻烟。阿郎悲歌，歌声回荡沙漠。从此，月圆之夜，月牙泉边总有凄美秦腔，似月儿灵魂诉说爱情。
+                                    </p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source
+                                    src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37f53a57f-4a2f-47a7-8779-727c7745cbeb_1.mp4?Expires=1776598068&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=HkzGaaS0AO6CZLeP7y0xVZmAVvA%3D"
+                                    type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>平遥推光漆器于2006年被列入首批国家级非物质文化遗产名录。保护单位通过举办展览、培训、出版画册等方式，积极推动平遥推光漆器的保护和传承。非议编号为：Ⅷ-51。
+                            </p>
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>
+                                近年来，平遥县通过鼓励大师创建工作室带徒传艺、校企合作开设漆器班、龙头企业创建产业示范基地等方式促进推光漆器髹饰技艺传承发展，成效明显。
+                            </p>
+                            <p>在传承方面，平遥推光漆器主要依靠家族传承和师徒传承，许多家庭都有从事平遥推光漆器的艺人。在发展方面，平遥推光漆器不断创新，将传统技艺与现代设计相结合，开发出更多符合市场需求的产品，如漆器艺术品、文创产品等。同时，通过举办平遥推光漆器展览、培训等活动，提高了平遥推光漆器的知名度和影响力。此外，当地政府还通过打造文化产业园区、设立展销窗口等方式，推动平遥推光漆器的市场化发展，带动当地就业和群众增收。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/326805619-e8f7-4336-906c-eac4528e36ad_4.png?Expires=1776598062&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=O4fN3ydlKYw3f%2F%2BnR2nLfW%2FX1VY%3D"
+                                    alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3730bb000-754a-4972-be2c-ff876b9e72e4_5.png?Expires=1776598068&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=PRDzLnIbWE%2BwVD%2BPKT5gpEBQ2Xo%3D"
+                                    alt=" Image">
+                            </div>
+                        </div>
+                        <!-- ==== custom cursor start ==== -->
+                        <div class="mouseCursor cursor-outer"></div>
+                        <div class="mouseCursor cursor-inner"></div>
+                        <!-- ==== / custom cursor end ==== -->
+                        <!-- ==== scroll to top start ==== -->
+                        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                            <span></span>
+                            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                            </svg>
+                        </button>
+                        <!-- ==== / scroll to top end ==== -->
+                        <!-- ==== / color switcher end ==== -->
+                    </div>
+                    <!-- ==== js dependencies start ==== -->
+                    <!-- jquery -->
+                    <script src="assets/js/jquery-3.7.1.min.js"></script>
+                    <!-- bootstrap five js -->
+                    <script src="assets/js/bootstrap.bundle.min.js"></script>
+                    <!-- nice select js -->
+                    <script src="assets/js/jquery.nice-select.min.js"></script>
+                    <!-- magnific popup js -->
+                    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                    <!-- swiper slider js -->
+                    <script src="assets/js/swiper-bundle.min.js"></script>
+                    <!-- viewport js -->
+                    <script src="assets/js/viewport.jquery.js"></script>
+                    <!-- odometer js -->
+                    <script src="assets/js/odometer.min.js"></script>
+                    <!-- vanilla tilt js -->
+                    <script src="assets/js/vanilla-tilt.min.js"></script>
+                    <!-- aos js -->
+                    <script src="assets/js/aos.js"></script>
+
+                    <!-- splittext js -->
+                    <script src="assets/js/SplitText.min.js"></script>
+                    <!-- scrollto js -->
+                    <script src="assets/js/ScrollToPlugin.min.js"></script>
+                    <!-- scrolltrigger js -->
+                    <script src="assets/js/ScrollTrigger.min.js"></script>
+                    <!-- gsap js -->
+                    <script src="assets/js/gsap.min.js"></script>
+                    <!-- ==== / js dependencies end ==== -->
+                    <!-- template settings js -->
+                    <script src="assets/js/template-settings.js"></script>
+                    <!-- main js -->
+                    <script src="assets/js/custom.js"></script>
+<!--                     <script src="utils.js"></script>-->
+<!--                    <script>-->
+<!--                        document.addEventListener('DOMContentLoaded', function () {-->
+<!--                            checkLogin();-->
+<!--                        });-->
+<!--                    </script>-->
+
+</body>
+
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>敦煌壁画</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/316eda3ff-9d9e-4f0d-8670-4daaced03667_4.1.png?Expires=1776599130&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=r8eU4zsvRVWWfExHVnANP%2F5Aw9c%3D">
+                    <span>早期风格</span>
+                </div>
+                <div class="box">
+                    <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3deef0b01-2863-4823-a46f-2acd3db9cd5f_4.2.png?Expires=1776599213&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=K%2Bdc6vxxj%2BoDGkhuSkgZz0PahBo%3D">
+                    <span>西魏风格</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35db940f0-0125-4314-af9e-c1e044867abc_4.3.png?Expires=1776599214&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=4d%2B5AAFI7a0Jfcu7JbRqSETCWII%3D">
+                    <span>北周风格</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e506d994-8aaa-4d21-ac46-30054929541c_4.4.png?Expires=1776599226&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=EKz727I5hot0alAkLJNqsis7VDg%3D">
+                    <span>唐代风格</span>
+                </div>
+                <div class="box">
+                    <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/362726cd9-964d-43f5-b6fd-70d33c45f74e_4.5.png?Expires=1776599229&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=etLc8f5bj1uYBhUeuFCTjwYsMIM%3D">
+                    <span>宋代风格</span>
+                </div>
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>走进敦煌壁画</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">早期风格</h3>
+                        <p>敦煌壁画的早期风格主要出现在十六国和北魏时期，如275、254、257等窟的壁画。这个时期的壁画表现出强烈的感情外露和明显的动态夸张，人物造型以劲细线条勾勒，且注重晕染效果的运用。背景通常采用赭红色加散花图案装饰，呈现出一种浓厚的异域风格，尤其带有明显的新疆或西域绘画风格。这种风格突出了佛教的神秘性和人物的超凡脱俗，同时也反映出这一时期佛教艺术与其他文化艺术的交流与融合。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37071da46-ae3c-4469-a104-512c14087559_4.6.png?Expires=1776599234&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2B4poOJj%2F1k2dQcFVodJNuVWnf28%3D"
+                                alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/38ddbc47f-6024-41b4-8afd-1dcbffd9e6df_4.7.png?Expires=1776599236&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=yEy6DWO1d1WqG8K%2FbfZ97wlv17U%3D"
+                                alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">西魏风格
+                        </h3>
+                        <p>
+                            西魏时期的壁画风格（如249窟、285窟等）则在继承早期风格的基础上，融入了更多的生活情节和形象。西魏的壁画通常以白粉为底，使用遒劲潇洒的线条和明快的色彩进行描绘。此时期的壁画不仅展现了佛教的宗教主题，还更具生活气息，壁画中的人物和场景更加生动自然，体现了佛教艺术和现实生活的紧密结合。整体来看，西魏风格在敦煌佛教艺术中进一步发展了传统画风。
+                        </p>
+
+                    </div>
+
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">北周风格</h3>
+
+                        <p>北周时期（如290、428、299等窟）的壁画通常为大型的本生故事和佛法故事连环画，画面大多以白壁为底，并用流畅的线条勾勒出人物和景物。色彩清淡雅丽，整体风格更趋向汉族传统绘画，佛教艺术也逐渐与中原文化融为一体。北周的造像风格经历了重要变化，面相浑圆、身体丰壮的风格取代了西魏时期的“秀骨清像”风格，千佛图像的面积也逐渐增大，佛画内容从原本的墙中部移至窟顶，反映了佛教艺术传播方向的改变。
+                        </p>
+
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3fc687d14-bf99-424d-aa69-2d827dc0b96f_4.8.png?Expires=1776599240&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ee9KUlgpwFjt%2FBbIfcMcB5RukEc%3D"
+                                alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/376c81847-aa48-420d-abfd-c7471e71d14e_4.9.png?Expires=1776599243&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=tI7pZhKaLYnoO9jKBaJ%2BClc%2BS%2BI%3D"
+                                alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">唐代风格</h3>
+
+                        <p>唐代的壁画题材非常丰富，涵盖了净土变相、经变故事画、佛菩萨像、供养人等多个方面。净土变相的构图借助建筑物的透视，造成了深远的空间感，画面复杂而紧凑，成为绘画艺术的一项重要突破。唐代的壁画和雕刻中的佛、菩萨形象表现出了多样化的姿态，动作和表情比前代更加生动。唐代的供养人壁画则精细地描绘了上层社会生活，许多作品如盛唐时期乐庭瑰和妻子王氏的供养像，成为了唐代佛教美术的代表之作。
+                        </p>
+
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">宋代风格</h3>
+
+                        <p>由于历史的原因，敦煌艺术在宋代逐渐衰落，但宋代的密画和中原新画风的壁画仍保存至今。北宋时期的洞窟通常在原有洞窟的基础上进行改建，宋代的壁画往往覆盖着唐代或北魏时期的作品。宋代的壁画展现了当时山水人物的绘画技巧，尤其在九八窟和六一窟的作品中，宋代的构图技巧和画面表现力得到了充分展示。
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

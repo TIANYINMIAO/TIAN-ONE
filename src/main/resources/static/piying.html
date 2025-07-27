@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 皮影</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 800px; */
+            /* 控制最大宽度，避免太大 */
+            height: auto;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==== topbar start ==== -->
+    <!--[if lt IE 9]>
+      <p class="browserupgrade">
+         You are using an <strong>outdated</strong> browser. Please
+         <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+         your experience and security.
+      </p>
+      <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+        <div class="daohang">
+            <!-- logo 部分，设置为左侧 -->
+            <div class="logo">
+                <img src="assets/image/logo2.png" alt="Logo">
+            </div>
+            <!-- 导航栏部分 -->
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul class="main-nav">
+                    <li class="nav-item">
+                        <a href="index%20copy.html">首页</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">子菜单1</a></li>
+                                                             <li><a href="#">子菜单2</a></li>
+                                                             <li><a href="#">子菜单3</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="3.1wenhua.html">文化篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                            <li><a href="3.1wenhua.html">传统技艺</a></li>
+                            <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                            <li><a href="3.1wenhua.html">传统音乐</a></li>
+                            <li><a href="3.1wenhua.html">传统体育</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="renwu.html">治水篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="renwu.html">治水英雄颂</a></li>
+                            <li><a href="zsjy.html">治水技奇谈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shenhua.html">神话篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="shenhua.html">大禹治水</a></li>
+                            <li><a href="shenhua.html">黄河母亲</a></li>
+                            <li><a href="shenhua.html">女娲补天</a></li>
+                            <li><a href="shenhua.html">伏羲创世</a></li>
+                            <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="zhengce.html">政策篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="zhengce.html">要闻</a></li>
+                            <li><a href="zhengce.html">地方新闻</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="rhudong.html">趣味黄河</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">互动答题</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="chat.html">智慧AI</a>
+                        <!-- <ul class="sub-menu">
+                                                                               <li><a href="# ">互动答题</a></li>
+                                                                            </ul> -->
+                    </li>
+                </ul>
+            </nav>
+            <div class="dengluzc">
+                <a href="shijianshu.html">黄河
+                    史书</a>
+                <a href="dlzc.html">登录</a>
+                <a href="dlzc.html">注册</a>
+
+            </div>
+        </div>
+        <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        </script>
+
+        <!-- ==== 主体部分 ==== -->
+        <section class="common-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="common-banner__content text-center">
+                        <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                        <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+                    </div>
+                </div>
+            </div>
+            <div class="banner-bg">
+                <video class="banner-video" autoplay muted loop playsinline>
+                    <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3249eee4f-8261-480a-afb6-fca13e2de3f5_lv.mp4?Expires=1776595714&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=BgvvFNuj446L9cyMnsnOYmG0LeY%3D" type="video/mp4">
+                    <source src="assets/videos/banner-video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="shape">
+                <img src="assets/images/shape.png" alt="Image">
+            </div>
+            <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+            </div>
+        </section>
+        <!-- ==== / banner section end ==== -->
+        <!-- ==== faq section start ==== -->
+        <section class="faq">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-8 col-xl-6">
+                        <div class="faq__content">
+                            <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                                <span class="sub-title"><i
+                                        class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作为黄河上游河套平原的核心区域，宁夏融合农耕与游牧文明，皮影戏成为多元文化的叙事载体（如《黄河谣》融合汉族祈雨调与蒙古族长调）。黄河沿岸的社火、庙会（如中宁县石空大佛寺明代皮影残片）为皮影提供表演场景，80%的传统剧目直接取材黄河传说（如《筏子客》再现羊皮筏子运输），使其成为黄河文明的活态镜像。</span>
+                                <h2 class="title-animation">宁 夏 回 族 自 治 区 的 <span>历 史 长 河</span>
+
+                                </h2>
+                            </div>
+                            <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="accordion" id="accordion">
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                宁夏皮影是什么？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    宁夏皮影是中国传统民间艺术，以雕刻精致的牛皮或羊皮形象为载体，通过灯光投射在幕布上，配合音乐、唱腔和对话进行表演。是黄河流域唯一汉、回、蒙艺术融合的皮影流派，影人服饰含新月纹样，面部去五官以避伊斯兰禁忌，形成独特文化标识。它以精美工艺、独特音乐和生动表演著称，是宁夏文化遗产的重要代表，深受当地群众喜爱。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                宁夏皮影的起源与发展阶段？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    宁夏皮影戏作为黄河文化的重要组成部分，经历了漫长而曲折的发展历程。从早期的传入与融合，到清乾隆时期的艺术创新，再到清末的鼎盛时期和近现代的恢复与发展，宁夏皮影戏始终保持着其独特的艺术魅力和文化内涵。同时，随着现代技术的不断引入和创新，宁夏皮影戏也在不断地与时俱进，焕发出新的生机与活力。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                宁夏皮影的艺术风格与形式？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    宁夏皮影的艺术风格形式独具特色。在制作上，它采用牛皮为原料，经过泡醒、脱毛、刮净、绷展、做样、出汗、彩绘等多道工序精心制作而成。皮影人物造型生动优美，立体感强，脸谱与服饰以镂空为主，又适当留实，繁简得宜，虚实相生。在表演上，宁夏皮影戏演出受场地限制不大，设施、道具简易，行动方便，随处可演。一块白布帐、一盏灯，配以各种道具和精雕镂刻的皮影人，耍线人双手各执一幅皮影表演，边演边唱，黑暗中灯光透过皮质小人在幕布另一面显现出栩栩如生的人物、花鸟和楼宇殿阁。其唱腔主要有秦腔、陇东道情、碗碗腔和眉户剧等，剧目繁多，包括历史演义、民间传说、武使公案、爱情故事、神话寓言等。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="false" aria-controls="collapseFour">
+                                                宁夏皮影如何为黄河文化增光添彩？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    宁夏皮影作为黄河文化的重要组成部分，为黄河文化增添了独特的艺术魅力。首先，宁夏皮影以其独特的制作工艺和表演形式，展现了黄河地区人民的智慧和创造力。其次，宁夏皮影的剧目内容广泛，涉及历史、传说、民间故事等多个方面，反映了黄河地区的历史文化和人民生活。此外，宁夏皮影还通过与其他文化形式的交流和融合，不断吸收新的元素和灵感，为黄河文化注入了新的活力和内涵。例如，宁夏皮影与旅游、教育等文化形式的结合，不仅促进了皮影艺术的传承和发展，也提高了黄河文化的知名度和影响力。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                        <div class="faq__thumb d-none d-lg-block">
+                            <div class="faq__thumb-inner">
+                                <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/31f263863-9b81-40c5-ac5b-7b6bc392be41_9%20%286%29.jpg?Expires=1776596016&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=wJFnUmq2jbvdYAo5myOUfyx%2FbKI%3D" alt="Image">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==== / faq section end ==== -->
+        <section class="blog-main cm-details">
+            <div class="container">
+                <div class="row gutter-60">
+                    <div class="col-12 col-xl-8">
+                        <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="zhizuo.html">
+                                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/38c076f41-be21-48e6-b9e9-f78163c3f164_6.png?Expires=1776596054&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=CjNl98hDKH2HZRu4jN2Ydb%2Fxu8s%3D" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="zhizuo.html"><i class="fa-solid fa-tags"></i>制作</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="zhizuo.html">皮影的制作过程 </a></h4>
+                                    <p>
+                                        从一张兽皮到跃然幕上的灵动身影，宁夏皮影的制作是一场匠人与时光的共舞。选皮、雕刻、染色、缀合……每一步都凝结着世代传承的智慧，每一刀都刻印着中华传统美学的基因。走进这段光影的诞生之旅，您将触摸到指尖的温度，见证平凡皮革如何蜕变为承载故事的灵魂。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="zhizuo.html" aria-label="blog details" title="blog details">🌍
+                                        光影与匠心的对话——探秘皮影背后的千年技艺<i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="qvpai.html">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b52dca5e-ba25-4c35-ad45-54d22bc90e3f_1.png?Expires=1776596074&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=zQ4Dx%2Bfza3ogSkj9UK6HOxYeMCA%3D" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="piyinggushi.html"><i class="fa-solid fa-tags"></i>皮影里的中国故事</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="piyinggushi.html">用皮影讲述中国故事 </a></h4>
+                                    <p>
+                                        方寸幕布间，帝王将相、市井百姓、神魔传说皆可入戏。宁夏皮影以刀为笔、以光为墨，将《西游记》的奇幻、《三国演义》的豪情、《白蛇传》的缠绵，化作流淌的光影长卷。它不仅演绎故事，更传递着仁义礼智的中华精神。透过这扇古老的“动画之窗”，让我们读懂中国文化的深邃与鲜活。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="piyinggushi.html" aria-label="blog details" title="blog details">🌍
+                                        千年光影，一戏乾坤——皮影里的中国叙事密码<i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="assets/images/wenh/gansuqinqiang/12.png" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="gansujvmu.html"><i class="fa-solid fa-tags"></i>剧目</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="gansujvmu.html">秦腔的经典剧目 </a></h4>
+                                    <p>
+                                        甘肃秦腔作为西北戏曲艺术的瑰宝，其剧目体系历经数百年积淀，形成以历史纵深、地域风情、奇幻想象与时代创新为主轴的四大经典类别。四类剧目交织出从明清江湖到现代剧场的艺术长卷，既承载着丝绸之路上多民族文化交融的基因，又在当代舞台焕发新生，成为读懂甘肃人文精神与审美嬗变的鲜活注脚。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="gansujvmu.html" aria-label="blog details" title="blog details">🌍 经典欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="blog-main__sidebar">
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e24ead18-290b-423d-a292-b30994d5875d_13.png?Expires=1776593788&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6LLL0O7wTyJxU1YhOyxhgqkjp50%3D" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>皮影小剧场：《月光下的皮影舞会》</h6>
+                                    <p>在月光皎洁的夜晚，皮影艺人们用灵巧的双手，在村口大树下演绎了一场梦幻般的皮影舞会。
+                                    </p>
+                                    <p>在古老的村庄里，每当月圆之夜，皮影艺人们就会聚集在村口的大树下，用灵巧的双手操控着色彩斑斓的皮影角色，开始一场别开生面的皮影舞会。今晚，月光如水，照亮了整个舞台，皮影小兔子轻盈地跳跃着，仿佛真的在草地上嬉戏；皮影老鹰展翅高飞，划过夜空，留下一道道美丽的光影轨迹。皮影艺人们的手指在幕后灵活舞动，每一个动作都牵动着观众的心弦，仿佛大家也跟着皮影角色一起，在月光下翩翩起舞。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e24ead18-290b-423d-a292-b30994d5875d_13.png?Expires=1776593788&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6LLL0O7wTyJxU1YhOyxhgqkjp50%3D" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>皮影小剧场：《智勇小英雄》</h6>
+                                    <p>少年小明利用古老的皮影戏道具，制作出一个皮影勇士，成功保护了村庄免受妖怪的侵扰。
+                                    </p>
+                                    <p>
+                                        在一个被妖怪困扰的村庄里，住着一位名叫小明的少年。他聪明勇敢，决心要保护村庄免受妖怪的侵扰。一天，小明在村后的山洞里发现了一套古老的皮影戏道具，他决定利用这些道具，制作出一个能够打败妖怪的皮影勇士。经过无数个日夜的练习，小明终于掌握了皮影操控的精髓。在一个月黑风高的夜晚，他操纵着皮影勇士，与妖怪展开了一场惊心动魄的战斗。最终，凭借着智慧和勇气，小明和他的皮影勇士成功地将妖怪赶出了村庄，成为了村民们心中的英雄。
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="assets/images/wenh/gansuqinqiang/13.png" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>皮影小剧场：《月牙泉之恋》</h6>
+                                    <p>敦煌戍边将士阿郎与秦腔高手月儿跨越生死、以歌传情的凄美爱情故事</p>
+                                    <p>敦煌月牙泉旁，阿郎与月儿情定终身。阿郎是戍边将士，月儿是村中秦腔高手，歌声如泉。边疆战事起，阿郎出征，两人在泉边许下重逢誓言。月儿日复一日，在泉边以秦腔寄情。阿郎战场英勇，心系月儿。战后归来，阿郎却只见月牙泉，不见月儿身影，原来她已化作泉边一缕轻烟。阿郎悲歌，歌声回荡沙漠。从此，月圆之夜，月牙泉边总有凄美秦腔，似月儿灵魂诉说爱情。
+                                    </p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32f547cb2-6f98-441b-8c5f-842b519dd8e1_5.mp4?Expires=1776596279&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=UctVCSuDvX5g65RXUnU%2Bhd6hdJw%3D" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>2006年，皮影戏被列入“第一批国家级非物质文化遗产名录”。这一认定标志着中国政府对皮影戏这一传统艺术形式的重视和保护。皮影戏作为一种源远流长的民间艺术，不仅在中国各地有着深厚的群众基础，还在国际上享有盛誉。
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>宁夏皮影在传承过程中，逐渐形成了自己的地方特色。明代设卫戍边，中卫设“卫”，皮影戏随军旅传到中卫。至清末民初，随着陕甘等省皮影艺人受生活所迫移民到盐池县麻黄山、红井子一带，皮影戏传播并普及到宁夏民间，成了寻常百姓喜闻乐见的曲艺形式。宁夏具有代表性的地方皮影包括贺兰皮影、西吉皮影、海原县皮影、盐池皮影等。
+                            </p>
+                            <p>在传承过程中，宁夏皮影也涌现出了一批优秀的艺人和戏班。如宁夏西吉县曹氏家族，其皮影戏曾在央视农民新春联欢会西吉专场舞台上与全国观众见面。曹志勤老人作为曹氏家族皮影戏的传承人，不仅自己热爱皮影戏，还积极培养儿女传承这一技艺。他的女儿曹玉萍受聘于国家5A级景区——宁夏镇北堡西部影城参加演出，儿子曹永归也承接了父亲的技艺。
+                            </p>
+                            <p>为了推动宁夏皮影的传承与发展，政府和保护机构以及学校等社会各界都做出了积极的努力。他们通过举办皮影戏培训班、开展皮影戏进校园、进社区等活动，加强皮影戏的宣传和教育力度。同时，还鼓励年轻人参与皮影戏的学习和表演，为这一艺术注入新的活力和生命力。此外，一些皮影戏班也积极尝试与现代科技相结合，利用数字化技术记录和保存皮影戏资料，通过新媒体平台推广和宣传皮影戏文化。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b81da63e-1949-4fb3-b384-c185256aea70_9.png?Expires=1776596323&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=xAAOWuuZ%2FwDSLbK0F2gObWzAZtU%3D" alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/376ace53a-7388-4469-9123-bc49e3c37c45_10.png?Expires=1776596343&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=5WkW%2F6yEMryQRiN4xPuB%2Bw8%2BlLo%3D" alt=" Image">
+                            </div>
+                        </div>
+                        <!-- ==== custom cursor start ==== -->
+                        <div class="mouseCursor cursor-outer"></div>
+                        <div class="mouseCursor cursor-inner"></div>
+                        <!-- ==== / custom cursor end ==== -->
+                        <!-- ==== scroll to top start ==== -->
+                        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                            <span></span>
+                            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                            </svg>
+                        </button>
+                        <!-- ==== / scroll to top end ==== -->
+                        <!-- ==== / color switcher end ==== -->
+                    </div>
+                    <!-- ==== js dependencies start ==== -->
+                    <!-- jquery -->
+                    <script src="assets/js/jquery-3.7.1.min.js"></script>
+                    <!-- bootstrap five js -->
+                    <script src="assets/js/bootstrap.bundle.min.js"></script>
+                    <!-- nice select js -->
+                    <script src="assets/js/jquery.nice-select.min.js"></script>
+                    <!-- magnific popup js -->
+                    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                    <!-- swiper slider js -->
+                    <script src="assets/js/swiper-bundle.min.js"></script>
+                    <!-- viewport js -->
+                    <script src="assets/js/viewport.jquery.js"></script>
+                    <!-- odometer js -->
+                    <script src="assets/js/odometer.min.js"></script>
+                    <!-- vanilla tilt js -->
+                    <script src="assets/js/vanilla-tilt.min.js"></script>
+                    <!-- aos js -->
+                    <script src="assets/js/aos.js"></script>
+
+                    <!-- splittext js -->
+                    <script src="assets/js/SplitText.min.js"></script>
+                    <!-- scrollto js -->
+                    <script src="assets/js/ScrollToPlugin.min.js"></script>
+                    <!-- scrolltrigger js -->
+                    <script src="assets/js/ScrollTrigger.min.js"></script>
+                    <!-- gsap js -->
+                    <script src="assets/js/gsap.min.js"></script>
+                    <!-- ==== / js dependencies end ==== -->
+                    <!-- template settings js -->
+                    <script src="assets/js/template-settings.js"></script>
+                    <!-- main js -->
+                    <script src="assets/js/custom.js"></script>
+<!--                     <script src="utils.js"></script>-->
+<!--                    <script>-->
+<!--                        document.addEventListener('DOMContentLoaded', function () {-->
+<!--                            checkLogin();-->
+<!--                        });-->
+<!--                    </script>-->
+
+</body>
+
+</html>

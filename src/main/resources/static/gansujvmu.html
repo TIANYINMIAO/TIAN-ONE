@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>秦腔</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .circle-container {
+            position: fixed;
+            left: -50dvh;
+            top: 0;
+            width: 100dvh;
+            height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .circle {
+            width: 100dvh;
+            height: 100dvh;
+            border-radius: 50%;
+            position: absolute;
+            transition: transform 0.1s linear;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            transform: rotate(-20deg);
+        }
+
+        .segment {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+
+        /* Her segment için farklı görsel ve pozisyon ayarları */
+        .segment:nth-child(1) {
+            clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 50%);
+        }
+
+
+        .segment:nth-child(1)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745150460515_52e79207-08e5-4b41-9095-266788bdbad0_5.png?Expires=1776686461&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=AqtEbdoplVSHrrdD0neLt9f%2FUUE%3D');
+            background-position: 75% 25%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+        .segment:nth-child(2) {
+            clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
+        }
+
+        .segment:nth-child(2)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745150465521_db1b6c1d-043b-481c-ab30-c28fd635da07_12.png?Expires=1776686466&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=LTFs3nE1v9ySK7laPSljO9ZW9jI%3D');
+            background-position: 175% 50%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+        .segment:nth-child(3) {
+            clip-path: polygon(50% 50%, 50% 100%, 0% 100%, 0% 50%);
+        }
+
+        .segment:nth-child(3)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745150475843_8cc5a04a-f3e8-405e-8215-27bdd51dd178_25.png?Expires=1776686476&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=YP3jG1iZDOf1dNyrUrzxorgF6Pg%3D');
+            background-position: 50% 200%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+        .segment:nth-child(4) {
+            clip-path: polygon(50% 50%, 0% 50%, 0% 0%, 50% 0%);
+        }
+
+        .segment:nth-child(4)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745150480497_3f70e641-4f7b-4c2d-b264-f843dea10353_27.jpeg?Expires=1776686481&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=CFpR%2Byp0EJFe3ueSVND7V1SMMRY%3D');
+            background-position: -75% 125%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+        /* .segment:nth-child(5) {
+            clip-path: polygon(50% 50%, 0% 30%, 0% 0%, 50% 0%);
+        }
+
+        .segment:nth-child(5)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('./assets/images/wenh/huangnanzangxi/cao.png');
+            background-position: 0% -25%;
+            background-size: 75%;
+            border-radius: 50%;
+        } */
+
+
+
+        .content {
+            width: 100vw;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 100vw;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 默认设置为较矮屏幕样式 */
+        section {
+            min-height: 120vh !important;
+        }
+
+        /* 大屏幕（高度大于等于 900px）使用 height: 100vh */
+        @media (min-height: 900px) {
+            section {
+                min-height: unset !important;
+                height: 100vh;
+            }
+        }
+
+        /* 
+        .z2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            background-color: #43401F;
+            overflow: hidden;
+        } */
+
+        .z2 {
+            display: flex;
+            height: 500px;
+
+            overflow-x: auto;
+            /* 让 .z2 内部可以横向滚动 */
+            overflow-y: hidden;
+            /* 防止出现不必要的垂直滚动 */
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            width: 100%;
+        }
+
+
+        .shell2 {
+            -webkit-mask-image: linear-gradient(to right, #0000, #000, #000, #0000);
+            overflow-x: auto;
+            display: flex;
+            gap: 5rem;
+            align-items: start;
+            padding: 70px;
+        }
+
+        .shell2>div {
+            block-size: 320px;
+            background-color: #fff;
+            aspect-ratio: 16/9;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 0 5px 5px rgba(173, 173, 173, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .shell2 .one {
+            margin-left: 500px;
+        }
+
+        .shell2 video {
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* 滚动条样式 */
+        ::-webkit-scrollbar {
+            height: 16px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f5f5f5;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #956308;
+            border-radius: 10px;
+        }
+
+        /* 文字样式 */
+        .text-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* 按钮样式 */
+        .fullscreen-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .fullscreen-btn:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .biaoti {
+            position: absolute;
+            top: 70px;
+            right: 80px;
+            width: 900px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 轻微渐变背景 */
+            padding: 20px 30px;
+            border-left: 5px solid #C19A6B;
+            /* 复古金色边框 */
+            backdrop-filter: blur(10px);
+            /* 增强玻璃质感 */
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            color: #EAE0D5;
+            /* 典雅的米白色字体 */
+            font-family: "Songti SC", serif;
+            /* 经典宋体，符合戏曲文化 */
+        }
+
+        /* 标题样式 */
+        .biaoti h1 {
+            font-size: 48px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #D4AF37;
+            /* 金色字体，高级感 */
+            text-shadow: 2px 2px 5px rgba(212, 175, 55, 0.5);
+            margin-bottom: 15px;
+        }
+
+        /* 文字段落 */
+        .biaoti p {
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: justify;
+            color: #EAE0D5;
+            font-weight: 400;
+            text-indent: 2em;
+            opacity: 0.9;
+            /* 轻微透明，增加层次感 */
+        }
+
+        /* 额外的动画（可选） */
+        .biaoti {
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* 渐显动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 经典曲目标题样式 */
+        .biaoti2 {
+            position: absolute;
+            top: 350px;
+            /* 调整位置，避免与 .biaoti 重叠 */
+            right: 770px;
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #D4AF37;
+            /* 高级金色 */
+            text-shadow: 2px 2px 5px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体，符合戏曲风格 */
+            padding: 10px 20px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+            box-shadow: 0px 4px 10px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        /* 鼠标悬停效果 */
+        .biaoti2:hover {
+            background: rgba(255, 223, 186, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* 进入动画 */
+        .biaoti2 {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 鼠标悬停效果 */
+        .biaoti2:hover {
+            background: rgba(255, 223, 186, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* 图片容器样式 */
+        .shell2 img {
+            width: 569px;
+            /* 控制图片大小 */
+            height: 320px;
+            object-fit: cover;
+            border-radius: 12px;
+            /* 圆角处理 */
+            border: 5px solid #D4AF37;
+            /* 复古金色边框 */
+            box-shadow: 0px 5px 15px rgba(212, 175, 55, 0.3);
+            /* 增强浮雕感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 图片悬停效果 */
+        .shell2 img:hover {
+            /* transform: scale(1.05); */
+            box-shadow: 0px 10px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* 文字样式 */
+        .text-overlay {
+            position: absolute;
+
+            left: 19%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            font-weight: bold;
+            color: #D4AF37;
+            /* 典雅金色 */
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-family: "KaiTi", serif;
+            /* 书法字体 */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 移动端基础样式 */
+        @media (max-width: 768px) {
+            .biaoti {
+                position: relative;
+                top: auto;
+                right: auto;
+                width: 90%;
+                max-width: none;
+                margin: 20px auto;
+                padding: 15px;
+                transform: none;
+                backdrop-filter: blur(5px);
+                border-radius: 6px;
+            }
+
+            .biaoti h1 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+                text-align: center;
+                margin-bottom: 12px;
+            }
+
+            .biaoti p {
+                font-size: 1rem;
+                text-indent: 1.5em;
+                line-height: 1.6;
+            }
+
+            .biaoti2 {
+                position: relative;
+                top: auto !important;
+                right: auto !important;
+                display: block;
+                width: fit-content;
+                margin: 0 auto 30px;
+                font-size: 1.5rem;
+                padding: 8px 15px;
+                border-width: 1px;
+                transform: none !important;
+            }
+
+            /* 视频容器改造 */
+            .z2 {
+                position: relative;
+                height: auto;
+                margin-top: 20px;
+            }
+
+            .shell2 {
+                flex-direction: column;
+                padding: 0 15px;
+                gap: 25px;
+                -webkit-mask-image: none;
+            }
+
+            .shell2>div {
+                width: 100% !important;
+                min-width: auto;
+                block-size: auto;
+                aspect-ratio: 16/9;
+                margin-left: 0 !important;
+            }
+
+            /* 圆形装饰优化 */
+            .circle-container {
+                display: none;
+                /* 移动端隐藏复杂图形 */
+            }
+
+            /* 全局调整 */
+            section {
+                padding: 30px 0;
+                height: auto !important;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+        }
+
+        /* 小屏手机优化 */
+        @media (max-width: 480px) {
+            .biaoti {
+                width: 95%;
+                padding: 12px;
+            }
+
+            .biaoti h1 {
+                font-size: 1.8rem;
+            }
+
+            .biaoti p {
+                font-size: 0.9rem;
+            }
+
+            .biaoti2 {
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+            }
+
+            .shell2 {
+                padding: 0 10px;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle-container">
+        <div class="circle" id="circle">
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+        </div>
+    </div>
+    <div class="content">
+        <section id="section1" style="background: #1B1F23; color: white;">
+            <div class="biaoti">
+                <h1>历史演义剧</h1>
+                <p>
+                    甘肃秦腔的历史演义剧，如《火焰驹》、《出五关》和《薛刚反唐》，以宏大的历史背景为舞台，将古代忠奸斗争、英雄豪杰的传奇故事搬上戏曲舞台。这些剧目不仅展现了历史人物的英勇与智慧，更深刻揭示了忠诚、孝道和正义等传统美德的力量。通过连台本戏的形式，观众可以跟随剧情的发展，感受历史的厚重与悲壮。
+                </p>
+            </div>
+            <div class="biaoti2">经典曲目</div>
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+                        <div class="text-overlay">《火焰驹》</div>
+                        <video
+                            src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32fb78393-ffd2-4b55-8f4f-39ef74614b63_huo.mp4?Expires=1776594852&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=YGAZ87kqulL1QADb0M2oXN%2B%2BmTk%3D"
+                            controls></video>
+                        <button class="fullscreen-btn" onclick="openFullscreen(this)">全屏播放</button>
+                    </div>
+                    <div>
+                        <div class="text-overlay">《出五关》</div>
+                        <video
+                            src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/321b7b8c5-cbb4-45c6-bb06-d01768b51265_chuwuguan.mp4?Expires=1776594891&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=lZkXDzW8n7WrSmo2bpiOhb0jNRU%3D"
+                            controls></video>
+                        <button class="fullscreen-btn" onclick="openFullscreen(this)">全屏播放</button>
+                    </div>
+                    <div>
+                        <div class="text-overlay">《薛刚反唐》</div>
+                        <video
+                            src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3555cb646-b4f7-44d6-9d2e-4fffd0a229f2_xuegft.mp4?Expires=1776594924&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=I5Kj2o3fYcDCdBwjXgcmKqG0sro%3D"
+                            controls></video>
+                        <button class="fullscreen-btn" onclick="openFullscreen(this)">全屏播放</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <section id="section2" style="background: #2C3E50; color: white;">
+            <div class="biaoti">
+                <h1>民间生活剧</h1>
+                <p>甘肃秦腔的民间生活剧，如《烙碗计》、《张连卖布》和《看女》，以陇原百姓的日常生活为蓝本，通过生动的情节和细腻的表演，展现了民间生活的酸甜苦辣和人性的复杂多面。这些剧目中，方言俚语的巧妙运用和丑角的幽默表演，为观众带来了无尽的欢乐与思考。它们不仅反映了民间生活的真实面貌，更传递了积极向上的人生态度和价值观。
+                </p>
+            </div>
+            <div class="biaoti2">经典曲目</div>
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+                        <div class="text-overlay">《张连卖布》</div>
+                        <video
+                            src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/30f01940a-77aa-4991-bb2e-f152b90ff8c3_zlmb.mp4?Expires=1776594956&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=8MH4EGLbntZNkF%2FsiybgB8YX6z0%3D"
+                            controls></video>
+                        <button class="fullscreen-btn" onclick="openFullscreen(this)">全屏播放</button>
+                    </div>
+                    <div>
+                        <div class="text-overlay">《烙碗计》</div>
+                        <video
+                            src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3fcb23d0a-99a5-44d5-b3b5-ab201f0a427c_lwj.mp4?Expires=1776595014&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=F%2BCCesAwxPbHk5n3a%2F%2FvK6fZfbE%3D"
+                            controls></video>
+                        <button class="fullscreen-btn" onclick="openFullscreen(this)">全屏播放</button>
+                    </div>
+                    <div>
+                        <div class="text-overlay">《看女》</div>
+                        <video
+                            src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b149ec6d-8ee1-4952-b761-8c1d51a5a9f2_kv.mp4?Expires=1776595050&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=fGMQKoq1%2F3pwxqqQw%2BaUhW4Txas%3D"
+                            controls></video>
+                        <button class="fullscreen-btn" onclick="openFullscreen(this)">全屏播放</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+        <section id="section3" style="background: #34495E; color: white;">
+            <div class="biaoti">
+                <h1>神魔仙侠剧</h1>
+                <p>甘肃秦腔的神魔仙侠剧，如《游西湖》、《白蛇传》和《钟馗嫁妹》，融合了敦煌壁画的神秘元素和武侠小说的奇幻色彩，为观众呈现了一个充满奇幻与武侠的世界。这些剧目中，服化道的精美设计和特技表演的精彩呈现，为观众带来了强烈的视觉冲击和审美享受。它们不仅展现了神魔世界的神秘与壮丽，更弘扬了正义与勇敢的精神。
+                </p>
+            </div>
+            <div class="biaoti2">经典曲目</div>
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+                        <div class="text-overlay">《游西湖》</div>
+                        <video
+                            src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3573faf80-9374-4096-936c-22ecc7c042f6_yxh.mp4?Expires=1776595173&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6XiF3erWCaF3leeSEwmqRGKjzCo%3D"
+                            controls></video>
+                        <button class="fullscreen-btn" onclick="openFullscreen(this)">全屏播放</button>
+                    </div>
+                    <div>
+                        <div class="text-overlay">《白蛇传》</div>
+                        <video
+                            src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/36b44cc80-9774-4148-880b-33aadb41a642_bsz.mp4?Expires=1776595289&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=pvxeA3pQ1lPGWKZFiRL%2FWICWdXc%3D"
+                            controls></video>
+                        <button class="fullscreen-btn" onclick="openFullscreen(this)">全屏播放</button>
+                    </div>
+                    <div>
+                        <div class="text-overlay">《钟馗嫁妹》</div>
+                        <video
+                            src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/380d590b3-e597-4195-9702-96dec11b5e35_zjiamei.mp4?Expires=1776595339&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=zaeCE6UDp41DysHiG85BPzQ13jo%3D"
+                            controls></video>
+                        <button class="fullscreen-btn" onclick="openFullscreen(this)">全屏播放</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+        <section id="section4" style="background: #4A4E69; color: white;">
+            <div class="biaoti">
+                <h1>新编创新剧</h1>
+                <p>
+                    甘肃秦腔的新编创新剧，如《敦煌恋》和《麦积圣歌》，是20世纪50年代后创作的现代戏曲作品。这些剧目在继承传统秦腔艺术的基础上，融入了交响乐、数字舞台技术等现代元素，为传统戏曲注入了新的活力和魅力。它们不仅反映了现代社会的审美需求，更展现了甘肃秦腔在传承与创新中的不断探索与进步。
+                </p>
+            </div>
+            <div class="biaoti2">经典曲目</div>
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+                        <div class="text-overlay">《敦煌恋》</div>
+                        <video
+                            src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/387178843-2247-4282-8d3d-29fefaf6bba3_dunhl.mp4?Expires=1776595377&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=yHqogT%2BJfoQJvRS2UtFPPPc6Auk%3D"
+                            controls></video>
+                        <button class="fullscreen-btn" onclick="openFullscreen(this)">全屏播放</button>
+                    </div>
+                    <div>
+                        <div class="text-overlay">《麦积圣歌》</div>
+                        <video
+                            src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3df00a732-975c-4910-8ab6-e2a1890e4a93_mj.mp4?Expires=1776595499&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=PJmGM50Oh65vPy9C0yo9%2B0cxoUs%3D"
+                            controls></video>
+                        <button class="fullscreen-btn" onclick="openFullscreen(this)">全屏播放</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+    </div>
+    <script>
+        const circle = document.getElementById("circle");
+        const sections = document.querySelectorAll("section");
+        const sectionCount = sections.length;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+        window.addEventListener("scroll", () => {
+            let scrollPercentage = window.scrollY / maxScroll;
+            let rotation = (scrollPercentage * 360) - 20;
+            // Scroll ile dönmeyi sağlayan mantığı düzeltmek
+            circle.style.transform = `rotate(${rotation}deg)`;
+        });
+    </script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

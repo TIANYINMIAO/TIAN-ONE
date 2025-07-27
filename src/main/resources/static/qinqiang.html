@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <title>文化篇 | 秦腔</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 800px; */
+            /* 控制最大宽度，避免太大 */
+            height: auto;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+
+
+        /* 导航部分结束 */
+    </style>
+</head>
+
+<body>
+
+    <!--[if lt IE 9]>
+         <p class="browserupgrade">
+            You are using an <strong>outdated</strong> browser. Please
+            <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+            your experience and security.
+         </p>
+         <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+        <div class="daohang">
+            <!-- logo 部分，设置为左侧 -->
+            <div class="logo">
+                <img src="assets/image/logo2.png" alt="Logo">
+            </div>
+            <!-- 导航栏部分 -->
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul class="main-nav">
+                    <li class="nav-item">
+                        <a href="index%20copy.html">首页</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">子菜单1</a></li>
+                                                             <li><a href="#">子菜单2</a></li>
+                                                             <li><a href="#">子菜单3</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="3.1wenhua.html">文化篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                            <li><a href="3.1wenhua.html">传统技艺</a></li>
+                            <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                            <li><a href="3.1wenhua.html">传统音乐</a></li>
+                            <li><a href="3.1wenhua.html">传统体育</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="renwu.html">治水篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="renwu.html">治水英雄颂</a></li>
+                            <li><a href="zsjy.html">治水技奇谈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shenhua.html">神话篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="shenhua.html">大禹治水</a></li>
+                            <li><a href="shenhua.html">黄河母亲</a></li>
+                            <li><a href="shenhua.html">女娲补天</a></li>
+                            <li><a href="shenhua.html">伏羲创世</a></li>
+                            <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="zhengce.html">政策篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="zhengce.html">要闻</a></li>
+                            <li><a href="zhengce.html">地方新闻</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="rhudong.html">趣味黄河</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">互动答题</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="chat.html">智慧AI</a>
+                        <!-- <ul class="sub-menu">
+                                                                               <li><a href="# ">互动答题</a></li>
+                                                                            </ul> -->
+                    </li>
+                </ul>
+            </nav>
+            <div class="dengluzc">
+                <a href="shijianshu.html">黄河
+                    史书</a>
+                <a href="dlzc.html">登录</a>
+                <a href="dlzc.html">注册</a>
+
+            </div>
+        </div>
+        <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        </script>
+        <!-- ==== 主体部分 ==== -->
+        <section class="common-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="common-banner__content text-center">
+                        <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                        <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+                    </div>
+                </div>
+            </div>
+            <div class="banner-bg">
+                <video class="banner-video" autoplay muted loop playsinline>
+                    <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/316516b87-528c-44f1-aeeb-1333db7d9f00_2.mp4?Expires=1776593657&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=rezy8BSGU5piUy%2BCPznALgMY2Ac%3D" type="video/mp4">
+                    <source src="assets/videos/banner-video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="shape">
+                <img src="assets/images/shape.png" alt="Image">
+            </div>
+            <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+            </div>
+        </section>
+        <!-- ==== / banner section end ==== -->
+        <!-- ==== faq section start ==== -->
+        <section class="faq">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-8 col-xl-6">
+                        <div class="faq__content">
+                            <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                                <span class="sub-title"><i
+                                        class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;甘肃地处黄河上游，黄土高原的苍茫地貌与黄河的奔涌气势，塑造了秦腔高亢激昂的唱腔风格。黄河沿岸的农耕文明与多民族交融历史，为秦腔提供了“忠孝节义”“家国情怀”等题材内容。黄河泥沙沉积形成的独特黏土，曾被用于早期秦腔舞台搭建和道具制作。</span>
+                                <h2 class="title-animation">秦 腔 的 <span>历 史 长 河</span>
+
+                                </h2>
+                            </div>
+                            <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="accordion" id="accordion">
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                秦腔是什么？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    秦腔，又称“梆子腔”或“陕西梆子”，是中国西北地区极具代表性的戏曲剧种之一，主要流行于陕西、甘肃、宁夏、青海、新疆等西北部地区。秦腔以其独特的唱腔、表演技艺和丰富的剧目内容，深受当地人民的喜爱，并被列为中国国家级非物质文化遗产。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                秦腔的起源与发展阶段？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    秦腔的起源可以追溯到元明之际，当时流传于关中一带的劝善调与当地民间音乐及关中方言结合，逐渐形成了秦腔这一戏曲声腔剧种。明代万历年间，《钵中莲》传奇抄本中已有关于秦腔的记载，说明秦腔在当时或更早以前已经形成，并传播到了其他地方。清代是秦腔的繁盛时期，乾隆年间，秦腔更是风靡全国，成为当时重要的戏曲剧种之一。<br>
+                                                    秦腔经历了多个阶段的变化和革新。从元明之际的初步形成，到明清之际的广泛传播，再到清代中叶以后的逐渐地方化，秦腔始终保持着其独特的艺术风格和魅力。新中国成立后，秦腔艺术得到了进一步的繁荣和发展，成为西北地区重要的文化名片。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                秦腔的艺术风格与形式？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    秦腔的艺术风格粗犷豪放，充满生活气息。其唱腔多变，包含多种基本板式和特色唱腔，唱词结构整齐，节奏丰富。表演上，秦腔注重唱、念、做、打的结合，表现力极强。音乐伴奏独具特色，以板胡为主，辅以多种乐器，文场与武场协作，营造出独特的音乐氛围。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="false" aria-controls="collapseFour">
+                                                秦腔如何为黄河文化增光添彩？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    甘肃秦腔作为黄河文化的重要组成部分，不仅承载着丰富的历史文化内涵，还为黄河文化增添了独特的艺术魅力和文化价值。秦腔以其独特的唱腔、表演技艺和剧目内容，展现了西北地区人民的豪放性格和坚韧不拔的精神风貌。通过秦腔的演出和传播，人们可以更加深入地了解和感受黄河文化的魅力和内涵，从而进一步推动黄河文化的传承和发展，进一步为黄河文化的传播和弘扬提供了更加广阔的平台和机遇。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                        <div class="faq__thumb d-none d-lg-block">
+                            <div class="faq__thumb-inner">
+                                <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/36713485e-6d93-4850-8db0-1fb4d3d22bbf_4.png?Expires=1776593695&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=MPyJWj18OtQRAr730njjw2klF08%3D" alt="Image">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- ==== / faq section end ==== -->
+        <section class="blog-main cm-details">
+            <div class="container">
+                <div class="row gutter-60">
+                    <div class="col-12 col-xl-8">
+                        <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="kunqv1.html">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3636e3efa-1f95-4186-ab6a-546cc8aa4841_6.png?Expires=1776593713&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=fBN6Flilpxc4LM%2FbhOusv3q45Yo%3D" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="yindiao.html"><i class="fa-solid fa-tags"></i>音乐伴奏</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="yindiao.html">秦腔的四大音乐伴奏 </a></h4>
+                                    <p>在浩瀚的中华戏曲艺术长河中，甘肃秦腔以其独特的魅力和深厚的文化底蕴，成为了西北地区璀璨的明珠。而在这璀璨的艺术瑰宝中，四大件音乐伴奏——板胡、二弦、笛子与三弦（或二胡），犹如四位默契十足的乐师，共同编织出一曲曲荡气回肠、韵味十足的传统乐章。它们不仅承载着秦腔音乐的灵魂，更是甘肃秦腔艺术韵味与情感表达不可或缺的重要组成部分。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="yindiao.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="qvpai.html">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3179799eb-946c-46ff-8bc7-03002f19e9a6_11.png?Expires=1776593738&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=o9pp9MlJSk9qX6a6Uw1MHY0qT48%3D" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="qvpai.html"><i class="fa-solid fa-tags"></i>曲牌</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="qvpai.html">秦腔的六类曲牌 </a></h4>
+                                    <p>从唐宋遗音到民间智慧，秦腔曲牌以六大类型编织出戏剧音乐的基因图谱：弦乐幽婉述衷肠，唢呐铿锵铸铁血，海笛空灵通三界，笙管雅正承古韵，昆腔雅化添文心，套曲连章筑史诗。每类曲牌皆是解锁秦腔艺术密码的密钥，在程式化与即兴性的辩证中，书写着戏曲音乐最本真的东方美学。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="qvpai.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/387c5fb5a-33b1-41ce-a944-65d0034ff3a7_12.png?Expires=1776593765&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=hQYWudr7sEaDHSvkLg%2FM6HJmcf8%3D" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="gansujvmu.html"><i class="fa-solid fa-tags"></i>剧目</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="gansujvmu.html">秦腔的经典剧目 </a></h4>
+                                    <p>
+                                        甘肃秦腔作为西北戏曲艺术的瑰宝，其剧目体系历经数百年积淀，形成以历史纵深、地域风情、奇幻想象与时代创新为主轴的四大经典类别。四类剧目交织出从明清江湖到现代剧场的艺术长卷，既承载着丝绸之路上多民族文化交融的基因，又在当代舞台焕发新生，成为读懂甘肃人文精神与审美嬗变的鲜活注脚。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="gansujvmu.html" aria-label="blog details" title="blog details">🌍 经典欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="blog-main__sidebar">
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e24ead18-290b-423d-a292-b30994d5875d_13.png?Expires=1776593788&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6LLL0O7wTyJxU1YhOyxhgqkjp50%3D" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>秦腔小剧场：《锁麟囊》</h6>
+                                    <p>薛湘灵赠囊结善缘，寒窑重逢共渡难。
+                                    </p>
+                                    <p>在古老的登州城，有一位名叫薛湘灵的富家千金。她出嫁那天，母亲送给她一个装满珠宝的锁麟囊，寓意吉祥如意。在迎亲的路上，薛湘灵遇到了同样在出嫁的贫家女赵守贞。风雨中，两人在春秋亭避雨，薛湘灵看到赵守贞的寒酸，心生怜悯，便将自己的锁麟囊赠予了她。<br>
+
+                                        时光流转，薛家突遭变故，薛湘灵流落到莱州，为了生计，她进入赵守贞家做保姆。一天，她在赵家看到了自己当年赠出的锁麟囊，心中惊讶不已。赵守贞得知真相后，非常感动，她不仅收留了薛湘灵，还与她结为姐妹。在赵守贞的帮助下，薛湘灵最终与家人团聚，两人共同面对生活的风雨，成为了彼此生命中不可或缺的一部分。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e24ead18-290b-423d-a292-b30994d5875d_13.png?Expires=1776593788&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6LLL0O7wTyJxU1YhOyxhgqkjp50%3D" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>秦腔小剧场：《王宝钏》</h6>
+                                    <p>王宝钏苦守寒窑十八年，终得薛平贵荣归团圆。
+
+
+                                    </p>
+                                    <p>在遥远的古代，有一位相国之女名叫王宝钏。她美丽善良，聪明伶俐，却在绣球招亲时拒绝了所有豪门贵族的公子哥儿，偏偏看中了贫穷但有志气的乞丐薛平贵。王宝钏不顾父亲的反对，毅然决然地与薛平贵私定终身，并随他住进了寒窑。<br>
+
+                                        寒窑里的日子虽然清苦，但两人相亲相爱，过得十分幸福。然而，好景不长，薛平贵为了改变命运，决定从军出征。王宝钏在寒窑中默默等待，日复一日，年复一年。她拒绝了所有前来提亲的人，坚守着对薛平贵的爱情和承诺。<br>
+
+                                        十八年过去了，薛平贵终于战功赫赫，衣锦还乡。他回到寒窑，看到了年迈却依然美丽的王宝钏。两人相拥而泣，终于结束了漫长的等待。薛平贵带着王宝钏回到了京城，他们过上了幸福美满的生活，成为了人们口中的佳话。<br>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e24ead18-290b-423d-a292-b30994d5875d_13.png?Expires=1776593788&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6LLL0O7wTyJxU1YhOyxhgqkjp50%3D" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>秦腔小剧场：《月牙泉之恋》</h6>
+                                    <p>敦煌戍边将士阿郎与秦腔高手月儿跨越生死、以歌传情的凄美爱情故事</p>
+                                    <p>敦煌月牙泉旁，阿郎与月儿情定终身。阿郎是戍边将士，月儿是村中秦腔高手，歌声如泉。边疆战事起，阿郎出征，两人在泉边许下重逢誓言。月儿日复一日，在泉边以秦腔寄情。阿郎战场英勇，心系月儿。战后归来，阿郎却只见月牙泉，不见月儿身影，原来她已化作泉边一缕轻烟。阿郎悲歌，歌声回荡沙漠。从此，月圆之夜，月牙泉边总有凄美秦腔，似月儿灵魂诉说爱情。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3665d8b51-9c08-40cf-8698-f4acd434e741_1.mp4?Expires=1776593881&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=gTYJpExHK%2FF3B%2FWe0hbwxyKc3fY%3D" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>2019年11月，《国家级非物质文化遗产代表性项目保护单位名单》公布，甘肃秦腔艺术剧院有限责任公司、宁夏演艺集团秦腔剧院有限公司、陕西省戏曲研究院、新疆生产建设兵团猛进秦剧团获得“秦腔”保护单位资格。
+                            </p>
+                            <p>2024年12月，入选甘肃省第五批省级非物质文化遗产代表性项目名录。</p>
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>甘肃省内现有众多民间秦腔剧团，春节期间，这些剧团会精心策划并上演一系列秦腔演出活动，为节日增添浓厚的文化氛围，同时也对甘肃秦腔的传承与发展起到了积极的推动作用。这些活动不仅让传统秦腔艺术得以在节日的欢庆中传承，更激发了民众对本土文化的热爱与自豪感。
+                            </p>
+                            <p>与此同时，甘肃秦腔也在积极探索与现代艺术的融合之路，通过创新表演形式和内容，力求吸引更多年轻观众的目光。一些剧团在保留秦腔经典元素的基础上，融入现代舞美设计、灯光音响效果以及新颖的剧情构思，使得古老的艺术形式焕发出新的活力。此外，甘肃秦腔还尝试与流行音乐、影视等现代艺术形式跨界合作，创作出既具有传统韵味又不失时尚感的秦腔作品，进一步拓宽了其受众基础。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3082b38ff-6203-469c-8f6a-a334ff0914b8_1.png?Expires=1776593912&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=YwTtywyNgW%2B3fZHDBFsMltzBBLY%3D" alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/34a0bffaf-e8ef-4c86-aefe-d33dcabcd25e_2.png?Expires=1776593932&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=7aIvEsooHtyXA8Vyd0AiP8rHaU0%3D" alt=" Image">
+                            </div>
+                        </div>
+                        <!-- ==== custom cursor start ==== -->
+                        <div class="mouseCursor cursor-outer"></div>
+                        <div class="mouseCursor cursor-inner"></div>
+                        <!-- ==== / custom cursor end ==== -->
+                        <!-- ==== scroll to top start ==== -->
+                        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                            <span></span>
+                            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                            </svg>
+                        </button>
+                        <!-- ==== / scroll to top end ==== -->
+                        <!-- ==== / color switcher end ==== -->
+                    </div>
+                    <!-- ==== js dependencies start ==== -->
+                    <!-- jquery -->
+                    <script src="assets/js/jquery-3.7.1.min.js"></script>
+                    <!-- bootstrap five js -->
+                    <script src="assets/js/bootstrap.bundle.min.js"></script>
+                    <!-- nice select js -->
+                    <script src="assets/js/jquery.nice-select.min.js"></script>
+                    <!-- magnific popup js -->
+                    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                    <!-- swiper slider js -->
+                    <script src="assets/js/swiper-bundle.min.js"></script>
+                    <!-- viewport js -->
+                    <script src="assets/js/viewport.jquery.js"></script>
+                    <!-- odometer js -->
+                    <script src="assets/js/odometer.min.js"></script>
+                    <!-- vanilla tilt js -->
+                    <script src="assets/js/vanilla-tilt.min.js"></script>
+                    <!-- aos js -->
+                    <script src="assets/js/aos.js"></script>
+
+                    <!-- splittext js -->
+                    <script src="assets/js/SplitText.min.js"></script>
+                    <!-- scrollto js -->
+                    <script src="assets/js/ScrollToPlugin.min.js"></script>
+                    <!-- scrolltrigger js -->
+                    <script src="assets/js/ScrollTrigger.min.js"></script>
+                    <!-- gsap js -->
+                    <script src="assets/js/gsap.min.js"></script>
+                    <!-- ==== / js dependencies end ==== -->
+                    <!-- template settings js -->
+                    <script src="assets/js/template-settings.js"></script>
+                    <!-- main js -->
+                    <script src="assets/js/custom.js"></script>
+<!--                     <script src="utils.js"></script>-->
+<!--                    <script>-->
+<!--                        document.addEventListener('DOMContentLoaded', function () {-->
+<!--                            checkLogin();-->
+<!--                        });-->
+<!--                    </script>-->
+
+</body>
+
+</html>

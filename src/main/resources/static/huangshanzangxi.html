@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 黄南藏戏</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 1500px;
+            控制最大宽度，避免太大 */
+            max-height: 750px;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==== 进入动画 ==== -->
+    <div class="preloader">
+        <i class="icon-donation"></i>
+        <p>黄河文化</p>
+    </div>
+    <div class="daohang">
+        <!-- logo 部分，设置为左侧 -->
+        <div class="logo">
+            <img src="assets/image/logo2.png" alt="Logo">
+        </div>
+        <!-- 导航栏部分 -->
+        <button class="mobile-menu-btn">☰</button>
+        <nav>
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="index%20copy.html">首页</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">子菜单1</a></li>
+                                                         <li><a href="#">子菜单2</a></li>
+                                                         <li><a href="#">子菜单3</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="3.1wenhua.html">文化篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                        <li><a href="3.1wenhua.html">传统技艺</a></li>
+                        <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                        <li><a href="3.1wenhua.html">传统音乐</a></li>
+                        <li><a href="3.1wenhua.html">传统体育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="renwu.html">治水篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="renwu.html">治水英雄颂</a></li>
+                        <li><a href="zsjy.html">治水技奇谈</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="shenhua.html">神话篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="shenhua.html">大禹治水</a></li>
+                        <li><a href="shenhua.html">黄河母亲</a></li>
+                        <li><a href="shenhua.html">女娲补天</a></li>
+                        <li><a href="shenhua.html">伏羲创世</a></li>
+                        <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="zhengce.html">政策篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="zhengce.html">要闻</a></li>
+                        <li><a href="zhengce.html">地方新闻</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="rhudong.html">趣味黄河</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">互动答题</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="chat.html">智慧AI</a>
+                    <!-- <ul class="sub-menu">
+                                                                           <li><a href="# ">互动答题</a></li>
+                                                                        </ul> -->
+                </li>
+            </ul>
+        </nav>
+        <div class="dengluzc">
+            <a href="shijianshu.html">黄河
+                史书</a>
+            <a href="dlzc.html">登录</a>
+            <a href="dlzc.html">注册</a>
+
+        </div>
+    </div>
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('active');
+        });
+    </script>
+    <!-- ==== 主体部分 ==== -->
+    <section class="common-banner">
+        <div class="container">
+            <div class="row">
+                <div class="common-banner__content text-center">
+                </div>
+            </div>
+        </div>
+        <div class="banner-bg">
+            <video class="banner-video" autoplay muted loop playsinline>
+                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/34c4a674a-150b-42eb-a8bc-546200bce843_3.mp4?Expires=1776529577&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=9ojTxgoLX4%2BW1gJwzEcIE%2FQ189A%3D" type="video/mp4">
+                <source src="assets/videos/banner-video.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="shape">
+            <img src="assets/images/shape.png" alt="Image">
+        </div>
+        <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+        </div>
+    </section>
+    <!-- ==== / banner section end ==== -->
+    <!-- ==== faq section start ==== -->
+    <section class="faq">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-8 col-xl-6">
+                    <div class="faq__content">
+                        <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                            <span class="sub-title"><i
+                                    class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄河在青海境内的流域是河湟文化的主要分布区域，这一地区的人口分布和民族交融也为黄南藏戏的传播和发展提供了有利条件。黄南藏戏作为青海地区影响较大的少数民族剧种，其演出多集中于黄南藏族自治州的同仁、泽库、尖扎等地区，这些地区正是黄河流域的重要组成部分。
+                            </span>
+                            <h2 class="title-animation">走 进 <span>黄 南 藏 戏</span>
+
+                            </h2>
+                        </div>
+                        <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="accordion" id="accordion">
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            黄南藏戏是什么？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                黄南藏戏是青海省黄南藏族自治州的传统戏剧，也是国家级非物质文化遗产之一。它属于安多语系藏戏的一个重要支系，是青海黄南地区藏族戏曲剧种。黄南藏戏融合了藏族文化、宗教元素与生活素材，展现了独特的艺术风格。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            黄南藏戏经历了哪些发展阶段？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                黄南藏戏的发展经历了多个重要阶段。从17世纪中期到18世纪中期，它处于说唱阶段；1740—1794年夏日仓三世时期，形成了三人表演的形式；1854—1946年吉先甲时期，黄南藏戏逐渐走向成熟；1910—1973年多吉甲时期，它迎来了兴盛发展阶段；而自1980年以来，黄南藏戏进入了提高与革新阶段，不断焕发新的活力。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            黄南藏戏的艺术风格是如何形成的？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                黄南藏戏的艺术风格源于多方面的融合与创新。它的手式指法、身段步法和人物造型，吸收了黄南寺院壁画中的人物形态，同时融入了寺院宗教舞蹈、民间舞蹈以及藏族生活素材动作等元素。这种独特的融合，使得黄南藏戏形成了自己独有的艺术风格，深受观众喜爱。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                            aria-expanded="false" aria-controls="collapseFour">
+                                            黄南藏戏如何为黄河文化增添加彩？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                黄南藏戏通过其多样化的艺术形式、深厚的文化内容、融合性的文化特质、历史记忆的传承以及丰富的精神价值，为黄河文化增添了独特的色彩和内涵。它不仅是藏族文化的重要代表，也是黄河文化不可或缺的组成部分，它体现着黄河文化的多样性、包容性和深远影响。相信通过对黄南藏戏的传承与发展，也能够更全面地理解和欣赏黄河文化的壮阔与丰富。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                    <div class="faq__thumb d-none d-lg-block">
+                        <div class="faq__thumb-inner">
+                            <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/34fc47974-a8b2-4e69-a30a-341268d5dc85_22.png?Expires=1776529628&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=STjg8xN0E7GlaaQfASwuYzOu%2BAM%3D" alt="Image">
+                            </div>
+                            <div class="thumb-sm" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/351190686-9fdf-4dfd-89d9-a0b40701d9c9_2.png?Expires=1776529657&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=tVf7oYPdJ1OHuukt8r0v6sEOUfQ%3D" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="shape d-none d-lg-block">
+            <img src="assets/images/faq/shape.png" alt="Image">
+        </div> -->
+    </section>
+    <!-- ==== / faq section end ==== -->
+    <section class="blog-main cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="col-12 col-xl-8">
+                    <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35f0a7474-8149-41d1-9ba2-48613afe69d6_1..png?Expires=1776529695&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=mrmMpodj9SjkeLjbNQcRopE4E90%3D" alt="Image">
+
+                            <div class="tag">
+                                <i class="fa-solid fa-tags"></i>流派与分支</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+                            <div class="blog__single-content">
+                                <h4><a href="#">流派与分支：安多藏戏的艺术明珠 </a></h4>
+                                <p>黄南藏戏作为安多藏戏的核心代表，形成了以隆务寺为中心的"寺院藏戏"和以村落为根基的"民间藏戏"两大流派。寺院藏戏注重宗教仪轨，以《米拉日巴劝化记》等佛经故事为主，表演庄严肃穆；民间藏戏则融入世俗生活，发展出《格萨尔王传》等英雄史诗题材。其独特的"唱、舞、诵、技"四艺融合形式，在藏族戏曲中独树一帜。
+                                </p>
+                            </div>
+                            <div class="blog__single-cta">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+                            <a href="yishutese.html">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/364858dd2-09e4-4be1-a9ef-478b496e06dc_6.png?Expires=1776529726&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ba0P70TGGzpI4sqAaERMmYU3zFs%3D" alt="Image">
+                            </a>
+                            <div class="tag">
+                                <a href="yishutese.html"><i class="fa-solid fa-tags"></i>艺术特色</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+                            <!-- <div class="blog__single-meta">
+                           <p><i class="icon-user"></i>Robert Fox</p>
+                           <p><i class="icon-message"></i>Comments (03)</p>
+                        </div> -->
+                            <div class="blog__single-content">
+                                <h4><a href="yishutese.html">艺术特色的五维解析 </a></h4>
+                                <p>
+                                    黄南藏戏，作为藏族文化瑰宝中的璀璨明珠，其艺术特色在演出场地、表演程式、音乐唱腔、乐器组合及经典剧目等五个维度上展现出独特的魅力与深厚的文化底蕴。从寺院辩经场的神圣起源到现代剧场的创新演绎，从九型角色系统的文化密码到音乐唱腔的活态传承，从宗教法器与民间乐器的古今交响到四大传世经典的文化图谱，黄南藏戏以其独特的艺术语言和表现形式，讲述着藏族人民的历史传说、英雄故事与文化信仰。
+                                </p>
+                            </div>
+                            <div class="blog__single-cta">
+                                <a href="yishutese.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="blog-main__sidebar">
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/313b3f30a-6414-4bed-9084-41f3c18e813a_10.png?Expires=1776529755&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Ajk6hb7JWoj%2Brec5FVVC0JblrQI%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>《米拉日巴劝化记》——苦修圣者的度化之舞</h6>
+                                <p>寺院藏戏的宗教传奇
+                                </p>
+                                <p>15世纪高僧米拉日巴在雪山修行时，遇猎人贡布多吉追杀鹿群。他以“鹿舞”展现鹿群灵动的求生之姿，又以“骷髅舞”演绎生死无常，枯骨随鼓点碎裂重组。猎人弓箭坠地，幡然醒悟，将鹿角制成法号皈依佛法。剧中“鹿角面具”刻有密宗经文，舞步融合唐卡中空行母的飞天姿态，至今隆务寺仍用金汁书写该剧唱词，象征智慧如阳光普照众生。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/313b3f30a-6414-4bed-9084-41f3c18e813a_10.png?Expires=1776529755&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Ajk6hb7JWoj%2Brec5FVVC0JblrQI%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>《格萨尔·赛马称王》——马背上的王权预言</h6>
+                                <p>民间藏戏的世俗史诗
+
+
+                                </p>
+                                <p>少年格萨尔扮作乞丐参加赛马盛会，其神驹江噶佩布在疾驰中踏出“三现吉祥蹄印”，蹄声如雷震裂黄金面具，露出帝王真容。赛马途中穿插“倒挂马腹射箭”“飞鞍换马”等绝技，马鞍镶嵌的九眼天珠随剧情闪烁。每当演至加冕时刻，演员需顺时针绕场七圈，抛洒青稞完成“转世”仪式。此剧完整保留了吐蕃骑兵的呼麦战歌，马蹄声由十二面达玛鼓模拟，每声鼓点皆对应史诗中的星象方位。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39bfdd19c-475d-487a-97f1-54c07e5b695f_4.mp4?Expires=1776529793&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=lqLbT4opXZ9j60SSrNVibnJ9a4Q%3D" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>2006年5月20日，青海省黄南藏族自治州申报的藏戏（黄南藏戏）经中华人民共和国国务院批准列入第一批国家级非物质文化遗产名录。为了保护和传承这一珍贵的文化遗产，黄南州成立了藏戏非遗中心，对濒危的藏戏剧目、鲜为人知的唱腔以及独特的表演技巧进行抢救性记录，构建起全面且精细的藏戏数字资源库。
+                            </p>
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>黄南州现有多家民间藏戏团，春节期间会安排多场藏戏演出活动，这些活动对传承和发展藏戏具有积极的推动作用。同时，黄南藏戏还积极与现代艺术相结合，创新表演形式和内容，以吸引更多观众。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/31e7572ae-53b6-4368-b1d0-67c8a0026b4b_24.png?Expires=1776529820&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=koNmYzGAmwgnzDITxCV9%2BsU3oRk%3D" alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3506b0491-6b87-43be-805b-a344d31afe2d_25.png?Expires=1776529846&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=PLas%2FRKosdXsorRyDjxsDOtK3NM%3D" alt=" Image">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- ==== custom cursor start ==== -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+        <!-- ==== / custom cursor end ==== -->
+        <!-- ==== scroll to top start ==== -->
+        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+            <span></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </button>
+        <!-- ==== / scroll to top end ==== -->
+    </div>
+
+
+
+    <!-- ==== custom cursor start ==== -->
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"></div>
+    <!-- ==== / custom cursor end ==== -->
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

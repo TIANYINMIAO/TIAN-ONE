@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>潍坊风筝制作</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e7fece1e-8148-4777-9242-d7323fa6c790_10.1.png?Expires=1776599589&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=8r3kyfkPu2DobDMD%2FwHgXH0BXd8%3D">
+                    <span>串式风筝</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e2b05303-24db-481a-995d-cd1789f05a9b_10.2.png?Expires=1776599597&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=9tG0VqM7DGqSpxHqpJnF1v27%2FVM%3D">
+                    <span>板子风筝</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37dd1f675-df4f-48cc-80eb-3f736c0e94ca_10.3.png?Expires=1776599600&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=emyeJQn916oR7ocNOj%2FyQ7S7WYc%3D">
+                    <span>软翅风筝</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b3c5d897-18d8-4776-91f3-d26e27e99285_10.4.png?Expires=1776599605&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=62CIkgZuJV7zvz2O1kY%2FFnSHgcg%3D">
+                    <span>硬翅风筝</span>
+                </div>
+
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3210aba2f-f653-4631-89ac-52e356ce975c_10.5.png?Expires=1776599610&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=eIQW7WRmdhg%2BqkPeiYWYLjgrLMU%3D">
+                    <span>立体风筝</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>领悟潍坊风筝创新魅力</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">1. 串式风筝：工艺精细，气势雄伟
+                        </h3>
+                        <p>串式风筝作为潍坊风筝中的一大亮点，其制作工艺复杂、结构庞大，具有很高的观赏性和技术含量。这种风筝通常由数只相同或不同的风筝通过线串联起来，形成一条长串状的结构。最具代表性的串式风筝便是潍坊的龙头蜈蚣风筝，这种风筝通常将多只小型风筝用线串接在一起，形成一个栩栩如生的长形蜈蚣或龙的形象，放飞时仿佛龙蜈蜴般在空中翻飞，气势宏大，深受风筝爱好者喜爱。制作这种风筝的难度较高，需要非常精准的线条设计和风筝间的协调性，制作过程中，工匠需要考虑风力、结构和重量的平衡，以确保其稳定飞行。
+                        </p>
+
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e64e413d-00b6-4533-88f2-34c6bb74ebc0_10.6.png?Expires=1776599616&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=B1jfyvAwDMMxE2t8kCIak71V7OE%3D"
+                                alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3f93fc198-228e-4cef-918c-4ebb8eae275a_10.7.png?Expires=1776599620&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=jZgjxETfdDQ72fe%2FB1NaaFzQx64%3D"
+                                alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">2. 板子风筝：造型简洁，艺术性强
+
+                        </h3>
+                        <p>
+                            板子风筝，又称“板式风筝”或“拍子风筝”，是一种历史悠久、广泛使用的传统风筝。板子风筝的升力片通过骨架支撑形成板状结构，因此具有非常好的飞行稳定性。此类风筝的形状大多为长方形或八角形，其设计简单却富有艺术感，特别适合进行工艺美术创作。板式风筝的题材非常丰富，常常通过细腻的绘画技巧展现花鸟虫鱼、人物故事等各种图案。例如，潍坊的八角形八卦板式风筝《八仙过海》便是一个经典代表，其图案精致，色彩鲜艳，展示了传统的中国绘画艺术风格。此外，板式风筝在历史上也有着重要的象征意义，常作为节庆、庆典或仪式上的装饰，承载着吉祥与祝福的寓意。
+                        </p>
+
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35f2bac73-94b3-4a6f-9fc2-901f2d2cd51a_10.8.png?Expires=1776599623&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=A%2BakEBKGAm2RanremcXsDWfwK4g%3D"
+                                alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/335dbf3d4-180b-4946-b35e-b5a09ba0777a_10.9.png?Expires=1776599627&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2B7P9M4IqyhsqDGrgkGma%2FbtbHVo%3D"
+                                alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">3. 软翅风筝：简单易做，适合各年龄层</h3>
+                        <p>软翅风筝是中国传统风筝中最为常见且普及度最高的一类，因其结构简单，制作容易，广受家庭、学校等团体的喜爱。软翅风筝的升力片由一根主翅条和蒙面组成，特点是翅下部没有硬性结构，因此飞行时，风从两翅蒙面的下方逸出，产生上升力，使得软翅风筝具有良好的起飞性能和飞行稳定性。它通常适合初学者或儿童使用，简单的制作和飞行原理使得软翅风筝成为风筝爱好者的入门选择。软翅风筝的造型多样，可以是简单的矩形、菱形或更为复杂的动物形象，放飞时，轻盈而稳定的飞行效果使其成为公园、节庆和家庭聚会中的热门娱乐项目。
+                        </p>
+
+                    </div>
+
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">4. 硬翅风筝：结构坚固，造型独特</h3>
+                        <p>硬翅风筝，又称“元宝翅风筝”，是潍坊风筝的经典代表之一。硬翅风筝的结构较为独特，两侧设有升力片，通常由两根弯曲的竹条、膀线和上覆的蒙面纸组成，形成一个稳定的通风道（风兜），这一结构使得风筝具有较强的风力承受能力和飞行稳定性。硬翅风筝的造型极其多样，常见的有沙燕风筝和潍坊城派的工笔人物风筝。沙燕风筝飞行迅猛，形态逼真，常在风筝节上作为竞技风筝出现。潍坊城派的工笔人物风筝则展现了高超的工艺技巧，人物的面容、服饰和表情均精致细腻，体现了传统工艺和艺术创作的完美结合。
+
+                        </p>
+
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">5. 立体风筝：新颖独特，具有装饰性</h3>
+                        <p>立体风筝是一种外形独特、富有创意的风筝类型。它通常是由折叠结构的骨架组成，外面覆盖蒙面，形成一个立体结构，类似圆柱体或长方体的形态。传统的潍坊城派立体风筝多以宫灯、花瓶等为题材，采用精美的工笔画手法进行装饰，制作精细且富有文化内涵。这类风筝不仅具有飞行性能，还兼具装饰艺术的功能，通常作为节庆、展览等场合的展示品，吸引人们的目光。立体风筝的设计展示了风筝制作工艺的多样性和独特性，充满了现代和传统相结合的艺术感。
+                        </p>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

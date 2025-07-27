@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 藏族刺绣</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 800px; */
+            /* 控制最大宽度，避免太大 */
+            height: auto;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+
+        /* 导航部分开始 */
+        /* 导航栏整体背景 */
+        .daohang {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 30, 30, 0.95) 100%);
+            padding: 15px 30px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Logo 样式 */
+        .daohang .logo {
+            width: 180px;
+        }
+
+        .daohang .logo img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        /* 导航菜单的样式 */
+        .daohang .main-nav {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-family: 'KaiTi', 'SimHei', serif;
+            flex: 1;
+            justify-content: center;
+        }
+
+        /* 每个菜单项 */
+        .daohang .nav-item {
+            position: relative;
+            margin: 0 15px;
+            text-align: center;
+        }
+
+        .daohang .nav-item>a {
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: block;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .daohang .nav-item>a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 8px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .daohang .nav-item>a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .daohang .nav-item>a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        /* 子菜单 */
+        .daohang .sub-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 30, 30, 0.95) 100%);
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            width: 200px;
+            z-index: 100;
+        }
+
+        /* 鼠标悬停时显示子菜单 */
+        .daohang .nav-item:hover .sub-menu {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .daohang .sub-menu li {
+            margin: 5px 0;
+            z-index: 100;
+        }
+
+        .daohang .sub-menu li a {
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .daohang .sub-menu li a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .daohang .sub-menu li a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .daohang .sub-menu li a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+        }
+
+        /* 登录注册按钮样式 */
+        .daohang .dengluzc {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-right: 50px;
+        }
+
+        .daohang .dengluzc a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            background: linear-gradient(45deg, rgba(139, 69, 19, 0.7), rgba(160, 82, 45, 0.7));
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-size: 16px;
+            font-weight: bold;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .daohang .dengluzc a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.5), rgba(255, 165, 0, 0.5));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .daohang .dengluzc a:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, rgba(139, 69, 19, 0.9), rgba(160, 82, 45, 0.9));
+            color: #fff;
+        }
+
+        .daohang .dengluzc a:hover::before {
+            opacity: 1;
+        }
+
+        /* 移动端按钮适配 */
+        @media (max-width: 768px) {
+            .dengluzc a {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .main-nav {
+                display: none;
+            }
+        }
+
+        /* 分隔线 */
+        .daohang .nav-divider {
+            height: 30px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 0 15px;
+        }
+
+        /* 导航部分结束 */
+    </style>
+</head>
+
+<body>
+    <!-- ==== topbar start ==== -->
+    <!--[if lt IE 9]>
+      <p class="browserupgrade">
+         You are using an <strong>outdated</strong> browser. Please
+         <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+         your experience and security.
+      </p>
+      <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+        <div class="daohang">
+            <!-- logo 部分，设置为左侧 -->
+            <div class="logo">
+                <img src="assets/image/logo2.png" alt="Logo">
+            </div>
+            <!-- 导航栏部分 -->
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul class="main-nav">
+                    <li class="nav-item">
+                        <a href="index%20copy.html">首页</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">子菜单1</a></li>
+                                                             <li><a href="#">子菜单2</a></li>
+                                                             <li><a href="#">子菜单3</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="3.1wenhua.html">文化篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                            <li><a href="3.1wenhua.html">传统技艺</a></li>
+                            <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                            <li><a href="3.1wenhua.html">传统音乐</a></li>
+                            <li><a href="3.1wenhua.html">传统体育</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="renwu.html">治水篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="renwu.html">治水英雄颂</a></li>
+                            <li><a href="zsjy.html">治水技奇谈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shenhua.html">神话篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="shenhua.html">大禹治水</a></li>
+                            <li><a href="shenhua.html">黄河母亲</a></li>
+                            <li><a href="shenhua.html">女娲补天</a></li>
+                            <li><a href="shenhua.html">伏羲创世</a></li>
+                            <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="zhengce.html">政策篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="zhengce.html">要闻</a></li>
+                            <li><a href="zhengce.html">地方新闻</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="rhudong.html">趣味黄河</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">互动答题</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="chat.html">智慧AI</a>
+                        <!-- <ul class="sub-menu">
+                                                                               <li><a href="# ">互动答题</a></li>
+                                                                            </ul> -->
+                    </li>
+                </ul>
+            </nav>
+            <div class="dengluzc">
+                <a href="shijianshu.html">黄河
+                    史书</a>
+                <a href="dlzc.html">登录</a>
+                <a href="dlzc.html">注册</a>
+
+            </div>
+        </div>
+
+        <!-- ==== 主体部分 ==== -->
+        <section class="common-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="common-banner__content text-center">
+                        <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                        <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+                    </div>
+                </div>
+            </div>
+            <div class="banner-bg">
+                <video class="banner-video" autoplay muted loop playsinline>
+                    <source
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3f2ec0145-0ff3-4906-9747-93b8869a3a72_3.mp4?Expires=1776596049&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=QFbyy%2B35QHtvP6ZJB8pQSdFVb2g%3D"
+                        type="video/mp4">
+
+                </video>
+            </div>
+            <div class="shape">
+                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3023e6d32-2c29-40d9-b299-f481dd88fd60_shape.png?Expires=1776596112&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=lQhaBMYxNN29oElPDZ1%2BPSzw%2BHw%3D"
+                    alt="Image">
+            </div>
+            <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3d4e4b244-2ef7-4b73-85a4-cd24d02a428b_sprade-base.png?Expires=1776596125&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2BbrWHs%2BuBC4CzSU2N7XEa2D%2BrUE%3D"
+                    alt="Image" class="base-img">
+            </div>
+        </section>
+        <!-- ==== / banner section end ==== -->
+        <!-- ==== faq section start ==== -->
+        <section class="faq">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-8 col-xl-6">
+                        <div class="faq__content">
+                            <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                                <span class="sub-title"><i
+                                        class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄河文化是青海地区多民族文化交融的重要背景，藏族刺绣在发展过程中吸收了黄河文化中其他民族文化元素，如汉族的刺绣技艺和图案风格，使其在艺术表现上更加丰富多样。同时，黄河文化的多元性和包容性也为藏族刺绣的传承和发展提供了广阔的社会文化基础，使其在青海地区的多民族文化交流中不断得到滋养和创新。
+                                </span>
+                                <h2 class="title-animation">青 海 省 的 <span>历 史 长 河</span>
+
+                                </h2>
+                            </div>
+                            <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="accordion" id="accordion">
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                藏族刺绣是什么？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    藏族刺绣是青海省藏族地区流传的传统刺绣技艺，具有悠久的历史和独特的艺术风格。它以丰富的图案、精湛的针法和鲜明的民族特色著称，常用于制作宗教用品、服饰、生活用品等，是藏族文化的重要组成部分。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                藏族刺绣的起源与发展阶段？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    藏族刺绣起源于1500多年前的吐蕃时期，最初以头戴的发辫套为主要载体。在后来的发展中，它不断吸收其他民族文化元素，如唐卡的构图手法和中原刺绣的技艺，逐渐形成独特的艺术风格。明清以来，随着青海地区与中原交流的频繁，藏族刺绣工艺逐步完善，刺绣开始在青海河湟地区普及。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                藏族刺绣的艺术风格与形式？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    藏族刺绣的艺术风格形式多样，其作品图案人物活灵活现，构图饱满，图案粗犷，绣法质朴，色彩艳丽。它既学习和传承中原刺绣的传统技艺，又吸收和借鉴唐卡的构图手法，绣品沉浑厚朴、精致华丽，呈现出富丽堂皇的艺术风格。常见的针法有平针、串针、套针、跳针、同旋针等十余种。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="false" aria-controls="collapseFour">
+                                                藏族刺绣如何为黄河文化增光添彩？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    藏族刺绣作为青海地区重要的非物质文化遗产，丰富了黄河文化的内涵。它不仅展现了藏族人民独特的审美观念和文化创造力，还通过与其他民族文化的交流融合，体现了黄河文化多元共生的特点。同时，藏族刺绣在现代的传承和发展中，也成为了青海地区文化旅游的重要组成部分，为黄河文化的传播和发展做出了积极贡献。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                        <div class="faq__thumb d-none d-lg-block">
+                            <div class="faq__thumb-inner">
+                                <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39c6a2bd1-20b9-4db3-ac32-fa62e1737269_8.png?Expires=1776596177&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6UMPrvv8cTAOnmDFlmXLR8d%2FxXY%3D"
+                                        alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==== / faq section end ==== -->
+        <section class="blog-main cm-details">
+            <div class="container">
+                <div class="row gutter-60">
+                    <div class="col-12 col-xl-8">
+                        <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="#">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/306f22b19-2240-43f5-8a73-a67fc9aebde8_3.jpg?Expires=1776596193&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=O61EUF2UZDiiZgqv6tV2DhlgKcM%3D"
+                                        alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="#"><i class="fa-solid fa-tags"></i>历史渊源</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="#">历史渊源</a></h4>
+                                    <p>
+                                        贵南藏族刺绣，在1500多年前的吐蕃时期，就以头戴的发辫套为主要载体，藏绣技术从贵南县沙沟乡兴起并传播开来。风格各异的辫套会隆重地出现在藏族女子的成年礼上，甚至会作为彩礼出现在婚礼上，当地妇女几乎人人都会做绣活。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="c1.html">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/335ab9825-d0fc-474e-a166-7ce03f07de0b_4.gif?Expires=1776596208&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=BzvGoWXX6WCE7EuC9XcWadmfOEE%3D"
+                                        alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="c1.html"><i class="fa-solid fa-tags"></i>特征</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="c1.html">藏族刺绣的文化特征 </a></h4>
+                                    <p>
+                                        贵南藏族刺绣具有丰富的文化特征和独特的制作工艺，采用多种传统针法如平针、串针、套针等，主要用于民族服饰、唐卡、佛像等艺术品的装饰。其制作过程包括剪样、缝制、刺绣等步骤，常以山水、人物、动物等为题材，作品内容丰富，展示了贵南藏族深厚的艺术传统。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="c1.html" aria-label="blog details" title="blog details">🌍
+                                        了解更多<i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="assets/images/wenh/gansuqinqiang/12.png" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="gansujvmu.html"><i class="fa-solid fa-tags"></i>剧目</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="gansujvmu.html">秦腔的经典剧目 </a></h4>
+                                    <p>
+                                        甘肃秦腔作为西北戏曲艺术的瑰宝，其剧目体系历经数百年积淀，形成以历史纵深、地域风情、奇幻想象与时代创新为主轴的四大经典类别。四类剧目交织出从明清江湖到现代剧场的艺术长卷，既承载着丝绸之路上多民族文化交融的基因，又在当代舞台焕发新生，成为读懂甘肃人文精神与审美嬗变的鲜活注脚。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="gansujvmu.html" aria-label="blog details" title="blog details">🌍 经典欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="blog-main__sidebar">
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32b21c172-c801-4c94-9063-88d8ec71abb3_13.png?Expires=1776596266&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=OMyiaxF5XnaTT%2BKjJ4A3k6z1Jms%3D"
+                                        alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>藏绣传承人的坚守</h6>
+                                    <p>一位藏族绣娘如何坚守传统技艺，传承藏族刺绣的故事。
+                                    </p>
+                                    <p>我是贵南县的一名藏族绣娘，从母亲那里学到了精湛的刺绣技艺。随着时代的变迁，许多年轻人不再愿意学习这门手艺，我看着那些精美的藏绣作品，心里充满了忧虑。为了传承这门技艺，我开始在村里举办刺绣培训班，免费教年轻女孩学习藏绣。虽然过程艰难，但我始终坚持着，因为我知道这是我们的文化瑰宝，不能让它失传。在政府的支持下，越来越多的人开始关注藏族刺绣，我的培训班也逐渐有了起色，看到年轻一代对藏绣的喜爱和投入，我感到无比欣慰。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32b21c172-c801-4c94-9063-88d8ec71abb3_13.png?Expires=1776596266&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=OMyiaxF5XnaTT%2BKjJ4A3k6z1Jms%3D"
+                                        alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>藏绣的创新之路</h6>
+                                    <p>一位藏族刺绣艺人如何在传统与现代之间找到平衡，推动藏绣创新发展的故事。
+                                    <p>
+                                        我是贵南县的一名藏族刺绣艺人，一直致力于将传统藏绣与现代设计相结合。起初，我尝试在传统图案中加入一些现代元素，但遭到了一些传统派的反对，他们认为这样做会破坏藏绣的纯粹性。但我坚信只有创新才能让藏绣走得更远。于是，我不断学习现代设计理念，同时深入研究藏族传统文化，力求在两者之间找到最佳的结合点。经过多次尝试和改进，我设计出了一系列既保留传统韵味又符合现代审美的藏绣作品。这些作品一经推出，就受到了市场的广泛欢迎，也让更多的人看到了藏绣的无限可能。
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="assets/images/wenh/gansuqinqiang/13.png" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>皮影小剧场：《月牙泉之恋》</h6>
+                                    <p>敦煌戍边将士阿郎与秦腔高手月儿跨越生死、以歌传情的凄美爱情故事</p>
+                                    <p>敦煌月牙泉旁，阿郎与月儿情定终身。阿郎是戍边将士，月儿是村中秦腔高手，歌声如泉。边疆战事起，阿郎出征，两人在泉边许下重逢誓言。月儿日复一日，在泉边以秦腔寄情。阿郎战场英勇，心系月儿。战后归来，阿郎却只见月牙泉，不见月儿身影，原来她已化作泉边一缕轻烟。阿郎悲歌，歌声回荡沙漠。从此，月圆之夜，月牙泉边总有凄美秦腔，似月儿灵魂诉说爱情。
+                                    </p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source
+                                    src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3881abfa9-b639-4e50-b900-b0a8e44f2180_7.mp4?Expires=1776596302&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=WqiSbXD7lkLxHOMjsciNQsMXVn4%3D"
+                                    type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>自本世纪初我国非物质文化遗产保护工作开展以来，藏族刺绣得到有效发掘与保护。2021年5月24日，藏族刺绣（贵南藏族刺绣）经国务院批准列入第五批国家级非物质文化遗产名录。遗产编号为Ⅶ-132。
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>在传承方面，藏族刺绣主要依靠家族传承和师徒传承，当地妇女几乎人人都会做绣活。
+                            </p>
+                            <p>在发展方面，藏族刺绣不断创新，将传统技艺与现代设计相结合，开发出更多符合市场需求的产品，如藏绣艺术品、生活用品等。同时，通过举办刺绣展览、培训等活动，提高了藏族刺绣的知名度和影响力。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3db5fd728-a5d6-4b51-8217-db9e8315e365_9.png?Expires=1776596321&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2FGow2ooJOf6RT5F%2BHpK4MlMh7bI%3D"
+                                    alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/31ef333c3-ef5d-492b-b8fd-c615beb49890_10.png?Expires=1776596323&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=r0C4ZS4VJ9WSs4vkVPDjzPtcPIs%3D"
+                                    alt=" Image">
+                            </div>
+                        </div>
+                        <!-- ==== custom cursor start ==== -->
+                        <div class="mouseCursor cursor-outer"></div>
+                        <div class="mouseCursor cursor-inner"></div>
+                        <!-- ==== / custom cursor end ==== -->
+                        <!-- ==== scroll to top start ==== -->
+                        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                            <span></span>
+                            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                            </svg>
+                        </button>
+                        <!-- ==== / scroll to top end ==== -->
+                        <!-- ==== / color switcher end ==== -->
+                    </div>
+                    <!-- ==== js dependencies start ==== -->
+                    <!-- jquery -->
+                    <script src="assets/js/jquery-3.7.1.min.js"></script>
+                    <!-- bootstrap five js -->
+                    <script src="assets/js/bootstrap.bundle.min.js"></script>
+                    <!-- nice select js -->
+                    <script src="assets/js/jquery.nice-select.min.js"></script>
+                    <!-- magnific popup js -->
+                    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                    <!-- swiper slider js -->
+                    <script src="assets/js/swiper-bundle.min.js"></script>
+                    <!-- viewport js -->
+                    <script src="assets/js/viewport.jquery.js"></script>
+                    <!-- odometer js -->
+                    <script src="assets/js/odometer.min.js"></script>
+                    <!-- vanilla tilt js -->
+                    <script src="assets/js/vanilla-tilt.min.js"></script>
+                    <!-- aos js -->
+                    <script src="assets/js/aos.js"></script>
+
+                    <!-- splittext js -->
+                    <script src="assets/js/SplitText.min.js"></script>
+                    <!-- scrollto js -->
+                    <script src="assets/js/ScrollToPlugin.min.js"></script>
+                    <!-- scrolltrigger js -->
+                    <script src="assets/js/ScrollTrigger.min.js"></script>
+                    <!-- gsap js -->
+                    <script src="assets/js/gsap.min.js"></script>
+                    <!-- ==== / js dependencies end ==== -->
+                    <!-- template settings js -->
+                    <script src="assets/js/template-settings.js"></script>
+                    <!-- main js -->
+                    <script src="assets/js/custom.js"></script>
+<!--                     <script src="utils.js"></script>-->
+<!--                    <script>-->
+<!--                        document.addEventListener('DOMContentLoaded', function () {-->
+<!--                            checkLogin();-->
+<!--                        });-->
+<!--                    </script>-->
+
+</body>
+
+</html>

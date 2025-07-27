@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 晋祠庙会</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 1500px;
+            控制最大宽度，避免太大 */
+            max-height: 750px;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==== 进入动画 ==== -->
+    <div class="preloader">
+        <i class="icon-donation"></i>
+        <p>黄河文化</p>
+    </div>
+    <div class="daohang">
+        <!-- logo 部分，设置为左侧 -->
+        <div class="logo">
+            <img src="assets/image/logo2.png" alt="Logo">
+        </div>
+        <!-- 导航栏部分 -->
+        <button class="mobile-menu-btn">☰</button>
+        <nav>
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="index%20copy.html">首页</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">子菜单1</a></li>
+                                                         <li><a href="#">子菜单2</a></li>
+                                                         <li><a href="#">子菜单3</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="3.1wenhua.html">文化篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                        <li><a href="3.1wenhua.html">传统技艺</a></li>
+                        <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                        <li><a href="3.1wenhua.html">传统音乐</a></li>
+                        <li><a href="3.1wenhua.html">传统体育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="renwu.html">治水篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="renwu.html">治水英雄颂</a></li>
+                        <li><a href="zsjy.html">治水技奇谈</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="shenhua.html">神话篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="shenhua.html">大禹治水</a></li>
+                        <li><a href="shenhua.html">黄河母亲</a></li>
+                        <li><a href="shenhua.html">女娲补天</a></li>
+                        <li><a href="shenhua.html">伏羲创世</a></li>
+                        <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="zhengce.html">政策篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="zhengce.html">要闻</a></li>
+                        <li><a href="zhengce.html">地方新闻</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="rhudong.html">趣味黄河</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">互动答题</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="chat.html">智慧AI</a>
+                    <!-- <ul class="sub-menu">
+                                                                           <li><a href="# ">互动答题</a></li>
+                                                                        </ul> -->
+                </li>
+            </ul>
+        </nav>
+        <div class="dengluzc">
+            <a href="shijianshu.html">黄河
+                史书</a>
+            <a href="dlzc.html">登录</a>
+            <a href="dlzc.html">注册</a>
+
+        </div>
+    </div>
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('active');
+        });
+    </script>
+    <!-- ==== 主体部分 ==== -->
+    <section class="common-banner">
+        <div class="container">
+            <div class="row">
+                <div class="common-banner__content text-center">
+                </div>
+            </div>
+        </div>
+        <div class="banner-bg">
+            <video class="banner-video" autoplay muted loop playsinline>
+                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/38f39a136-316c-428f-bfb1-4c124df7feb3_1.45.mp4?Expires=1776605783&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=g3A%2Flo9coHOCM8BvexZZU4AZzpU%3D" type="video/mp4">
+                <source src="assets/videos/banner-video.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="shape">
+            <img src="assets/images/shape.png" alt="Image">
+        </div>
+        <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+        </div>
+    </section>
+    <!-- ==== / banner section end ==== -->
+    <!-- ==== faq section start ==== -->
+    <section class="faq">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-8 col-xl-6">
+                    <div class="faq__content">
+                        <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                            <span class="sub-title"><i
+                                    class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄河文化是中华民族的摇篮，深厚的历史积淀和文化底蕴赋予了晋祠庙会丰富的精神内涵。晋祠庙会作为山西地方的重要民俗活动，承载着黄河流域的文化特色和民间信仰。庙会不仅是对先祖的敬仰和祭祀，也是黄河文化与当地百姓生活的紧密结合。庙会中，神像祭祀、民间歌舞、传统手工艺等活动，都是黄河文化滋养的产物，展现了晋地人民的精神风貌和对自然、祖先的崇敬。这种文化传统代代相传，成为人们情感认同和文化归属的象征。
+                            </span>
+                            <h2 class="title-animation">走 进 <span>晋祠庙会</span>
+
+                            </h2>
+                        </div>
+                        <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="accordion" id="accordion">
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            晋祠庙会是什么？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                晋祠庙会是以晋祠为核心的传统庙会活动，具有浓厚的宗教氛围和民俗特色。作为山西省太原市的重要民俗活动，晋祠庙会已有数百年的历史，是祭祀、民间信仰与艺术表现的集中体现。庙会不仅是为了纪念古代的宗教人物和地方英雄，也是人们集会、娱乐、交流的场所。庙会期间，信众和游客聚集在晋祠，参与各种仪式、表演和展示。活动内容丰富多样，从祭祀到舞蹈、戏曲，从手工艺到美食展销，展现了山西丰富的文化传承和地方特色，是对地方历史文化的一次大规模展示。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            晋祠庙会经历了哪些发展阶段？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                晋祠庙会的起源可以追溯到春秋时期，最初是晋国国君祭祀神灵的活动。随着时间推移，庙会逐渐发展为民间信仰和宗教活动的集中表现，历经多个历史阶段的变革与演变。从唐代至明清时期，晋祠庙会逐步从单一的宗教祭祀活动，转变为集宗教、文化、娱乐和商业等多元功能于一体的大型节庆。进入现代后，随着社会的变迁，庙会活动融入了更多民俗表演和地方艺术，成为展示晋地风土人情和黄河文化的重要平台。庙会不仅仅是宗教活动，它还反映了地方的经济发展与社会变迁，是历史的见证。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            晋祠庙会的艺术风格是如何形成的？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                晋祠庙会的艺术形式多样，融合了山西独特的民间艺术，如地方戏曲、传统舞蹈、民间手工艺等。庙会中的表演内容不仅包含戏曲演出，还包括民歌演唱、民间舞蹈以及戏剧表演等，体现了地方文化的丰富性。特别是山西的地方戏曲，如晋剧、皮影戏等在庙会期间得到了广泛的演绎，吸引了大量游客和信众的参与。除此之外，庙会中的手工艺品制作也是一大亮点，如面塑、剪纸、刺绣等传统技艺，展现了地方民间工艺的巧妙和精湛。通过这些艺术表现形式，庙会不仅是一种宗教仪式，也成为了弘扬地方传统文化和艺术的盛大庆典。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                            aria-expanded="false" aria-controls="collapseFour">
+                                            晋祠庙会如何为黄河文化增添加彩？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                晋祠庙会是黄河文化的重要承载体之一，它通过祭祀活动和民间艺术表演，生动展示了黄河流域独特的文化特色。庙会中的祭祀活动不仅是对先祖的敬仰，也是对黄河母亲的崇敬。在庙会期间，民众通过歌舞、祈福、祭神等形式，表达了对黄河的敬畏和对大自然的崇拜。同时，庙会的民间艺术也展示了黄河文化的多样性和丰富性。通过庙会，黄河文化不仅传递给了当地居民，也吸引了大量外地游客，成为黄河文明的重要展示窗口。晋祠庙会的传承与发展，进一步推动了黄河文化的传扬，为当地社会文化的繁荣和发展增添了独特的色彩。
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                    <div class="faq__thumb d-none d-lg-block">
+                        <div class="faq__thumb-inner">
+                            <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/358de4aa3-7a73-4fc1-94d4-77e5fd8ed097_1.46.png?Expires=1776605787&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=X7338lIpuyxzKYYd6mLPhJYcbXw%3D" alt="Image">
+                            </div>
+                            <div class="thumb-sm" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37ffde950-cf40-43b5-84ef-e22cb62e4ce2_1.47.png?Expires=1776605820&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ptfYa091zdORfAl5I6hmNfSob64%3D" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="shape d-none d-lg-block">
+            <img src="assets/images/faq/shape.png" alt="Image">
+        </div> -->
+    </section>
+    <!-- ==== / faq section end ==== -->
+    <section class="blog-main cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="col-12 col-xl-8">
+                    <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+
+                            <a href="jcmh.html">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/38dbd319f-5cf7-4130-a758-3dc404734ffa_1.49.png?Expires=1776605847&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=uYOKMUmEcLVuDMSb6j9I2cqLmA0%3D" alt="Image">
+                            </a>
+
+                            <div class="tag">
+                                <a href="jcmh.html"><i class="fa-solid fa-tags"></i>民俗内容</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+                            <div class="blog__single-content">
+                                <h4><a href="jcmh.html">民俗内容:晋祠庙会的文化盛宴 </a></h4>
+                                <p>晋祠庙会是山西省传统的民间文化盛会，融合了丰富的民俗活动和历史文化。庙会期间，游客可以欣赏到具有地方特色的民间表演，如舞狮、舞龙、山西梆子戏等传统艺术形式，展现了山西深厚的文化底蕴和艺术传承。此外，庙会还包括了传统的民间工艺展示，游客可以体验到剪纸、面塑、皮影戏等手工艺品的制作过程。庙会中还有丰富的美食摊位，提供着山西特色的小吃如刀削面、油糕、过油肉等，游客在享受美味的同时，也能感受到浓厚的地方风情。通过这些传统的民俗活动，晋祠庙会不仅传承了地方文化，也吸引了来自各地的游客，成为一场集娱乐、文化和美食为一体的盛大节日庆典。
+                                </p>
+                            </div>
+                            <div class="blog__single-cta">
+                                <a href="jcmh.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+                            <a href="yishutese.html">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/313f7d280-f91d-42f7-91df-b0319d484c01_1.50.png?Expires=1776605866&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=BKmvpuwsFgcr2wGKF1q1wFznm1g%3D" alt="Image">
+                            </a>
+                            <div class="tag">
+                                <a href="yishutese.html"><i class="fa-solid fa-tags"></i>传承保护</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+                            <!-- <div class="blog__single-meta">
+                           <p><i class="icon-user"></i>Robert Fox</p>
+                           <p><i class="icon-message"></i>Comments (03)</p>
+                        </div> -->
+                            <div class="blog__single-content">
+                                <h4><a href="yishutese.html">传承保护 </a></h4>
+                                <p>
+                                    晋祠庙会历史悠久，是太原地区传统的民俗盛会，具有重要的民族学和历史学研究价值。自20世纪80年代以来，随着交通的便捷，庙会的规模和商贩来源大大增加，商贩来自全国各地，摊位和商品种类也更加多样化。庙会不仅体现了太原的乡风民俗，也吸引了大量游客和商户。为了保护这一文化遗产，晋祠庙会被列入国家级非物质文化遗产代表性项目保护单位，并于2019年和2023年分别获得了太原市晋源区晋祠镇晋祠一社区股份经济合作社的保护资格。
+                                </p>
+                            </div>
+                            <div class="blog__single-cta">
+                                <!-- <a href="yishutese.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                        class="fa-solid fa-arrow-right-long"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="assets/images/wenh/chuanjv/12.png" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="lianpu.html"><i class="fa-solid fa-tags"></i>脸谱</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+                                <div class="blog__single-meta">
+                           <p><i class="icon-user"></i>Robert Fox</p>
+                           <p><i class="icon-message"></i>Comments (03)</p>
+                        </div>
+                                <div class="blog__single-content">
+                                    <h4><a href="lianpu.html">川剧脸谱：巴蜀戏曲的瑰丽符号 </a></h4>
+                                    <p>
+                                        川剧脸谱是川剧表演艺术中不可或缺的重要组成部分，它不仅是塑造角色的视觉语言，更是历代川剧艺人共同创造并传承下来的艺术瑰宝。脸谱通过色彩、图案、线条的变化，展现人物的性格特征、身份地位和情感表达，使观众一眼便能识别角色的性格与定位。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="lianpu.html" aria-label="blog details" title="blog details">🌍 脸谱欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="blog-main__sidebar">
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/38fcbeae5-0b8d-4531-8cfe-def01137928c_1.52.png?Expires=1776605890&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=PWPiKoPqyDjIhpdJiSCkmqdcdl0%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>庙会的神奇祈福</h6>
+                                <p>年轻女子在庙会上为哥哥祈福，庙会带来幸福。
+                                </p>
+                                <p>
+                                    张兰在庙会上为她未婚的哥哥张大勇祈福，求神保佑他能找到工作和伴侣。张兰在祈福台前虔诚跪下，双手合十，投入香火后许下心愿。几个月后，张大勇不仅找到了自己理想的工作，还与一位女孩相识并很快相爱。张兰收到这个好消息时，心中充满感激，便再次回到庙会，感谢神灵的保佑，并为庙会捐赠了一些礼物。这个小故事展现了庙会在民众生活中的重要地位，以及信仰如何带给人们希望和幸福。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/38fcbeae5-0b8d-4531-8cfe-def01137928c_1.52.png?Expires=1776605890&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=PWPiKoPqyDjIhpdJiSCkmqdcdl0%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>晋祠庙会的奇遇</h6>
+                                <p>面塑艺人与信徒的神像奇遇，庙会传递信仰力量
+
+
+                                </p>
+                                <p>李明是庙会上的年轻面塑艺人，他制作的神像吸引了一位名叫张老汉的信徒。张老汉请求李明为他家中连年不顺的事情祈福，李明慷慨地将神像赠送给他。几个月后，张老汉带着神像回到庙会，表示感谢，声称神像带来了好运，家中的困难一一得到了解决。为了感谢，张老汉将神像捐赠给庙会，成为庙会的幸运物。这段故事不仅传递了庙会的信仰力量，也体现了人与人之间通过庙会建立的温暖纽带。
+
+                                </p>
+                            </div>
+                        </div>
+                        <!-- <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="assets/images/wenh/chuanjv/.png" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>传奇故事：戏台上的千面变幻</h6>
+                                    <p>相传，在川剧的戏台
+                                        上，隐藏着一面神奇的铜镜。凡是踏上舞台的戏曲艺人，只要对着镜子一照，便能幻化出不同的脸谱，而这些脸谱不仅是外在的妆容，更是角色性格与命运的映照。
+
+                                    </p>
+                                    <p>川剧的脸谱，色彩斑斓，寓意深远，每一种颜色、每一笔勾画，皆承载着巴蜀文化的厚重底蕴。<br>
+                                        🔴 红色：忠义无双，热血豪情<br>
+                                        ⚫ 黑色：刚直不阿，威武果断<br>
+                                        ⚪ 白色：阴险狡诈，诡计多端<br>
+                                        🔵🟢蓝色/绿色：桀骜不驯，英勇善战<br>
+                                        🟡⚪金色/银色：神秘莫测，超凡脱俗<br>
+                                    </p>
+                                </div>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c101f952-ddf9-4113-a473-3bf89a3ec31e_1.51.mp4?Expires=1776605948&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=jiNAx62xtxYOuJyQqLIdT9CuU7I%3D" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>晋祠庙会作为重要的非物质文化遗产，承载着丰富的地方历史和文化。随着现代化进程的加快，传统文化的传承面临着挑战。为了保护晋祠庙会这一重要的非遗项目，政府和社会各界采取了多种措施，包括建立非遗保护机制、开展非遗教育以及举办相关的庙会活动。通过系统的传承和创新，庙会的传统艺术形式得到了有效保护，并在现代社会中得以延续。同时，也通过数字化手段对庙会的历史资料和民俗艺术进行记录，为后代提供更加丰富的文化资源。非遗的保护不仅仅是对传统活动的保存，也是对地方文化认同的重塑，确保这一文化瑰宝能够在现代社会中焕发新的生机。
+                            </p>
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>晋祠庙会的传承不仅是对传统习俗的延续，更是文化认同和地方精神的凝聚。随着时代的变化，庙会活动在继承传统的基础上也不断创新，结合现代人的需求进行适当调整。例如，庙会的表演内容从传统戏曲拓展到现代艺术形式，吸引了年轻一代的关注与参与。此外，庙会的教育功能也日益凸显，通过举办讲座、文化交流等活动，向社会公众传递传统文化的内涵，尤其是向年轻人普及地方民俗文化。庙会的传承和发展不仅是对历史文化的尊重，也是文化自信的体现，确保这一传统文化能够在未来继续繁荣发展。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3f039be27-bf04-451d-a551-66a1eefaa662_1.48.png?Expires=1776605923&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=0OGLWQ3k%2FKvqeSeyAdzgWUqcyng%3D" alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3d7b46df6-429c-46ea-a72c-aa0c60ad5d2c_1.53.png?Expires=1776605936&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=UYqwi6kjEvORZcJrU763oBMC9fQ%3D" alt=" Image">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- ==== custom cursor start ==== -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+        <!-- ==== / custom cursor end ==== -->
+        <!-- ==== scroll to top start ==== -->
+        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+            <span></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </button>
+        <!-- ==== / scroll to top end ==== -->
+    </div>
+
+
+
+    <!-- ==== custom cursor start ==== -->
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"></div>
+    <!-- ==== / custom cursor end ==== -->
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>吕剧</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32d75d160-28c2-439f-814b-acdf6e3f2db8_81.png?Expires=1776600235&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=9rXzj%2BNjQ2im%2BZYFlOPOAlMW09U%3D">
+                    <span>文 化 沉 蕴</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3caaca0e6-a0f7-4f9b-842f-53b766c1fe7d_82.png?Expires=1776600254&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=fLjrjj7kNcy2UP1vFsMwe9j1Kt4%3D">
+                    <span>最 初 起 源</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/381efd739-bbfe-4e49-a466-2cd7d88861d5_83.png?Expires=1776600272&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ym9QRnjWABAA6lVfxka7Q2c%2FOpQ%3D">
+                    <span>初 步 发 展</span>
+                </div>
+                <div class="box">
+                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/36b893b6f-3809-4e0b-be73-2be9d0cb4eae_84.png?Expires=1776600290&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=5LDwGheMJ6XEnOHEFTpNnrErKXc%3D">
+                    <span>高 度 繁 荣</span>
+                </div>
+                <div class="box">
+                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/304543839-a3c1-41bc-bc6a-51bb86138bd9_85.png?Expires=1776600305&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=pINuhluTVxZobGwXykJeNK%2BIxjE%3D">
+                    <span>重 获 新 生</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>剧种发展</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">文化沉蕴</h3>
+                        <p>吕剧自形成以来，已有百余年的历史。纵观吕剧艺术的整个历史演变过程，大体上是循“山东琴书（说唱扬琴）——化装琴书（又称化装扬琴）——定名为吕剧”之脉沿革和发展的。
+                            山东琴书最早产生于鲁西南一带，距今已有二百余年的历史。由于早期多由民间艺人在农村中传唱，始称为“小曲子”，后因其伴奏乐器主要为扬琴(早称洋扬)，故被称为“扬琴”。后来，说唱山东琴书的民间艺人，进入较大城市或到外省演唱，曾被称为“文明琴书”、“山东扬琴”等，至1933年始定名为山东琴书。
+                            山东琴书的音乐构成，包括了全国大部地区流行的著名曲调和来自“诸宫调”、“杂剧”、“昆曲”中的古老以及明、清以来当地流行的民间小曲。山东琴书早期是曲牌联唱体，所用曲牌多达二百余个，其中常用的主要有。梅花落”、“叠断桥”、“银纽丝”、“呀儿哟”、“太平年、“上河调”、“汉口垛”、“娃娃调”、“剪靛花”“点绛唇”等。<br>后来，各路琴书逐渐以“风阳歌”、“垛子板”为主要曲调。间或插入其他曲牌。于是，牌子曲目多被口语生动、故事性强的书目所取代。在演唱形式上，也由自我娱乐式的“庄稼耍”，逐渐被对口搭档所代替。演唱时，两人搭档对口，或多人分角色演唱。以唱和说为主，以表演为辅，使人物形象逼真生动。这种唱、说及表演浑然一体的演唱特点。成为当时著名民间艺人时殿元等人，改坐腔扬琴为化妆演出，逐步发展形成吕戏的基础条件。
+                            山东琴书曲调优美悦耳，音韵婉转；用词造句俚言俗语，自然流畅、朴实风趣，乡土色彩浓重；书目多取材于民间传说和群众所熟悉的历史故事，贴近生活，妇孺皆知，易记易唱也易于流传，能够普及。因此，山东琴书在鲁西南形成后，便迅速流传至山东各地。由于各地的语言、风俗人情、经济发展状况的不同，特别是琴书艺人在演唱技巧、艺术风格及个人自然条件等方面所存在的差异，使琴书在山东逐渐形成了南路、东路和北路三大艺术流派。南路琴书主要流行于鲁西南一带，东路琴书则在广饶、博兴、昌潍和胶东一带流行，北路琴书主要流行于德州等地区。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/33686c941-ef03-4d52-b124-1ec1bcaec2dd_86.png?Expires=1776600324&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=gOfOB%2FhqFML4EMwQwQM9wAjde1Q%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ea01f593-9b4d-464c-bfe7-11d1bd0828e5_87.png?Expires=1776600340&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=RuNvqnNX17oec2rgZQiLa54ZiJ0%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">最初起源</h3>
+                        <p>山东琴书这种唱、说和表演浑然一体的民间曲艺演唱形式，是山东琴书由说唱艺术形式发展成为戏曲艺术的基础条件。据《黄河志》记载，在1884年以前，黄河入海口处的广饶（当时为乐安县）北部和利津东部并无防洪大堤，每到洪水季节，黄河常常泛滥成灾，这一带的穷苦农民不得不背井离乡，以逃荒要饭谋生。于是，以演唱当时民间流行“小曲”形式进行乞讨的难民逐渐增多。以“唱曲”讨饭遂成为有些人养家糊口的主要手段，活动区域也不断扩大。
+                            光绪初年，乐安（现广饶县）北部一带的农民，为躲避灾荒，常随身携带坠琴、节子板等乐器，外出卖艺求生。开始以唱琴书小段为主，或顺口编些有趣的故事，边耍边唱。后来，他们不断吸收戏曲唱腔和民间小调来丰富自己的表演内容和形式。如东寨村的张兰田、张志田兄弟俩，就曾去安徽风阳拜师学艺。当地流行的凤阳歌对琴书的表演艺术产生了很大的影响。艺人们在长期的演唱实践中，不断追求新的艺术形式。一些擅长唱工的艺人，在长期的表演过程中，逐渐形成了自己的唱腔特点。擅长人物表演的艺人，则致力于创造新的表现形式来吸引观众。
+                            1900年(光绪二十六年)冬，以东路琴书艺人时殿元为首的同乐班，尝试着将《王小赶脚》改为化妆演出，用竹、纸、布扎成驴形，加以彩绘，一演员身绑彩驴，做骑驴状；一演员执鞭赶驴；另有艺人操坠琴、扬琴、竹板等乐器伴奏，演员在音乐声中载歌载舞。此种表演形式别开生面、生动活泼，初次演出便获成功。是年初春，时殿元等又将许多琴书篇目，由坐腔形式改为化妆演出，带领同乐班遍走博兴、广饶、潍县、诸城、掖县、黄县等地。所到之处，深受群众喜爱。因演出《王小赶脚》时以“驴”为道具，群众就把同乐班称为“驴戏班”。时殿元感到此名不雅，每到一地首先声明唱的是“化
+                            (上)妆扬琴”。
+
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37fc59de7-8ef0-4161-9fb3-d96cc20e730e_88.png?Expires=1776600362&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=tkIIfK3u2Quv3y0poSp0joe%2BMr8%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/33c80e387-1118-48eb-874c-8ab4c022cb24_89.png?Expires=1776600379&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=CaQcmdlWAiNJqjYeBh0rSDNkHO0%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">初步发展</h3>
+
+                        <p>在常年的流动演出中，化妆扬琴艺人经常和京剧、五音戏、河北梆子等剧种的班社在同一集镇演出，甚至出现“两合水”、“三合水”（两个或三个不同剧种同台演出）的情况。这种演出方式对促进化妆扬琴在剧目、表演、唱腔、舞台装扮、音乐等方面与其他剧种的借鉴融合和创新发展起到了重要作用，使其逐渐从简单的化妆演出发展成为比较完整的戏曲形式。演出的剧目也从“对子戏”、“三小戏”扩大到本戏和连台本戏；演出的场所也由盘凳子到进入茶园、剧场。1917年(民国六年)，由广饶县化妆扬琴艺人张凤辉等人组成的车里班首先进入济南市演出。此后，不少剧班也纷纷进入济南城表演。有的班社还经常到烟台、青岛演出，进一步扩大了该戏的影响。当时较有影响的班子有黄家班、父子班、同乐班、庆和班、共和班等。
+                            抗日战争爆发后，该剧种陷入困境。原在济南城演出的剧团也因演出每况愈下，导致班社萎缩，艺人生活难以为继。多数艺人返回家乡，剩下的艺人凑成一个“义和班”维持演出，勉强度日。抗战胜利后，演出状况并未好转，反而愈加萧条。“义和班”也于1946年末解散，艺人被迫改行，另寻出路。
+                        </p>
+
+                    </div>
+
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3220e30dd-bb1c-4137-b89e-54c0fc66ec7b_90.png?Expires=1776600400&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=bw7KZe7FZGNKJhYmhtZjMqsj%2BAE%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c6ca72a3-0f3f-4eee-b385-1eadf676b573_91.png?Expires=1776600428&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=op2QeSN6jDzLOwsv7iUk7TL9eec%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">高度繁荣</h3>
+                        <p>中华人民共和国成立后，化妆扬琴剧种获得了新生。从1950年起，山东省文联地方戏曲研究室组织对本省地方戏曲艺术进行了发掘、整理、试验、推广，并以化妆扬琴作为改革的重点，选择《小姑贤》为实验剧目。在学习传统剧目的基础上，又将现代题材的小说《李二嫂改嫁》改编演出。这期间，由义和班改组成的济南化妆扬琴剧团也编演了《张大有被骗》《王秀鸾》等戏，打开了吕剧现代戏的大门。这些改编剧目的上演使化妆扬琴的影响日益扩大，并涌现出郎咸芬、林建华、王俊英等一批著名演员。1953年山东省吕剧团成立后，继续进行剧目的改革创新工作，先后整理加工了《姊妹易嫁》《逼婚记》等传统剧目，编演了《光明大道》等现代戏。1953年11月,山东省吕剧团在济南大观园以“吕剧”挂牌首次公演《小姑贤》《王定保借当》《蓝桥会》《李二嫂改嫁》等剧目，群众争相观看，演出获得极大成功，“吕剧”这个名称得到观众认可。
+                            1954年，在华东区戏剧观摩会演上，《李二嫂改嫁》《光明大道》《王定保借当》《小姑贤》分别获奖。《李二嫂改嫁》和《借年》于1957年由长春电影制片厂拍成黑白影片；《两垅地》于1965年由上海海燕电影制片厂摄制成黑白影片。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e2bfe698-4645-47d0-8767-cff5d789b93e_92.png?Expires=1776600446&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=A%2BB0KDqMFrMjV60arEoqOHoS%2Bsk%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3816ae4ae-ac3f-4c11-8803-1aaec394f50e_93.png?Expires=1776600470&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ajczxr4xwVWWgN9JUi8lIkfUtXU%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">重获新生</h3>
+
+                        <p>文化大革命”期间，吕剧被禁演。1976年以后，吕剧复兴。《半边天》于1976年由长春电影制片厂摄制成彩色影片；《逼婚记》于1979年由长春电影制片厂摄制成彩色影片；《张王李赵》于1982年获全国剧本奖。
+                            之后，全国各地剧团纷纷开始演出传统剧目、排演新剧目、培养青年演员，八大戏曲种类之一的吕剧迎来了新的发展阶段。<br>各剧院先后推出了《画龙点睛》《林娘》《庄户皇帝》《醉青天》《山高水长》《军嫂》《石龙湾》《苦菜花》《书记大姐》《大地军魂》《补天》《勿忘在莒》等优秀剧目。现代吕剧《补天》一经上演便在全国迅速走红，荣获2004-2005年度国家舞台艺术精品工程十大精品剧目。大型现代戏《石龙湾》荣获文化部颁发的第三届“文华新剧目奖”、
+                            “文华编剧奖”、 “文华音乐创作奖” 、文华表演奖，该剧还荣获中宣部“五个一工程奖”。 大型现代戏《苦菜花》获文化部颁发的第八届“文华大奖”、 “文华剧作奖”、
+                            “文华音乐创作奖”，著名表演艺术家郎咸芬扮演的主要角色母亲，获“文华表演奖”。<br>《苦菜花》剧本还荣获1998年度“中国曹禺戏剧文学奖”。第六届中国戏剧节
+                            “优秀演出奖”、“优秀编剧奖”、
+                            “导演奖”、“作曲奖”、“舞美设计奖”、“优秀表演奖”、“表演奖”。<br>《百姓书记》《回家》《勿忘在莒》《海殇》等剧目也在全国获得大奖，深受人民群众喜爱。 [7]
+                            这一时期出现了一批卓有才华的艺术家，如梅花奖获得者焦黎、高静、吕淑娥、刘玉凤，中国戏剧节表演奖获得者李萍，文化表演奖获得者龚鲁阳、董家岭，中国艺术节表演奖柏绪民、史萍，中国现代戏优秀剧目展演“优秀主角奖”获得者文宗哲、马林，“优秀配角奖”获得者李肖江、胡静华、常兆玉、郭爱琴、黄继森、李红、朱广友等。
+                        </p>
+
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3593b74f4-df95-4910-b3c3-9eddb45af839_94.png?Expires=1776600524&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=doykZzLmwsZqDWWNtM5zyl6pwco%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3781c6563-4f63-40d5-96e3-bb0647f1f236_95.png?Expires=1776600541&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=2fleWzK74GOS1C87%2B6%2FXNRjN0kg%3D" alt=" Image">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

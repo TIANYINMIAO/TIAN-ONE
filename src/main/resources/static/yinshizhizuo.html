@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 银饰制作</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 800px; */
+            /* 控制最大宽度，避免太大 */
+            height: auto;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==== topbar start ==== -->
+    <!--[if lt IE 9]>
+      <p class="browserupgrade">
+         You are using an <strong>outdated</strong> browser. Please
+         <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+         your experience and security.
+      </p>
+      <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+        <div class="daohang">
+            <!-- logo 部分，设置为左侧 -->
+            <div class="logo">
+                <img src="assets/image/logo2.png" alt="Logo">
+            </div>
+            <!-- 导航栏部分 -->
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul class="main-nav">
+                    <li class="nav-item">
+                        <a href="index%20copy.html">首页</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">子菜单1</a></li>
+                                                             <li><a href="#">子菜单2</a></li>
+                                                             <li><a href="#">子菜单3</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="3.1wenhua.html">文化篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                            <li><a href="3.1wenhua.html">传统技艺</a></li>
+                            <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                            <li><a href="3.1wenhua.html">传统音乐</a></li>
+                            <li><a href="3.1wenhua.html">传统体育</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="renwu.html">治水篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="renwu.html">治水英雄颂</a></li>
+                            <li><a href="zsjy.html">治水技奇谈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shenhua.html">神话篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="shenhua.html">大禹治水</a></li>
+                            <li><a href="shenhua.html">黄河母亲</a></li>
+                            <li><a href="shenhua.html">女娲补天</a></li>
+                            <li><a href="shenhua.html">伏羲创世</a></li>
+                            <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="zhengce.html">政策篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="zhengce.html">要闻</a></li>
+                            <li><a href="zhengce.html">地方新闻</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="rhudong.html">趣味黄河</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">互动答题</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="chat.html">智慧AI</a>
+                        <!-- <ul class="sub-menu">
+                                                                               <li><a href="# ">互动答题</a></li>
+                                                                            </ul> -->
+                    </li>
+                </ul>
+            </nav>
+            <div class="dengluzc">
+                <a href="shijianshu.html">黄河
+                    史书</a>
+                <a href="dlzc.html">登录</a>
+                <a href="dlzc.html">注册</a>
+
+            </div>
+        </div>
+        <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        </script>
+
+        <!-- ==== 主体部分 ==== -->
+        <section class="common-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="common-banner__content text-center">
+                        <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                        <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+                    </div>
+                </div>
+            </div>
+            <div class="banner-bg">
+                <video class="banner-video" autoplay muted loop playsinline>
+                    <source
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c700a4e3-36f3-4541-ab20-0027bd30d692_3.mp4?Expires=1776597825&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2BoYsyen73oYFIAin0DcraLd9Dz0%3D"
+                        type="video/mp4">
+
+                </video>
+            </div>
+            <div class="shape">
+                <img src="assets/images/shape.png" alt="Image">
+            </div>
+            <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+            </div>
+        </section>
+        <!-- ==== / banner section end ==== -->
+        <!-- ==== faq section start ==== -->
+        <section class="faq">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-8 col-xl-6">
+                        <div class="faq__content">
+                            <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                                <span class="sub-title"><i
+                                        class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄河文化通过多民族的交流与融合，为内蒙古银饰制作的发展提供了丰富的文化滋养。银饰制作在发展过程中吸收了黄河文化中其他民族文化元素，如汉族的银饰技艺和图案风格，使其在艺术表现上更加丰富多样。同时，黄河文化的多元性和包容性也为银饰制作的传承和发展提供了广阔的社会文化基础，使其在内蒙古地区不断得到创新和发展。
+                                </span>
+                                <h2 class="title-animation">内 蒙 古 的 <span>历 史 长 河</span>
+
+                                </h2>
+                            </div>
+                            <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="accordion" id="accordion">
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                银饰制作技艺是什么？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    银饰制作是内蒙古自治区的传统技艺项目，是中国非物质文化遗产之一。它是一种具有浓郁民族特色和地方特色的传统手工艺形式，主要通过手工技艺制作银质饰品和生活用品。银饰制作技艺涵盖熔银、锻打、拉丝、镶嵌、掐花、焊接、打磨等多道工序，制作出的银饰精美细腻，富有独特的民族风格和艺术价值。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                银饰制作技艺的起源与发展阶段？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    内蒙古银饰制作起源于明末清初，约有300多年的历史。明末清初初创阶段的银饰制作主要受蒙古族传统工艺的影响，以简单的银质生活用品和饰品为主。随着与汉族文化的交流，银饰制作逐渐融合了汉族的工艺元素，制作技艺更加精湛，产品种类更加丰富。新中国成立后至今，在政府的保护和支持下，银饰制作技艺得到了有效的传承和发扬。同时，现代设计理念和市场需求也推动了银饰制作的创新和发展。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                银饰制作技艺的艺术风格与形式？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    银饰的造型多样，包括首饰、餐具、马具、药勺等，种类繁多。制作工艺包括锤揲、錾刻、镂空、掐丝、镶嵌、焊接等，工艺复杂且精细。银饰的图案和造型具有浓郁的蒙古族特色，反映了蒙古族人民的生活、信仰和文化。银饰不仅是精美的装饰品，还具有实用价值，如银碗、银壶等生活用品。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="false" aria-controls="collapseFour">
+                                                银饰制作技艺如何为黄河文化增光添彩？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    内蒙古银饰制作作为地区重要的非物质文化遗产，丰富了黄河文化的内涵。它不仅展现了蒙古族人民独特的审美观念和文化创造力，还通过与其他民族文化的交流融合，体现了黄河文化多元共生的特点。同时，银饰制作在现代的传承和发展中，也成为了内蒙古地区文化旅游的重要组成部分，为黄河文化的传播和发展做出了积极贡献。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                        <div class="faq__thumb d-none d-lg-block">
+                            <div class="faq__thumb-inner">
+                                <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35c7088f8-6cc4-4507-b759-8512270cadbb_4.png?Expires=1776597851&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=t3whGRzWYGwjCKil%2Bwal0m16%2Fu8%3D"
+                                        alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==== / faq section end ==== -->
+        <section class="blog-main cm-details">
+            <div class="container">
+                <div class="row gutter-60">
+                    <div class="col-12 col-xl-8">
+                        <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="#">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/36e51fe49-0dea-4997-9763-721bb3e1cb48_2.png?Expires=1776597845&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=veb8tEtkrLt9Q%2F1IUccrGZBUnpA%3D"
+                                        alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="#"><i class="fa-solid fa-tags"></i>历史背景</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="#">历史背景与文化传承 </a></h4>
+                                    <p>
+                                        内蒙古银饰制作技艺源远流长，已有数百年的历史。它与蒙古族、达斡尔族、鄂温克族等民族的生活密切相关，主要体现在日常穿戴、婚礼、节庆和宗教活动等重要场合中。银饰不仅具有装饰功能，更承载着丰富的文化和宗教内涵。在蒙古族传统中，银饰常常是家庭财富的象征，同时也具有辟邪、祈福的功能。银饰在蒙古族社会中的地位也随着时间的推移逐渐得到重视，成为民族文化的重要组成部分。
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="c6.html">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39bd9f981-88e2-48fd-961e-03688942e5e9_3.png?Expires=1776597849&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=cRtcskmqaiSrmFyEHeTha0fb0rc%3D"
+                                        alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="c6.html"><i class="fa-solid fa-tags"></i>工艺技法</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+                                <div class="blog__single-content">
+                                    <h4><a href="c6.html">银饰的工艺技法 </a></h4>
+                                    <p>
+                                        内蒙古银饰制作技艺包含多种精湛的工艺技法，每一种技法都在精细与艺术性之间找到完美的平衡，确保每一件银饰品都具有独特的美学价值和文化意义。以下是内蒙古银饰制作的四大核心工艺技术，分别是铸造、雕刻、镶嵌和打磨，它们共同构成了银饰的精致和精巧。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="c6.html" aria-label="blog details" title="blog details">🌍
+                                        了解更多<i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="assets/images/wenh/gansuqinqiang/12.png" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="gansujvmu.html"><i class="fa-solid fa-tags"></i>剧目</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="gansujvmu.html">秦腔的经典剧目 </a></h4>
+                                    <p>
+                                        甘肃秦腔作为西北戏曲艺术的瑰宝，其剧目体系历经数百年积淀，形成以历史纵深、地域风情、奇幻想象与时代创新为主轴的四大经典类别。四类剧目交织出从明清江湖到现代剧场的艺术长卷，既承载着丝绸之路上多民族文化交融的基因，又在当代舞台焕发新生，成为读懂甘肃人文精神与审美嬗变的鲜活注脚。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="gansujvmu.html" aria-label="blog details" title="blog details">🌍 经典欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="blog-main__sidebar">
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/397263ee1-92c7-44a1-8d41-69af0791eec4_13.png?Expires=1776596666&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=kYwwAqdPBMxEUoNygU5bx2XgJuA%3D"
+                                        alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>银饰艺人的坚守</h6>
+                                    <p>一位蒙古族银饰艺人如何坚守传统技艺，传承银饰制作的故事。
+                                    </p>
+                                    <p>我是内蒙古的一名蒙古族银饰艺人，从父亲那里学到了精湛的银饰制作技艺。随着时代的变迁，许多年轻人不再愿意学习这门手艺，我看着那些精美的银饰作品，心里充满了忧虑。为了传承这门技艺，我开始在社区举办银饰制作培训班，免费教年轻女孩学习银饰制作。虽然过程艰难，但我始终坚持着，因为我知道这是我们的文化瑰宝，不能让它失传。在政府的支持下，越来越多的人开始关注银饰制作，我的培训班也逐渐有了起色，看到年轻一代对银饰的喜爱和投入，我感到无比欣慰。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/397263ee1-92c7-44a1-8d41-69af0791eec4_13.png?Expires=1776596666&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=kYwwAqdPBMxEUoNygU5bx2XgJuA%3D"
+                                        alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>银饰的创新之路</h6>
+                                    <p>一位蒙古族银饰艺人如何在传统与现代之间找到平衡，推动银饰制作创新发展的故事。
+                                    <p>
+                                        我是内蒙古的一名蒙古族银饰艺人，一直致力于将传统银饰制作与现代设计相结合。起初，我尝试在传统图案中加入一些现代元素，但遭到了一些传统派的反对，他们认为这样做会破坏银饰的纯粹性。但我坚信只有创新才能让银饰走得更远。于是，我不断学习现代设计理念，同时深入研究蒙古族传统文化，力求在两者之间找到最佳的结合点。经过多次尝试和改进，我设计出了一系列既保留传统韵味又符合现代审美的银饰作品。这些作品一经推出，就受到了市场的广泛欢迎，也让更多的人看到了银饰制作的无限可能。
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="assets/images/wenh/gansuqinqiang/13.png" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>皮影小剧场：《月牙泉之恋》</h6>
+                                    <p>敦煌戍边将士阿郎与秦腔高手月儿跨越生死、以歌传情的凄美爱情故事</p>
+                                    <p>敦煌月牙泉旁，阿郎与月儿情定终身。阿郎是戍边将士，月儿是村中秦腔高手，歌声如泉。边疆战事起，阿郎出征，两人在泉边许下重逢誓言。月儿日复一日，在泉边以秦腔寄情。阿郎战场英勇，心系月儿。战后归来，阿郎却只见月牙泉，不见月儿身影，原来她已化作泉边一缕轻烟。阿郎悲歌，歌声回荡沙漠。从此，月圆之夜，月牙泉边总有凄美秦腔，似月儿灵魂诉说爱情。
+                                    </p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source
+                                    src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/383ca5ea2-fa40-4b84-91c6-b45fd39c1216_1.mp4?Expires=1776597846&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Y3oa%2Fh3c%2FBcK8ZOyNzn2WsKpBZw%3D"
+                                    type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>2021年，乌拉特铜银器制作技艺被列入国家级非物质文化遗产代表性项目名录。2013年，银碗制作技艺被列入内蒙古自治区级非物质文化遗产名录，编号为NMⅧ-46。保护单位通过举办银饰制作展览、培训、出版画册等方式，积极推动银饰制作的保护和传承。
+                            </p>
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>银饰制作主要依靠家族传承和师徒传承，许多家庭都有从事银饰制作的艺人。
+                            </p>
+                            <p>银饰制作不断创新，将传统技艺与现代设计相结合，开发出更多符合市场需求的产品，如银饰艺术品、文创产品等。同时，通过举办银饰制作展览、培训等活动，提高了银饰制作的知名度和影响力。此外，当地政府还通过打造文化产业园区、设立展销窗口等方式，推动银饰制作的市场化发展，带动当地就业和群众增收。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ae6b0916-0dab-4b4d-919b-f5d836d74fde_1.png?Expires=1776597831&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=cCQLHirfJ1iWNhyAo77Ee6akgg8%3D"
+                                    alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/351a1f26a-9bcc-4994-be42-9426e1df8007_5.png?Expires=1776597853&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=nszEIIXvGSEhMpOT8SwcdWDo1NE%3D"
+                                    alt=" Image">
+                            </div>
+                        </div>
+                        <!-- ==== custom cursor start ==== -->
+                        <div class="mouseCursor cursor-outer"></div>
+                        <div class="mouseCursor cursor-inner"></div>
+                        <!-- ==== / custom cursor end ==== -->
+                        <!-- ==== scroll to top start ==== -->
+                        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                            <span></span>
+                            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                            </svg>
+                        </button>
+                        <!-- ==== / scroll to top end ==== -->
+                        <!-- ==== / color switcher end ==== -->
+                    </div>
+                    <!-- ==== js dependencies start ==== -->
+                    <!-- jquery -->
+                    <script src="assets/js/jquery-3.7.1.min.js"></script>
+                    <!-- bootstrap five js -->
+                    <script src="assets/js/bootstrap.bundle.min.js"></script>
+                    <!-- nice select js -->
+                    <script src="assets/js/jquery.nice-select.min.js"></script>
+                    <!-- magnific popup js -->
+                    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                    <!-- swiper slider js -->
+                    <script src="assets/js/swiper-bundle.min.js"></script>
+                    <!-- viewport js -->
+                    <script src="assets/js/viewport.jquery.js"></script>
+                    <!-- odometer js -->
+                    <script src="assets/js/odometer.min.js"></script>
+                    <!-- vanilla tilt js -->
+                    <script src="assets/js/vanilla-tilt.min.js"></script>
+                    <!-- aos js -->
+                    <script src="assets/js/aos.js"></script>
+
+                    <!-- splittext js -->
+                    <script src="assets/js/SplitText.min.js"></script>
+                    <!-- scrollto js -->
+                    <script src="assets/js/ScrollToPlugin.min.js"></script>
+                    <!-- scrolltrigger js -->
+                    <script src="assets/js/ScrollTrigger.min.js"></script>
+                    <!-- gsap js -->
+                    <script src="assets/js/gsap.min.js"></script>
+                    <!-- ==== / js dependencies end ==== -->
+                    <!-- template settings js -->
+                    <script src="assets/js/template-settings.js"></script>
+                    <!-- main js -->
+                    <script src="assets/js/custom.js"></script>
+<!--                     <script src="utils.js"></script>-->
+<!--                    <script>-->
+<!--                        document.addEventListener('DOMContentLoaded', function () {-->
+<!--                            checkLogin();-->
+<!--                        });-->
+<!--                    </script>-->
+</body>
+
+</html>

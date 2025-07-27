@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- required meta -->
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- #favicon -->
+   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+   <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+   <!-- #title -->
+   <title>治水篇 | 治水英雄颂</title>
+   <!-- #keywords -->
+   <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+   <!-- #description -->
+   <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+   <!-- google fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com/">
+   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet">
+   <!-- main css -->
+   <link rel="stylesheet" href="assets/css/main.css">
+   <!-- responsive css -->
+   <link rel="stylesheet" href="assets/css/responsive.css">
+   <!-- color themes -->
+   <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+   <!-- want sticky header -->
+   <link rel="stylesheet" href="assets/css/sticky-header.css">
+   <!-- box layout css -->
+   <link rel="stylesheet" href="assets/css/box-layout.css">
+   <!-- dark mode css -->
+   <link rel="stylesheet" href="assets/css/dark-mode.css">
+   <!-- rtl css -->
+   <link rel="stylesheet" href="assets/css/rtl.css">
+   <link rel="stylesheet" href="assets/css/daohang.css">
+   <style>
+      body {
+         background-image: url("https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745238896479_12d0b10a-8591-4e7c-a68d-b0c91f6312fc_29.png?Expires=1776774897&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=HWJ%2BIlDXwC357BToXopNDf4Wy5c%3D");
+      }
+
+      /* 导航部分开始 */
+
+
+
+      /* 导航部分结束 */
+      .shop-header {
+         text-align: center;
+         margin-bottom: 40px;
+      }
+
+
+      .shop-header p {
+         font-size: 1.4rem;
+         max-width: 1200px;
+         margin: 2rem auto;
+         line-height: 2;
+         color: #4a2c2a;
+         /* 黄河泥沙色 */
+         font-family: 'ZCOOL XiaoWei', '华文楷体', serif;
+         text-indent: 2em;
+         padding: 30px 50px;
+         position: relative;
+         background:
+            linear-gradient(45deg, #fff5e6 25%, #ffe4c4 100%),
+            url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==');
+         /* 宣纸纹理 */
+         border: 3px double #8b4513;
+         /* 青铜器纹路色 */
+         border-radius: 0 20px 20px 0;
+         box-shadow:
+            5px 5px 15px rgba(139, 69, 19, 0.1),
+            inset 0 0 20px rgba(255, 215, 0, 0.1);
+         text-shadow: 0.5px 0.5px 1px rgba(139, 69, 19, 0.3);
+      }
+
+      /* 左侧黄河纹样装饰 */
+      .shop-header p::before {
+         content: "";
+         position: absolute;
+         left: -40px;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 30px;
+         height: 120%;
+         background:
+            linear-gradient(to right,
+               #8b4513 20%,
+               #cd853f 50%,
+               #8b4513 80%);
+         clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+      }
+
+      /* 右侧黄河浪花纹样 */
+      .shop-header p::after {
+         content: "";
+         position: absolute;
+         right: -40px;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 30px;
+         height: 120%;
+         background:
+            linear-gradient(to right,
+               #8b4513 20%,
+               #cd853f 50%,
+               #8b4513 80%);
+         clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+      }
+
+      /* 响应式 */
+      /* 平板布局 (992px) */
+      @media (max-width: 992px) {
+         .team-details {
+            width: 94%;
+            padding: 3rem 0;
+            border-radius: 1.5rem;
+         }
+
+         .team-details__thumb img {
+            margin-top: -2rem;
+            max-width: 80%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+         }
+
+         .team-details__content {
+            padding: 0 2rem;
+         }
+
+         .designation {
+            font-size: 1.4rem !important;
+            line-height: 1.4;
+         }
+
+         .my-word h5 {
+            font-size: 1.3rem;
+         }
+
+         .team-details__list ul {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+         }
+
+         .btn--primary {
+            padding: 1rem 2rem !important;
+            font-size: 0.95rem;
+         }
+      }
+
+      /* 移动端布局 (768px) */
+      @media (max-width: 768px) {
+         .team-details {
+            width: 96%;
+            margin: 2rem auto;
+            padding: 2rem 0;
+            border-radius: 1.2rem;
+         }
+
+         .row.gutter-40 {
+            gap: 2rem;
+         }
+
+         .team-details__thumb {
+            order: 2;
+            margin-top: 1.5rem;
+         }
+
+         .team-details__thumb img {
+            margin-top: 0;
+            max-width: 100%;
+            border-radius: 1rem;
+         }
+
+         .team-details__meta {
+            text-align: center;
+         }
+
+         .designation {
+            font-size: 1.2rem !important;
+         }
+
+         .progress-wrapper {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+         }
+
+         .team-details__list ul {
+            grid-template-columns: 1fr;
+         }
+
+         .social {
+            justify-content: center;
+         }
+
+         .btn--primary {
+            width: 100%;
+            justify-content: center;
+         }
+      }
+
+      /* 小屏手机优化 (576px) */
+      @media (max-width: 576px) {
+         .team-details {
+            padding: 1.5rem 0;
+            border-radius: 1rem;
+         }
+
+         .team-details__content {
+            padding: 0 1rem;
+         }
+
+         .designation {
+            font-size: 1.1rem !important;
+         }
+
+         .de {
+            font-size: 1rem !important;
+         }
+
+         .team-details__list ul li {
+            font-size: 0.9rem;
+            gap: 0.8rem;
+         }
+
+         .social a {
+            width: 40px !important;
+            height: 40px !important;
+         }
+
+         .btn--primary {
+            font-size: 0.9rem !important;
+            padding: 0.8rem 1.5rem !important;
+         }
+      }
+
+      /* 微交互动画增强 */
+      @media (hover: hover) {
+         .btn--primary {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            &:hover {
+               transform: translateY(-2px);
+               box-shadow: 0 8px 20px rgba(184, 155, 90, 0.2);
+            }
+         }
+
+         .social a {
+            transition: transform 0.2s ease;
+
+            &:hover {
+               transform: scale(1.1);
+            }
+         }
+      }
+
+      /* 深色模式适配 */
+      @media (prefers-color-scheme: dark) {
+         .team-details {
+            background: linear-gradient(15deg,
+                  rgba(30, 20, 10, 0.98) 0%,
+                  rgba(50, 35, 20, 0.95) 100%),
+               url('data:image/png;base64,...');
+            border-color: #8a6d4b;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <!--[if lt IE 9]>
+      <p class="browserupgrade">
+         You are using an <strong>outdated</strong> browser. Please
+         <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+         your experience and security.
+      </p>
+      <![endif]-->
+   <div class="page-wrapper">
+      <!-- ==== 进入动画 ==== -->
+      <div class="preloader">
+         <i class="icon-donation"></i>
+         <p>黄河文化</p>
+      </div>
+
+      <!-- ==== 主体部分开始 ==== -->
+      <div class="daohang">
+         <!-- logo 部分，设置为左侧 -->
+         <div class="logo">
+            <img src="assets/image/logo2.png" alt="Logo">
+         </div>
+         <!-- 导航栏部分 -->
+         <button class="mobile-menu-btn">☰</button>
+         <nav>
+            <ul class="main-nav">
+               <li class="nav-item">
+                  <a href="index%20copy.html">首页</a>
+                  <!-- <ul class="sub-menu">
+                                                       <li><a href="#">子菜单1</a></li>
+                                                       <li><a href="#">子菜单2</a></li>
+                                                       <li><a href="#">子菜单3</a></li>
+                                                    </ul> -->
+               </li>
+               <li class="nav-item">
+                  <a href="3.1wenhua.html">文化篇</a>
+                  <ul class="sub-menu">
+                     <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                     <li><a href="3.1wenhua.html">传统技艺</a></li>
+                     <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                     <li><a href="3.1wenhua.html">传统音乐</a></li>
+                     <li><a href="3.1wenhua.html">传统体育</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a href="renwu.html">治水篇</a>
+                  <ul class="sub-menu">
+                     <li><a href="renwu.html">治水英雄颂</a></li>
+                     <li><a href="zsjy.html">治水技奇谈</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a href="shenhua.html">神话篇</a>
+                  <ul class="sub-menu">
+                     <li><a href="shenhua.html">大禹治水</a></li>
+                     <li><a href="shenhua.html">黄河母亲</a></li>
+                     <li><a href="shenhua.html">女娲补天</a></li>
+                     <li><a href="shenhua.html">伏羲创世</a></li>
+                     <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a href="zhengce.html">政策篇</a>
+                  <ul class="sub-menu">
+                     <li><a href="zhengce.html">要闻</a></li>
+                     <li><a href="zhengce.html">地方新闻</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a href="rhudong.html">趣味黄河</a>
+                  <!-- <ul class="sub-menu">
+                                                       <li><a href="#">互动答题</a></li>
+                                                    </ul> -->
+               </li>
+               <li class="nav-item">
+                  <a href="chat.html">智慧AI</a>
+                  <!-- <ul class="sub-menu">
+                                                                         <li><a href="# ">互动答题</a></li>
+                                                                      </ul> -->
+               </li>
+            </ul>
+         </nav>
+         <div class="dengluzc">
+            <a href="shijianshu.html">黄河
+               史书</a>
+            <a href="dlzc.html">登录</a>
+            <a href="dlzc.html">注册</a>
+
+         </div>
+      </div>
+      <script>
+         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('active');
+         });
+      </script>
+      <div class="shop-header">
+         <p>在浩瀚的黄河文化长河中，治水英雄的故事犹如璀璨星辰，熠熠生辉。这些英雄以无畏的勇气和超凡的智慧，挺身而出，与肆虐的洪水展开殊死搏斗。他们或披荆斩棘，开渠引流；或身先士卒，筑堤固坝。每一滴汗水，每一次拼搏，都凝聚着对家园的深情厚爱和对人民的赤诚之心。治水英雄传，不仅是对这些英雄壮举的颂扬，更是对黄河文化中坚韧不拔、勇于担当精神的传承与弘扬。
+         </p>
+      </div>
+      <section class="team-details">
+         <div class="container">
+            <div class="row gutter-40 align-items-center">
+               <div class="col-12 col-lg-6 col-xl-5">
+                  <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                     <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3libing.png?Expires=1776504356&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=yUi5X%2Ff5I8YdiW0MhLyt7%2FBYrrI%3D"
+                        alt="Image">
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6 col-xl-7">
+                  <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="team-details__meta">
+                        <h4 class="title-animation"></h4>
+                        <p class="designation">李 冰 -- 公 元 前 4 世 纪</p>
+                        <p class="de">“遇山凿洞，逢水架桥；分水止患，因势利导。”
+                        </p>
+                     </div>
+                     <div class="my-word">
+                        <h5>治水成就</h5>
+                     </div>
+                     <div class="progress-wrapper">
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 治水影响范围
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="60%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 水利工程成功率
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="90%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team-details__list">
+                        <ul>
+                           <li><i class="icon-circle-check"></i>修建都江堰，治理岷江水患
+
+                           </li>
+                           <li><i class="icon-circle-check"></i>首创“分水鱼嘴”与“飞沙堰”等工程设计
+                           </li>
+                           <li><i class="icon-circle-check"></i>推动农业发展，使成都平原成为富庶之地
+                           </li>
+                           <li><i class="icon-circle-check"></i>奠定了“因势利导”的治水理念，影响深远</li>
+                        </ul>
+                     </div>
+                     <div class="team-details__cta cta">
+                        <a href="libing.html" aria-label="make a donation" title="make a donation" class="btn--primary">
+                           走 进 李 冰 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+      <section class="team-details">
+         <div class="container">
+            <div class="row gutter-40 align-items-center">
+               <div class="col-12 col-lg-6 col-xl-5">
+                  <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                     <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3jiayi.png?Expires=1776504451&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=1U4ihVN1ICkRqHbo7%2F2CiWL3nEg%3D"
+                        alt="Image">
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6 col-xl-7">
+                  <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="team-details__meta">
+                        <h4 class="title-animation"></h4>
+                        <p class="designation">贾 谊 -- 西 汉 初 </p>
+                        <p class="de">“防民之口，甚于防川；水患之害，理当防范于未然。”
+                        </p>
+                     </div>
+                     <div class="my-word">
+                        <h5>治水成就</h5>
+                     </div>
+                     <div class="progress-wrapper">
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 治水预防建议覆盖率
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="60%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 水患防治理论完善度
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="80%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team-details__list">
+                        <ul>
+                           <li><i class="icon-circle-check"></i>提出“防患于未然”治水思想
+                           </li>
+                           <li><i class="icon-circle-check"></i>强调治水与民生、政治稳定的深度关联
+                           </li>
+                           <li><i class="icon-circle-check"></i>倡导堤防、疏导结合的综合治水理念
+                           </li>
+                           <li><i class="icon-circle-check"></i>推动汉初社会稳定，减轻水患对百姓的影响</li>
+                        </ul>
+                     </div>
+                     <div class="team-details__cta cta">
+                        <a href="jiayi.html" aria-label="make a donation" title="make a donation" class="btn--primary">
+                           走 进 贾 谊 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+      <section class="team-details">
+         <div class="container">
+            <div class="row gutter-40 align-items-center">
+               <div class="col-12 col-lg-6 col-xl-5">
+                  <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                     <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3wangjing.png?Expires=1776504660&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=66zFu2uwJITEEqbCqITS3LYWc6o%3D"
+                        alt="Image">
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6 col-xl-7">
+                  <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="team-details__meta">
+                        <h4 class="title-animation"></h4>
+                        <p class="designation">王 景 -- 东 汉 </p>
+                        <p class="de">“筑堤束水，攻沙深槽；分杀水势，河汴兼治，终复禹河故道。”
+                        </p>
+                     </div>
+                     <div class="my-word">
+                        <h5>治水成就</h5>
+                     </div>
+                     <div class="progress-wrapper">
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 决溢减少率
+
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="92%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 漕运效率提升
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="95%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team-details__list">
+                        <ul>
+                           <li><i class="icon-circle-check"></i>首建系统堤防体系
+                           </li>
+                           <li><i class="icon-circle-check"></i>开创水沙调控理论
+                           </li>
+                           <li><i class="icon-circle-check"></i>实现河汴航运复兴
+                           </li>
+                           <li><i class="icon-circle-check"></i>确立工程管理典范</li>
+                        </ul>
+                     </div>
+                     <div class="team-details__cta cta">
+                        <a href="wangjing.html" aria-label="make a donation" title="make a donation"
+                           class="btn--primary"> 走
+                           进 王 景 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+      <section class="team-details">
+         <div class="container">
+            <div class="row gutter-40 align-items-center">
+               <div class="col-12 col-lg-6 col-xl-5">
+                  <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                     <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3caocao.png?Expires=1776504719&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=DLLFTUPy49HyuO6nJ%2BXDOjiym68%3D"
+                        alt="Image">
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6 col-xl-7">
+                  <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="team-details__meta">
+                        <h4 class="title-animation"></h4>
+                        <p class="designation">曹 操 -- 155 年 - 220 年 </p>
+                        <p class="de">“蓄水养民，疏河利国；治水之道，贵在长远。”
+                        </p>
+                     </div>
+                     <div class="my-word">
+                        <h5>治水成就</h5>
+                     </div>
+                     <div class="progress-wrapper">
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 河道疏浚覆盖范围
+
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="65%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 水利工程成功率
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="80%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team-details__list">
+                        <ul>
+                           <li><i class="icon-circle-check"></i>实施“蓄泄结合”治水策略，有效缓解水患
+                           </li>
+                           <li><i class="icon-circle-check"></i>主持开挖“平虏渠”，大幅提升黄河两岸的灌溉效益
+                           </li>
+                           <li><i class="icon-circle-check"></i>倡导农田水利建设，保障粮食生产，稳定社会秩序
+                           </li>
+                           <li><i class="icon-circle-check"></i>提出治水要注重“蓄水养民”，推动黄河治水理念革新</li>
+                        </ul>
+                     </div>
+                     <div class="team-details__cta cta">
+                        <a href="caocao.html" aria-label="make a donation" title="make a donation" class="btn--primary">
+                           走
+                           进 曹 操 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+      <section class="team-details">
+         <div class="container">
+            <div class="row gutter-40 align-items-center">
+               <div class="col-12 col-lg-6 col-xl-5">
+                  <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                     <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/34d179a90-b3ce-42b2-95c0-cb0b9ad8cb65_lishimin.png?Expires=1776530885&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=c2YZw9hfrMTnp62CQXMwQjIRReo%3D"
+                        alt="Image">
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6 col-xl-7">
+                  <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="team-details__meta">
+                        <h4 class="title-animation"></h4>
+                        <p class="designation">李 世 民 -- 598 年 - 649 年 </p>
+                        <p class="de">“治河之道，贵在审时度势；安民之本，尤需防患未然。”
+                        </p>
+                     </div>
+                     <div class="my-word">
+                        <h5>治水成就</h5>
+                     </div>
+                     <div class="progress-wrapper">
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 河道治理范围
+
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="75%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 水利工程成功率
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="80%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team-details__list">
+                        <ul>
+                           <li><i class="icon-circle-check"></i>倡导“因地制宜，疏堵结合”的治水思想
+                           </li>
+                           <li><i class="icon-circle-check"></i>整治黄河、渭河等多条重要水系，确保水患可控
+                           </li>
+                           <li><i class="icon-circle-check"></i>推动“减水防患、蓄水养田”的治水理念，保障农业发展
+                           </li>
+                           <li><i class="icon-circle-check"></i>开凿沟渠、引水入田，使沿岸百姓安居乐业</li>
+                        </ul>
+                     </div>
+                     <div class="team-details__cta cta">
+                        <a href="lishimin.html" aria-label="make a donation" title="make a donation"
+                           class="btn--primary"> 走
+                           进 李 世 民 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+      <section class="team-details">
+         <div class="container">
+            <div class="row gutter-40 align-items-center">
+               <div class="col-12 col-lg-6 col-xl-5">
+                  <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                     <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/321edc37a-9ec2-40a7-bbf1-72217f5178f9_zhaokuangyin.png?"
+                        alt="Image">
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6 col-xl-7">
+                  <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="team-details__meta">
+                        <h4 class="title-animation"></h4>
+                        <p class="designation">赵 匡 胤 -- 960 年 - 976 年 </p>
+                        <p class="de">"治河如治军，束水攻沙；植柳固堤，兵民共筑，定鼎漕运千秋业。"</p>
+                     </div>
+                     <div class="my-word">
+                        <h5>治水成就</h5>
+                     </div>
+                     <div class="progress-wrapper">
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 黄河决溢治理率
+
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="80%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 漕运通航率提升
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="50%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team-details__list">
+                        <ul>
+                           <li><i class="icon-circle-check"></i>首创"军事化河防"制度
+                           </li>
+                           <li><i class="icon-circle-check"></i>确立"植柳固堤"生态工法
+                           </li>
+                           <li><i class="icon-circle-check"></i>重构北方水运网络体系
+                           </li>
+                           <li><i class="icon-circle-check"></i>奠基宋代河工技术体系</li>
+                        </ul>
+                     </div>
+                     <div class="team-details__cta cta">
+                        <a href="zhaokuangyin.html" aria-label="make a donation" title="make a donation"
+                           class="btn--primary"> 走
+                           进 赵 匡 胤 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+      <section class="team-details">
+         <div class="container">
+            <div class="row gutter-40 align-items-center">
+               <div class="col-12 col-lg-6 col-xl-5">
+                  <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                     <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c9fffd96-7042-440a-9ef3-9a03b4aca7c0_wanganshi.png?"
+                        alt="Image">
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6 col-xl-7">
+                  <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="team-details__meta">
+                        <h4 class="title-animation"></h4>
+                        <p class="designation">王 安 石 -- 1021 年 - 1086 年 </p>
+                        <p class="de">"治河如理财，水旱相济；淤田固本，官民共治，开千年河政新章。"</p>
+                     </div>
+                     <div class="my-word">
+                        <h5>治水成就</h5>
+                     </div>
+                     <div class="progress-wrapper">
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 黄河决溢治理率
+
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="80%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 水利投资回报率
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="50%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team-details__list">
+                        <ul>
+                           <li><i class="icon-circle-check"></i>开创"经济治河"系统思维
+                           </li>
+                           <li><i class="icon-circle-check"></i>建立"淤田养堤"生态模式
+                           </li>
+                           <li><i class="icon-circle-check"></i>革新水利工程融资体系
+                           </li>
+                           <li><i class="icon-circle-check"></i>构建标准化河工技术规范</li>
+                        </ul>
+                     </div>
+                     <div class="team-details__cta cta">
+                        <a href="wanganshi1.html" aria-label="make a donation" title="make a donation"
+                           class="btn--primary"> 走
+                           进 王 安 石 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+      <section class="team-details">
+         <div class="container">
+            <div class="row gutter-40 align-items-center">
+               <div class="col-12 col-lg-6 col-xl-5">
+                  <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                     <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3efb81e0c-27ad-4da7-8526-6cf49c119243_jixiaolan.png?Expires=1776530980&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=2%2BGbbNG4QLsykp3hm2AIFTTVlQg%3D"
+                        alt="Image">
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6 col-xl-7">
+                  <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="team-details__meta">
+                        <h4 class="title-animation"></h4>
+                        <p class="designation">纪 晓 岚 -- 1724 年 - 1805 年 </p>
+                        <p class="de">"治河如治典，考据溯源；以史为鉴，文脉载道，铸河工文明之髓。"</p>
+                     </div>
+                     <div class="my-word">
+                        <h5>治水成就</h5>
+                     </div>
+                     <div class="progress-wrapper">
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 治河文献编纂量
+
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="60%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 治河方略采纳率
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="75%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team-details__list">
+                        <ul>
+                           <li><i class="icon-circle-check"></i>系统整理历代治黄典籍
+                           </li>
+                           <li><i class="icon-circle-check"></i>构建"以史治河"决策体系
+                           </li>
+                           <li><i class="icon-circle-check"></i>创立河工技术标准化体系
+                           </li>
+                           <li><i class="icon-circle-check"></i>推动治河知识全民传播</li>
+                        </ul>
+                     </div>
+                     <div class="team-details__cta cta">
+                        <a href="jixiaolan.html" aria-label="make a donation" title="make a donation"
+                           class="btn--primary"> 走
+                           进 纪 晓 岚 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+      <section class="team-details">
+         <div class="container">
+            <div class="row gutter-40 align-items-center">
+               <div class="col-12 col-lg-6 col-xl-5">
+                  <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                     <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b9cb61f5-e15e-4bef-8282-eaa28b422d68_linzexv.png?"
+                        alt="Image">
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6 col-xl-7">
+                  <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="team-details__meta">
+                        <h4 class="title-animation"></h4>
+                        <p class="designation">林 则 徐 -- 1785 年 - 1850 年 </p>
+                        <p class="de">"治河如御敌，守正出奇；以工代赈，昼夜督防，铸就金堤护国脉。"</p>
+                     </div>
+                     <div class="my-word">
+                        <h5>治水成就</h5>
+                     </div>
+                     <div class="progress-wrapper">
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 筑堤成本下降率
+
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="40%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 河工银两截留率下降
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="30%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team-details__list">
+                        <ul>
+                           <li><i class="icon-circle-check"></i>创立"以工代赈"治河模式
+                           </li>
+                           <li><i class="icon-circle-check"></i>革新河工物料管理体系
+                           </li>
+                           <li><i class="icon-circle-check"></i>开创近代水利工程监理制
+                           </li>
+                           <li><i class="icon-circle-check"></i>推动中西方治河技术融合</li>
+                        </ul>
+                     </div>
+                     <div class="team-details__cta cta">
+                        <a href="linzexu.html" aria-label="make a donation" title="make a donation"
+                           class="btn--primary"> 走
+                           进 林 则 徐 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+      <section class="team-details">
+         <div class="container">
+            <div class="row gutter-40 align-items-center">
+               <div class="col-12 col-lg-6 col-xl-5">
+                  <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                     <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/349e261e4-cafc-4619-a917-f423480e5bb8_sunzhongs.png?"
+                        alt="Image">
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6 col-xl-7">
+                  <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="team-details__meta">
+                        <h4 class="title-animation"></h4>
+                        <p class="designation">孙 中 山 -- 1866 年 - 1925 年 </p>
+                        <p class="de">"治河如建国，统筹经纬；水电并济，民生为本，绘就江河复兴蓝图。"</p>
+                     </div>
+                     <div class="my-word">
+                        <h5>治水成就</h5>
+                     </div>
+                     <div class="progress-wrapper">
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 黄河治理规划覆盖范围
+
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="80%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="cause__progress progress-bar-single">
+                           <div class="cause-progress__bar">
+                              <p>✅ 水利工程蓝图实施率
+                              </p>
+                              <div class="progress-bar-wrapper" data-percent="60%">
+                                 <div class="progress-bar">
+                                    <div class="progress-bar-percent"><span class="percent-value"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team-details__list">
+                        <ul>
+                           <li><i class="icon-circle-check"></i>开创现代系统工程治河理念
+                           </li>
+                           <li><i class="icon-circle-check"></i>奠定黄河水力发电理论基础
+                           </li>
+                           <li><i class="icon-circle-check"></i>推动治河事业国际化合作
+                           </li>
+                           <li><i class="icon-circle-check"></i>构建民生导向的水利价值观</li>
+                        </ul>
+                     </div>
+                     <div class="team-details__cta cta">
+                        <a href="sunzhongshan.html" aria-label="make a donation" title="make a donation"
+                           class="btn--primary"> 走
+                           进 孙 中 山 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+      <!-- ==== team details section end ==== -->
+      <!-- ==== footer start ==== -->
+      <footer class="footer-two">
+         <div class="container">
+            <div class="row align-items-center gutter-30">
+               <div class="col-12 col-lg-7 col-xxl-6">
+                  <div class="footer-two__newsletter-content">
+                     <h3 class="title-animation">
+                        黄 河 的 史 诗 从 未 落 幕
+                     </h3>
+                     <p>她的浪纹里沉睡着千万双治水者的草鞋，涛声中回响着无数智者的低语</p>
+                  </div>
+               </div>
+               <!-- <div class="col-12 col-lg-5 col-xxl-5 offset-xxl-1">
+                 <div class="footer-two__newsletter-form">
+                     <form action="#" method="post">
+                        <input type="email" required name="subscribe-email" id="subscribeEmail" placeholder="发送邮件">
+                        <button type="submit" aria-label="subscribe to our newsletter"
+                           title="subscribe to our newsletter" class="btn--primary"> <i
+                              class="fa-solid fa-paper-plane"></i>
+                        </button>
+                     </form>
+                  </div>
+               </div> -->
+            </div>
+            <!-- <div class="row">
+                     <div class="col-12">
+                        <hr class="divider">
+                     </div>
+                  </div> -->
+            <!-- <div class="row gutter-60">
+                     <div class="col-12 col-md-6 col-xl-3">
+                        <div class="footer-two__widget" data-aos="fade-up" data-aos-duration="1000">
+                           <div class="footer-two__widget-logo">
+                              <a href="index.html">
+                                 <img src="assets/images/logo-light.png" alt="Image">
+                              </a>
+                           </div>
+                           <div class="footer-two__widget-content">
+                              <p>Our secure online donation platform allows you to make contributions quickly and
+                                 safely. Choose from various.
+                              </p>
+                              <div class="social">
+                                 <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook"
+                                    title="facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                 </a>
+                                 <a href="https://vimeo.com/" target="_blank" aria-label="share us on vimeo" title="vimeo">
+                                    <i class="fa-brands fa-vimeo-v"></i>
+                                 </a>
+                                 <a href="https://x.com/" target="_blank" aria-label="share us on twitter" title="twitter">
+                                    <i class="fa-brands fa-twitter"></i>
+                                 </a>
+                                 <a href="https://www.linkedin.com/" target="_blank" aria-label="share us on linkedin"
+                                    title="linkedin">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-md-6 col-xl-2 offset-xl-1">
+                        <div class="footer-two__widget" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                           <div class="footer-two__widget-intro">
+                              <h5>Quick Links</h5>
+                              <div class="line">
+                                 <span class="large-line"></span>
+                                 <span class="small-line"></span>
+                                 <span class="small-line"></span>
+                              </div>
+                           </div>
+                           <div class="footer-two__widget-content">
+                              <ul>
+                                 <li><a href="about-us.html"><i class="fa-solid fa-arrow-right"></i>About Us</a>
+                                 </li>
+                                 <li><a href="blog-list.html"><i class="fa-solid fa-arrow-right"></i>Our
+                                       News</a>
+                                 </li>
+                                 <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Our
+                                       Campaign</a>
+                                 </li>
+                                 <li><a href="faq.html"><i class="fa-solid fa-arrow-right"></i>FAQ</a></li>
+                                 <li><a href="contact-us.html"><i class="fa-solid fa-arrow-right"></i>Get A
+                                       Quote</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-md-6 col-xl-3">
+                        <div class="footer-two__widget footer-two__widget--alternate" data-aos="fade-up"
+                           data-aos-duration="1000" data-aos-delay="400">
+                           <div class="footer-two__widget-intro">
+                              <h5>Our Services</h5>
+                              <div class="line">
+                                 <span class="large-line"></span>
+                                 <span class="small-line"></span>
+                                 <span class="small-line"></span>
+                              </div>
+                           </div>
+                           <div class="footer-two__widget-content">
+                              <ul>
+                                 <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Our Causes</a>
+                                 </li>
+                                 <li><a href="events.html"><i class="fa-solid fa-arrow-right"></i>Education
+                                       Support</a>
+                                 </li>
+                                 <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Our
+                                       Campaign</a>
+                                 </li>
+                                 <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Food
+                                       Support</a>
+                                 </li>
+                                 <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Health
+                                       Support</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-md-6 col-xl-3">
+                        <div class="footer-two__widget footer-two__widget--alternate" data-aos="fade-up"
+                           data-aos-duration="1000" data-aos-delay="600">
+                           <div class="footer-two__widget-intro">
+                              <h5>Get In Touch</h5>
+                              <div class="line">
+                                 <span class="large-line"></span>
+                                 <span class="small-line"></span>
+                                 <span class="small-line"></span>
+                              </div>
+                           </div>
+                           <div class="footer-two__widget-content footer-two__widget-content--contact">
+                              <ul>
+                                 <li><a href="https://maps.app.goo.gl/Gr9pTNqz5FRNrjQw8" target="_blank"><i
+                                          class="fa-solid fa-location-dot"></i>455 West Orchard Street Kings
+                                       Mountain, NC 280867</a>
+                                 </li>
+                                 <li><a href=""><i class="fa-solid fa-phone"></i>+088 (246)
+                                       642-27-10</a>
+                                 </li>
+                                 <li><a href="mailto:support@example.com"><i
+                                          class="fa-regular fa-envelope"></i>example@email.com</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div> -->
+            <div class="footer-two__copyright">
+               <div class="container">
+                  <div class="row align-items-center gutter-12">
+                     <div class="col-12 col-lg-6">
+                        <div class="footer-two__copyright-inner text-center text-lg-start">
+
+                        </div>
+                     </div>
+                     <div class="col-12 col-lg-6">
+                        <div class="footer__bottom-left">
+                           <ul class="footer__bottom-list justify-content-center justify-content-lg-end">
+                              <li><a href="#">Q Q</a></li>
+                              <li><a href="#">微 信</a></li>
+                              <li><a href="#">联 系 我 们</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+               <img src="assets/images/sprade.png" alt="Image" class="base-img">
+            </div>
+            <div class="sprade-light" data-aos="zoom-in" data-aos-duration="1000">
+               <img src="assets/images/sprade-light.png" alt="Image">
+            </div>
+      </footer>
+      <!-- ==== / footer end ==== -->
+      <!-- ==== custom cursor start ==== -->
+      <div class="mouseCursor cursor-outer"></div>
+      <div class="mouseCursor cursor-inner"></div>
+      <!-- ==== / custom cursor end ==== -->
+      <!-- ==== scroll to top start ==== -->
+      <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+         <span></span>
+         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+         </svg>
+      </button>
+      <!-- ==== / scroll to top end ==== -->
+
+   </div>
+   <!-- ==== js dependencies start ==== -->
+   <!-- jquery -->
+   <script src="assets/js/jquery-3.7.1.min.js"></script>
+   <!-- bootstrap five js -->
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <!-- nice select js -->
+   <script src="assets/js/jquery.nice-select.min.js"></script>
+   <!-- magnific popup js -->
+   <script src="assets/js/jquery.magnific-popup.min.js"></script>
+   <!-- swiper slider js -->
+   <script src="assets/js/swiper-bundle.min.js"></script>
+   <!-- viewport js -->
+   <script src="assets/js/viewport.jquery.js"></script>
+   <!-- odometer js -->
+   <script src="assets/js/odometer.min.js"></script>
+   <!-- vanilla tilt js -->
+   <script src="assets/js/vanilla-tilt.min.js"></script>
+   <!-- aos js -->
+   <script src="assets/js/aos.js"></script>
+
+   <!-- splittext js -->
+   <script src="assets/js/SplitText.min.js"></script>
+   <!-- scrollto js -->
+   <script src="assets/js/ScrollToPlugin.min.js"></script>
+   <!-- scrolltrigger js -->
+   <script src="assets/js/ScrollTrigger.min.js"></script>
+   <!-- gsap js -->
+   <script src="assets/js/gsap.min.js"></script>
+   <!-- ==== / js dependencies end ==== -->
+   <!-- template settings js -->
+   <script src="assets/js/template-settings.js"></script>
+   <!-- main js -->
+   <script src="assets/js/custom.js"></script>
+<!--    <script src="utils.js"></script>-->
+<!--   <script>-->
+<!--      document.addEventListener('DOMContentLoaded', function () {-->
+<!--         checkLogin();-->
+<!--      });-->
+<!--   </script>-->
+</body>
+
+</html>

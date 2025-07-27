@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>汉调二簧</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3d3944128-72e3-4798-9984-6150852925b1_12.1.png?Expires=1776599107&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=KGAXTl8e96bE1XgjtLHGkBoiztk%3D">
+                    <span>角色行当</span>
+                </div>
+                <div class="box">
+                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3556da828-98e0-4206-9eac-d7122c0d8969_12.2.png?Expires=1776599129&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=lkN9AXyBYJ3vqjHqbK12lKm%2BrYE%3D">
+                    <span>唱腔风格</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/30367f78e-afcb-4688-b68e-6fb5fafd0888_12.3.png?Expires=1776599147&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=NTBQ0oXCL96cTaYlZEx%2F9yQ8iRo%3D">
+                    <span>伴奏乐器</span>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>汉调二簧的文化特征
+            </h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">角色行当的多样性与独特性
+
+                        </h3>
+                        <p>汉调二簧的角色行当丰富多样，涵盖了传统戏剧中的末、净、生、旦、丑等基本类型。每一个角色都有其独特的演绎方式，特别是在旦角的表现上，常常运用假声来达到更细腻的表演效果。生角则多用真声，声音浑厚且有力，表现男性角色的阳刚之气；旦角则常以高亢、柔和的假声来表现女性角色的柔情与细腻。此外，净角则运用激烈的虎音，表现强烈的戏剧冲突和人物的豪情。通过这一系列行当的表现，汉调二簧能够呈现出复杂的情感层次和人物性格的多样性。
+                        </p>
+
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/340c54517-5861-495f-b471-ba345b47a7c2_12.4.png?Expires=1776599171&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6nx4TYrNE2B7DyuffAgAkslUlbw%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ba695ec7-da39-4d8e-912f-6cc431fcd7bb_12.5.png?Expires=1776599188&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=fCjkmF38ddXsvPC6HneufCfUFlQ%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">唱腔风格的多变性与情感表达
+
+                        </h3>
+                        <p>
+                            汉调二簧的唱腔是其最具特色的部分之一，主要以西皮和二簧为主。这两种主要的腔调不仅在技术上有所不同，还在情感的传达上各具特色。西皮主要用于表现欢愉、喜悦的情感，其节奏较快，旋律也较为明快，常用于戏剧中的轻松场面和人物的愉快心情。而二簧则更加悠扬悲凉，常用于表现人物的哀伤、严肃或戏剧性较强的场面。通过这两种腔调的交替使用，汉调二簧能够在情感上进行细腻的对比，增强观众的代入感，使戏剧的情感表达更加丰富与真实。
+                        </p>
+
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/304e10f27-ac99-405e-9005-0d560f69240f_12.6.png?Expires=1776599206&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=d7Z5lXeqjKuLXSk2dHPBJ5FFo1Y%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32c2a935c-72c1-4946-b37b-859fca0aa92b_12.6.png?Expires=1776599217&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=fROFc6BtG7Ncf7Lf6uP%2B2WvjmAE%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">伴奏乐器的多样化与地方色彩</h3>
+                        <p>汉调二簧的伴奏乐器种类繁多，既有弦乐器，如胡琴、二胡、月琴、三弦等，也有吹奏乐器，如唢呐、笛子等。此外，剧中的武场还会使用鼓类乐器，如暴鼓、尖鼓和锣等。这些乐器的使用不仅丰富了音乐的层次感，还增加了戏剧的表现力和气氛的渲染。例如，胡琴和二胡常用于文场，演奏出细腻的旋律与情感，而唢呐的高亢激烈则常用于表现剧中人物的激烈情s绪或重要场景。乐器的使用不仅增强了剧本的表现力，还赋予了汉调二簧独特的地方色彩，反映了其深厚的民间音乐传统。
+                        </p>
+                        <p>
+                            总之，汉调二簧的文化特征通过其多样化的角色行当、细腻且富有层次的唱腔风格，以及伴奏乐器的丰富运用，展现了这一剧种的独特魅力。这些特征不仅体现了陕西及湖北一带的地方文化特色，也使汉调二簧成为了中国传统戏剧中的重要组成部分。
+                        </p>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

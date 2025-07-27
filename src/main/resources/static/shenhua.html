@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>黄河拾遗--神话篇</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        :root {
+            --xuan-bg: #f8f4e8;
+            --ink-black: #2d1e12;
+            --vermillion: #b02a1f;
+            /* 调整朱砂色，使其更柔和 */
+            --gold: #b68c42;
+            /* 适配黄色导航栏 */
+            --paper-texture: url('https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745238896479_12d0b10a-8591-4e7c-a68d-b0c91f6312fc_29.png?Expires=1776774897&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=HWJ%2BIlDXwC357BToXopNDf4Wy5c%3D');
+        }
+
+
+        /* body {
+                background: var(--xuan-bg);
+                min-height: 100vh;
+                padding: 2rem;
+                font-family: 'SimSun', serif;
+                text-align: center;
+            } */
+        .xinwen {
+            background-image: url("https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745238896479_12d0b10a-8591-4e7c-a68d-b0c91f6312fc_29.png?Expires=1776774897&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=HWJ%2BIlDXwC357BToXopNDf4Wy5c%3D");
+            min-height: 100vh;
+            padding: 2rem;
+            /* max-width: 85%; */
+            font-family: 'SimSun', serif;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.3rem;
+            font-family: 'LiSu', '隶书', cursive;
+            color: var(--ink-black);
+            text-align: center;
+            position: relative;
+            padding: 1.0rem 2rem;
+            margin: 2rem auto;
+            display: inline-block;
+            background:
+                linear-gradient(15deg,
+                    rgba(197, 161, 90, 0.1) 0%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(203, 61, 47, 0.1) 100%),
+                url('data:image/svg+xml;utf8,<svg width="120" height="12" viewBox="0 0 120 12" xmlns="http://www.w3.org/2000/svg"><path d="M5 6Q15 3 25 6 35 9 45 6 55 3 65 6 75 9 85 6 95 3 105 6 115 9 115 6" stroke="%23cb3d2f" fill="none" stroke-width="1.5" opacity="0.8"/></svg>') bottom center/contain no-repeat;
+
+            /* 书法文字阴影 */
+            text-shadow:
+                2px 2px 0px rgba(197, 161, 90, 0.2),
+                4px 4px 0px rgba(203, 61, 47, 0.1);
+
+            /* 立体边框效果 */
+            border: 3px double var(--gold);
+            border-image:
+                linear-gradient(135deg,
+                    var(--gold) 20%,
+                    transparent 50%,
+                    var(--vermillion) 80%) 1;
+
+            /* 卷轴展开动画 */
+            animation: scrollUnfold 1s ease-out forwards;
+            transform-origin: top center;
+
+            /* 印章伪元素 */
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background:
+                    linear-gradient(45deg,
+                        var(--vermillion) 0%,
+                        #b02a1f 100%);
+                opacity: 0.8;
+                clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+            }
+
+            &::before {
+                left: -20px;
+                top: -20px;
+            }
+
+            &::after {
+                right: -20px;
+                bottom: -20px;
+                transform: rotate(180deg);
+            }
+
+            /* 悬停动效 */
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+            &:hover {
+                transform:
+                    rotate(-1deg) scale(1.02);
+                box-shadow:
+                    0 10px 30px rgba(45, 30, 18, 0.15),
+                    0 0 30px rgba(197, 161, 90, 0.1);
+            }
+        }
+
+        @keyframes scrollUnfold {
+            0% {
+                transform:
+                    scaleY(0.8) rotate(-2deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform:
+                    scaleY(1) rotate(-1deg);
+                opacity: 1;
+            }
+        }
+
+
+        /* 新闻标题样式 */
+
+        /* ========== 🌟 标题样式优化 🌟 ========== */
+        .shop-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+
+        .shop-header p {
+            font-size: 1.4rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            line-height: 2;
+            color: #4a2c2a;
+            /* 黄河泥沙色 */
+            font-family: 'ZCOOL XiaoWei', '华文楷体', serif;
+            text-indent: 2em;
+            padding: 30px 50px;
+            position: relative;
+            background:
+                linear-gradient(45deg, #fff5e6 25%, #ffe4c4 100%),
+                url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==');
+            /* 宣纸纹理 */
+            border: 3px double #8b4513;
+            /* 青铜器纹路色 */
+            border-radius: 0 20px 20px 0;
+            box-shadow:
+                5px 5px 15px rgba(139, 69, 19, 0.1),
+                inset 0 0 20px rgba(255, 215, 0, 0.1);
+            text-shadow: 0.5px 0.5px 1px rgba(139, 69, 19, 0.3);
+        }
+
+        /* 左侧黄河纹样装饰 */
+        .shop-header p::before {
+            content: "";
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 120%;
+            background:
+                linear-gradient(to right,
+                    #8b4513 20%,
+                    #cd853f 50%,
+                    #8b4513 80%);
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+        }
+
+        /* 右侧黄河浪花纹样 */
+        .shop-header p::after {
+            content: "";
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 120%;
+            background:
+                linear-gradient(to right,
+                    #8b4513 20%,
+                    #cd853f 50%,
+                    #8b4513 80%);
+            clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+        }
+
+        /* 神话开始 */
+        .shenhua section {
+            padding: 1em;
+            margin-block: 1lh;
+            width: 75vw;
+            background:
+                linear-gradient(15deg,
+                    rgba(45, 30, 18, 0.9) 0%,
+                    rgba(62, 45, 29, 0.95) 100%),
+                url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==');
+            color: #e0d6c8;
+            border: 3px solid #3e2d1d;
+            border-image:
+                linear-gradient(45deg,
+                    #3e2d1d 0%,
+                    #b89b5a 50%,
+                    #3e2d1d 100%) 1;
+            box-shadow:
+                0 0 20px rgba(184, 155, 90, 0.1),
+                0 10px 30px rgba(0, 0, 0, 0.3),
+                inset 0 0 15px rgba(184, 155, 90, 0.05);
+            overflow: visible;
+
+            /* 新增的居中设置 */
+            margin-left: auto;
+            margin-right: auto;
+
+            /* 或者使用 flexbox 居中（如果父容器是 flex） */
+            display: block;
+            text-align: center;
+
+        }
+
+        .shenhua h1 {
+            font-family: 'LiSu', '隶书', cursive;
+            color: #b89b5a;
+            font-size: 2.5rem;
+            text-shadow:
+                2px 2px 1px rgba(0, 0, 0, 0.3),
+                0 0 10px rgba(184, 155, 90, 0.2);
+        }
+
+        .shenhua p {
+            margin-block: 1lh;
+            line-height: 1.2;
+        }
+
+        .shenhua img {
+            max-width: 100%;
+            width: 400px;
+            shape-margin: 0.75em;
+        }
+
+        .shenhua img:hover {
+            transform: scale(1.02);
+
+        }
+
+        .shenhua .elephants {
+            float: right;
+            margin-right: -15vw;
+            shape-outside: url(https://assets.codepen.io/4787486/elephant-and-calf.svg);
+        }
+
+        .shenhua .tree {
+            float: left;
+            margin-left: -15vw;
+            shape-outside: url(https://assets.codepen.io/4787486/tree.svg);
+        }
+
+        .shenhua .orion {
+            float: left;
+            margin-top: 3em;
+            margin-left: -12vw;
+            shape-outside: url(https://assets.codepen.io/4787486/orion-III.svg);
+        }
+
+        /* * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 1em;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: system-ui, sans-serif;
+            font-size: 1em;
+            font-weight: 200;
+            line-height: 1;
+        } */
+
+        .shenhua .roma {
+            display: grid;
+            place-content: center;
+            position: fixed;
+            bottom: 2vmin;
+            right: 2vmin;
+            width: 5.5vmin;
+            min-width: 30px;
+            aspect-ratio: 1;
+            background-image: linear-gradient(#7070ff 50%, #008000 0);
+            background-size: cover;
+            opacity: 0.5;
+            transition: opacity 0.3s ease, scale 0.3s ease;
+        }
+
+        .shenhua .roma img {
+            max-width: 100%;
+            transition: rotate 10s linear;
+        }
+
+        .shenhua .roma:hover {
+            opacity: 1;
+            scale: 1.2;
+        }
+
+        .shenhua .roma:hover>img {
+            rotate: -720deg;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 9]>
+         <p class="browserupgrade">
+            You are using an <strong>outdated</strong> browser. Please
+            <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+            your experience and security.
+         </p>
+         <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+        <!-- ==== 主体部分 ==== -->
+    <div class="daohang">
+        <!-- logo 部分，设置为左侧 -->
+        <div class="logo">
+            <img src="assets/image/logo2.png" alt="Logo">
+        </div>
+        <!-- 导航栏部分 -->
+        <button class="mobile-menu-btn">☰</button>
+        <nav>
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="index%20copy.html">首页</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">子菜单1</a></li>
+                                                         <li><a href="#">子菜单2</a></li>
+                                                         <li><a href="#">子菜单3</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="3.1wenhua.html">文化篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                        <li><a href="3.1wenhua.html">传统技艺</a></li>
+                        <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                        <li><a href="3.1wenhua.html">传统音乐</a></li>
+                        <li><a href="3.1wenhua.html">传统体育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="renwu.html">治水篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="renwu.html">治水英雄颂</a></li>
+                        <li><a href="zsjy.html">治水技奇谈</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="shenhua.html">神话篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="shenhua.html">大禹治水</a></li>
+                        <li><a href="shenhua.html">黄河母亲</a></li>
+                        <li><a href="shenhua.html">女娲补天</a></li>
+                        <li><a href="shenhua.html">伏羲创世</a></li>
+                        <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="zhengce.html">政策篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="zhengce.html">要闻</a></li>
+                        <li><a href="zhengce.html">地方新闻</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="rhudong.html">趣味黄河</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">互动答题</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="chat.html">智慧AI</a>
+                    <!-- <ul class="sub-menu">
+                                                                           <li><a href="# ">互动答题</a></li>
+                                                                        </ul> -->
+                </li>
+            </ul>
+        </nav>
+        <div class="dengluzc">
+            <a href="shijianshu.html">黄河
+                史书</a>
+            <a href="dlzc.html">登录</a>
+            <a href="dlzc.html">注册</a>
+
+        </div>
+    </div>
+        <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        </script>
+        <div class="xinwen">
+            <div class="shop-header">
+                <p>神话宛如璀璨星辰，与黄河文化紧密相连，交相辉映。它们或讲述黄河的神秘起源，或描绘英雄治水的壮丽史诗，或演绎龙的传奇故事，多维度地展现了黄河文化的博大精深。这些神话不仅承载着黄河文化的深厚底蕴，更在世代相传中，唤起人们对自然的虔诚敬畏、对英雄的崇高敬仰以及对美好生活的无限憧憬。
+                </p>
+            </div>
+            <div class="shenhua">
+                <section>
+                    <img id="elephants" class="elephants" src="https://assets.codepen.io/4787486/elephant-and-calf.svg"
+                        alt="">
+                    <h1>大禹治水：以疏导定山河脉络，奠定华夏地理基因</h1>
+                    <p>尧舜时代，黄河洪水肆虐，淹没田舍，百姓流离失所。鲧奉命治水，九年筑堤堵水，却无果而终，被舜帝处决。其子禹继承遗志，誓平水患。</p>
+                    <p>禹深知堵不如疏，亲率百姓踏勘九州，规划河道。他手持石斧，身先士卒，凿山开渠，引洪入海。治水十三年，三过家门而不入。首次过门，妻临产呻吟，子啼待哺，他忍痛离去；二次过门，幼子唤父，他挥手泪别；三次过门，儿已长成，仍无暇团聚。
+                    </p>
+                    <p>至龙门山，山岩挡道，洪水淤塞。禹率众凿山，昼夜不息，终将山岩劈开，洪水奔涌东流。百姓称此山口为“禹门口”。</p>
+                    <p>经年累月，河道疏通，洪水退却，良田重现。禹划九州，定水土，教民耕种，万民归心。舜帝禅位，禹建夏朝，铸九鼎，划华夏。</p>
+                    <p>禹治水，非独力胜天，乃因势利导，顺势而为。其公而忘私、坚韧不拔之精神，传颂千古。黄河岸畔，禹王庙香火不绝；华夏儿女，永记治水之功。</p>
+                </section>
+
+                <section style="background: black;">
+                    <img id="orion" class="orion" src="https://assets.codepen.io/4787486/orion-III.svg" alt="">
+                    <h1>黄河母亲：神女化身为水，乳汁滋养文明胚胎</h1>
+                    <p>远古洪荒，黄河流域焦土千里。烈日炙烤下，大地龟裂如老人皱纹，枯骨遍野，百姓跪在干涸的河床，喉咙里挤出沙哑的祈雨声。</p>
+                    <p>忽闻天际环佩叮当，云霞翻涌间现神女宓妃。她身披鲛绡，发间簪星，手持玉净瓶，瓶中琼浆翻涌。“吾乃河洛之神，见苍生受苦，特来赐乳。”神女轻启朱唇，琼浆化作金流，注入龟裂大地。霎时，黄沙腾起绿雾，枯枝绽出新芽，干涸河道涌出清波。
+                    </p>
+                    <p>宓妃不忍离去，化入黄河血脉。她的乳汁化作滔滔河水，滋养两岸子民。先民们逐水而居，播撒粟种，结网捕鱼。神女更以神力驯服洪水猛兽：暴雨倾盆时，她幻作白龙盘踞河口；烈日炙烤时，便遣甘霖润泽禾苗。
+                    </p>
+                    <p>岁月流转，黄河流域渐成沃野。半地穴里飘起炊烟，彩陶上绘满渔猎，先民在神女护佑下孕育文明胚胎。他们称黄河为“母亲河”，在河岸筑起祭坛，以五谷献祭，传唱《河图》古谣。</p>
+                    <p>
+                        然神女灵力渐衰。她将双目化作日月，照耀稼穑；青丝散作支流，灌溉桑田；最后以魂灵融为泥沙，堆积成华北平原。如今，黄河水仍裹挟着远古记忆奔涌，岸边古柏年轮里藏着神女心跳，每道河湾都似她温柔的臂弯，继续拥抱着这片土地。
+                    </p>
+
+                </section>
+
+                <section>
+                    <img id="tree" class="tree" src="https://assets.codepen.io/4787486/tree.svg" alt="">
+                    <h1>女娲补天：五彩熔岩锁狂流，阴阳重归太极图</h1>
+                    <p>在很久很久以前，天地间发生了一场巨大的灾难。四根支撑天地的巨柱突然断裂，天空瞬间裂开了一个巨大的口子，天河之水如猛兽般汹涌而下，大地被洪水淹没，山林燃起熊熊大火，猛兽也趁机出来伤害百姓，整个世界陷入了一片混乱和恐怖之中。
+                    </p>
+                    <p>女娲看到人类遭受如此苦难，心中十分悲痛。她决心要拯救这个世界，修补好破损的天空。女娲四处寻找补天的材料，她翻山越岭，涉过急流，历经千辛万苦，终于在一座深山里找到了五彩石。这些五彩石散发着奇异的光芒，仿佛蕴含着神秘的力量。
+                    </p>
+                    <p>女娲开始炼石补天。她在山脚下架起了一堆巨大的篝火，将五彩石放入火中，用神力催动火焰，经过七七四十九天的艰苦炼制，五彩石终于被炼成了粘稠的熔岩。女娲用巨大的双手捧起熔岩，向着天空的裂口飞去。
+                    </p>
+                    <p>她飞到裂口处，将熔岩一点点地填补进去。每一次填补，天空的裂口就缩小一些。然而，裂口实在太大了，女娲感到自己的力量渐渐不支。但她心中只有一个信念：一定要拯救人类。</p>
+                    <p>
+                        就在女娲感到疲惫不堪的时候，她突然领悟到阴阳平衡的道理。她施展神力，将五彩熔岩按照阴阳的规律排列，形成了一个巨大的太极图。太极图散发着柔和而强大的光芒，将天河之水阻挡在外。
+                    </p>
+                    <p>
+                        随着最后一块五彩熔岩的填补，天空的裂口终于被完全修补好了。天河之水不再倾泻，洪水渐渐退去，大火也熄灭了。猛兽被女娲的神力震慑，躲回了山林深处。大地又恢复了往日的生机，人类重新过上了幸福的生活。女娲补天的壮举，成为了人们口中永远传颂的神话。
+                    </p>
+                </section>
+                <section style="background: black;">
+                    <img id="orion" class="orion" src="https://assets.codepen.io/4787486/orion-III.svg" alt="">
+                    <h1>伏羲创世：浪纹解码天地道，一画开天明玄机</h1>
+                    <p>
+                        在遥远的古代，黄河流域洪水泛滥，大地一片汪洋，百姓生活苦不堪言。在这混沌迷茫之时，一位伟大的智者——伏羲诞生了。
+                    </p>
+                    <p>伏羲自幼聪慧过人，他常常站在波涛汹涌的黄河岸边，凝视着那起伏的浪涛，思索着天地间的奥秘。他发现黄河的浪纹变化无穷，时而舒缓如丝带，时而汹涌如猛兽，这看似无序的浪纹中，似乎隐藏着某种规律。
+                    </p>
+                    <p>一日，伏羲在黄河边陷入沉思，恍惚间，他看到河中浪纹幻化成各种奇妙的符号。突然，一道灵光闪过，他意识到这些符号或许就是解开天地奥秘的钥匙。于是，他日夜观察黄河浪纹的变化，仔细研究其中的规律，逐渐领悟到了阴阳相生、万物变化的道理。
+                    </p>
+                    <p>为了将这些感悟记录下来，伏羲决定创造一种符号系统。他拿起树枝，在地上画下了一道简单的横线“—”，这看似简单的一画，却蕴含着无尽的玄机。这一画，代表着阳，是天地间积极向上的力量；而后，他又画下了一道断开的横线“--”，代表着阴，是天地间柔和包容的力量。
+                    </p>
+                    <p>
+                        伏羲用这两组符号，不断地组合变化，演绎出了八卦。每一个卦象都代表着一种自然现象或事物发展的规律，如乾卦象征天，坤卦象征地，震卦象征雷，巽卦象征风等。通过八卦，伏羲为人们解读了天地间的种种奥秘，预测了自然的变化，指导人们如何顺应自然、趋利避害。
+                    </p>
+                    <p>从此，人类有了认识世界、理解宇宙的工具。伏羲一画开天，用黄河浪纹解码天地之道，为人类文明的发展奠定了坚实的基础。他的智慧如同黄河之水，源远流长，滋养着后世子孙，让中华民族在漫长的历史长河中不断繁衍生息，创造出灿烂的文明。
+                    </p>
+
+                </section>
+                <section>
+                    <img id="elephants" class="elephants" src="https://assets.codepen.io/4787486/elephant-and-calf.svg"
+                        alt="">
+                    <h1>黄帝蚩尤：青铜血火淬龙图，炎黄盟誓启华章</h1>
+                    <p>在古老的黄河流域，生活着众多部落。其中，黄帝部落和蚩尤部落最为强大。蚩尤部落勇猛好战，他们擅长铸造青铜兵器，所到之处，战火纷飞。而黄帝部落则以仁德著称，深受百姓爱戴。
+                    </p>
+                    <p>蚩尤野心勃勃，妄图称霸黄河流域。他率领着装备精良的军队，向黄帝部落发起了进攻。一时间，黄河岸边硝烟弥漫，喊杀声震天。黄帝率领部落勇士奋起抵抗，双方在逐鹿之野展开了一场惊心动魄的大战。
+                    </p>
+                    <p>蚩尤的军队挥舞着青铜武器，攻势如潮。黄帝的勇士们毫不畏惧，他们凭借着顽强的意志和灵活的战术，与敌人展开了殊死搏斗。战场上，鲜血染红了土地，青铜兵器碰撞出耀眼的火花。</p>
+                    <p>为了战胜蚩尤，黄帝得到了九天玄女的帮助，学会了兵法阵图。他布下奇阵，将蚩尤的军队引入其中。蚩尤的军队在阵中迷失了方向，陷入了混乱。黄帝趁机指挥勇士们发起反击，一时间，杀声震天，蚩尤的军队节节败退。
+                    </p>
+                    <p>经过激烈的战斗，黄帝终于战胜了蚩尤。这场大战虽然残酷，但也让两个部落都认识到了团结的重要性。战后，黄帝部落和炎帝部落（此前炎帝部落已与黄帝部落有过交流融合）举行了一场盛大的盟誓仪式。</p>
+                    <p>在黄河之畔，他们宰杀牲畜，歃血为盟，发誓从此团结一心，共同守护这片土地。这一盟誓，开启了炎黄子孙团结奋进的新篇章。从此，华夏民族在这片古老的土地上繁衍生息，创造出了辉煌灿烂的文明。黄帝和蚩尤的这场大战，也成为了中华民族历史上一段波澜壮阔的传奇，激励着一代又一代的华夏儿女勇往直前。
+                    </p>
+                </section>
+
+            </div>
+        </div>
+
+
+        <!-- ==== 主体部分结束 ==== -->
+
+        <!-- ==== custom cursor start ==== -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+        <!-- ==== / custom cursor end ==== -->
+        <!-- ==== scroll to top start ==== -->
+        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+            <span></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </button>
+        <!-- ==== / scroll to top end ==== -->
+    </div>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

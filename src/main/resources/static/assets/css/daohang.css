@@ -1,0 +1,485 @@
+        /* 导航部分开始 */
+        /* 导航栏整体背景 */
+        .daohang {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 30, 30, 0.95) 100%);
+            padding: 15px 0px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+
+        }
+
+        /* Logo 样式 */
+        .daohang .logo {
+            width: 180px;
+        }
+
+        .daohang .logo img {
+            width: auto;
+            margin-left: 50px;
+            height: 80px;
+            border-radius: 12px;
+            /* 添加圆角 */
+            object-fit: contain;
+            /* 保持比例不变缩放 */
+            /* padding: 4px; */
+            /* 添加内边距，避免贴边 */
+            /* background-color: #fff; */
+            /* 设置背景色以更清晰展示 logo */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            /* 柔和阴影 */
+            transition: transform 0.3s ease;
+            /* 添加交互动画效果 */
+        }
+
+        .daohang .logo img:hover {
+            transform: scale(1.05);
+            /* 鼠标悬停轻微放大 */
+        }
+
+        /* 导航菜单的样式 */
+        .daohang .main-nav {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-family: 'KaiTi', 'SimHei', serif;
+            flex: 1;
+            justify-content: center;
+        }
+
+        /* 每个菜单项 */
+        .daohang .nav-item {
+            position: relative;
+            margin: 0 12px;
+            text-align: center;
+        }
+
+        .daohang .nav-item>a {
+            font-size: clamp(15px, 16vw, 20px);
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 20px;
+            display: block;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .daohang .nav-item>a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 8px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .daohang .nav-item>a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .daohang .nav-item>a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        /* 子菜单 */
+        .daohang .sub-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 30, 30, 0.95) 100%);
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            width: 200px;
+            z-index: 100;
+        }
+
+        /* 鼠标悬停时显示子菜单 */
+        .daohang .nav-item:hover .sub-menu {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .daohang .sub-menu li {
+            margin: 5px 0;
+            z-index: 100;
+        }
+
+        .daohang .sub-menu li a {
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .daohang .sub-menu li a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .daohang .sub-menu li a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .daohang .sub-menu li a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+        }
+
+        /* 登录注册按钮样式 */
+        .daohang .dengluzc {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-right: 50px;
+        }
+
+        .daohang .dengluzc a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            background: linear-gradient(45deg, rgba(139, 69, 19, 0.7), rgba(160, 82, 45, 0.7));
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-size: 16px;
+            font-weight: bold;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .daohang .dengluzc a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.5), rgba(255, 165, 0, 0.5));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .daohang .dengluzc a:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, rgba(139, 69, 19, 0.9), rgba(160, 82, 45, 0.9));
+            color: #fff;
+        }
+
+        .daohang .dengluzc a:hover::before {
+            opacity: 1;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        /* 移动端按钮适配 */
+        @media (max-width: 1200px) {
+            .dengluzc .nav-item>a {
+                /* font-size: 14px; */
+                padding: 10px 15px;
+            }
+
+            .main-nav {
+                display: none;
+            }
+        }
+
+        /* ===== 中等屏幕黄金比例方案 (1200-768px) ===== */
+        @media (max-width: 1200px) and (min-width: 768px) {
+            .daohang {
+                padding: 8px 20px;
+                background: linear-gradient(135deg,
+                        rgba(20, 20, 20, 0.98) 0%,
+                        rgba(40, 40, 40, 0.97) 100%);
+            }
+
+            /* 智能LOGO缩放系统 */
+            .logo {
+                flex: 0 1 12%;
+                /* 黄金比例分配 */
+                min-width: 100px;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .logo img {
+                height: 58px;
+                margin-left: 0px;
+                filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.1));
+            }
+
+            /* 动态导航核心 */
+            .main-nav {
+                flex: 1 1 68%;
+                gap: 4px;
+                padding: 0 2%;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .nav-item {
+                scroll-snap-align: start;
+                margin: 0 6px;
+                position: relative;
+            }
+
+            .nav-item>a {
+                font-size: clamp(14px, 1.25vw, 16px);
+                /* 视口动态字体 */
+                padding: 10px 16px;
+                letter-spacing: 0.05em;
+                backdrop-filter: blur(4px);
+                border: 1px solid transparent;
+                transition:
+                    transform 0.3s ease,
+                    background 0.2s,
+                    border-color 0.4s;
+            }
+
+            .nav-item>a:hover {
+                transform: translateY(-1px);
+                border-color: rgba(255, 215, 0, 0.3);
+                background: linear-gradient(135deg,
+                        rgba(255, 215, 0, 0.08) 0%,
+                        rgba(255, 215, 0, 0.04) 100%);
+            }
+
+            /* 子菜单微交互 */
+            .sub-menu {
+                width: 160px;
+                background: rgba(30, 30, 30, 0.98);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(12px);
+            }
+
+            .sub-menu li a {
+                padding: 10px 16px;
+                font-size: 13px;
+                position: relative;
+            }
+
+            .sub-menu li a::before {
+                content: '';
+                position: absolute;
+                left: 8px;
+                top: 50%;
+                width: 4px;
+                height: 4px;
+                background: #ffd700;
+                transform: translateY(-50%);
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            .sub-menu li a:hover::before {
+                opacity: 1;
+            }
+
+            /* 登录区域空间优化 */
+            .dengluzc {
+                flex: 0 1 20%;
+                margin-right: 20px;
+                gap: 8px;
+            }
+
+            .dengluzc a {
+                padding: 8px 18px;
+                font-size: 13px;
+                background: linear-gradient(45deg,
+                        rgba(139, 69, 19, 0.8),
+                        rgba(101, 67, 33, 0.8));
+                border-radius: 20px;
+            }
+
+            /* 动态呼吸间隙 */
+            .nav-item::after {
+                content: '';
+                position: absolute;
+                right: -8px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 24px;
+                background: linear-gradient(to bottom,
+                        transparent 0%,
+                        rgba(255, 215, 0, 0.2) 50%,
+                        transparent 100%);
+            }
+
+            .nav-item:last-child::after {
+                display: none;
+            }
+        }
+
+        /* ===== 精致微调层 (992-768px) ===== */
+        @media (max-width: 992px) and (min-width: 768px) {
+            .daohang {
+                padding: 8px 15px;
+            }
+
+            .logo img {
+                height: 54px;
+            }
+
+            .nav-item>a {
+                padding: 8px 14px;
+                font-size: clamp(13px, 1.15vw, 15px);
+            }
+
+            .sub-menu {
+                width: 140px;
+            }
+
+            .dengluzc a {
+                padding: 7px 16px;
+            }
+
+            /* 激活动态投影 */
+            .nav-item:hover>a {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        /* 移动端菜单处理 */
+        @media (max-width: 992px) {
+            .daohang {
+                position: relative;
+                padding: 10px;
+            }
+
+            .daohang .logo {
+                width: 120px;
+                margin-left: 10px;
+            }
+
+            .daohang .logo img {
+                height: 50px;
+            }
+
+            /* 隐藏主导航 */
+            .daohang .main-nav {
+                display: none;
+            }
+
+            /* 显示移动菜单按钮 */
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 24px;
+                /* margin-right: 15px; */
+                margin-left: 35px;
+            }
+
+            /* 调整登录注册区域 */
+            .daohang .dengluzc {
+                margin-right: 20px;
+                gap: 10px;
+            }
+
+            .daohang .dengluzc a {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            /* 展开的移动菜单 */
+            .main-nav.active {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: rgba(0, 0, 0, 0.95);
+                padding: 15px;
+            }
+
+            .main-nav.active .nav-item {
+                margin: 8px 0;
+            }
+
+            .main-nav.active .sub-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                background: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        /* 小屏幕手机优化 */
+        @media (max-width: 480px) {
+            .daohang {
+                gap: 10px;
+            }
+
+            .daohang .dengluzc {
+                margin-right: 10px;
+            }
+
+            .daohang .dengluzc a {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+
+            .daohang .logo {
+                width: 100px;
+            }
+
+            .daohang .logo img {
+                height: 45px;
+            }
+        }
+
+        /* 分隔线 */
+        .daohang .nav-divider {
+            height: 30px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 0 15px;
+        }
+
+        /* 导航部分结束 */

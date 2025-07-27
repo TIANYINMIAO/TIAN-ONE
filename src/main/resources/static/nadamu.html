@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 那达慕大会</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 1500px;
+            控制最大宽度，避免太大 */
+            max-height: 750px;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==== 进入动画 ==== -->
+    <div class="preloader">
+        <i class="icon-donation"></i>
+        <p>黄河文化</p>
+    </div>
+    <div class="daohang">
+        <!-- logo 部分，设置为左侧 -->
+        <div class="logo">
+            <img src="assets/image/logo2.png" alt="Logo">
+        </div>
+        <!-- 导航栏部分 -->
+        <button class="mobile-menu-btn">☰</button>
+        <nav>
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="index%20copy.html">首页</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">子菜单1</a></li>
+                                                         <li><a href="#">子菜单2</a></li>
+                                                         <li><a href="#">子菜单3</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="3.1wenhua.html">文化篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                        <li><a href="3.1wenhua.html">传统技艺</a></li>
+                        <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                        <li><a href="3.1wenhua.html">传统音乐</a></li>
+                        <li><a href="3.1wenhua.html">传统体育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="renwu.html">治水篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="renwu.html">治水英雄颂</a></li>
+                        <li><a href="zsjy.html">治水技奇谈</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="shenhua.html">神话篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="shenhua.html">大禹治水</a></li>
+                        <li><a href="shenhua.html">黄河母亲</a></li>
+                        <li><a href="shenhua.html">女娲补天</a></li>
+                        <li><a href="shenhua.html">伏羲创世</a></li>
+                        <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="zhengce.html">政策篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="zhengce.html">要闻</a></li>
+                        <li><a href="zhengce.html">地方新闻</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="rhudong.html">趣味黄河</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">互动答题</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="chat.html">智慧AI</a>
+                    <!-- <ul class="sub-menu">
+                                                                           <li><a href="# ">互动答题</a></li>
+                                                                        </ul> -->
+                </li>
+            </ul>
+        </nav>
+        <div class="dengluzc">
+            <a href="shijianshu.html">黄河
+                史书</a>
+            <a href="dlzc.html">登录</a>
+            <a href="dlzc.html">注册</a>
+
+        </div>
+    </div>
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('active');
+        });
+    </script>
+    <!-- ==== 主体部分 ==== -->
+    <section class="common-banner">
+        <div class="container">
+            <div class="row">
+                <div class="common-banner__content text-center">
+                </div>
+            </div>
+        </div>
+        <div class="banner-bg">
+            <video class="banner-video" autoplay muted loop playsinline>
+                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3496c9173-2ff4-4492-9bca-4ec0e37d0e3e_1.27.mp4?Expires=1776605021&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Zo4jINyPWv1G029iHX0KI1W7YYw%3D" type="video/mp4">
+                <source src="assets/videos/banner-video.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="shape">
+            <img src="assets/images/shape.png" alt="Image">
+        </div>
+        <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+        </div>
+    </section>
+    <!-- ==== / banner section end ==== -->
+    <!-- ==== faq section start ==== -->
+    <section class="faq">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-8 col-xl-6">
+                    <div class="faq__content">
+                        <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                            <span class="sub-title"><i
+                                    class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄河文化以其深厚的历史底蕴与包容性，为那达慕大会提供了丰富的滋养。作为蒙古族重要的传统节日，那达慕大会不仅承载了蒙古族的民族精神和文化特点，也与黄河流域的农业文化和多民族融合紧密相关。大会的马术、摔跤、射箭等项目，展现了黄河流域和草原文化的独特风采，成为这一地区文化交流的重要平台。黄河流域的文化积淀为大会提供了丰富的文化符号与表达方式，使得那达慕不仅仅是一场体育赛事，也是一种深刻的文化展示，体现了不同民族文化的相互融合与共同繁荣。
+                            </span>
+                            <h2 class="title-animation">走 进 <span>那达慕大会</span>
+
+                            </h2>
+                        </div>
+                        <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="accordion" id="accordion">
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            那达慕大会是什么？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                那达慕大会是蒙古族传统的节庆活动，通常包括马术、摔跤、射箭等竞技项目，也是一场集文化、体育与民族团结于一体的盛会。它不仅是蒙古族的体育竞技展示，也是蒙古族历史、风俗和信仰的重要体现。那达慕大会有着悠久的历史，其形式和内容深深植根于蒙古族的游牧文化中，展示了草原民族对自然的敬畏与对力量的推崇。大会的举办不仅仅是竞技的比拼，更是文化认同与自豪感的表达，通过这些传统项目，人们在庆祝胜利的同时，也传承了民族的英雄气概和草原精神。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            那达慕大会经历了哪些发展阶段？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                那达慕大会的起源可以追溯到蒙古草原上的古代游牧部落竞技和庆祝活动，最初是为了表彰英雄人物和增强部落间的联系。随着历史的发展，那达慕大会逐渐演变为一种区域性的民族大庆，涵盖了更广泛的文化和社会活动，成为了蒙古族和其他草原民族的传统节日。经过数百年的发展，这一大会不仅成为蒙古族的文化象征，也吸引了其他民族的参与，成为展示草原文化的独特平台。随着现代社会的进步，那达慕大会的形式也不断创新，加入了更多现代元素，如科技展示、音乐会和国际赛事，令传统活动焕发新的生机。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            那达慕大会的艺术风格是如何形成的？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                那达慕大会的艺术风格以传统的蒙古草原文化为主，表现形式包括蒙古族传统舞蹈、音乐以及竞技活动。马术表演、摔跤和射箭等竞技项目，不仅展示了蒙古族的体育技巧，也具有很强的艺术观赏性。此外，传统的蒙古服饰和歌舞表演也为大会增添了浓郁的文化色彩。大会上的传统蒙古乐器演奏，如马头琴、长调歌唱等，既让观众感受到音乐的魅力，又展示了蒙古族人民在悠久历史中的文化积淀。每一项活动、每一个节目都体现了蒙古族人民对自然和生命的尊重与崇敬，展现出草原文化的独特韵味和精神风貌。
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                            aria-expanded="false" aria-controls="collapseFour">
+                                            那达慕大会如何为黄河文化增添加彩？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                那达慕大会通过展示蒙古族传统文化和体育活动，深化了黄河流域各民族间的文化交流。大会不仅吸引了各民族参与，也让人们更深刻地理解和体验蒙古族与黄河流域其他民族的互动与融合。这种跨文化的盛会为黄河文化增添了独特的民族特色和多元色彩。通过这场盛大的文化庆典，黄河流域的居民不仅能感受到草原文化的魅力，还能更好地理解和尊重其他民族的风俗习惯。那达慕大会为黄河文化增添的色彩，不仅表现在表演和竞技项目上，更在于它促使了民族间相互尊重与包容的文化氛围形成。
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                    <div class="faq__thumb d-none d-lg-block">
+                        <div class="faq__thumb-inner">
+                            <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32d733c11-a82c-4f69-bdf4-0b42ec0b6d50_1.28.png?Expires=1776605043&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2BIxcNS%2FCZEPaAGM7PuWjCeVxW0s%3D" alt="Image">
+                            </div>
+                            <div class="thumb-sm" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/34949371c-1d9f-4b00-80e3-50f3b4e26eea_1.29.png?Expires=1776605060&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ktPX6sk6vlbC56PRwlXdAJsqeL8%3D" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="shape d-none d-lg-block">
+            <img src="assets/images/faq/shape.png" alt="Image">
+        </div> -->
+    </section>
+    <!-- ==== / faq section end ==== -->
+    <section class="blog-main cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="col-12 col-xl-8">
+                    <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+
+                            <a href="ndm.html">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37919742a-7903-448f-a874-dd79008b502f_1.30.png?Expires=1776605074&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=C8LbPznMoEja1okwQpjuWa6C9Z0%3D" alt="Image">
+                            </a>
+
+                            <div class="tag">
+                                <a href="ndm.html"><i class="fa-solid fa-tags"></i>主要运动</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+                            <div class="blog__single-content">
+                                <h4><a href="ndm.html">主要运动：那达慕大会的体育盛典 </a></h4>
+                                <p>那达慕大会作为蒙古族传统的文化盛会，体育赛事是其中最具代表性的部分。大会的主要运动包括赛马、摔跤和射箭，这三项传统体育项目深深植根于蒙古族的历史与文化。赛马比赛是那达慕的亮点，骑手们骑着骏马在草原上飞驰，展现了蒙古族人民与马匹的深厚感情与卓越的骑术。摔跤是蒙古族最具代表性的传统体育项目，摔跤手们在场地上力争胜利，体现了力量与技巧的结合。射箭则展示了蒙古族人在草原上生存与狩猎的技能，这三项运动不仅是对体力和技巧的考验，也是对蒙古族精神与传统的传承与弘扬。
+                                </p>
+                            </div>
+                            <div class="blog__single-cta">
+                                <a href="ndm.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+                            <a href="#">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/366c1a1ee-b6c4-4da8-8f1b-e3075add2d46_1.31.png?Expires=1776605089&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=WFXMDHP6G8USoPsI1ceIJH%2BCW60%3D" alt="Image">
+                            </a>
+                            <div class="tag">
+                                <a href="#"><i class="fa-solid fa-tags"></i>传统盛会</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+                            <!-- <div class="blog__single-meta">
+                           <p><i class="icon-user"></i>Robert Fox</p>
+                           <p><i class="icon-message"></i>Comments (03)</p>
+                        </div> -->
+                            <div class="blog__single-content">
+                                <h4><a href="#">传统盛会：那达慕 </a></h4>
+                                <p>
+                                    “那达慕”有久远的历史。据铭刻在石崖上的《成吉思汗石文》载，早在1225年成吉思汗西征战败花刺子模后，就在布哈苏齐海地方，举行过盛大的那达慕大会。那以后，多少个世纪以来，每逢庆祝战功、祭旗点将、军民欢聚、盟旗聚会以及敖包祭祀等都举办那达慕活动。蒙古族是个尚武的民族。成吉思汗非常看重培养人的勇敢、机智、顽强，于是把骑马、射箭、摔跤统称为“男儿三艺”，作为士兵和民众素质训练的内容。在那达慕大会上，这“男儿三艺”也就成为民族体育的主要项目。
+                                    那达慕大会十分隆重，过去，每当举办草原那达慕大会时，方圆一二百里的牧民，都要穿上节日盛装，扶老携幼，带着蒙古包和日常用品，乘车骑马，从四面八方赶来赴会。远近的商贸小贩也赶来摆上店铺，出售日用品，收购畜产品。解放后，城里的那达慕大会虽比过去草原那达慕的韵味显得不足，但现代文化的进入，却使那达慕更壮观，更红火，更丰富多彩。
+                                </p>
+                            </div>
+                            <div class="blog__single-cta">
+                                <!-- <a href="yishutese.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                        class="fa-solid fa-arrow-right-long"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="assets/images/wenh/chuanjv/12.png" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="lianpu.html"><i class="fa-solid fa-tags"></i>脸谱</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+                                <div class="blog__single-meta">
+                           <p><i class="icon-user"></i>Robert Fox</p>
+                           <p><i class="icon-message"></i>Comments (03)</p>
+                        </div>
+                                <div class="blog__single-content">
+                                    <h4><a href="lianpu.html">川剧脸谱：巴蜀戏曲的瑰丽符号 </a></h4>
+                                    <p>
+                                        川剧脸谱是川剧表演艺术中不可或缺的重要组成部分，它不仅是塑造角色的视觉语言，更是历代川剧艺人共同创造并传承下来的艺术瑰宝。脸谱通过色彩、图案、线条的变化，展现人物的性格特征、身份地位和情感表达，使观众一眼便能识别角色的性格与定位。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="lianpu.html" aria-label="blog details" title="blog details">🌍 脸谱欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="blog-main__sidebar">
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/359c57515-8282-4fbd-80b5-5efab2b7b44e_1.32.png?Expires=1776605106&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=lFNQU4M%2BNorIfAO6hchQQyil%2FgQ%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>《草原之约》》</h6>
+                                <p>草原上的友谊与挑战
+                                </p>
+                                <p>在那达慕大会的摔跤赛中，两个年轻的摔跤选手彼此间有着深厚的友情，但这次比赛让他们真正意识到竞技精神和勇气的真正含义。比赛中的一番较量，既是力量的对抗，也是精神的碰撞，最终他们以友好的拥抱结束了这场比赛，展现了草原文化中“挑战与尊重”并存的独特精神。这场摔跤赛不仅是一场单纯的竞技比赛，也象征着草原民族在面对挑战时所展现的坚持与毅力，以及在竞争中始终保持的尊重与友谊。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/359c57515-8282-4fbd-80b5-5efab2b7b44e_1.32.png?Expires=1776605106&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=lFNQU4M%2BNorIfAO6hchQQyil%2FgQ%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>《马背上的舞蹈》</h6>
+                                <p>骑手与马匹展现草原文化的灵魂。
+
+
+                                </p>
+                                <p>那达慕大会的马术比赛总是充满激情与美丽，一位年轻的女骑手展示了她与马匹之间无与伦比的默契。在这场表演中，她骑乘的骏马如舞者般飞奔，腾空而起，优雅的舞步配合着民族音乐的节奏，仿佛整个草原都在与她同舞。这场表演不仅是体育竞技，也是蒙古族文化艺术的一部分，展现了人与自然和谐共生的深刻内涵。马术表演的背后，是对草原和自然深厚的情感，骑手与马匹之间的默契展现了草原民族生活的紧密联系与彼此依存的关系。
+                                </p>
+                            </div>
+                        </div>
+                        <!-- <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="assets/images/wenh/chuanjv/.png" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>传奇故事：戏台上的千面变幻</h6>
+                                    <p>相传，在川剧的戏台
+                                        上，隐藏着一面神奇的铜镜。凡是踏上舞台的戏曲艺人，只要对着镜子一照，便能幻化出不同的脸谱，而这些脸谱不仅是外在的妆容，更是角色性格与命运的映照。
+
+                                    </p>
+                                    <p>川剧的脸谱，色彩斑斓，寓意深远，每一种颜色、每一笔勾画，皆承载着巴蜀文化的厚重底蕴。<br>
+                                        🔴 红色：忠义无双，热血豪情<br>
+                                        ⚫ 黑色：刚直不阿，威武果断<br>
+                                        ⚪ 白色：阴险狡诈，诡计多端<br>
+                                        🔵🟢蓝色/绿色：桀骜不驯，英勇善战<br>
+                                        🟡⚪金色/银色：神秘莫测，超凡脱俗<br>
+                                    </p>
+                                </div>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3803ff690-24a6-4309-bda5-b3bc0b5884c8_1.35.mp4?Expires=1776605152&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=AWMeWTHowegR7nIBalDo%2F9TCAg4%3D" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>那达慕大会作为非物质文化遗产，在现代化的过程中得到了有效保护。政府和社会团体通过组织比赛、演出和文化交流活动，确保这一传统节庆形式得以传承与发扬。与此同时，许多与大会相关的技艺如传统摔跤、射箭和马术表演，也被列入了地方非遗名录，得到了更加系统的保护与推广。地方政府还通过建立文化传承基地、非遗文化馆等设施，培养后代对传统艺术的兴趣和热爱。通过这些手段，那达慕大会不仅保持了原汁原味的传统，还融入了当代元素，使其更加贴近现代生活，激发了年轻一代对传统文化的传承与创新热情。
+                            </p>
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>那达慕大会在现代社会中得到了广泛的传承和发展，尤其是在年轻一代中，通过媒体传播和现代技术的运用，更多人开始参与和了解这一传统节庆。与此同时，许多地区通过创新形式，如在城市举办的“迷你那达慕”，使传统活动与现代生活相结合，推动了这一文化的持续发展。随着社会的变迁，更多的社会力量开始关注这一非物质文化遗产的保护和发展，推动了那达慕大会走向更广泛的国际舞台。通过互联网平台，越来越多的人能够观看到来自草原的精彩表演，这种全球化的传播，让世界各地的人们都能体验到这一文化盛宴。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e204be00-1f8d-408d-b733-297bb6ada813_1.33.png?Expires=1776605192&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=XcwoAdhSC8wXEhFVBpjsV2oPVMQ%3D" alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3bdcef586-fd47-4123-bfbc-0b9d6aeeb8aa_1.34.png?Expires=1776605188&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=f5hUe27OGCJl%2FEQnCqaBxWqhPHA%3D" alt=" Image">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- ==== custom cursor start ==== -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+        <!-- ==== / custom cursor end ==== -->
+        <!-- ==== scroll to top start ==== -->
+        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+            <span></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </button>
+        <!-- ==== / scroll to top end ==== -->
+    </div>
+
+
+
+    <!-- ==== custom cursor start ==== -->
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"></div>
+    <!-- ==== / custom cursor end ==== -->
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

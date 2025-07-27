@@ -1,0 +1,430 @@
+/* 基础样式 */
+body {
+    margin: 0;
+    background-image: url("https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745242624032_bfcb3b13-e6dd-4574-8d44-5d7f91f18a82_15.png?Expires=1776778624&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Qd4Ksg46Xpx7whRz6cEfh1ioX1I%3D");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 文章容器 */
+.article-container {
+    min-height: 79vh;
+    background: rgba(10, 10, 10, 0.95);
+    line-height: 1.8;
+    font-family: 'Noto Serif SC', 'SimSun', serif;
+    width: 80% !important;
+    margin: 0rem auto;
+    padding: 4rem;
+    box-shadow:
+        0 0 0 2px #3e2d1d,
+        /* 基础边框 */
+        0 0 0 4px rgba(184, 155, 90, 0.3),
+        /* 鎏金辉光层 */
+        0 8px 30px rgba(0, 0, 0, 0.6),
+        /* 主投影 */
+        0 15px 50px rgba(0, 0, 0, 0.4),
+        /* 环境光晕 */
+        inset 0 0 20px rgba(184, 155, 90, 0.1);
+    /* 内发光 */
+    border-radius: 8px;
+    position: relative;
+    border: 1px solid transparent;
+    /* 为伪元素留出空间 */
+    width: 90%;
+    overflow: hidden;
+}
+
+/* 青铜器纹路装饰 */
+.article-container::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg,
+            #3e2d1d 0%,
+            #b89b5a 25%,
+            #3e2d1d 50%,
+            #b89b5a 75%,
+            #3e2d1d 100%);
+    z-index: -1;
+    animation: gradientShift 8s infinite linear;
+    border-radius: 10px;
+}
+
+/* 动态光影效果 */
+.article-container::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 180deg,
+            transparent 20%,
+            rgba(184, 155, 90, 0.1) 50%,
+            transparent 80%);
+    animation: rotate 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 200% 200%;
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 标题样式 */
+.article-title {
+    color: #b89b5a;
+    /* 鎏金色 */
+    font-size: 2.4em !important;
+    margin: 2rem 0;
+    padding-bottom: 1.5rem;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.article-title::after {
+    content: "";
+    background: linear-gradient(90deg,
+            rgba(184, 155, 90, 0) 0%,
+            #b89b5a 50%,
+            rgba(184, 155, 90, 0) 100%);
+    height: 3px;
+    width: 120px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 元信息 */
+.article-meta {
+    color: #857b6d;
+    border-bottom: 1px solid #3e2d1d;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 正文内容 */
+.article-content {
+    color: #e0d6c8 !important;
+    /* 象牙白 */
+    min-height: 40vh;
+}
+
+/* 图片样式 */
+.article-image {
+    border: 2px solid #3e2d1d;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    margin: 2rem 0;
+    display: block;
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-caption {
+    color: #857b6d;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* 段落样式 */
+.paragraph {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-indent: 2em;
+    margin-bottom: 1.5rem;
+}
+
+/* 重点段落 */
+.highlight {
+    background: rgba(62, 45, 29, 0.3);
+    /* 深棕透明层 */
+    border-left: 4px solid #b89b5a;
+    color: #f5f0eb;
+    box-shadow: inset 4px 0 8px rgba(184, 155, 90, 0.1);
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.highlight::before {
+    content: "——";
+    color: #b89b5a;
+    text-shadow: 0 0 8px rgba(184, 155, 90, 0.3);
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* 页脚装饰 */
+.footer-decoration {
+    color: #b89b5a;
+    border-top: 1px solid #3e2d1d;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .article-container {
+        padding: 30px 20px;
+    }
+
+    .article-title {
+        font-size: 1.8em;
+    }
+
+    .paragraph {
+        text-indent: 1.5em;
+    }
+}
+
+/* 导航部分开始 */
+/* 导航栏整体背景 */
+.daohang {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 30, 30, 0.95) 100%);
+    padding: 15px 0px;
+    border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo 样式 */
+.daohang .logo {
+    width: 180px;
+}
+
+.daohang .logo img {
+    width: auto;
+    margin-left: 50px;
+    height: 80px;
+    border-radius: 12px;
+    /* 添加圆角 */
+    object-fit: contain;
+    /* 保持比例不变缩放 */
+    /* padding: 4px; */
+    /* 添加内边距，避免贴边 */
+    /* background-color: #fff; */
+    /* 设置背景色以更清晰展示 logo */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    /* 柔和阴影 */
+    transition: transform 0.3s ease;
+    /* 添加交互动画效果 */
+}
+
+.daohang .logo img:hover {
+    transform: scale(1.05);
+    /* 鼠标悬停轻微放大 */
+}
+
+/* 导航菜单的样式 */
+.daohang .main-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'KaiTi', 'SimHei', serif;
+    flex: 1;
+    justify-content: center;
+}
+
+/* 每个菜单项 */
+.daohang .nav-item {
+    position: relative;
+    margin: 0 15px;
+    text-align: center;
+}
+
+.daohang .nav-item>a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 25px;
+    display: block;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.daohang .nav-item>a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 215, 0, 0.2);
+    border-radius: 8px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.daohang .nav-item>a:hover::before {
+    transform: scaleX(1);
+}
+
+.daohang .nav-item>a:hover {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* 子菜单 */
+.daohang .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 30, 30, 0.95) 100%);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 200px;
+    z-index: 100;
+}
+
+/* 鼠标悬停时显示子菜单 */
+.daohang .nav-item:hover .sub-menu {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.daohang .sub-menu li {
+    margin: 5px 0;
+    z-index: 100;
+}
+
+.daohang .sub-menu li a {
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.daohang .sub-menu li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 8px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.daohang .sub-menu li a:hover::before {
+    transform: scaleX(1);
+}
+
+.daohang .sub-menu li a:hover {
+    color: #ffd700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+/* 登录注册按钮样式 */
+.daohang .dengluzc {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.daohang .dengluzc a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, rgba(139, 69, 19, 0.7), rgba(160, 82, 45, 0.7));
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.daohang .dengluzc a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.5), rgba(255, 165, 0, 0.5));
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.daohang .dengluzc a:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, rgba(139, 69, 19, 0.9), rgba(160, 82, 45, 0.9));
+    color: #fff;
+}
+
+.daohang .dengluzc a:hover::before {
+    opacity: 1;
+}
+
+/* 移动端按钮适配 */
+@media (max-width: 768px) {
+    .dengluzc a {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+}
+
+/* 分隔线 */
+.daohang .nav-divider {
+    height: 30px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0 15px;
+}
+
+/* 导航部分结束 */

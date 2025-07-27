@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>平遥推光漆器</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3d1b322de-00a7-4740-9e75-f02bb4a99543_8.1.png?Expires=1776599467&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ffyn%2B%2BM%2F8%2BvRyBfix8jWkDot3BI%3D">
+                    <span>大漆制漆</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3cfc009d7-5c51-41c7-b285-0978b65f6d4a_8.2.png?Expires=1776599474&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=MibZ23jHfwbpq5dQpgtW3emJ%2FWY%3D">
+                    <span>桐油炼制</span>
+                </div>
+                <div class="box">
+                    <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/31e605abe-e6f2-4223-8feb-80024053e94e_8.3.png?Expires=1776599483&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2BsRCNYYm%2FR5WpdiWJYG5ePeOK24%3D">
+                    <span>制灰挂灰</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35a47e003-9c90-44a5-8267-ccea3aa9c15e_8.4.png?Expires=1776599486&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=APmq1hOrQoMC19t1nLCRU5ysCj0%3D">
+                    <span>漆栓制作</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3cc8cf738-31b7-4d5d-96d2-61eb277894ff_8.5.png?Expires=1776599491&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=IGr5QFYLSEPlwosjXwKnTOKe4oQ%3D">
+                    <span>阴房设置</span>
+                </div>
+                <!-- <div class="box">
+                    <img src="assets/images/wenh/chuanjv/4.webp">
+                    <span>打磨抛光</span>
+                </div> -->
+
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>走进平遥推光漆器的制作工艺</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">大漆制漆工艺：从自然中提炼精华
+                        </h3>
+                        <p>大漆作为漆器制作的基础材料，需要经过特殊的处理和炼制，才能成为可用的漆料。大漆是从漆树上采集的天然树脂，未经炼制的原漆无法直接使用，因此，必须采用一套精细的工艺进行处理。首先，采集到的大漆需要经过清洗，去除杂质；接着，再通过特别的配方和炼制工艺，去除漆中的水分，使其达到适宜的浓度和粘性，以便后续的使用。大漆的质量直接影响到漆器的耐久性和漆面的效果，因此这一环节的工艺要求非常高。
+                        </p>
+
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/372cb1a7d-3758-4c28-b360-d8732278be31_8.6.png?Expires=1776599506&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=jddqntdVQaStWuvjnyxYseY4TRs%3D"
+                                alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32b4868a7-e327-41e9-bf77-f93d10f42fc9_8.7.png?Expires=1776599511&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=CF6F25ZqFTtJ5XXbv1Si6YH5%2FjY%3D"
+                                alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">桐油炼制工艺：强化漆质，增加光泽
+
+                        </h3>
+                        <p>
+                            桐油是制作漆器的另一关键材料，它具有增亮、防潮和耐久的特性。传统的桐油炼制工艺将天然桐油与大漆混合，并通过特殊的炼制技术，使其更好地适应漆器制作的需求。在炼制过程中，桐油与大漆的比例需要精确调配，确保漆料的粘稠度和光泽度都达到最佳。炼制后的桐油不仅提高了漆器的光泽度，还增强了漆面在长期使用中的抗老化能力，延长了漆器的使用寿命。
+                        </p>
+
+
+                    </div>
+
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">制灰挂灰工艺：精细打底，奠定基础</h3>
+                        <p>在漆器髹漆前，传统工艺要求在木胎上进行制灰挂灰。木胎表面经过多道灰浆的涂抹，能够为后续的漆层提供更好的附着力和耐久性。漆器艺人通常使用三种不同的灰浆材料：生漆土籽灰、猪血灰和黄土胶灰。这些灰浆经过精心调配，分别具有不同的功能。生漆土籽灰用于第一道灰层，它具有很好的吸附性；猪血灰用于增加灰层的均匀性和紧密性；黄土胶灰则有助于漆层的粘附力。挂灰是一个需要极高技巧的工序，必须保证每一道灰层的均匀性和细腻度，通常需要挂四道以上的灰，底灰和浆灰的配比要精准，才能为后续的漆饰提供一个稳定而平滑的基础。
+                        </p>
+
+
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e1b46235-face-487c-94b1-d7c5c4d34a62_8.8.png?Expires=1776599515&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=5UHv00t26W7ozjseQw0emxVSJfw%3D"
+                                alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c49f8649-7886-4fc4-a111-c212986482ce_8.9.png?Expires=1776599521&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=RHO8UutNDMhfzD4agRc7s6MgL8E%3D"
+                                alt=" Image">
+                        </div>
+                    </div>
+                </div>
+                <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                    <h3 class="title-animation">漆栓制作工艺：传统工具的独特性</h3>
+                    <p>在平遥推光漆器的制作过程中，漆栓作为一种传统工具，对漆器的髹饰至关重要。漆栓是用来涂漆的工具，通常由木材制成，表面覆盖有动物毛发（如牛尾毛或少女头发），并与天然大漆、桐油混合制作而成。漆栓的制作要求极高，首先需要将毛发进行特制处理，使其保持坚韧并能够均匀涂抹漆料。漆栓的大小和硬度也有所讲究，制作工艺要求精细，艺人通常需要精心雕刻漆栓，并调节其适应度。由于漆栓的制造复杂且需要特殊的技巧，这一工艺通常只有经验丰富的工匠才能完成。
+                    </p>
+
+
+                </div>
+                <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                    <h3 class="title-animation">阴房设置：控制湿度，确保漆面干燥</h3>
+                    <p>漆器的干燥不仅仅是漆中水分的蒸发，还需要控制温度和湿度。平遥推光漆器的制作过程中，阴房的设置至关重要。阴房是一个温湿度适宜的环境，它通过调控湿度和温度，为漆器的每一层漆提供最佳的干燥条件。每当一层漆涂抹完成后，漆器便需要放置在阴房内进行干燥。阴房的湿度控制非常严格，过高或过低都会影响漆面的效果。阴房内的温度和湿度需保持在一定范围内，才能让漆面达到理想的干燥效果。
+                    </p>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">推光漆工艺：匠心打磨，光亮如镜</h3>
+                        <p>推光漆工艺是平遥漆器的最大亮点之一，也是漆器表面呈现光滑、亮丽效果的关键工艺。在这个工艺环节中，漆器的表面需要经过多次精细的打磨和抛光。首先，工匠会使用细砂纸对漆面进行初步打磨，去除粗糙的部分，使漆面更加平滑。接着，使用由椴木烧制的木炭块，蘸取水分反复打磨，使漆面黑度更高。最后，用特制的头发蘸油进行细致的打磨，最终用手掌蘸上细砖灰和麻油进行推光，使漆面达到镜面般的效果。每一层漆的打磨和抛光都需要工匠们耐心细致地操作，这个过程不仅需要技术，还需要大量的时间和精力。最终，漆器表面会呈现出如镜面般的光泽，散发出耀眼的光辉。
+                        </p>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">镶嵌、雕刻、罩金等装饰技法：赋予漆器灵魂</h3>
+                        <p>为了增加漆器的艺术性和独特性，平遥推光漆器常常采用镶嵌、雕刻、罩金等装饰技法。这些技法不仅增加了漆器的视觉效果，还赋予了漆器更深刻的文化象征意义。漆器表面常常镶嵌金、银、玉、珠、石等贵重材料，甚至有些作品还会进行雕刻和堆鼓处理。雕刻和镶嵌工艺要求极高，工匠需要用心雕刻出精美的图案，确保每一块嵌入的材料都完美契合。罩金工艺则为漆器增添了豪华的金色装饰，进一步提升了漆器的艺术价值和收藏价值。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

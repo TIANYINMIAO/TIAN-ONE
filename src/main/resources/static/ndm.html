@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>那达慕大会</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img src="assets/zp/19.png">
+                    <span>摔 跤</span>
+                </div>
+                <div class="box">
+                    <img src="assets/zp/20.png">
+                    <span>赛 马</span>
+                </div>
+                <div class="box">
+                    <img src="assets/zp/21.png">
+                    <span>射 箭</span>
+                </div>
+                <!-- <div class="box">
+                    <img src="..\zp\2.png">
+                    <span>乐 器</span>
+                </div>
+                  <div class="box">
+                    <img src="..\zp\2.png">
+                    <span>丑 角</span>
+                </div> -->
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>主要运动</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">摔跤</h3>
+                        <p>蒙古高原盛产著名的蒙古马，能跑善战，耐力极强。自古以来，蒙古人对马就有特殊的感情，蒙古人从小就在马背上长大，都以自己有一匹善跑的快马感到自豪。驯练烈马，精骑善射是蒙古族牧民的绝技，通常把是否善于驯马、赛马、射箭、摔跤作为鉴别一个优秀牧民的标准。
+                            <br>
+
+                            <br>
+                            赛马为蒙古族男儿三技之一。参加者有时全是少年，有时不分年龄，具有广泛的群众性。赛马项目包括：1、快马赛，主要比马的速度，一般为直线赛跑，赛程一般为20、30、40公里，先达终点为胜；2、走马赛，主要是比赛马步伐的稳健与轻快；3、颠马赛，是蒙古族特有的马上竞技表演项目。
+                            <br>
+                            蒙古族赛马是蒙古族传统体育娱乐活动之一。旧称赛马、射箭、摔跤为男子三项竞技。蒙古赛马比赛今多在那达慕大会时举行。届时在内蒙古大草原上，远近百里以至几百里的牧民驱车乘马赶来聚会，参加赛马活动。赛马场上，彩旗飘飘，鼓角长呜，热闹非凡。
+                            <br>蒙古族赛马不分男女老少均可参加。少则几十人，多则上百人，一起上阵，直线赛跑，其距离40、60、80、华里不等。为了减少马的负荷量，不论老少，大都不备马鞍，不穿靴袜，只着华丽彩衣，配上长长彩带，襟飘带舞，显得格外英武。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="assets/zp/23.png" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="assets/zp/22.png" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">赛马</h3>
+                        <p>蒙古高原盛产著名的蒙古马，能跑善战，耐力极强。自古以来，蒙古人对马就有特殊的感情，蒙古人从小就在马背上长大，都以自己有一匹善跑的快马感到自豪。驯练烈马，精骑善射是蒙古族牧民的绝技，通常把是否善于驯马、赛马、射箭、摔跤作为鉴别一个优秀牧民的标准。
+                            <br>
+
+                            <br>
+                            赛马为蒙古族男儿三技之一。参加者有时全是少年，有时不分年龄，具有广泛的群众性。赛马项目包括：1、快马赛，主要比马的速度，一般为直线赛跑，赛程一般为20、30、40公里，先达终点为胜；2、走马赛，主要是比赛马步伐的稳健与轻快；3、颠马赛，是蒙古族特有的马上竞技表演项目。
+                            <br>
+                            蒙古族赛马是蒙古族传统体育娱乐活动之一。旧称赛马、射箭、摔跤为男子三项竞技。蒙古赛马比赛今多在那达慕大会时举行。届时在内蒙古大草原上，远近百里以至几百里的牧民驱车乘马赶来聚会，参加赛马活动。赛马场上，彩旗飘飘，鼓角长呜，热闹非凡。
+                            <br>蒙古族赛马不分男女老少均可参加。少则几十人，多则上百人，一起上阵，直线赛跑，其距离40、60、80、华里不等。为了减少马的负荷量，不论老少，大都不备马鞍，不穿靴袜，只着华丽彩衣，配上长长彩带，襟飘带舞，显得格外英武。
+
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="assets/zp/24.png" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="assets/zp/25.png" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">射箭</h3>
+
+                        <p>射箭是蒙古族传统的“男子三项”的项目之一，也是那达慕最早的活动内容之一。在公元800多年以前，蒙古人分为许多不同的部落，他们的经济生活大体可分为游牧经济和狩猎经济两种。在成吉思汗统一蒙古以后，虽然狩猎经济的部落逐渐转向了游牧经济，但狩猎时期长年积累下的拉弓射箭的本领却保留了下来，以防外敌侵略和野兽袭击畜群。没有牲畜的贫苦牧民则仍依赖弓箭捕杀动物维持生活。
+
+                        </p>
+
+                    </div>
+
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="assets/zp/26.png" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="assets/zp/27.png" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <!-- <h3 class="title-animation">道具</h3>
+                        <p>二人台的服装、化妆仿效晋剧。道具简单，主要有扇子、手绢、霸王鞭等。二人台在表演上既有草原辽阔粗犷的风格，又有北方憨直奔放的品味，深受蒙汉两族人民喜爱。
+                        </p> -->
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

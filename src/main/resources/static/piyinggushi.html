@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <title>皮影</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .circle-container {
+            position: fixed;
+            left: -50dvh;
+            top: 0;
+            width: 100dvh;
+            height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .circle {
+            width: 100dvh;
+            height: 100dvh;
+            border-radius: 50%;
+            position: absolute;
+            transition: transform 0.1s linear;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            transform: rotate(-20deg);
+        }
+
+        .segment {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+
+        /* Her segment için farklı görsel ve pozisyon ayarları */
+        .segment:nth-child(1) {
+            clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 30%);
+        }
+
+
+        .segment:nth-child(1)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745150798480_0c2a50bd-20ee-46a9-b741-979d9f86724c_9%20%2812%29.jpg?Expires=1776686799&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=MoTUDI2TdtNtwx4deOU8Xs62C48%3D');
+            background-position: 75% 25%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+        .segment:nth-child(2) {
+            clip-path: polygon(50% 50%, 100% 30%, 100% 100%, 80% 100%);
+        }
+
+        .segment:nth-child(2)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745150830183_948285a6-9ea8-438c-bd64-56429f0b1125_9%20%2813%29.jpg?Expires=1776686830&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=FkcGtwAIsv8zGEf%2B8CQh0VgW5cc%3D');
+            background-position: 175% 50%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+        .segment:nth-child(3) {
+            clip-path: polygon(50% 50%, 80% 100%, 30% 100%, 20% 100%);
+        }
+
+        .segment:nth-child(3)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(' https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745150836370_441d209d-59f8-4915-9586-9ebefeaa756e_9%20%2837%29.jpg?Expires=1776686837&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=L3QspfiND6%2FaD8buvyZY9%2Fts3Js%3D');
+            background-position: 50% 200%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+        .segment:nth-child(4) {
+            clip-path: polygon(50% 50%, 20% 100%, 0% 100%, 0% 30%);
+        }
+
+        .segment:nth-child(4)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(' https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745150846812_e7b1eaaa-f1b9-485a-98ef-c6141ffe6505_9%20%2852%29.jpg?Expires=1776686847&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=A%2BPSpnctPsK%2FW%2BiwqEfDPrOntm4%3D');
+            background-position: -75% 125%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+        .segment:nth-child(5) {
+            clip-path: polygon(50% 50%, 0% 30%, 0% 0%, 50% 0%);
+        }
+
+        .segment:nth-child(5)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745150913968_00865ba8-cd09-4c5d-bca6-f72e008d8c61_9%20%2853%29.jpg?Expires=1776686914&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=z88bpzjozL8m6LdCuBMIb8xwhrw%3D');
+            background-position: 0% -25%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+
+
+        /* .segment:nth-child(6) {
+            clip-path: polygon(50% 50%, 30% 0%, 50% 0%, 30% 0%);
+        }
+
+        .segment:nth-child(6)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('./assets/images/wenh/chuanjv/21.png');
+            background-position: center;
+            background-size: 75%;
+            border-radius: 50%;
+        } */
+
+        .content {
+            width: 100vw;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 100vw;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 默认设置为较矮屏幕样式 */
+        section {
+            min-height: 110vh !important;
+        }
+
+        /* 大屏幕（高度大于等于 900px）使用 height: 100vh */
+        @media (min-height: 900px) {
+            section {
+                min-height: unset !important;
+                height: 100vh;
+            }
+        }
+
+
+        /* 
+        .z2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            background-color: #43401F;
+            overflow: hidden;
+        } */
+
+        .z2 {
+            display: flex;
+            height: 550px;
+
+            overflow-x: auto;
+            /* 让 .z2 内部可以横向滚动 */
+            overflow-y: hidden;
+            /* 防止出现不必要的垂直滚动 */
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            width: 100%;
+        }
+
+
+        .shell2 {
+            -webkit-mask-image: linear-gradient(to right, #0000, #000, #000, #0000);
+            overflow-x: auto;
+            display: flex;
+            gap: 5rem;
+            align-items: start;
+            padding: 70px;
+        }
+
+        .shell2>div {
+            block-size: 400px;
+            background-color: #fff;
+            aspect-ratio: 16/9;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 0 5px 5px rgba(173, 173, 173, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .shell2 .one {
+            margin-left: 650px;
+            margin-top: 70px;
+        }
+
+        .shell2 video {
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            /* margin-top: 50px; */
+        }
+
+        /* 滚动条样式 */
+        ::-webkit-scrollbar {
+            height: 16px;
+        }
+
+
+
+        /* 文字样式 */
+        .text-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* 按钮样式 */
+        .fullscreen-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .fullscreen-btn:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .biaoti {
+            position: absolute;
+            top: 70px;
+            right: 80px;
+            width: 900px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 轻微渐变背景 */
+            padding: 20px 30px;
+            border-left: 5px solid #C19A6B;
+            /* 复古金色边框 */
+            backdrop-filter: blur(10px);
+            /* 增强玻璃质感 */
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            color: #EAE0D5;
+            /* 典雅的米白色字体 */
+            font-family: "Songti SC", serif;
+            /* 经典宋体，符合戏曲文化 */
+        }
+
+        /* 标题样式 */
+        .biaoti h1 {
+            font-size: 48px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #D4AF37;
+            /* 金色字体，高级感 */
+            text-shadow: 2px 2px 5px rgba(212, 175, 55, 0.5);
+            margin-bottom: 15px;
+        }
+
+        /* 文字段落 */
+        .biaoti p {
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: justify;
+            color: #EAE0D5;
+            font-weight: 400;
+            text-indent: 2em;
+            opacity: 0.9;
+            /* 轻微透明，增加层次感 */
+        }
+
+        /* 额外的动画（可选） */
+        .biaoti {
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* 渐显动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 经典曲目标题样式 */
+        .biaoti2 {
+            position: absolute;
+            top: 350px;
+            /* 调整位置，避免与 .biaoti 重叠 */
+            right: 770px;
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #D4AF37;
+            /* 高级金色 */
+            text-shadow: 2px 2px 5px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体，符合戏曲风格 */
+            padding: 10px 20px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+            box-shadow: 0px 4px 10px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        /* 鼠标悬停效果 */
+        .biaoti2:hover {
+            background: rgba(255, 223, 186, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* 进入动画 */
+        .biaoti2 {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 鼠标悬停效果 */
+        .biaoti2:hover {
+            background: rgba(255, 223, 186, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* 移动端基础样式 */
+        @media (max-width: 768px) {
+            .biaoti {
+                position: relative;
+                top: auto;
+                right: auto;
+                width: 90%;
+                max-width: none;
+                margin: 20px auto;
+                padding: 15px;
+                transform: none;
+                backdrop-filter: blur(5px);
+                border-radius: 6px;
+            }
+
+            .biaoti h1 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+                text-align: center;
+                margin-bottom: 12px;
+            }
+
+            .biaoti p {
+                font-size: 1rem;
+                text-indent: 1.5em;
+                line-height: 1.6;
+            }
+
+            .biaoti2 {
+                position: relative;
+                top: auto !important;
+                right: auto !important;
+                display: block;
+                width: fit-content;
+                margin: 0 auto 30px;
+                font-size: 1.5rem;
+                padding: 8px 15px;
+                border-width: 1px;
+                transform: none !important;
+            }
+
+            /* 视频容器改造 */
+            .z2 {
+                position: relative;
+                height: auto;
+                margin-top: 20px;
+            }
+
+            .shell2 {
+                flex-direction: column;
+                padding: 0 15px;
+                gap: 25px;
+                -webkit-mask-image: none;
+            }
+
+            .shell2>div {
+                width: 100% !important;
+                min-width: auto;
+                block-size: auto;
+                aspect-ratio: 16/9;
+                margin-left: 0 !important;
+            }
+
+            /* 圆形装饰优化 */
+            .circle-container {
+                display: none;
+                /* 移动端隐藏复杂图形 */
+            }
+
+            /* 全局调整 */
+            section {
+                padding: 30px 0;
+                height: auto !important;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+        }
+
+        /* 小屏手机优化 */
+        @media (max-width: 480px) {
+            .biaoti {
+                width: 95%;
+                padding: 12px;
+            }
+
+            .biaoti h1 {
+                font-size: 1.8rem;
+            }
+
+            .biaoti p {
+                font-size: 0.9rem;
+            }
+
+            .biaoti2 {
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+            }
+
+            .shell2 {
+                padding: 0 10px;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle-container">
+        <div class="circle" id="circle">
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+        </div>
+    </div>
+    <div class="content">
+        <section id="section1" style="background: #1B1F23; color: white;">
+            <div class="biaoti">
+                <h1>《孙悟空大战白骨精》</h1>
+                <p>
+                    作品以经典名著《西游记》中的惊险片段为蓝本，通过精美的皮影艺术再现孙悟空与白骨精斗智斗勇的传奇故事。皮影光影交错，动作流畅灵动，将孙悟空的机智勇猛与白骨精的诡谲变化展现得淋漓尽致。这不仅是一次对传统民间艺术的精彩诠释，也让观众在光影之间重温经典，感受中国神话的独特魅力。
+                </p>
+            </div>
+
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+
+                        <video
+                            src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/33fbb70ee-ca9e-47c0-a5b4-bcced64e1040_sun.mp4?Expires=1776597001&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2Fhal5bYR%2BZYqsk1%2FnbYTJtsZsHk%3D"
+                            controls></video>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </section>
+        <section id="section2" style="background: #2C3E50; color: white;">
+            <div class="biaoti">
+                <h1>《三英战吕布》</h1>
+                <p>
+                    这部精心打造的皮影动画，以《三国演义》中最震撼的战斗之一“三英战吕布”为题材，融合了皮影独特的造型语言和史诗般的叙事风格。三十余位角色各具神韵，战场厮杀场面壮阔恢弘，评书式的旁白与戏曲韵味的对白相辅相成，营造出浓厚的古典氛围。传统皮影技艺在数字时代的创新演绎，让这部作品既承载了历史厚重感，又焕发出新时代的生命力。
+                </p>
+            </div>
+
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+
+                        <video
+                            src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3249eee4f-8261-480a-afb6-fca13e2de3f5_lv.mp4?Expires=1776595714&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=BgvvFNuj446L9cyMnsnOYmG0LeY%3D"
+                            controls></video>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section3" style="background: #34495E; color: white;">
+            <div class="biaoti">
+                <h1>《桃园三结义》</h1>
+                <p>
+                    “桃园三结义”作为《三国演义》的开篇经典，象征着忠义精神的传承。这部皮影动画用细腻的光影技法，将刘备、关羽、张飞在桃园中结拜的情境生动再现，展现出三位英雄的英气与豪情。背景配乐融入传统戏曲元素，画面古朴典雅，充分展现了中国皮影艺术的深厚文化底蕴。借助现代技术的创新表达，这部作品让观众在欣赏艺术的同时，感受到三国故事的英雄气概与兄弟情深。
+
+                </p>
+            </div>
+
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+                        <video
+                            src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c454dfa0-9dd9-4f9f-9b32-b2da9ea6aa2c_tao.mp4?Expires=1776597121&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=pvUuHt1DxIJHlA6OMEyTTPUn2Sk%3D"
+                            controls></video>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section4" style="background: #4A4E69; color: white;">
+            <div class="biaoti">
+                <h1>《黑神话悟空》</h1>
+                <p>作为一部融合皮影艺术与现代叙事的创新作品，《黑神话：悟空（第二章）》以东方神话为核心，运用皮影动画的光影魅力构建出一个瑰丽奇幻的西游世界。孙悟空的英勇无畏、妖魔鬼怪的诡秘神秘，在皮影特有的剪影风格下更显传奇色彩。作品既保留了民间艺术的古典韵味，又融入数字时代的视觉冲击，为传统皮影开辟了一条焕然一新的表达道路，让古老的故事焕发出前所未有的生命力。
+                </p>
+            </div>
+
+            <div class="z2">
+
+                <div class="shell2">
+                    <div class="one">
+
+                        <video
+                            src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3afea6a24-bc7d-46b0-865a-6080eeb51677_hei.mp4?Expires=1776597157&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=P1dmdruHybJgCpoD93ncqvsvycw%3D"
+                            controls></video>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <section id="section6" style="background: #5C677D; color: white;"></section> -->
+
+    </div>
+    <script>
+        const circle = document.getElementById("circle");
+        const sections = document.querySelectorAll("section");
+        const sectionCount = sections.length;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+        window.addEventListener("scroll", () => {
+            let scrollPercentage = window.scrollY / maxScroll;
+            let rotation = (scrollPercentage * 360) - 20;
+            // Scroll ile dönmeyi sağlayan mantığı düzeltmek
+            circle.style.transform = `rotate(${rotation}deg)`;
+        });
+    </script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

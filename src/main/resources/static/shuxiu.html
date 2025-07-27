@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 蜀绣</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 800px; */
+            /* 控制最大宽度，避免太大 */
+            height: auto;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+
+        /* 导航部分开始 */
+    </style>
+</head>
+
+<body>
+    <!-- ==== topbar start ==== -->
+    <!--[if lt IE 9]>
+      <p class="browserupgrade">
+         You are using an <strong>outdated</strong> browser. Please
+         <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+         your experience and security.
+      </p>
+      <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+        <div class="daohang">
+            <!-- logo 部分，设置为左侧 -->
+            <div class="logo">
+                <img src="assets/image/logo2.png" alt="Logo">
+            </div>
+            <!-- 导航栏部分 -->
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul class="main-nav">
+                    <li class="nav-item">
+                        <a href="index%20copy.html">首页</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">子菜单1</a></li>
+                                                             <li><a href="#">子菜单2</a></li>
+                                                             <li><a href="#">子菜单3</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="3.1wenhua.html">文化篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                            <li><a href="3.1wenhua.html">传统技艺</a></li>
+                            <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                            <li><a href="3.1wenhua.html">传统音乐</a></li>
+                            <li><a href="3.1wenhua.html">传统体育</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="renwu.html">治水篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="renwu.html">治水英雄颂</a></li>
+                            <li><a href="zsjy.html">治水技奇谈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shenhua.html">神话篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="shenhua.html">大禹治水</a></li>
+                            <li><a href="shenhua.html">黄河母亲</a></li>
+                            <li><a href="shenhua.html">女娲补天</a></li>
+                            <li><a href="shenhua.html">伏羲创世</a></li>
+                            <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="zhengce.html">政策篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="zhengce.html">要闻</a></li>
+                            <li><a href="zhengce.html">地方新闻</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="rhudong.html">趣味黄河</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">互动答题</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="chat.html">智慧AI</a>
+                        <!-- <ul class="sub-menu">
+                                                                               <li><a href="# ">互动答题</a></li>
+                                                                            </ul> -->
+                    </li>
+                </ul>
+            </nav>
+            <div class="dengluzc">
+                <a href="shijianshu.html">黄河
+                    史书</a>
+                <a href="dlzc.html">登录</a>
+                <a href="dlzc.html">注册</a>
+
+            </div>
+        </div>
+        <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        </script>
+
+        <!-- ==== 主体部分 ==== -->
+        <section class="common-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="common-banner__content text-center">
+                        <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                        <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+                    </div>
+                </div>
+            </div>
+            <div class="banner-bg">
+                <video class="banner-video" autoplay muted loop playsinline>
+                    <source
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32fb4395e-d969-4938-8547-f665a47a744f_1.mp4?Expires=1776596954&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=LSgeW%2BqYoHozBm9afbHrkvMu6bE%3D"
+                        type="video/mp4">
+
+                </video>
+            </div>
+            <div class="shape">
+                <img src="assets/images/shape.png" alt="Image">
+            </div>
+            <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+            </div>
+        </section>
+        <!-- ==== / banner section end ==== -->
+        <!-- ==== faq section start ==== -->
+        <section class="faq">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-8 col-xl-6">
+                        <div class="faq__content">
+                            <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                                <span class="sub-title"><i
+                                        class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄河文化是中华文化的重要组成部分，它通过多民族的交流与融合，为蜀绣的发展提供了丰富的文化滋养。蜀绣在发展过程中吸收了黄河文化中其他民族文化元素，如汉族的刺绣技艺和图案风格，使其在艺术表现上更加丰富多样。同时，黄河文化的多元性和包容性也为蜀绣的传承和发展提供了广阔的社会文化基础，使其在四川地区不断得到创新和发展。
+                                </span>
+                                <h2 class="title-animation">四 川 省 的 <span>历 史 长 河</span>
+
+                                </h2>
+                            </div>
+                            <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="accordion" id="accordion">
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                蜀绣是什么？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    蜀绣，又称“川绣”，是中国四大名绣之一，主要流行于四川省成都市及周边地区。它是在丝绸或其他织物上采用蚕丝线绣出花纹图案的中国传统工艺，具有悠久的历史和独特的艺术风格。蜀绣以软缎、彩丝为主要原料，针法包括12大类122种，以其明丽清秀的色彩和精湛细腻的针法形成了自身的独特韵味。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                蜀绣的起源与发展阶段？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    蜀绣的历史可以追溯到三星堆文明时期，距今已有3000多年历史。蜀绣的发展基于蜀地富饶，尤其是所产丝帛质好量大。汉末三国时期，蜀锦蜀绣就已经驰名天下。隋唐时期，随着丝绸之路的贸易往来，蜀绣迅速发展，达到历史上的高峰。明清两代，蜀绣逐渐形成行业，出现了许多专业刺绣人员和小型刺绣作坊。20世纪50年代后，蜀绣遍布四川民间，从业人员众多，蜀绣艺术得到了进一步的发展。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                蜀绣的艺术风格与形式？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    蜀绣的艺术风格形式多样，其特点包括针法严谨、针脚平齐、变化丰富、形象生动、富有立体感等。蜀绣针法之多居四大名绣之首，有12大类130余种针法。蜀绣擅长表现花鸟、走兽、山水、虫鱼、人物等题材，色彩艳丽，构图疏朗，浑厚圆润，具有浓郁的地方色彩
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="false" aria-controls="collapseFour">
+                                                蜀绣如何为黄河文化增光添彩？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    蜀绣作为四川地区重要的非物质文化遗产，丰富了黄河文化的内涵。它不仅展现了巴蜀人民独特的审美观念和文化创造力，还通过与其他民族文化的交流融合，体现了黄河文化多元共生的特点。同时，蜀绣在现代的传承和发展中，也成为了四川地区文化旅游的重要组成部分，为黄河文化的传播和发展做出了积极贡献。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                        <div class="faq__thumb d-none d-lg-block">
+                            <div class="faq__thumb-inner">
+                                <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/355b06f39-21e5-4a7e-92b3-9c590951c7de_2.png?Expires=1776596987&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=JHH3AvA6sV6ldzx%2BZQjb2DMgM3s%3D"
+                                        alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==== / faq section end ==== -->
+        <section class="blog-main cm-details">
+            <div class="container">
+                <div class="row gutter-60">
+                    <div class="col-12 col-xl-8">
+                        <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="#">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37fd94be6-6575-46f5-8e83-3a4d39373a18_2.jpg?Expires=1776596972&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=7MEsWeJ1QexyCLyKTJHUSr80wZ4%3D"
+                                        alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="#"><i class="fa-solid fa-tags"></i>产地环境</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="#">蜀绣的产地环境 </a></h4>
+                                    <p>
+                                        蜀绣主要指以四川成都为中心的川西平原一带的刺绣，由于文化和地理的渊源，也发展到重庆等周边地区。以现代科学的眼光来看，成都平原水土丰美，气候宜人，温湿度都适宜栽桑养蚕。川西这一地区古称“蜀”，在巴蜀大地上盛产丝绸；古蜀大地的丝绸文明孕育了发达的丝织技术，这既为蜀绣提供了刺绣原料——丝绸和丝线，使蜀绣发展有了雄厚的物质基础，又为蜀绣发展兴盛创造了产业和文化环境。
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="c3.html">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/31f5ecd84-3fc2-4af2-8c6f-02e2f0fcb047_1.jpg?Expires=1776597007&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=iuW6D29jQ7XzSUo%2Fqsuqt6dRI44%3D"
+                                        alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="c3.html"><i class="fa-solid fa-tags"></i>产品特点</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="c3.html">蜀绣：精致工艺与文化传承 </a></h4>
+                                    <p>
+                                        蜀绣因其精湛的技艺和独特的艺术魅力，成为中国四大名绣之一。蜀绣以其细腻、光亮、色彩鲜明的特色而闻名，受地理、文化和历史因素的影响，经过长时间的发展逐渐形成了严谨且独具地方特色的风格。蜀绣不仅技艺精湛、题材丰富，而且以其创新性和适应性强的绣法，赋予每一件作品生命与灵魂。无论是人物、山水、花鸟，还是传统的民间故事与吉祥图案，蜀绣都能精确捕捉细节，展现出艺术与情感的完美融合。
+
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="c3.html" aria-label="blog details" title="blog details">🌍
+                                        了解更多<i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="assets/images/wenh/gansuqinqiang/12.png" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="gansujvmu.html"><i class="fa-solid fa-tags"></i>剧目</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="gansujvmu.html">秦腔的经典剧目 </a></h4>
+                                    <p>
+                                        甘肃秦腔作为西北戏曲艺术的瑰宝，其剧目体系历经数百年积淀，形成以历史纵深、地域风情、奇幻想象与时代创新为主轴的四大经典类别。四类剧目交织出从明清江湖到现代剧场的艺术长卷，既承载着丝绸之路上多民族文化交融的基因，又在当代舞台焕发新生，成为读懂甘肃人文精神与审美嬗变的鲜活注脚。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="gansujvmu.html" aria-label="blog details" title="blog details">🌍 经典欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="blog-main__sidebar">
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/397263ee1-92c7-44a1-8d41-69af0791eec4_13.png?Expires=1776596666&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=kYwwAqdPBMxEUoNygU5bx2XgJuA%3D"
+                                        alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>蜀绣传承人的坚守</h6>
+                                    <p>一位蜀绣传承人如何坚守传统技艺，传承蜀绣的故事。
+                                    </p>
+                                    <p>我是成都的一名蜀绣传承人，从母亲那里学到了精湛的蜀绣技艺。随着时代的变迁，许多年轻人不再愿意学习这门手艺，我看着那些精美的蜀绣作品，心里充满了忧虑。为了传承这门技艺，我开始在社区举办蜀绣培训班，免费教年轻女孩学习蜀绣。虽然过程艰难，但我始终坚持着，因为我知道这是我们的文化瑰宝，不能让它失传。在政府的支持下，越来越多的人开始关注蜀绣，我的培训班也逐渐有了起色，看到年轻一代对蜀绣的喜爱和投入，我感到无比欣慰。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/397263ee1-92c7-44a1-8d41-69af0791eec4_13.png?Expires=1776596666&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=kYwwAqdPBMxEUoNygU5bx2XgJuA%3D"
+                                        alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>蜀绣的创新之路</h6>
+                                    <p>一位蜀绣艺人如何在传统与现代之间找到平衡，推动蜀绣创新发展的故事。
+                                    <p>
+                                        我是成都的一名蜀绣艺人，一直致力于将传统蜀绣与现代设计相结合。起初，我尝试在传统图案中加入一些现代元素，但遭到了一些传统派的反对，他们认为这样做会破坏蜀绣的纯粹性。但我坚信只有创新才能让蜀绣走得更远。于是，我不断学习现代设计理念，同时深入研究巴蜀传统文化，力求在两者之间找到最佳的结合点。经过多次尝试和改进，我设计出了一系列既保留传统韵味又符合现代审美的蜀绣作品。这些作品一经推出，就受到了市场的广泛欢迎，也让更多的人看到了蜀绣的无限可能。
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="assets/images/wenh/gansuqinqiang/13.png" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>皮影小剧场：《月牙泉之恋》</h6>
+                                    <p>敦煌戍边将士阿郎与秦腔高手月儿跨越生死、以歌传情的凄美爱情故事</p>
+                                    <p>敦煌月牙泉旁，阿郎与月儿情定终身。阿郎是戍边将士，月儿是村中秦腔高手，歌声如泉。边疆战事起，阿郎出征，两人在泉边许下重逢誓言。月儿日复一日，在泉边以秦腔寄情。阿郎战场英勇，心系月儿。战后归来，阿郎却只见月牙泉，不见月儿身影，原来她已化作泉边一缕轻烟。阿郎悲歌，歌声回荡沙漠。从此，月圆之夜，月牙泉边总有凄美秦腔，似月儿灵魂诉说爱情。
+                                    </p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source
+                                    src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3f56452c6-6e34-4437-b4e1-f80fb781f3c1_2.mp4?Expires=1776597062&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=sS6nR9zWT2OPqP6NYeZF3sNIcD4%3D"
+                                    type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>蜀绣的保护工作得到了政府和社会的高度重视。2006年5月20日，四川成都市的蜀绣经国务院批准列入第一批国家级非物质文化遗产名录。编号为：Ⅶ-21。
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>近年来，四川省通过举办蜀绣展览、培训等活动，提高了蜀绣的知名度和影响力。此外，还通过数字化保护、知识产权保护等方式，推动蜀绣的传承和发展。
+                            </p>
+                            <p>在传承方面，蜀绣主要依靠师徒传承和家族传承，许多家庭都有从事蜀绣的艺人。在发展方面，蜀绣不断创新，将传统技艺与现代设计相结合，开发出更多符合市场需求的产品，如蜀绣艺术品、生活用品等。同时，通过举办蜀绣展览、培训等活动，提高了蜀绣的知名度和影响力。此外，当地政府还通过打造文化产业园区、设立展销窗口等方式，推动蜀绣的市场化发展，带动当地就业和群众增收。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c96b0988-2f81-4801-a173-0a1931db7d4f_7.png?Expires=1776597075&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=74bGeQ5JVrT6Giat4StxRXWbJZc%3D"
+                                    alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3943f6ef1-bd61-438f-a7bd-88bfcdc93cd5_6.png?Expires=1776597079&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=MWQTxewttzxJS%2BW0nyYDeRq3kis%3D"
+                                    alt=" Image">
+                            </div>
+                        </div>
+                        <!-- ==== custom cursor start ==== -->
+                        <div class="mouseCursor cursor-outer"></div>
+                        <div class="mouseCursor cursor-inner"></div>
+                        <!-- ==== / custom cursor end ==== -->
+                        <!-- ==== scroll to top start ==== -->
+                        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                            <span></span>
+                            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                            </svg>
+                        </button>
+                        <!-- ==== / scroll to top end ==== -->
+                        <!-- ==== / color switcher end ==== -->
+                    </div>
+                    <!-- ==== js dependencies start ==== -->
+                    <!-- jquery -->
+                    <script src="assets/js/jquery-3.7.1.min.js"></script>
+                    <!-- bootstrap five js -->
+                    <script src="assets/js/bootstrap.bundle.min.js"></script>
+                    <!-- nice select js -->
+                    <script src="assets/js/jquery.nice-select.min.js"></script>
+                    <!-- magnific popup js -->
+                    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                    <!-- swiper slider js -->
+                    <script src="assets/js/swiper-bundle.min.js"></script>
+                    <!-- viewport js -->
+                    <script src="assets/js/viewport.jquery.js"></script>
+                    <!-- odometer js -->
+                    <script src="assets/js/odometer.min.js"></script>
+                    <!-- vanilla tilt js -->
+                    <script src="assets/js/vanilla-tilt.min.js"></script>
+                    <!-- aos js -->
+                    <script src="assets/js/aos.js"></script>
+
+                    <!-- splittext js -->
+                    <script src="assets/js/SplitText.min.js"></script>
+                    <!-- scrollto js -->
+                    <script src="assets/js/ScrollToPlugin.min.js"></script>
+                    <!-- scrolltrigger js -->
+                    <script src="assets/js/ScrollTrigger.min.js"></script>
+                    <!-- gsap js -->
+                    <script src="assets/js/gsap.min.js"></script>
+                    <!-- ==== / js dependencies end ==== -->
+                    <!-- template settings js -->
+                    <script src="assets/js/template-settings.js"></script>
+                    <!-- main js -->
+                    <script src="assets/js/custom.js"></script>
+<!--                     <script src="utils.js"></script>-->
+<!--                    <script>-->
+<!--                        document.addEventListener('DOMContentLoaded', function () {-->
+<!--                            checkLogin();-->
+<!--                        });-->
+<!--                    </script>-->
+
+</body>
+
+</html>

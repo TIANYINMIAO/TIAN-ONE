@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'KaiTi', 'STKaiti', serif;
+            /* 使用楷体字体 */
+            background-color: #f5f5dc;
+            /* 米色背景 */
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            background-color: #f5f5dc;
+            /* 米色背景 */
+        }
+
+        .sessions-list {
+            width: 30%;
+            border-right: 1px solid #ccc;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: #fdf5e6;
+            /* 淡黄色背景 */
+        }
+
+        .sessions-list h2 {
+            margin-bottom: 20px;
+            color: #8b4513;
+            /* 深棕色 */
+        }
+
+        .sessions-list ul {
+            list-style: none;
+        }
+
+        .sessions-list li {
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sessions-list li:hover,
+        .sessions-list li.active {
+            background-color: #fff8dc;
+            /* 象牙白 */
+        }
+
+        .chat-window {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            background-color: #fdf5e6;
+            /* 淡黄色背景 */
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin: 15px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+            /* 用户消息在右侧 */
+        }
+
+        .message.ai {
+            justify-content: flex-start;
+            /* AI消息在左侧 */
+        }
+
+        .message span {
+            display: inline-block;
+            padding: 12px 18px;
+            border-radius: 12px;
+            max-width: 60%;
+            font-family: 'KaiTi', 'STKaiti', serif;
+            /* 使用楷体字体 */
+            color: #333;
+        }
+
+        .message.user span {
+            background-color: #add8e6;
+            /* 浅蓝色 */
+        }
+
+        .message.ai span {
+            background-color: #f0e68c;
+            /* 浅金色 */
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+            background-color: #fdf5e6;
+            /* 淡黄色背景 */
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        .chat-input button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            background-color: #8b4513;
+            /* 深棕色 */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .chat-input button:hover {
+            background-color: #5f2c1c;
+            /* 更深的棕色 */
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0.2;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.2;
+            }
+        }
+
+        .thinking-dots span {
+            animation-name: blink;
+            animation-duration: 1.4s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: both;
+        }
+
+        .thinking-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .thinking-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 左侧历史会话列表 -->
+        <div class="sessions-list">
+            <h2>历史会话</h2>
+            <ul id="sessions"></ul>
+        </div>
+
+        <!-- 右侧聊天窗口 -->
+        <div class="chat-window">
+            <div class="chat-messages" id="messages"></div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="输入消息...">
+                <button onclick="sendMessage()" id="sendButton">发送</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentSessionId = null;
+        let typewriterInProgress = false;
+
+        // 获取 JWT 令牌
+        function getToken() {
+            return localStorage.getItem('token');
+        }
+
+        // 页面加载时获取历史会话
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchSessions();
+        });
+
+        // 获取历史会话
+        function fetchSessions() {
+            const token = getToken();
+            if (!token) {
+                alert('请先登录');
+                return;
+            }
+
+            fetch('/huanghe/sessionshistory', {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+                .then(response => {
+                    if (response.status === 401) {
+                        alert('未授权，请重新登录');
+                        return;
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // 假设后端返回的字段是 data.data
+                    let sessions = data.data;
+                    if (!sessions || sessions.length === 0) {
+                        document.getElementById('sessions').innerHTML = '<p>暂无会话记录</p>';
+                        return;
+                    }
+
+                    // 按 createdAt 降序排序
+                    sessions.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+                    const sessionsList = document.getElementById('sessions');
+                    sessionsList.innerHTML = '';
+
+                    sessions.forEach(session => {
+                        const li = document.createElement('li');
+                        // 使用后端返回的 title 作为标题，若 title 为空则显示 createdAt
+                        li.textContent = session.title || new Date(session.createdAt).toLocaleString();
+                        li.dataset.sessionId = session.sessionId;
+                        li.addEventListener('click', () => {
+                            document.querySelectorAll('.sessions-list li').forEach(item => item.classList.remove('active'));
+                            li.classList.add('active');
+                            currentSessionId = session.sessionId;
+                            fetchMessages(session.sessionId);
+                        });
+                        sessionsList.appendChild(li);
+                    });
+                })
+                .catch(error => {
+                    console.error('获取会话列表失败:', error);
+                    document.getElementById('sessions').innerHTML = '<p>加载会话失败</p>';
+                });
+        }
+
+        // 获取指定会话的消息
+        function fetchMessages(sessionId) {
+            const token = getToken();
+            if (!token) {
+                alert('请先登录');
+                return;
+            }
+
+            fetch(`/huanghe/sessions/${sessionId}/messages`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+                .then(response => {
+                    if (response.status === 401) {
+                        alert('未授权，请重新登录');
+                        return;
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const messages = data.data;
+                    const messagesDiv = document.getElementById('messages');
+                    messagesDiv.innerHTML = '';
+
+                    if (!messages || messages.length === 0) {
+                        messagesDiv.innerHTML = '<p>此会话暂无消息</p>';
+                        return;
+                    }
+
+                    messages.forEach(message => {
+                        const div = document.createElement('div');
+                        div.classList.add('message');
+                        // 用户消息在右侧，AI消息在左侧
+                        div.classList.add(message.senderType === 'user' ? 'user' : 'ai');
+                        const span = document.createElement('span');
+                        span.textContent = message.content;
+                        div.appendChild(span);
+                        messagesDiv.appendChild(div);
+                    });
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight; // 自动滚动到底部
+                })
+                .catch(error => {
+                    console.error('获取消息失败:', error);
+                    document.getElementById('messages').innerHTML = '<p>加载消息失败</p>';
+                });
+        }
+
+        // 显示用户消息
+        // 显示用户消息，确保它显示在右侧
+        function displayUserMessage(content) {
+            const messagesDiv = document.getElementById('messages');
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.classList.add('message', 'user'); // 用户消息在右侧
+            const userMessageSpan = document.createElement('span');
+            userMessageSpan.textContent = content;
+            userMessageDiv.appendChild(userMessageSpan);
+            messagesDiv.appendChild(userMessageDiv);
+
+            // 自动滚动到底部
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        // 发送消息
+        function sendMessage() {
+            // 如果正在进行打字效果，不允许发送新消息
+            if (typewriterInProgress) return;
+
+            const input = document.getElementById('messageInput');
+            const content = input.value.trim();
+            if (!content) return; // 如果输入为空，不发送
+
+            const token = getToken();
+            if (!token) {
+                alert('请先登录');
+                return;
+            }
+
+            // 立即在界面上显示用户发送的消息（右侧显示）
+            displayUserMessage(content);
+
+            // 显示AI正在思考的三个点
+            const thinkingElement = displayThinkingDots();
+
+            // 清空输入框
+            input.value = '';
+
+            const body = {
+                content: content,
+                sessionId: currentSessionId || '' // 如果 currentSessionId 为空，传递空字符串
+            };
+
+            // 发送消息到后端
+            fetch('/huanghe/aichat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(body)
+            })
+                .then(response => {
+                    if (response.status === 401) {
+                        alert('未授权，请重新登录');
+                        return;
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // 移除思考中的消息
+                    const thinkingDiv = document.getElementById('ai-thinking');
+                    if (thinkingDiv) {
+                        thinkingDiv.remove();
+                    }
+
+                    if (data && data.sessionId) {
+                        // 更新当前会话ID
+                        if (!currentSessionId) {
+                            currentSessionId = data.sessionId;
+                        }
+
+                        // 如果是新会话，更新会话列表
+                        if (data.isNewSession) {
+                            fetchSessions();
+                        }
+
+                        // 获取最新消息，包括AI回复
+                        fetch(`/huanghe/sessions/${data.sessionId}/messages`, {
+                            headers: {
+                                'Authorization': `Bearer ${token}`
+                            }
+                        })
+                            .then(response => response.json())
+                            .then(messagesData => {
+                                if (messagesData.data && messagesData.data.length > 0) {
+                                    // 查找最新的AI消息
+                                    const aiMessages = messagesData.data.filter(msg => msg.senderType === 'ai');
+                                    if (aiMessages.length > 0) {
+                                        // 获取最新的AI回复
+                                        const latestAIMessage = aiMessages[aiMessages.length - 1];
+                                        // 显示AI回复（逐字显示）
+                                        displayAIReply(latestAIMessage.content);
+                                    }
+                                }
+                            })
+                            .catch(error => {
+                                console.error('获取AI回复失败:', error);
+                            });
+                    } else {
+                        alert('发送消息失败: ' + (data.message || '未知错误'));
+                    }
+                })
+                .catch(error => {
+                    // 移除思考中的消息
+                    const thinkingDiv = document.getElementById('ai-thinking');
+                    if (thinkingDiv) {
+                        thinkingDiv.remove();
+                    }
+
+                    console.error('发送消息失败:', error);
+                    alert('发送消息失败，请稍后重试');
+                });
+        }
+
+        // 显示AI正在思考的三个点
+        function displayThinkingDots() {
+            const messagesDiv = document.getElementById('messages');
+            const aiThinkingDiv = document.createElement('div');
+            aiThinkingDiv.classList.add('message', 'ai');
+            aiThinkingDiv.id = 'ai-thinking';
+            const thinkingSpan = document.createElement('span');
+            thinkingSpan.classList.add('thinking-dots');
+            thinkingSpan.innerHTML = '<span>.</span><span>.</span><span>.</span>';
+            aiThinkingDiv.appendChild(thinkingSpan);
+            messagesDiv.appendChild(aiThinkingDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            return aiThinkingDiv;
+        }
+
+        // 逐字显示AI回复
+        function typeWriter(element, text, index, speed = 30) {
+            if (index < text.length) {
+                element.textContent += text.charAt(index);
+                index++;
+                setTimeout(() => typeWriter(element, text, index, speed), speed);
+
+                // 滚动到底部
+                const messagesDiv = document.getElementById('messages');
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            } else {
+                typewriterInProgress = false;
+                document.getElementById('sendButton').disabled = false;
+                document.getElementById('messageInput').disabled = false;
+            }
+        }
+
+        // 显示AI回复（逐字显示）
+        function displayAIReply(content) {
+            const messagesDiv = document.getElementById('messages');
+            const aiReplyDiv = document.createElement('div');
+            aiReplyDiv.classList.add('message', 'ai');
+            const aiReplySpan = document.createElement('span');
+            aiReplyDiv.appendChild(aiReplySpan);
+            messagesDiv.appendChild(aiReplyDiv);
+
+            typewriterInProgress = true;
+            document.getElementById('sendButton').disabled = true;
+            document.getElementById('messageInput').disabled = true;
+
+            typeWriter(aiReplySpan, content, 0);
+        }
+
+    </script>
+    <script src="utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            checkLogin();
+        });
+    </script>
+</body>
+
+</html>

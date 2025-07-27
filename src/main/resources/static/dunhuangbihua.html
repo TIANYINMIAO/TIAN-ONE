@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 敦煌壁画</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 800px; */
+            /* 控制最大宽度，避免太大 */
+            height: auto;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+
+        /* 导航部分开始 */
+    </style>
+</head>
+
+<body>
+    <!-- ==== topbar start ==== -->
+    <!--[if lt IE 9]>
+      <p class="browserupgrade">
+         You are using an <strong>outdated</strong> browser. Please
+         <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+         your experience and security.
+      </p>
+      <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+    <div class="daohang">
+        <!-- logo 部分，设置为左侧 -->
+        <div class="logo">
+            <img src="assets/image/logo2.png" alt="Logo">
+        </div>
+        <!-- 导航栏部分 -->
+        <button class="mobile-menu-btn">☰</button>
+        <nav>
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="index%20copy.html">首页</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">子菜单1</a></li>
+                                                         <li><a href="#">子菜单2</a></li>
+                                                         <li><a href="#">子菜单3</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="3.1wenhua.html">文化篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                        <li><a href="3.1wenhua.html">传统技艺</a></li>
+                        <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                        <li><a href="3.1wenhua.html">传统音乐</a></li>
+                        <li><a href="3.1wenhua.html">传统体育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="renwu.html">治水篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="renwu.html">治水英雄颂</a></li>
+                        <li><a href="zsjy.html">治水技奇谈</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="shenhua.html">神话篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="shenhua.html">大禹治水</a></li>
+                        <li><a href="shenhua.html">黄河母亲</a></li>
+                        <li><a href="shenhua.html">女娲补天</a></li>
+                        <li><a href="shenhua.html">伏羲创世</a></li>
+                        <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="zhengce.html">政策篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="zhengce.html">要闻</a></li>
+                        <li><a href="zhengce.html">地方新闻</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="rhudong.html">趣味黄河</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">互动答题</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="chat.html">智慧AI</a>
+                    <!-- <ul class="sub-menu">
+                                                                           <li><a href="# ">互动答题</a></li>
+                                                                        </ul> -->
+                </li>
+            </ul>
+        </nav>
+        <div class="dengluzc">
+            <a href="shijianshu.html">黄河
+                史书</a>
+            <a href="dlzc.html">登录</a>
+            <a href="dlzc.html">注册</a>
+    
+        </div>
+    </div>
+        <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        </script>
+
+        <!-- ==== 主体部分 ==== -->
+        <section class="common-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="common-banner__content text-center">
+                        <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                        <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+                    </div>
+                </div>
+            </div>
+            <div class="banner-bg">
+                <video class="banner-video" autoplay muted loop playsinline>
+                    <source
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3f136b72c-bcc0-428f-8f0d-563f31fe2837_1.mp4?Expires=1776597165&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=HeQSJ5PRePyJ4XC1jbH9dN0SyTI%3D"
+                        type="video/mp4">
+                </video>
+            </div>
+            <div class="shape">
+                <img src="assets/images/shape.png" alt="Image">
+            </div>
+            <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+            </div>
+        </section>
+        <!-- ==== / banner section end ==== -->
+        <!-- ==== faq section start ==== -->
+        <section class="faq">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-8 col-xl-6">
+                        <div class="faq__content">
+                            <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                                <span class="sub-title"><i
+                                        class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄河文化是中华文化的重要组成部分，它通过多民族的交流与融合，为敦煌壁画的发展提供了丰富的文化滋养。敦煌作为古丝绸之路上的重要节点，其壁画艺术在发展过程中吸收了黄河文化中其他民族文化元素，如汉族、西域各民族的绘画技艺和风格，使其在艺术表现上更加丰富多样。同时，黄河文化的多元性和包容性也为敦煌壁画的传承和发展提供了广阔的社会文化基础，使其在甘肃地区不断得到创新和发展。
+                                </span>
+                                <h2 class="title-animation">甘 肃 省 的 <span>历 史 长 河</span>
+
+                                </h2>
+                            </div>
+                            <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="accordion" id="accordion">
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                敦煌壁画是什么？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    敦煌壁画是中国古代美术史上的璀璨明珠，也是丝绸之路上的文化瑰宝。它主要指甘肃敦煌境内的莫高窟、西千佛洞、安西榆林窟等石窟的壁画。这些壁画内容丰富，技艺精湛，涵盖了佛教尊像画、经变画、佛教故事画、供养人画像、装饰图案画等多个主题，系统保留了公元4—14世纪中国绘画的真迹，被誉为“墙壁上的美术馆”。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                敦煌壁画的起源与发展阶段？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    敦煌壁画的起源可以追溯到公元4世纪，其发展大致经历了初创（公元4世纪至5世纪）、发展与成熟（公元6世纪至10世纪）、衰落与转型（公元11世纪至14世纪）三个阶段。早期受西域佛教艺术风格影响，以佛教故事和尊像画为主；北朝后期开始融合中原风格，内容和技艺愈发成熟，唐代达到鼎盛，人物画发展显著；随着丝绸之路衰落，壁画创作渐少，但仍有独特风格留存。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                敦煌壁画的艺术风格与形式？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    敦煌壁画的艺术风格形式多样，内容丰富，涵盖佛教尊像画、经变画、佛教故事画、供养人画像、装饰图案画等7类，生动反映了古代社会生活和风俗民情。其技艺精湛，采用天然矿物质颜料，色彩鲜艳持久，线条流畅，构图复杂而和谐。风格上早期受西域风格影响，后来逐渐融合中原风格，形成了独特的艺术风貌。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="false" aria-controls="collapseFour">
+                                                敦煌壁画如何为黄河文化增光添彩？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    敦煌壁画作为甘肃地区重要的非物质文化遗产，丰富了黄河文化的内涵。它不仅展现了古代丝绸之路沿线多民族的文化交流与融合，还通过其独特的艺术表现形式，体现了黄河文化多元共生的特点。同时，敦煌壁画在现代的传承和发展中，也成为了甘肃地区文化旅游的重要组成部分，为黄河文化的传播和发展做出了积极贡献。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                        <div class="faq__thumb d-none d-lg-block">
+                            <div class="faq__thumb-inner">
+                                <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/369444d7e-940c-4766-bfe0-4864b9cb1448_1.png?Expires=1776597267&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=1KMMhW%2BGGT5suoOAosdYHfnSADc%3D"
+                                        alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==== / faq section end ==== -->
+        <section class="blog-main cm-details">
+            <div class="container">
+                <div class="row gutter-60">
+                    <div class="col-12 col-xl-8">
+                        <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="#">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/374bcf145-c47c-4132-b9e8-671010a82ed0_5.png?Expires=1776597353&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=VjPdpDNgjqE%2BEQVmWG%2FefIwXu4U%3D"
+                                        alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="#"><i class="fa-solid fa-tags"></i>壁画题材
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="#">壁画题材
+                                        </a></h4>
+                                    <p>
+                                        在北魏晚期的洞窟里，出现了具有道家思想的神话题材。西魏249窟顶部，除中心画莲花藻井外，东西两面持节扬幡的方士开路，后有人首龙身的开明神兽随行。朱雀、玄武、青龙、白虎分布各壁。飞廉振翅而风动，雷公挥臂转连鼓，霹电以铁钻砸石闪光，雨师喷雾而致雨。
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="c4.html">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e2e0af91-0888-4ded-b2b4-3b91df387a25_6.png?Expires=1776597370&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=qrkSBpFYi8uPg4gYGaMFz2z1IfE%3D"
+                                        alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="c4.html"><i class="fa-solid fa-tags"></i>绘画风格
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+                                <div class="blog__single-content">
+                                    <h4><a href="c4.html">敦煌壁画的风格演变与艺术发展
+                                        </a></h4>
+                                    <p>
+                                        敦煌壁画作为中国古代佛教艺术的重要组成部分，历经多个历史时期的风格演变，每个时期的风格变化不仅体现了佛教艺术的独特魅力，也反映了社会文化、宗教信仰和艺术思想的变迁。早期的敦煌壁画充满了感情的外露和动态的夸张，逐渐过渡到西魏、北周、唐代和宋代的艺术特色，形成了丰富多样的视觉风貌。这些壁画在技法上精湛，题材上丰富，充分展示了中国传统绘画艺术的精髓以及佛教文化在不同历史时期的传播和演变。敦煌壁画不仅是古代宗教信仰的艺术表达，也是中国古代绘画历史中的瑰宝，具有极高的艺术和历史价值。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="c4.html" aria-label="blog details" title="blog details">🌍
+                                        了解更多<i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="assets/images/wenh/gansuqinqiang/12.png" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="gansujvmu.html"><i class="fa-solid fa-tags"></i>剧目</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="gansujvmu.html">秦腔的经典剧目 </a></h4>
+                                    <p>
+                                        甘肃秦腔作为西北戏曲艺术的瑰宝，其剧目体系历经数百年积淀，形成以历史纵深、地域风情、奇幻想象与时代创新为主轴的四大经典类别。四类剧目交织出从明清江湖到现代剧场的艺术长卷，既承载着丝绸之路上多民族文化交融的基因，又在当代舞台焕发新生，成为读懂甘肃人文精神与审美嬗变的鲜活注脚。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="gansujvmu.html" aria-label="blog details" title="blog details">🌍 经典欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="blog-main__sidebar">
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/397263ee1-92c7-44a1-8d41-69af0791eec4_13.png?Expires=1776596666&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=kYwwAqdPBMxEUoNygU5bx2XgJuA%3D"
+                                        alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>九色鹿本生故事画</h6>
+                                    <p>这幅壁画讲述了九色鹿救落水人调达，却被调达因利益诱惑而背叛，最终九色鹿凭借智慧和勇敢化解危机的故事，展现了画师高超的绘画技艺和深刻的艺术价值。
+                                    </p>
+                                    <p>在古老的恒河之畔，九色鹿如精灵般存在，它通体雪白，唯独背上有九种绚丽毛色，似银河落日洒下的斑斓光影。那日，落水者调达紧抓九色鹿鹿角，才从汹涌波涛中死里逃生。为报答救命之恩，九色鹿未要求任何回报，只希望调达保守它的行踪。然而，王后梦见九色鹿，便一病不起，要求国王务必寻来九色鹿为她做衣。重金之下，调达竟违背誓言，告知国王九色鹿的洞穴所在。国王率军围捕，千钧一发之际，九色鹿毫无惧色，向国王陈诉调达的背信弃义。国王听后，被九色鹿的品德震撼，不仅放过它，还下令全国保护。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/397263ee1-92c7-44a1-8d41-69af0791eec4_13.png?Expires=1776596666&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=kYwwAqdPBMxEUoNygU5bx2XgJuA%3D"
+                                        alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>五百强盗皈依佛法图</h6>
+                                    <p>这幅壁画描绘了五百强盗在战乱中为非作歹，最终被俘受刑，双眼被剜去，后在佛祖的慈悲救赎下重见光明并皈依佛法的故事，体现了佛教的慈悲与救赎精神。
+                                    <p>
+                                        北周时期，战乱频繁，一伙强盗在乱世中为非作歹。一次，他们与官军交战，寡不敌众，被俘后受尽酷刑，双眼被剜去。五百强盗在黑暗中痛苦挣扎，对世界满是绝望与愤恨。佛祖知晓后，心生怜悯，决定以无边佛法拯救他们。一日，强盗们突然感觉双眼微痒，用手一摸，竟摸到重新长出的眼珠。重见光明的那一刻，他们不敢相信，环顾四周，那温暖的阳光、清新的空气、美好的山川，与之前形成鲜明对比。他们意识到是佛祖的慈悲让他们获得新生，便纷纷跪倒在地，皈依佛法。
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="assets/images/wenh/gansuqinqiang/13.png" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>皮影小剧场：《月牙泉之恋》</h6>
+                                    <p>敦煌戍边将士阿郎与秦腔高手月儿跨越生死、以歌传情的凄美爱情故事</p>
+                                    <p>敦煌月牙泉旁，阿郎与月儿情定终身。阿郎是戍边将士，月儿是村中秦腔高手，歌声如泉。边疆战事起，阿郎出征，两人在泉边许下重逢誓言。月儿日复一日，在泉边以秦腔寄情。阿郎战场英勇，心系月儿。战后归来，阿郎却只见月牙泉，不见月儿身影，原来她已化作泉边一缕轻烟。阿郎悲歌，歌声回荡沙漠。从此，月圆之夜，月牙泉边总有凄美秦腔，似月儿灵魂诉说爱情。
+                                    </p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source
+                                    src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32d386f77-8477-487c-99ae-cad41e8e7ae7_2.mp4?Expires=1776597417&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=an8yidwRzRAUz83OlOj3V3fzK4k%3D"
+                                    type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>2017年，敦煌石粉彩绘技艺被公布为甘肃省非物质文化遗产保护项目。此外，敦煌研究院等机构通过数字化保护、修复技术等方式，积极推动敦煌壁画的保护和传承。敦煌壁画的非遗编号为：甘肃省非物质文化遗产名录编号60Ⅷ—6-21。
+                            </p>
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>在传承方面，敦煌壁画主要依靠师徒传承和专业机构的保护与研究，许多家庭和机构都有从事敦煌壁画的艺人和研究人员。
+                            </p>
+                            <p>在发展方面，敦煌壁画不断创新，将传统技艺与现代设计相结合，开发出更多符合市场需求的产品，如敦煌壁画的文创产品、数字艺术等。同时，通过举办敦煌壁画展览、培训等活动，提高了敦煌壁画的知名度和影响力。此外，当地政府还通过打造文化产业园区、设立展销窗口等方式，推动敦煌壁画的市场化发展，带动当地就业和群众增收。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3cdbbccd9-46af-432b-8e7e-6be95e2488eb_9.png?Expires=1776597433&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=cSSP9SCMIB8dQsPqz4Ep95p%2BBpU%3D"
+                                    alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ee13f143-8716-4f57-82b4-40c245d1b428_10.png?Expires=1776597435&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=MA6nQ8APDfAnp3l6PrQY68M%2BQoY%3D"
+                                    alt=" Image">
+                            </div>
+                        </div>
+                        <!-- ==== custom cursor start ==== -->
+                        <div class="mouseCursor cursor-outer"></div>
+                        <div class="mouseCursor cursor-inner"></div>
+                        <!-- ==== / custom cursor end ==== -->
+                        <!-- ==== scroll to top start ==== -->
+                        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                            <span></span>
+                            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                            </svg>
+                        </button>
+                        <!-- ==== / scroll to top end ==== -->
+                        <!-- ==== / color switcher end ==== -->
+                    </div>
+                    <!-- ==== js dependencies start ==== -->
+                    <!-- jquery -->
+                    <script src="assets/js/jquery-3.7.1.min.js"></script>
+                    <!-- bootstrap five js -->
+                    <script src="assets/js/bootstrap.bundle.min.js"></script>
+                    <!-- nice select js -->
+                    <script src="assets/js/jquery.nice-select.min.js"></script>
+                    <!-- magnific popup js -->
+                    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                    <!-- swiper slider js -->
+                    <script src="assets/js/swiper-bundle.min.js"></script>
+                    <!-- viewport js -->
+                    <script src="assets/js/viewport.jquery.js"></script>
+                    <!-- odometer js -->
+                    <script src="assets/js/odometer.min.js"></script>
+                    <!-- vanilla tilt js -->
+                    <script src="assets/js/vanilla-tilt.min.js"></script>
+                    <!-- aos js -->
+                    <script src="assets/js/aos.js"></script>
+
+                    <!-- splittext js -->
+                    <script src="assets/js/SplitText.min.js"></script>
+                    <!-- scrollto js -->
+                    <script src="assets/js/ScrollToPlugin.min.js"></script>
+                    <!-- scrolltrigger js -->
+                    <script src="assets/js/ScrollTrigger.min.js"></script>
+                    <!-- gsap js -->
+                    <script src="assets/js/gsap.min.js"></script>
+                    <!-- ==== / js dependencies end ==== -->
+                    <!-- template settings js -->
+                    <script src="assets/js/template-settings.js"></script>
+                    <!-- main js -->
+                    <script src="assets/js/custom.js"></script>
+<!--                     <script src="utils.js"></script>-->
+<!--                    <script>-->
+<!--                        document.addEventListener('DOMContentLoaded', function () {-->
+<!--                            checkLogin();-->
+<!--                        });-->
+<!--                    </script>-->
+
+</body>
+
+</html>

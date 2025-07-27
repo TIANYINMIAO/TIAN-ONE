@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>豫剧</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/33af76a0e-e66a-4333-98b3-2a51fc05f70b_96.png?Expires=1776599609&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=axNaBxgfRsAVjugjaq1O5wQpurw%3D">
+                    <span>基 本 特 征</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3f9296870-3213-48eb-8fb4-638a2b4502b9_97.png?Expires=1776599628&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=qCfHq1pg9NAV%2BCjY7QAZsGTKpmE%3D">
+                    <span>演 唱 特 色</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3630aa24a-0d1c-483f-b22e-bd757ca5569b_98.png?Expires=1776599647&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=wWbouHL7X2bCMD1oxV988y0sTZ4%3D">
+                    <span>角 色 行 当</span>
+                </div>
+                <!-- <div class="box">
+                    <img src="..\zp\2.png">
+                    <span>乐 器</span>
+                </div>
+                  <div class="box">
+                    <img src="..\zp\2.png">
+                    <span>丑 角</span>
+                </div> -->
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>文化特征</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">基本特征</h3>
+                        <p>豫剧的基本特征表现在：（1）豫剧生成、发展具有明显的多源性。（2）豫剧构建有着明显的多元性。（3）豫剧在发展过程中善于吸收融化，彰显出包容性。（4）豫剧剧目、音乐显示出丰富性。而豫剧许多专曲专用的曲牌音乐，又显示出了其程式性。不过在一套程式万千变化和一曲多用的戏曲美学思想关照下，豫剧的许多戏曲程式又可灵活多变地加以运用，这就又显示出豫剧程式的泛用性。（5）由于长期受中原文化，特别是黄河流域地方文化的影响，豫剧在演出剧目，舞台表演、人物塑造、表述方式.音乐唱腔等方面都形成了独特的河南地方风格和特色，具有浓郁的地域性特征。（6）豫剧的文学语言，表演、音乐质朴无华，通俗易懂，贴近群众，贴近生活，具有浓郁的河南文化特征，显示了河南文化特有的简约美和质朴美，从而构成了豫剧的简朴性特征。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35b157ab9-f5b9-4fea-98d6-97676a73f0e1_99.png?Expires=1776599669&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2BfGeI8jNExHJ2cRGzEO2%2FPG8J7A%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35e28103f-ee8b-4d01-a3ad-f6410d5f91e8_100.png?Expires=1776599691&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Ia8IIiDacfV%2FxePmTsDHlVDcoSM%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">演唱特色</h3>
+                        <p>豫剧的唱腔音乐结构属板式变化体，其主要声腔板式有四种，即二八板、慢板、流水板、散板。二八板在豫剧的四大板类中表现力最强，变化最丰富。慢板类有〔慢板〕〔金钩挂〕〔反金钩挂〕〔迎风板〕等板式。一般为4/4拍的三眼板，其上下句唱腔起于中眼而落于板上。上句落音较自由，下句落音豫东调和豫西调不同。〔慢板〕是豫剧唱腔中常用的板式之一。它的前奏过门有多种形式，其中最常用的有“六梆”“四梆”“导四梆”和“迎风一梆”等。流水板亦为豫剧常用的板类之一，可分为流水板、慢流水板、快流水板、流水连板等。唱腔一般都是眼起板落的一板一眼的形式。可根据需要作不同速度的变化。飞板也作“非板”，无板无眼，节奏自由，属于散板类。
+                            以上四大板类的唱词一般都是用“三三四”格律的十字句，或“二二三”格律的七字句，有时也用一些字数不等的长短句，如二八板中的呱嗒嘴即以五字句为基础，飞板中的滚白即为有唱有白的散文体句式。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b8b076d8-1263-4ea2-a7b9-efbf81aa7407_101.png?Expires=1776599717&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=w2ZIJSFqNq4P9px8WrEnVbbLTwI%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/38d5d4178-647d-427c-b59c-90fc923b54d8_102.png?Expires=1776599735&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=qZ8InusGC4ENpLUlWQeESLycyc4%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">角色行当</h3>
+
+
+                        <p>豫剧的角色由“生旦净丑”组成，按一般的说法是四生、四旦、四花脸。戏班组织也是按照“四生四旦四花脸，四兵四将四丫环；八个场面俩箱信，外加四个杂役”。“四生”即老生、大红脸（红生）、二红脸（武生），小生；“四旦”即正旦（青衣）、小旦（花旦、闺门旦）、老旦、彩旦；“四花脸”是黑头（副净）、大花脸、二花脸、三花脸（丑）。也有五生、五旦、五花脸的说法。演员一般都有自己的专工行当，也有一些演员则一专多能，工一行外，兼演他行。早期豫剧以“外八角”（四生四花脸）戏为主，生行戏占重要地位。生行的大红脸和二红脸的界限很严，大红脸专演关羽；二红脸专演赵匡胤、秦琼、康茂才等类角色，主要是武功戏。小生行一般有文武之分，也有的演员文武兼备，武功戏较出色。大净主要以唱功取胜，三花脸除表演诙谐风趣外，武功戏也有“盘绳”“吊水桶”“空中还原”“探海”“元宝顶”“大翻身”等不少绝招。旦行在以“外八角”为主时代，只占次要地位，但随女演员的登台与逐渐增多，在豫剧中取得了主导地位。
+                            各行当都有自己的表演要诀，如手势要诀是“花脸过项，红脸齐眉，小生齐唇，小旦齐胸”，武打戏的短打要诀是“身如蛇形眼似电，拳如流星腿似钻；稳如重舟急似箭，猛、勇、急、快、坐、站稳如山”，在枪路上，有“走丝”“连九枪”“十三枪”“九个鼻”“八杆”“单倒”等路数。青衣中闺门旦的表演要诀是“上场伸手似撵鹅，回手水袖搭手脖；飘飘下拜如抱子，跪下不能露脚脖”“说话不看人，走路不踢裙，男女不挽手，坐下看衣襟”。彩旦的表演要诀是“斜眼偷看人，说话咬嘴唇；一扭浑身动，走路摔汗巾”。小旦的出场式是“出门按鬓角，双手掖领窝，弯腰提绣鞋，再整衣裳角”。小生的表演要诀是“清、净、冲”。“清”是清秀，唱词吐字清，神态秀气；“净”是动作干净利落，恰到好处；“冲”是武打勇猛，精神振奋。
+                        </p>
+
+                    </div>
+
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/365b3f529-76d3-4de3-8e27-4c268626d2af_103.png?Expires=1776599755&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=WE7YpIl0YOUqABCY5wgUqxrEScg%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b29dbf07-4b52-47fe-86db-3a8ff68ea853_104.png?Expires=1776599776&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=JfGHEDLeCa3CaA8BTSB3o9ipHpE%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">角色行当</h3>
+                        <p>豫剧的角色由“生旦净丑”组成，按一般的说法是四生、四旦、四花脸。戏班组织也是按照“四生四旦四花脸，四兵四将四丫环；八个场面俩箱信，外加四个杂役”。“四生”即老生、大红脸（红生）、二红脸（武生），小生；“四旦”即正旦（青衣）、小旦（花旦、闺门旦）、老旦、彩旦；“四花脸”是黑头（副净）、大花脸、二花脸、三花脸（丑）。也有五生、五旦、五花脸的说法。演员一般都有自己的专工行当，也有一些演员则一专多能，工一行外，兼演他行。早期豫剧以“外八角”（四生四花脸）戏为主，生行戏占重要地位。生行的大红脸和二红脸的界限很严，大红脸专演关羽；二红脸专演赵匡胤、秦琼、康茂才等类角色，主要是武功戏。小生行一般有文武之分，也有的演员文武兼备，武功戏较出色。大净主要以唱功取胜，三花脸除表演诙谐风趣外，武功戏也有“盘绳”“吊水桶”“空中还原”“探海”“元宝顶”“大翻身”等不少绝招。旦行在以“外八角”为主时代，只占次要地位，但随女演员的登台与逐渐增多，在豫剧中取得了主导地位。
+
+                            <br>
+                            各行当都有自己的表演要诀，如手势要诀是“花脸过项，红脸齐眉，小生齐唇，小旦齐胸”，武打戏的短打要诀是“身如蛇形眼似电，拳如流星腿似钻；稳如重舟急似箭，猛、勇、急、快、坐、站稳如山”，在枪路上，有“走丝”“连九枪”“十三枪”“九个鼻”“八杆”“单倒”等路数。青衣中闺门旦的表演要诀是“上场伸手似撵鹅，回手水袖搭手脖；飘飘下拜如抱子，跪下不能露脚脖”“说话不看人，走路不踢裙，男女不挽手，坐下看衣襟”。彩旦的表演要诀是“斜眼偷看人，说话咬嘴唇；一扭浑身动，走路摔汗巾”。小旦的出场式是“出门按鬓角，双手掖领窝，弯腰提绣鞋，再整衣裳角”。小生的表演要诀是“清、净、冲”。“清”是清秀，唱词吐字清，神态秀气；“净”是动作干净利落，恰到好处；“冲”是武打勇猛，精神振奋。
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

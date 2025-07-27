@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>二人台</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/316f0b694-cc62-4653-b2c7-6a17a01331a8_1.png?Expires=1776597729&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=hc4%2FaOEvonH4HgqjghNWJvioR8o%3D">
+                    <span>音 乐</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3842dbdc3-f29b-424c-900c-8f30dd08cb9f_2.png?Expires=1776597836&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=L2uvifESepQnhdMdA1CN2gkewR8%3D">
+                    <span>唱 腔</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/310a7b697-f167-4afa-9a4a-997279663c29_3.png?Expires=1776597877&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=oDLvnEmCLa6TgIWTnu3GWIpbY0Y%3D">
+                    <span>乐 器</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39cc420dd-6cf4-4ca7-acf8-3bd9b2c7c3d4_4.png?Expires=1776597897&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=s4ODQOwhzcCf8oGj3dKd%2BsKvpb8%3D">
+                    <span>道 具</span>
+                </div>
+                <!-- <div class="box">
+                    <img src="assets/images/wenh/chuanjv/5.webp">
+                    <span>丑 角</span>
+                </div> -->
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>二人台小课堂</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">音乐</h3>
+                        <p>二人台的音乐是以当地山曲民歌“社火玩艺”中的的秧歌小调和道情戏中的部分乐曲基础，又吸收了内蒙民间小曲以及陕北民歌中的一些曲调的特征而成，具有浓厚的地方色彩。二人台的音乐分腔和牌曲两部分。唱腔多承用民歌曲调，有些经过各种速度的变化处理，已走向板式化。牌曲部分，基本是民歌基础上的器乐化。此外还吸收、借鉴了古牌曲、民间吹奏乐等，使其越来越丰富。演奏和伴奏时，主要有扬琴、笛子、四胡、二胡、四块瓦等乐器。音乐具有优美、清新、秀丽、明朗等特点。
+
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c5788f69-511d-4596-a5e0-320bae95ffaa_5.png?Expires=1776597918&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=i3NdIK1xNU2xyYYqwO1xkvaSB54%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c24b7262-c413-47f7-b019-5beb2c80fc1d_6.png?Expires=1776597937&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=MYDGz78wsLEeKNouWI3Osbda5kQ%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">唱腔</h3>
+                        <p>
+                            二人台的唱腔，基本上是专剧专曲，一曲一调。根据剧情变化，演唱时用慢、中、快的三拍式速度。二人台的传统音乐唱腔比较丰富，多数是在一些民歌小调的基础上发展而成的。最基本的曲调有“爬山调”和“烂席片”，此外，还吸收了其他民歌的曲子和其他剧种的一些曲牌，以丰富其表现力。其音乐形式，基本上属于民歌结构，因而作为戏剧音乐还是很不成熟的。为了演唱方便，表演通常只有两人，即一生一旦，或一丑一旦，有时一人可以交替饰演几个角色，俗称“摸帽戏”。随着二人台的不断改革和发展，有的开始尝试由多个演员表演阵容较大的梆子戏剧目，取得较好的效果。
+                        </p>
+                    </div>
+                    <!-- <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="assets/images/wenh/chuanjv/6.webp" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="assets/images/wenh/chuanjv/7.webp" alt=" Image">
+                        </div>
+                    </div> -->
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">乐器</h3>
+
+                        <p>二人台主乐器有“三大件”——枚、四胡、洋琴。艺人称“枚为骨，四胡为肉，洋琴为衣着，“三大件”互相配合，互相填补，各抒所长，成为协调，统一丰满华丽的音乐，此外还有梆子、四块瓦、唢呐、锣、小堂鼓等伴奏乐器。之外，后来在“三大件”之外还增加了二胡，中胡，琵琶、笙、阮、大提琴、等管弦乐器等，音乐的表现力更加丰富多彩。
+                        </p>
+
+                    </div>
+
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/306c4039e-a3bb-4838-b1fa-59c78d2cd055_7.png?Expires=1776597958&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=SQ%2Fd1oz7R%2FwACizLwWBt4gNQWy0%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/320be858b-5e9b-44e0-8ec7-fa80b86b13b2_8.png?Expires=1776597975&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=R9KyYWZ8BGBJnKssuscSWWuEvG8%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">道具</h3>
+                        <p>二人台的服装、化妆仿效晋剧。道具简单，主要有扇子、手绢、霸王鞭等。二人台在表演上既有草原辽阔粗犷的风格，又有北方憨直奔放的品味，深受蒙汉两族人民喜爱。
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

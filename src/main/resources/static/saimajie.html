@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 赛马节</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 1500px;
+            控制最大宽度，避免太大 */
+            max-height: 750px;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==== 进入动画 ==== -->
+    <div class="preloader">
+        <i class="icon-donation"></i>
+        <p>黄河文化</p>
+    </div>
+    <div class="daohang">
+        <!-- logo 部分，设置为左侧 -->
+        <div class="logo">
+            <img src="assets/image/logo2.png" alt="Logo">
+        </div>
+        <!-- 导航栏部分 -->
+        <button class="mobile-menu-btn">☰</button>
+        <nav>
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="index%20copy.html">首页</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">子菜单1</a></li>
+                                                         <li><a href="#">子菜单2</a></li>
+                                                         <li><a href="#">子菜单3</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="3.1wenhua.html">文化篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                        <li><a href="3.1wenhua.html">传统技艺</a></li>
+                        <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                        <li><a href="3.1wenhua.html">传统音乐</a></li>
+                        <li><a href="3.1wenhua.html">传统体育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="renwu.html">治水篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="renwu.html">治水英雄颂</a></li>
+                        <li><a href="zsjy.html">治水技奇谈</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="shenhua.html">神话篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="shenhua.html">大禹治水</a></li>
+                        <li><a href="shenhua.html">黄河母亲</a></li>
+                        <li><a href="shenhua.html">女娲补天</a></li>
+                        <li><a href="shenhua.html">伏羲创世</a></li>
+                        <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="zhengce.html">政策篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="zhengce.html">要闻</a></li>
+                        <li><a href="zhengce.html">地方新闻</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="rhudong.html">趣味黄河</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">互动答题</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="chat.html">智慧AI</a>
+                    <!-- <ul class="sub-menu">
+                                                                           <li><a href="# ">互动答题</a></li>
+                                                                        </ul> -->
+                </li>
+            </ul>
+        </nav>
+        <div class="dengluzc">
+            <a href="shijianshu.html">黄河
+                史书</a>
+            <a href="dlzc.html">登录</a>
+            <a href="dlzc.html">注册</a>
+
+        </div>
+    </div>
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('active');
+        });
+    </script>
+    <!-- ==== 主体部分 ==== -->
+    <section class="common-banner">
+        <div class="container">
+            <div class="row">
+                <div class="common-banner__content text-center">
+                </div>
+            </div>
+        </div>
+        <div class="banner-bg">
+            <video class="banner-video" autoplay muted loop playsinline>
+                <source
+                    src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31.1.mp4?Expires=1776340514&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Fg1Ic42jo0PB6GlC6E1dcoqvvSA%3D"
+                    type="video/mp4">
+                <source src="assets/videos/banner-video.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="shape">
+            <img src="assets/images/shape.png" alt="Image">
+        </div>
+        <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+        </div>
+    </section>
+    <!-- ==== / banner section end ==== -->
+    <!-- ==== faq section start ==== -->
+    <section class="faq">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-8 col-xl-6">
+                    <div class="faq__content">
+                        <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                            <span class="sub-title"><i
+                                    class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;青海的赛马节是黄河文化的重要组成部分，它不仅仅是一个传统节庆活动，更是展现黄河流域历史与精神风貌的平台。通过赛马、歌舞、民俗表演等形式，赛马节展示了青海及其周边地区的游牧文化，深刻体现了与自然和谐共生、马匹作为交通与生活伙伴的重要性。它蕴含着黄河文化中坚韧、勇敢与自由的精神，成为当地民众凝聚力和文化认同感的源泉。
+                            </span>
+                            <h2 class="title-animation">走 进 <span>赛 马 节</span>
+
+                            </h2>
+                        </div>
+                        <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="accordion" id="accordion">
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            赛马节是什么？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                青海赛马节是青海地区的传统庆典之一，每年吸引成千上万的人前来参与。赛马节不仅有赛马比赛，还包括民间歌舞、传统工艺展示、草原歌谣表演等，是青海丰富多彩的民族文化的集中展示。此活动通常在夏季举行，既是娱乐和竞技的盛会，也是各地人民交流感情、增进友谊的时刻。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            赛马节经历了哪些发展阶段？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                赛马节起源于青海及周边牧区的游牧文化，历史悠久。最早的赛马活动可以追溯到古代的牧民部落交流与军事演习，逐渐发展成为一种娱乐和社交的形式。经过几百年的演变，赛马节逐渐成为青海的代表性节庆活动，不仅在当地流传，也吸引着全国乃至世界的关注，成为展现青海民族精神与文化多样性的一个重要平台。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            赛马节的艺术风格是如何形成的？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                赛马节的艺术形式丰富多样，包含了传统的赛马比赛、民族舞蹈、民间歌唱以及草原音乐演奏等。赛马不仅是最为重要的比赛项目，还常常与舞蹈、歌唱等民俗表演交织在一起，展现出浓厚的地域特色。节庆期间，游客们不仅能享受视觉上的冲击，还能沉浸在传统文化和艺术形式的洗礼中。
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                            aria-expanded="false" aria-controls="collapseFour">
+                                            赛马节如何为黄河文化增添加彩？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                赛马节不仅仅是青海人民的一项传统节庆活动，它在文化上为黄河文化增添了更多的色彩与层次。赛马节作为展示黄河流域民众精神风貌的重要窗口，体现了草原文化、牧民的勇敢和与自然和谐共生的理念。通过赛马节，黄河流域的文化底蕴和独特魅力被进一步发扬光大，吸引了更多人关注黄河文化的多样性。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                    <div class="faq__thumb d-none d-lg-block">
+                        <div class="faq__thumb-inner">
+                            <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/324ae41ec-fca3-46af-b6b9-b901fc368bdb_1.2.png?Expires=1776601206&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=7iEl258hR4fIquq57rK5GN%2Fhfc0%3D" alt="Image">
+                            </div>
+                            <div class="thumb-sm" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3cd61ad27-ee2e-4af2-820e-df39f50b7019_1.3.png?Expires=1776601232&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=T%2BMDlo9KM98P3OfcFHUGYKXtrOs%3D" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="shape d-none d-lg-block">
+            <img src="assets/images/faq/shape.png" alt="Image">
+        </div> -->
+    </section>
+    <!-- ==== / faq section end ==== -->
+    <section class="blog-main cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="col-12 col-xl-8">
+                    <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+                            <a href="smj.html">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/30a5279f5-3c84-4d4a-9fa5-074cb40ba4c7_1.4.png?Expires=1776601252&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=lLTmIpzEfl6Zx6cRisH7cA1Kjg8%3D" alt="Image">
+                            </a>
+
+                            <div class="tag">
+                                <a href="smj.html"><i class="fa-solid fa-tags"></i>节日习俗</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+                            <div class="blog__single-content">
+                                <h4><a href="smj.html">节日习俗 </a></h4>
+                                <p>内蒙古赛马节是蒙古族传统的文化庆典，作为草原上的盛大节日，它不仅包括激烈的赛马比赛，还融合了丰富的民族歌舞表演、传统的祭祀仪式以及独特的草原美食。通过赛马这一核心活动，展现了蒙古族人民对马匹的崇敬与热爱，而歌舞和呼麦等艺术形式则体现了草原文化的魅力。节日期间，牧民们穿着传统的蒙古袍，举行祭祀活动，祈求丰收与平安，整个节日充满了草原的自由、豪迈与浓郁的民族气息。
+                                </p>
+                            </div>
+                            <div class="blog__single-cta">
+                                <a href="smj.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+                            <a href="#">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b64f2710-c40f-4839-9108-9ed772dbd648_1.5.png?Expires=1776601273&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=gjDWJyXNlAyPQvZFLN0BU91mnlE%3D" alt="Image">
+                            </a>
+                            <div class="tag">
+                                <a href="#"><i class="fa-solid fa-tags"></i>节日背景</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+                            <!-- <div class="blog__single-meta">
+                           <p><i class="icon-user"></i>Robert Fox</p>
+                           <p><i class="icon-message"></i>Comments (03)</p>
+                        </div> -->
+                            <div class="blog__single-content">
+                                <h4><a href="#">节日背景 </a></h4>
+                                <p>
+                                    蒙古族赛马节（818赛马节）：科尔沁左翼中旗是科尔沁草原的核心地带，是我国蒙古族人口最多的旗县，是孝庄文皇后的出生地，是民族英雄嘎达梅林的故乡。这里的人养马、爱马、懂马，每年的8月18日都要举行赛马节，赛马节就是草原的那达慕，人们在这里娱乐休息，享受赛马带来的快乐，赛马场也成了爱马人寻觅良驹的好地方。赛马会还有射箭，摔跤等项目。
+                                </p>
+                            </div>
+                            <div class="blog__single-cta">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="blog-main__sidebar">
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39d80be46-a941-4ee2-883c-62d0343aa184_1.9.png?Expires=1776601297&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6qLdvqPUfjhN5VG3mp3P35BCPnc%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>草原英雄的胜利</h6>
+                                <p>一位勇敢的马术能手在赛马节上用速度和技巧赢得了荣誉
+                                </p>
+                                <p>在青海的赛马节赛场上，年轻的马术能手阿旺参加了这场激烈的比赛。他生长在青藏高原，熟知每一匹马的脾性，马术技巧也从小在草原上磨砺。比赛开始时，众多骑手纷纷展开冲刺，阿旺与其他骑手几乎并驾齐驱。比赛进入高潮时，随着马匹的快速奔跑，阿旺迎头赶上，凭借出色的马术技巧和对赛道的精准掌控，他在最后的冲刺阶段超越了所有对手，首先穿越终点线。全场观众为他的表现欢呼，阿旺不仅赢得了比赛，也获得了部落的尊重与荣耀。这场比赛象征着勇气与坚持的力量，赛马节也因此成为草原精神的象征，传递着对英雄主义、无畏与超凡勇气的礼赞。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39d80be46-a941-4ee2-883c-62d0343aa184_1.9.png?Expires=1776601297&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6qLdvqPUfjhN5VG3mp3P35BCPnc%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>赛马节上的爱情故事</h6>
+                                <p>赛马场上，两位年轻人在激烈对决中萌生情愫。
+
+
+                                </p>
+                                <p>在青海的赛马节上，年轻的牧民小伙子扎西和姑娘玛吉参加了同一场赛马比赛。比赛前，扎西和玛吉都充满信心，但他们并不知道他们将成为对手。比赛开始时，扎西驾驭的骏马快速驰骋，而玛吉则展现出她的优雅与技巧，两人的距离在比赛过程中始终接近。尽管竞争激烈，但每当他们交换目光时，心中总有一种莫名的情感在升腾。在最后的一轮冲刺时，扎西和玛吉几乎并驾齐驱，然而，在最后一刻，扎西轻轻超越了玛吉，赢得了比赛。
+
+                                    然而，比赛结束后，扎西并没有庆祝自己的胜利，而是走向玛吉，递给她一朵野花并微笑着说：“你是我心中的英雄。”玛吉回以温柔的目光，两人在赛马节的欢呼声中开始了他们的爱情故事。赛马节不仅是体育赛事，更是草原上许多动人爱情故事的见证。正如草原上的风，赛马节成为了他们纯洁爱情的象征，见证了人与人之间真挚的情感与美好。
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3f05d018b-bf10-4bca-b7a2-6e78bb6b03ab_1.8.mp4?Expires=1776601343&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6NpU2MC1uel2hJR10GEk5bjBRTk%3D" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>赛马节作为青海地区的非物质文化遗产，得到了地方政府的积极保护。节庆期间，传统的赛马技艺、民间歌舞、音乐演奏等形式都在不断得到传承和发扬。各类非遗项目通过政府扶持、文化活动的推广以及群众参与，得到了有效的保护。赛马节不仅是竞技和娱乐的盛会，也是文化传承的重要载体。
+                            </p>
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>赛马节的传承与发展不仅依靠传统的方式，还借助现代传播手段与科技发展，使其能够在全球范围内吸引越来越多的观众。通过文化交流、跨国演出等途径，赛马节的影响力进一步扩大，既保留了传统文化的核心价值，也在与现代文明的融合中焕发出新的生命力。赛马节的未来发展将在传统与创新中不断推进，成为更具全球影响力的文化盛会。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3629d9a0b-8f7b-40ba-9c54-7e88b7040a90_1.6.png?Expires=1776601364&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=X6ZNQUMUNqGEmQYgzam266W8wMc%3D" alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/33b6b4066-c506-4be2-b836-95970069bf8d_1.7.png?Expires=1776601381&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=d3THrljRHhiXqQme3pLM1dBdaNg%3D" alt=" Image">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- ==== custom cursor start ==== -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+        <!-- ==== / custom cursor end ==== -->
+        <!-- ==== scroll to top start ==== -->
+        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+            <span></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </button>
+        <!-- ==== / scroll to top end ==== -->
+    </div>
+
+
+
+    <!-- ==== custom cursor start ==== -->
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"></div>
+    <!-- ==== / custom cursor end ==== -->
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

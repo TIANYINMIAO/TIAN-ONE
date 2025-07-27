@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>火把节</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img src="assets/zp/10.png">
+                    <span>纳 西 族</span>
+                </div>
+                <div class="box">
+                    <img src="assets/zp/11.png">
+                    <span>拉 祜 族</span>
+                </div>
+                <div class="box">
+                    <img src="assets/zp/12.png">
+                    <span>彝 族</span>
+                </div>
+                <!-- <div class="box">
+                    <img src="..\zp\2.png">
+                    <span>乐 器</span>
+                </div>
+                  <div class="box">
+                    <img src="..\zp\2.png">
+                    <span>丑 角</span>
+                </div> -->
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>传说小故事</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">纳西族</h3>
+                        <p>天神子劳阿普嫉妒人间的幸福生活，派一位年老的天将到人间，要他把人间烧成一片火海。老天将来到人间，看到一个男子将年纪稍大的孩子背在身上，年小的孩子反倒牵着走，他感到奇怪，细一问方知背着的孩子是侄子，牵着的孩子是儿子，因哥嫂已死，男子认为应该好好照料侄子。老天将为这样的人间美德深受感动，想着人们的心地是如此善良，怎忍加害于他们，便将天神烧毁人间的消息告诉给那男子，要他告诉人们于六月二十五那天事先在门口点燃火把，以此免去灾难。于是千家万户都在这天晚上点起了火把，天神以为人们早已在火海中灭亡，便沉沉地睡去，再也没有醒来。后来，纳西族人民就把这天定为火把节
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="assets/zp/13.png" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="assets/zp/14.png" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">拉祜族</h3>
+                        <p>山上住着一个善人和一个恶人，恶人专吃人眼。六月二十四这天，善人用蜂蜡裹在山羊角上，点燃蜂蜡后叫山羊去找恶人，恶人看到火花，以为人们拿火枪来打他，便急忙躲进山洞，并用石块堵住洞口，结果被洞里冒出来的水淹死了。从此人们就不再担心恶人来吃眼睛，可以安安稳稳地搞生产了。因此拉祜族人民就把这天定为火把节。
+
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="assets/zp/15.png" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="assets/zp/16.png" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">彝族</h3>
+
+                        <p>很早以前，天上有个大力士叫斯惹阿比，地上有个大力士叫阿体拉巴，两人都有拔山的力气。有一天，斯惹阿比要和阿体拉巴比赛摔跤，可是阿体拉巴有急事要外出，临走时，他请母亲用一盘铁饼招待斯惹阿比。斯惹阿比认为阿体拉巴既然以铁饼为饭食，力气一定很大，便赶紧离开了。阿体拉巴回来后，听母亲说斯惹阿比刚刚离去，便追了上去，要和他进行摔跤比赛，结果斯惹阿比被摔死了。天神恩梯古兹知道了此事，大为震怒，派了大批蝗虫来吃地上的庄稼。
+                            阿体拉巴便在旧历六月二十四那一晚，砍来许多松树枝、野蒿枝扎成火把，率领人们点燃起来，到田里去烧虫。从此，彝族人民便把这天定为火把节。撒梅王与异族抗争，头被砍掉，待到星宿出现又长出一个头来与之奋战厮杀。最后，由于奸细的出卖，砍掉头用尖刀草扫过脖子后，撒梅王的头就再也长不出来了，死不复生。据说尖刀草上的红斑就是撒梅王的血染红的。后来撒梅人在每年的六月二十四、二十五都要打起火把纪念撒梅王，并寻找他的英灵。
+                            <br>
+                            撒尼支系的《撒尼人的火把节》：
+                            <br>
+                            善神阿番偷开天门，撒下五谷，使人间的幸福生活超过天上。天神见了大怒，派大力士到地上来出气。阿潘恨大力士霸道，与他摔跤，把大力士摔倒在地上，压出一个坑来，后来天雨把那个坑变成湛蓝的长湖（路南淡水湖）。人们为纪念这位人间英雄，于农历六月二十四进行斗牛、摔跤、宰羊、燃火把等活动，以示悼念之情。
+                            阿细支系的《阿细人的火把节》：
+                            <br>
+                            奴隶主那迢迢把很多的穷弟兄关在牢狱中，穷人阿真等在羊角上绑上火把，冲向那迢迢的府第，烧死奴隶主，同时也烧掉了穷人手上的绳索。为纪念这次胜利，人们举火把游行，相沿成俗。 [4]
+                            罗婺支系的《喜鹊姑娘》：<br>
+                            罗婺彝家有个漂亮能干的姑娘，与彝家小伙阿龙早就相爱了。但附近十二个部落的男子都纷纷前来提亲，其中有个土官老爷凶狠残暴地说，如果不答应，就要血洗山寨，让全寨遭殃。姑娘无奈，答应在六月二十四相亲。相亲期到，姑娘穿上雪白的衣服、黑色短褂，胸前系一块花围裙，烧起一大堆火。十二部的头人也赶来了。姑娘深深地看了阿龙一眼后，纵身跳入火堆中。阿龙和几个小伙子想拽住她，可只扯下了她的衣角。四面八方的人们赶来，可她已经以死殉情。为了纪念她，十二个小伙抬起大牛推向对方，以推倒为胜。之后，杀牛饮酒、唱歌跳舞。后来彝家就把六月二十四定为火把节，被阿龙扯下的衣角，成了彝家妇女的围腰带，那焚烧姑娘的青烟，化为山寨的晨雾。据说清晨喜鹊鸣叫的时分，彝山的远处就隐隐绰绰地显出姑娘的身影，因此人们称她为喜鹊姑娘。
+                        </p>
+
+                    </div>
+
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="assets/zp/18.png" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="assets/zp/17.png" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <!-- <h3 class="title-animation">道具</h3>
+                        <p>二人台的服装、化妆仿效晋剧。道具简单，主要有扇子、手绢、霸王鞭等。二人台在表演上既有草原辽阔粗犷的风格，又有北方憨直奔放的品味，深受蒙汉两族人民喜爱。
+                        </p> -->
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

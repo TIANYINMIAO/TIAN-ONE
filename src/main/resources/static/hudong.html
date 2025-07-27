@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互动专区</title>
+    <style>
+        .option {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .selected {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        .summary {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="interactiveBtn">互动专区</button>
+    <div id="questionContainer"></div>
+    <div id="resultContainer" class="result"></div>
+    <div id="summaryContainer" class="summary"></div>
+
+    <script>
+        let questions = []; // 题目数据
+        let currentQuestionIndex = 0; // 当前题目索引
+        let correctAnswers = 0; // 正确题目计数
+        let incorrectAnswers = 0; // 错误题目计数
+
+        // 点击“互动专区”按钮，获取题目
+        document.getElementById('interactiveBtn').addEventListener('click', function () {
+            fetch('/huanghe/question', { method: 'GET' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.code === 1 && Array.isArray(data.data)) {
+                        questions = data.data;
+                        currentQuestionIndex = 0;
+                        correctAnswers = 0;
+                        incorrectAnswers = 0;
+                        document.getElementById('summaryContainer').innerText = '';
+                        displayCurrentQuestion(); // 显示第一道题目
+                    } else {
+                        throw new Error('返回数据格式错误');
+                    }
+                })
+                .catch(error => {
+                    console.error('获取题目失败:', error);
+                    document.getElementById('resultContainer').innerText = '获取题目失败，请稍后重试';
+                });
+        });
+
+        // 显示当前题目
+        function displayCurrentQuestion() {
+            const container = document.getElementById('questionContainer');
+            const resultContainer = document.getElementById('resultContainer');
+            container.innerHTML = ''; // 清空容器
+            resultContainer.innerText = ''; // 清空反馈信息
+
+            if (currentQuestionIndex >= questions.length) {
+                showSummary(); // 题目完成后显示总结
+                return;
+            }
+
+            const question = questions[currentQuestionIndex];
+            container.innerHTML = `<h3>第 ${currentQuestionIndex + 1} 题: ${question.content}</h3>`;
+
+            // 生成选项
+            const options = [
+                { label: 'A', text: question.optionA },
+                { label: 'B', text: question.optionB },
+                { label: 'C', text: question.optionC },
+                { label: 'D', text: question.optionD }
+            ];
+
+            options.forEach(option => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                optionDiv.innerText = `${option.label}. ${option.text}`;
+                optionDiv.addEventListener('click', function () {
+                    selectOption(question.id, option.label, optionDiv);
+                });
+                container.appendChild(optionDiv);
+            });
+        }
+
+        // 处理用户选择选项
+        function selectOption(questionId, selectedOption, optionDiv) {
+            // 更新选项样式
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            optionDiv.classList.add('selected');
+
+            // 发送 POST 请求到后端
+            fetch('/huanghe/option', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    questionId: questionId,
+                    optionId: selectedOption
+                })
+            })
+                .then(response => response.json())
+                .then(result => {
+                    const resultContainer = document.getElementById('resultContainer');
+                    if (result.code === 1) {
+                        resultContainer.innerText = '回答正确';
+                        resultContainer.className = 'result correct';
+                        correctAnswers++;
+                    } else {
+                        resultContainer.innerText = '回答错误';
+                        resultContainer.className = 'result incorrect';
+                        incorrectAnswers++;
+                    }
+                    // 1.5 秒后显示下一个题目
+                    setTimeout(() => {
+                        currentQuestionIndex++;
+                        displayCurrentQuestion();
+                    }, 1500);
+                })
+                .catch(error => {
+                    console.error('提交答案失败:', error);
+                    document.getElementById('resultContainer').innerText = '提交答案失败，请稍后重试';
+                });
+        }
+
+        // 显示总结信息，并在答对全部题目时请求 /huanghe/download
+        function showSummary() {
+            const summaryContainer = document.getElementById('summaryContainer');
+
+            if (incorrectAnswers === 0) {
+                summaryContainer.innerText = '恭喜你，全部答对！正在为您准备下载...';
+
+                // 发送 GET 请求到 /huanghe/download
+                fetch('/huanghe/download', { method: 'GET' })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP 错误! 状态码: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log("后端返回数据:", data); // 打印返回数据进行调试
+                        if (data.code === 1 && data.data) { // 这里使用 data.data
+                            summaryContainer.innerHTML += `<br><a href="${data.data}" target="_blank">点击这里下载</a>`;
+                        } else {
+                            console.error('下载失败:', data);
+                            summaryContainer.innerHTML += '<br>下载失败，请稍后重试。';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('下载请求失败:', error);
+                        summaryContainer.innerHTML += '<br>下载请求失败，请稍后重试。';
+                    });
+
+            } else {
+                summaryContainer.innerText = `您答错了${incorrectAnswers}道题，继续努力！`;
+            }
+        }
+    </script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

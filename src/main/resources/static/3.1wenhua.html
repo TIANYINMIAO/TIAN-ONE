@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>黄河文化--文化篇</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/3.1wenhua.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+</head>
+
+<body>
+<div class="daohang">
+    <!-- logo 部分，设置为左侧 -->
+    <div class="logo">
+        <img src="assets/image/logo2.png" alt="Logo">
+    </div>
+    <!-- 导航栏部分 -->
+    <button class="mobile-menu-btn">☰</button>
+    <nav>
+        <ul class="main-nav">
+            <li class="nav-item">
+                <a href="index%20copy.html">首页</a>
+                <!-- <ul class="sub-menu">
+                                                     <li><a href="#">子菜单1</a></li>
+                                                     <li><a href="#">子菜单2</a></li>
+                                                     <li><a href="#">子菜单3</a></li>
+                                                  </ul> -->
+            </li>
+            <li class="nav-item">
+                <a href="3.1wenhua.html">文化篇</a>
+                <ul class="sub-menu">
+                    <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                    <li><a href="3.1wenhua.html">传统技艺</a></li>
+                    <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                    <li><a href="3.1wenhua.html">传统音乐</a></li>
+                    <li><a href="3.1wenhua.html">传统体育</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="renwu.html">治水篇</a>
+                <ul class="sub-menu">
+                    <li><a href="renwu.html">治水英雄颂</a></li>
+                    <li><a href="zsjy.html">治水技奇谈</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="shenhua.html">神话篇</a>
+                <ul class="sub-menu">
+                    <li><a href="shenhua.html">大禹治水</a></li>
+                    <li><a href="shenhua.html">黄河母亲</a></li>
+                    <li><a href="shenhua.html">女娲补天</a></li>
+                    <li><a href="shenhua.html">伏羲创世</a></li>
+                    <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="zhengce.html">政策篇</a>
+                <ul class="sub-menu">
+                    <li><a href="zhengce.html">要闻</a></li>
+                    <li><a href="zhengce.html">地方新闻</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="rhudong.html">趣味黄河</a>
+                <!-- <ul class="sub-menu">
+                                                     <li><a href="#">互动答题</a></li>
+                                                  </ul> -->
+            </li>
+            <li class="nav-item">
+                <a href="chat.html">智慧AI</a>
+                <!-- <ul class="sub-menu">
+                                                                       <li><a href="# ">互动答题</a></li>
+                                                                    </ul> -->
+            </li>
+        </ul>
+    </nav>
+    <div class="dengluzc">
+        <a href="shijianshu.html">黄河
+            史书</a>
+        <a href="dlzc.html">登录</a>
+        <a href="dlzc.html">注册</a>
+
+    </div>
+</div>
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('active');
+        });
+    </script>
+
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+
+        <!-- 文化总述开始 -->
+        <div class="dahezi">
+            <main class="shop-container">
+                <div class="shop-header">
+                    <p>黄河文化是黄河流域九省文化的总和，涵盖传统技艺、民俗节庆、传统音乐和传统体育等多个方面。这些非遗文化在黄河的滋养下形成，共同构成了黄河文化的多样性和丰富性。</p>
+                </div>
+
+                <div class="categories">
+                    <button class="category-button active">总 述</button>
+                    <button class="category-button  " data-category="xijv1">传统戏剧</button>
+                    <button class="category-button" data-category="jiyi1">传统技艺</button>
+                    <button class="category-button" data-category="jieqing1">民俗节庆</button>
+                    <button class="category-button" data-category="yinyue1">传统音乐</button>
+                    <button class="category-button" data-category="tiyv1">传统体育</button>
+                </div>
+
+                <div class="products-grid">
+
+                    <div class="product-card" data-category="xijv1">
+                        <div class="product-image">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745152490788_31713f6d-6655-4c6b-9218-ef3405cc5f9c_1..png?Expires=1776688491&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=jhrSQu2WbPC2jO9gRi0UV%2BQtcmw%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="huangshanzangxi.html">
+                                <h2 class="product-name">黄南藏戏--青海省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="xijv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35a29b205-3af2-4c1e-a003-6cbe92d129c6_3.png?Expires=1776676578&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=HuZUq4vRtpsqzKfziTOb4gGtEek%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="chuanjv.html">
+                                <h2 class="product-name">川 剧--四川省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card" data-category="xijv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745152539072_211db26d-7ba0-4746-bbc4-c9a9c8286d4d_1..png?Expires=1776688540&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=qQ1vg%2Fv0OHu6FugjF7Y49P0r1kI%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="qinqiang.html">
+                                <h2 class="product-name">秦 腔--甘肃省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card" data-category="xijv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/39%20%2852%29.jpg?Expires=1776495637&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=fyoG75SC7BzUzq84YHfvPN54gU4%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="piying.html">
+                                <h2 class="product-name">皮 影--宁夏</h2>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="xijv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31..jfif?Expires=1776496260&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=wty%2F4wwvnEokApZ%2BAQZJrmVt7Z4%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="errentai.html">
+                                <h2 class="product-name">二人台--内蒙古</h2>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="product-card" data-category="xijv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745152578714_d63d9620-f0e9-418e-8cef-c2f182abd9f5_1..png?Expires=1776688579&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Qm52zkL8KRKfCTtCvRv%2BV18oO5o%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="jinjv.html">
+                                <h2 class="product-name">晋 剧--山西省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card" data-category="xijv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745152617844_4618cdc9-ad1f-4a7f-bd36-dbff18d6b493_1..png?Expires=1776688618&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=cW4TwXY22i%2FLj8J5Q1l2tc4g00Y%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="handiaoerhuang.html">
+                                <h2 class="product-name">汉调二簧--陕西省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="xijv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/311602522-c3d7-433c-863c-be80253fabc0_1..png?Expires=1776611009&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=QLIjDkgsxyCQAJpAT1gpVQKJQ2s%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="yvjv.html">
+                                <h2 class="product-name">豫 剧--河南省</h2>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="xijv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745152862217_24f350f2-2846-4ead-ae9c-be4639557d27_1.png?Expires=1776688863&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=qlrfMySfPPfgbCEt2qs3E6fIUck%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="lvjv.html">
+                                <h2 class="product-name">吕 剧--山东省</h2>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="jiyi1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31.jpg?Expires=1776496500&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=yFZbw0VTPJ8V%2FxuOI3nrhjTMKWg%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="zangzucx.html">
+                                <h2 class="product-name">藏族刺绣--青海省</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="jiyi1">
+                        <div class="product-image">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.jpg?Expires=1776496547&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=IwBDfFg82ptcP%2FxVyWuGz6F8%2Fck%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="tkhh.html">
+                                <h2 class="product-name">唐卡绘画--青海省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="jiyi1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745152899362_4ea249c9-c494-44cf-b50e-b55ed882edf1_5.png?Expires=1776688900&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=yDGOIGvkCVyOd%2BPddJI7NruurXo%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="shuxiu.html">
+                                <h2 class="product-name">蜀绣--四川省</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="jiyi1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/35.jpg?Expires=1776496712&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=7AbDwozxKaU0ADaBzp7nJfzkDTA%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="dunhuangbihua.html">
+                                <h2 class="product-name">敦煌壁画--甘肃省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card" data-category="jiyi1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/37.jpg?Expires=1776497383&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=cYHRMIBWxtBFSr7KHgs3oofwZgM%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="jianzhi.html">
+                                <h2 class="product-name">回族剪纸--宁夏省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="jiyi1">
+                        <div class="product-image">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745152921649_0f96c1f7-75e4-429a-96bb-9819c998e359_8.png?Expires=1776688922&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=v6UGCdhCAzkNOYxyabhHXKLAgsg%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="yinshizhizuo.html">
+                                <h2 class="product-name">银饰制作--内蒙古</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="jiyi1">
+                        <div class="product-image">
+
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745657916919_1db65338-d727-4d3a-9f90-bbb2f82ac735_5.png?Expires=1777193919&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=zQHyTuyT1a5K6fby9kEb8Twccxs%3D"
+                                alt="" />
+
+                        </div>
+                        <div class="product-details">
+                            <a href="hanchenghanggu.html">
+                                <h2 class="product-name">韩城行鼓--陕西省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="jiyi1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745152968213_42ae438b-4af2-4680-b840-0be515a9c877_11.png?Expires=1776688969&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=DuwJNg1LtIxv5ucRhJU8s3J8kqA%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="pingyaoqq.html">
+                                <h2 class="product-name">平遥推光漆器--山西省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="jiyi1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/313.jpg?Expires=1776500592&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=XuEgDTxNITvfKFlnsfIC%2Bmdnhtc%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="lytsc.html">
+                                <h2 class="product-name">洛阳唐三彩--河南省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="jiyi1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745152979461_1663cadf-d3b1-4cfa-8d5b-4e59f5725355_15.png?Expires=1776688980&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=EcNwoPmiYpsMGCjl%2Fv3a06hswEk%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="fengzheng.html">
+                                <h2 class="product-name">潍坊风筝制作--山东省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="jieqing1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/31a1063fc-eecd-4886-9dee-4fb05e74119e_13.png?Expires=1776676950&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=gckez%2FKcSG9U6nDRLz6eOVgnddc%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="saimajie.html">
+                                <h2 class="product-name">赛马节--青海省</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="jieqing1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31.80.png?Expires=1776501130&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=nM3fXHsi1DrbzW%2BSUxmM6eg%2FKgg%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="huobajie.html">
+                                <h2 class="product-name">火把节--四川省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="jieqing1">
+                        <div class="product-image">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745153023608_9f12e8ca-ac89-42fd-a2b5-a1514be721dd_1.3.png?Expires=1776689025&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=XK5w%2BsmWbFyCJjWnkeKhd%2Fd21Ho%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="dunhuangmogaoku.html">
+                                <h2 class="product-name">敦煌莫高窟文化节--甘肃</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="jieqing1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31.6.png?Expires=1776503875&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Dq1%2BFph4eXP0XzAguG5bNKGUydk%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="kaizhaijie.html">
+                                <h2 class="product-name">回族开斋节--宁夏</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="jieqing1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31.8.png?Expires=1776503900&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=t6lxsQuA%2BH6YXmQAImZkI5%2B8LUk%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="nadamu.html">
+                                <h2 class="product-name">那达慕大会--内蒙古</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="jieqing1">
+                        <div class="product-image">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31.10.png?Expires=1776503949&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=DiBHkgDHEIK46EGciEURTRpuXU0%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="xianguchengqiang.html">
+                                <h2 class="product-name">西安古城墙灯会--陕西</h2>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card" data-category="jieqing1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31.12.png?Expires=1776503969&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=BE1HaXcOPaoXqOl2CfLC83C%2FdHI%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="jicimiaohui.html">
+                                <h2 class="product-name">晋祠庙会--山西省</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="jieqing1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31.13.png?Expires=1776504033&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=KYYOajw11bM2yD0ypOTOWs5LWsc%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="luoyangmudan.html">
+                                <h2 class="product-name">洛阳牡丹文化节--河南</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="jieqing1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31.14.jpg?Expires=1776504070&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=h92zNQ4vVvoR5pVBIaOGxSI1InI%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="taishanfengsahn.html">
+                                <h2 class="product-name">泰山封禅大典--山东</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="yinyue1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.1.png?Expires=1776504102&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=qzZFT5qXpjAhCwLiIDEoekuiLFg%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="zzmg.html">
+                                <h2 class="product-name">藏族民歌--青海省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card" data-category="yinyue1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.3.png?Expires=1776504140&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=OE6fNeMPBwsYcb9qGh91UfuZ8n0%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="qzmg.html">
+                                <h2 class="product-name">羌族民歌--四川省</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="yinyue1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.4.png?Expires=1776504185&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=cUJ8brKgyjc2AAC0fIhMXN%2FgLuc%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="dunhuangguyue.html">
+                                <h2 class="product-name">敦煌古乐--甘肃省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="product-card" data-category="yinyue1">
+                        <div class="product-image">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.6.png?Expires=1776504210&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=18hveFfKmuby4uH4pgjmVVEF%2Fmg%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="nxzc.html">
+                                <h2 class="product-name">宁夏坐唱--宁夏</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="yinyue1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.8.png?Expires=1776504235&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=TcZdwYjQIE113PmQDbrnC%2FqNUus%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="matouqin.html">
+                                <h2 class="product-name">马头琴音乐--内蒙古</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="yinyue1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.9.png?Expires=1776504292&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=LO5b3RBpuSWOYtF3itK2ck9s9gU%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="sbmg.html">
+                                <h2 class="product-name">陕北民歌--陕西省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="yinyue1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.11.png?Expires=1776504338&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=proU2siseCmkOkWTHKQqKSkJ%2FO0%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="jjyy.html">
+                                <h2 class="product-name">晋剧音乐--山西省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="yinyue1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.13.png?Expires=1776504389&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=TAoM8ieIuULbL9tPNtepU7k%2F4Gc%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="yjyy.html">
+                                <h2 class="product-name">豫剧音乐--河南省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="yinyue1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31..png?Expires=1776504474&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=VdgaT1xvr7YSCHXpmLrRJd1JbQE%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="sdbz.html">
+                                <h2 class="product-name">山东梆子--山东省</h2>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="tiyv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/33.1.png?Expires=1776504582&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=IbTdqCiXGXTLXYSyGeYZlXO8W8M%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="sj.html">
+                                <h2 class="product-name">摔跤--青海省</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="tiyv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/33.2.png?Expires=1776504533&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=qM%2F6X3l8c5FOB3CvkvPrt1U34j8%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="qzsj.html">
+                                <h2 class="product-name">羌族射箭--四川省</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="tiyv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/33.3.png?Expires=1776504609&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=hTlv9MHgjuxZt14ljLtFRsEocrU%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="dhft.html">
+                                <h2 class="product-name">敦煌飞天舞蹈--甘肃</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="tiyv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/33.5.png?Expires=1776504634&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=FxnUvZb44r8sGPdifpyMplaXF9o%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="nxws.html">
+                                <h2 class="product-name">宁夏武术--宁夏省</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="tiyv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/33.7.png?Expires=1776504662&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=vJ8twNvcFk8qCHyteMgCIm4FEiA%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="nmgsm.html">
+                                <h2 class="product-name">蒙古族赛马--内蒙古</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="tiyv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/316.png?Expires=1776504744&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=M%2BVQLc3jkZg8p7LSpnkuNpmGBNw%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="sbyg.html">
+                                <h2 class="product-name">陕北秧歌--陕西省</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="tiyv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/33.10.png?Expires=1776504909&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=LTyV17o%2FdSWtRC540Kjo7X4GOuU%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="shjj.html">
+                                <h2 class="product-name">社火竞技--山西省</h2>
+                            </a>
+
+                        </div>
+                    </div>
+
+
+                    <div class="product-card" data-category="tiyv1">
+                        <div class="product-image">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/314.png?Expires=1776504958&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=t6aHD0UjgXcXyoMNnpdvuVdpyYE%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="hhpl.html">
+                                <h2 class="product-name">黄河漂流--河南省</h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="tiyv1">
+                        <div class="product-image">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/315.png?Expires=1776504978&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=4asJcIQm3PIKw7APjsbcwIgilcM%3D"
+                                alt="" />
+                        </div>
+                        <div class="product-details">
+                            <a href="hhlz.html">
+                                <h2 class="product-name">黄河龙舟--山东省</h2>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- ==== footer start ==== -->
+            <footer class="footer-two">
+                <div class="container">
+                    <div class="row align-items-center gutter-30">
+                        <div class="col-12 col-lg-7 col-xxl-6">
+                            <div class="footer-two__newsletter-content">
+                                <h3 class="title-animation">
+                                    黄 河 的 史 诗 从 未 落 幕
+                                </h3>
+                                <p>她的浪纹里沉睡着千万双治水者的草鞋，涛声中回响着无数智者的低语</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-5 col-xxl-5 offset-xxl-1">
+                            <div class="footer-two__newsletter-form">
+                                <form action="#" method="post">
+                                    <input type="email" required name="subscribe-email" id="subscribeEmail"
+                                        placeholder="Enter Email">
+                                    <button type="submit" aria-label="subscribe to our newsletter"
+                                        title="subscribe to our newsletter" class="btn--primary"> <i
+                                            class="fa-solid fa-paper-plane"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                           <div class="col-12">
+                              <hr class="divider">
+                           </div>
+                        </div> -->
+                    <!-- <div class="row gutter-60">
+                           <div class="col-12 col-md-6 col-xl-3">
+                              <div class="footer-two__widget" data-aos="fade-up" data-aos-duration="1000">
+                                 <div class="footer-two__widget-logo">
+                                    <a href="index.html">
+                                       <img src="assets/images/logo-light.png" alt="Image">
+                                    </a>
+                                 </div>
+                                 <div class="footer-two__widget-content">
+                                    <p>Our secure online donation platform allows you to make contributions quickly and
+                                       safely. Choose from various.
+                                    </p>
+                                    <div class="social">
+                                       <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook"
+                                          title="facebook">
+                                          <i class="fa-brands fa-facebook-f"></i>
+                                       </a>
+                                       <a href="https://vimeo.com/" target="_blank" aria-label="share us on vimeo" title="vimeo">
+                                          <i class="fa-brands fa-vimeo-v"></i>
+                                       </a>
+                                       <a href="https://x.com/" target="_blank" aria-label="share us on twitter" title="twitter">
+                                          <i class="fa-brands fa-twitter"></i>
+                                       </a>
+                                       <a href="https://www.linkedin.com/" target="_blank" aria-label="share us on linkedin"
+                                          title="linkedin">
+                                          <i class="fa-brands fa-linkedin-in"></i>
+                                       </a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-md-6 col-xl-2 offset-xl-1">
+                              <div class="footer-two__widget" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                                 <div class="footer-two__widget-intro">
+                                    <h5>Quick Links</h5>
+                                    <div class="line">
+                                       <span class="large-line"></span>
+                                       <span class="small-line"></span>
+                                       <span class="small-line"></span>
+                                    </div>
+                                 </div>
+                                 <div class="footer-two__widget-content">
+                                    <ul>
+                                       <li><a href="about-us.html"><i class="fa-solid fa-arrow-right"></i>About Us</a>
+                                       </li>
+                                       <li><a href="blog-list.html"><i class="fa-solid fa-arrow-right"></i>Our
+                                             News</a>
+                                       </li>
+                                       <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Our
+                                             Campaign</a>
+                                       </li>
+                                       <li><a href="faq.html"><i class="fa-solid fa-arrow-right"></i>FAQ</a></li>
+                                       <li><a href="contact-us.html"><i class="fa-solid fa-arrow-right"></i>Get A
+                                             Quote</a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-md-6 col-xl-3">
+                              <div class="footer-two__widget footer-two__widget--alternate" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="400">
+                                 <div class="footer-two__widget-intro">
+                                    <h5>Our Services</h5>
+                                    <div class="line">
+                                       <span class="large-line"></span>
+                                       <span class="small-line"></span>
+                                       <span class="small-line"></span>
+                                    </div>
+                                 </div>
+                                 <div class="footer-two__widget-content">
+                                    <ul>
+                                       <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Our Causes</a>
+                                       </li>
+                                       <li><a href="events.html"><i class="fa-solid fa-arrow-right"></i>Education
+                                             Support</a>
+                                       </li>
+                                       <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Our
+                                             Campaign</a>
+                                       </li>
+                                       <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Food
+                                             Support</a>
+                                       </li>
+                                       <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Health
+                                             Support</a>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-12 col-md-6 col-xl-3">
+                              <div class="footer-two__widget footer-two__widget--alternate" data-aos="fade-up"
+                                 data-aos-duration="1000" data-aos-delay="600">
+                                 <div class="footer-two__widget-intro">
+                                    <h5>Get In Touch</h5>
+                                    <div class="line">
+                                       <span class="large-line"></span>
+                                       <span class="small-line"></span>
+                                       <span class="small-line"></span>
+                                    </div>
+                                 </div>
+                                 <div class="footer-two__widget-content footer-two__widget-content--contact">
+                                    <ul>
+                                       <li><a href="https://maps.app.goo.gl/Gr9pTNqz5FRNrjQw8" target="_blank"><i
+                                                class="fa-solid fa-location-dot"></i>455 West Orchard Street Kings
+                                             Mountain, NC 280867</a>
+                                       </li>
+                                       <li><a href=""><i class="fa-solid fa-phone"></i>+088 (246)
+                                             642-27-10</a>
+                                       </li>
+                                       <li><a href="mailto:support@example.com"><i
+                                                class="fa-regular fa-envelope"></i>example@email.com</a></li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div> -->
+                    <div class="footer-two__copyright">
+                        <div class="container">
+                            <div class="row align-items-center gutter-12">
+                                <div class="col-12 col-lg-6">
+                                    <div class="footer-two__copyright-inner text-center text-lg-start">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="footer__bottom-left">
+                                        <ul class="footer__bottom-list justify-content-center justify-content-lg-end">
+                                            <li><a href="terms-conditions.html">Q Q</a></li>
+                                            <li><a href="privacy-policy.html">微 信</a></li>
+                                            <li><a href="privacy-policy.html">联 系 我 们</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+                        <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3shape.png?Expires=1776505074&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=A%2BNQhVsP0jilvCZ6gOQpY%2FRjUVE%3D"
+                            alt="Image" class="base-img">
+                    </div>
+                    <div class="sprade-light" data-aos="zoom-in" data-aos-duration="1000">
+                        <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3sprade-light.png?Expires=1776505036&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=dvGL9mC%2BZ97CTp%2FvefHzOFxr%2Fv4%3D"
+                            alt="Image">
+                    </div>
+            </footer>
+            <!-- ==== / footer end ==== -->
+            <!-- ==== custom cursor start ==== -->
+            <div class="mouseCursor cursor-outer"></div>
+            <div class="mouseCursor cursor-inner"></div>
+            <!-- ==== / custom cursor end ==== -->
+            <!-- ==== scroll to top start ==== -->
+            <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                <span></span>
+                <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                </svg>
+            </button>
+            <!-- ==== / scroll to top end ==== -->
+        </div>
+
+        <!-- ==== js dependencies start ==== -->
+        <!-- jquery -->
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <!-- bootstrap five js -->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <!-- nice select js -->
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <!-- magnific popup js -->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!-- swiper slider js -->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <!-- viewport js -->
+        <script src="assets/js/viewport.jquery.js"></script>
+        <!-- odometer js -->
+        <script src="assets/js/odometer.min.js"></script>
+        <!-- vanilla tilt js -->
+        <script src="assets/js/vanilla-tilt.min.js"></script>
+        <!-- aos js -->
+        <script src="assets/js/aos.js"></script>
+        <!-- splittext js -->
+        <script src="assets/js/SplitText.min.js"></script>
+        <!-- scrollto js -->
+        <script src="assets/js/ScrollToPlugin.min.js"></script>
+        <!-- scrolltrigger js -->
+        <script src="assets/js/ScrollTrigger.min.js"></script>
+        <!-- gsap js -->
+        <script src="assets/js/gsap.min.js"></script>
+        <!-- ==== / js dependencies end ==== -->
+        <!-- template settings js -->
+        <script src="assets/js/template-settings.js"></script>
+        <!-- main js -->
+        <script src="assets/js/custom.js"></script>
+        <script src="assets/js/3.1wenhua.js" defer></script>
+<!--         <script src="utils.js"></script>-->
+<!--        <script>-->
+<!--            document.addEventListener('DOMContentLoaded', function () {-->
+<!--                checkLogin();-->
+<!--            });-->
+<!--        </script>-->
+</body>
+
+</html>

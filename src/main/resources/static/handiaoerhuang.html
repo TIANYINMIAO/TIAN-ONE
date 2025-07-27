@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 汉调二簧</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 800px; */
+            /* 控制最大宽度，避免太大 */
+            height: auto;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==== 进入动画 ==== -->
+    <div class="preloader">
+        <i class="icon-donation"></i>
+        <p>黄河文化</p>
+    </div>
+<div class="daohang">
+    <!-- logo 部分，设置为左侧 -->
+    <div class="logo">
+        <img src="assets/image/logo2.png" alt="Logo">
+    </div>
+    <!-- 导航栏部分 -->
+    <button class="mobile-menu-btn">☰</button>
+    <nav>
+        <ul class="main-nav">
+            <li class="nav-item">
+                <a href="index%20copy.html">首页</a>
+                <!-- <ul class="sub-menu">
+                                                     <li><a href="#">子菜单1</a></li>
+                                                     <li><a href="#">子菜单2</a></li>
+                                                     <li><a href="#">子菜单3</a></li>
+                                                  </ul> -->
+            </li>
+            <li class="nav-item">
+                <a href="3.1wenhua.html">文化篇</a>
+                <ul class="sub-menu">
+                    <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                    <li><a href="3.1wenhua.html">传统技艺</a></li>
+                    <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                    <li><a href="3.1wenhua.html">传统音乐</a></li>
+                    <li><a href="3.1wenhua.html">传统体育</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="renwu.html">治水篇</a>
+                <ul class="sub-menu">
+                    <li><a href="renwu.html">治水英雄颂</a></li>
+                    <li><a href="zsjy.html">治水技奇谈</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="shenhua.html">神话篇</a>
+                <ul class="sub-menu">
+                    <li><a href="shenhua.html">大禹治水</a></li>
+                    <li><a href="shenhua.html">黄河母亲</a></li>
+                    <li><a href="shenhua.html">女娲补天</a></li>
+                    <li><a href="shenhua.html">伏羲创世</a></li>
+                    <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="zhengce.html">政策篇</a>
+                <ul class="sub-menu">
+                    <li><a href="zhengce.html">要闻</a></li>
+                    <li><a href="zhengce.html">地方新闻</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="rhudong.html">趣味黄河</a>
+                <!-- <ul class="sub-menu">
+                                                     <li><a href="#">互动答题</a></li>
+                                                  </ul> -->
+            </li>
+            <li class="nav-item">
+                <a href="chat.html">智慧AI</a>
+                <!-- <ul class="sub-menu">
+                                                                       <li><a href="# ">互动答题</a></li>
+                                                                    </ul> -->
+            </li>
+        </ul>
+    </nav>
+    <div class="dengluzc">
+        <a href="shijianshu.html">黄河
+            史书</a>
+        <a href="dlzc.html">登录</a>
+        <a href="dlzc.html">注册</a>
+
+    </div>
+</div>
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('active');
+        });
+    </script>
+    <!-- ==== 主体部分 ==== -->
+    <section class="common-banner">
+        <div class="container">
+            <div class="row">
+                <div class="common-banner__content text-center">
+                    <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                    <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+                </div>
+            </div>
+        </div>
+        <div class="banner-bg">
+            <video class="banner-video" autoplay muted loop playsinline>
+                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/36727791a-01a4-430d-a9a9-1a6fea73bf33_1.mp4?Expires=1776598784&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=vQPIjPuNxc81wbvqg65aCMsKY48%3D" type="video/mp4">
+                <source src="assets/videos/banner-video.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="shape">
+            <img src="assets/images/shape.png" alt="Image">
+        </div>
+        <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+        </div>
+    </section>
+    <!-- ==== / banner section end ==== -->
+    <!-- ==== faq section start ==== -->
+    <section class="faq">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-8 col-xl-6">
+                    <div class="faq__content">
+                        <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                            <span class="sub-title"><i
+                                    class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄河文化作为中华文明的重要发源地之一，其丰富的民间音乐、戏曲艺术和方言习俗对陕西汉调二簧产生了深远的影响。汉调二簧源自陕南汉江流域，这一地区与黄河文化有着千丝万缕的联系。黄河文化中的山歌、牧歌、民歌等民间音乐形式为汉调二簧提供了丰富的音乐素材和创作灵感。同时，黄河文化中的方言、习俗和民间故事也为汉调二簧的剧本创作和表演风格注入了独特的文化内涵。
+                            </span>
+                            <h2 class="title-animation">宁 夏 回 族 自 治 区 的 <span>历 史 长 河</span>
+
+                            </h2>
+                        </div>
+                        <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="accordion" id="accordion">
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            汉调二簧是什么？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                陕西汉调二簧，又称陕二簧、山二簧，是陕西省安康市和湖北省竹溪县的传统地方戏剧剧种，属于国家级非物质文化遗产之一。它是陕西第二大剧种，流行于陕西的安康、汉中、商雒、西安及四川、甘肃、湖北的部分地区。汉调二簧以其独特的声腔、表演风格和丰富的剧目深受观众喜爱。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            汉调二簧的起源与发展阶段？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                汉调二簧的起源可以追溯到清代初叶，它源自陕南汉江流域的山歌、牧歌、民歌等民间音乐形式。在发展过程中，汉调二簧受到了秦腔的影响，并吸收了昆曲、吹腔、高拨子等曲调，糅合当地方言，形成了独立的声腔剧种。随着时间的推移，汉调二簧逐渐形成了安康、汉中、商雒、关中等流派，名角层出不穷，艺术水平不断提高。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            汉调二簧的艺术风格与形式？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                汉调二簧的艺术风格形式独特，表演讲究细腻精到，唱腔真假嗓并用，悠扬婉转。其唱腔以西皮、二簧为主，西皮用于表现愉快、爽朗的情绪和场面，二簧用于表现悲哀、肃穆的情绪和场面。汉调二簧的脚色行当丰富，包括末、净、生、旦、丑、外、小、贴、老、杂等十个行当，每个行当都有其独特的表演风格和唱腔特点。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                            aria-expanded="false" aria-controls="collapseFour">
+                                            汉调二簧如何为黄河文化增光添彩？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                作为黄河文化的重要组成部分，陕西汉调二簧以其独特的艺术风格和丰富的文化内涵为黄河文化增添了独特的色彩。它不仅展示了黄河流域人民的智慧和创造力，还传承和弘扬了中华民族的优秀传统文化。通过汉调二簧的表演和传唱，人们可以更好地了解和感受黄河文化的魅力和价值。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                    <div class="faq__thumb d-none d-lg-block">
+                        <div class="faq__thumb-inner">
+                            <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/304c428e3-5906-4492-9320-8bcb04356f3c_3.jpg?Expires=1776598870&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=SzgytkqY6lTKl9vzAhWbaFMeUxc%3D" alt="Image">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="shape d-none d-lg-block">
+            <img src="assets/images/faq/shape.png" alt="Image">
+        </div> -->
+    </section>
+    <!-- ==== / faq section end ==== -->
+    <section class="blog-main cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="col-12 col-xl-8">
+                    <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+                            <a href="#">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3bbe4d304-e64f-41be-888d-7a384ee0896d_1..png?Expires=1776598918&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=PfSrHARnty0jw2BrKJpocvYm6MI%3D" alt="Image">
+                            </a>
+                            <div class="tag">
+                                <a href="#"><i class="fa-solid fa-tags"></i>代表剧目</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+
+                            <div class="blog__single-content">
+                                <h4><a href="#">汉调二簧的代表剧目 </a></h4>
+                                <p>
+                                    汉调二簧的传统剧目丰富，主要取材自历史故事和民间传说。代表性剧目包括《文姬辨琴》、《胡笳十八拍》、《战蚩尤》等，这些剧目展现了二簧戏的丰富情感和多样化表现形式。
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+                            <a href="c12.html">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32acd0aa7-61e5-4496-a09d-c906f78eae0e_4.jpg?Expires=1776598938&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ATog%2F53eR8DY2U0m1kwc3X8%2BNdw%3D" alt="Image">
+                            </a>
+                            <div class="tag">
+                                <a href="c12.html"><i class="fa-solid fa-tags"></i>文化特征</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+
+                            <div class="blog__single-content">
+                                <h4><a href="c12.html">汉调二簧的文化特征 </a></h4>
+                                <p>
+                                    汉调二簧作为陕西和湖北一带的传统戏剧剧种，具有极其丰富的文化特征。它不仅在演出形式、唱腔技巧上独具特色，还承载着深厚的地方文化背景。汉调二簧在演出风格上兼具细腻与粗犷，既可以通过细致入微的表演来展现人物的内心世界，又能够通过豪放激昂的方式来表现激烈的情感冲突。
+                                </p>
+                            </div>
+                            <div class="blog__single-cta">
+                                <a href="c12.html" aria-label="blog details" title="blog details">🌍
+                                    了解更多<i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="assets/images/wenh/gansuqinqiang/12.png" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="gansujvmu.html"><i class="fa-solid fa-tags"></i>剧目</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="gansujvmu.html">秦腔的经典剧目 </a></h4>
+                                    <p>
+                                        甘肃秦腔作为西北戏曲艺术的瑰宝，其剧目体系历经数百年积淀，形成以历史纵深、地域风情、奇幻想象与时代创新为主轴的四大经典类别。四类剧目交织出从明清江湖到现代剧场的艺术长卷，既承载着丝绸之路上多民族文化交融的基因，又在当代舞台焕发新生，成为读懂甘肃人文精神与审美嬗变的鲜活注脚。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="gansujvmu.html" aria-label="blog details" title="blog details">🌍 经典欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="blog-main__sidebar">
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e24ead18-290b-423d-a292-b30994d5875d_13.png?Expires=1776593788&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6LLL0O7wTyJxU1YhOyxhgqkjp50%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>皮影小剧场：《月光下的皮影舞会》</h6>
+                                <p>在月光皎洁的夜晚，皮影艺人们用灵巧的双手，在村口大树下演绎了一场梦幻般的皮影舞会。
+                                </p>
+                                <p>在古老的村庄里，每当月圆之夜，皮影艺人们就会聚集在村口的大树下，用灵巧的双手操控着色彩斑斓的皮影角色，开始一场别开生面的皮影舞会。今晚，月光如水，照亮了整个舞台，皮影小兔子轻盈地跳跃着，仿佛真的在草地上嬉戏；皮影老鹰展翅高飞，划过夜空，留下一道道美丽的光影轨迹。皮影艺人们的手指在幕后灵活舞动，每一个动作都牵动着观众的心弦，仿佛大家也跟着皮影角色一起，在月光下翩翩起舞。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e24ead18-290b-423d-a292-b30994d5875d_13.png?Expires=1776593788&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6LLL0O7wTyJxU1YhOyxhgqkjp50%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>皮影小剧场：《智勇小英雄》</h6>
+                                <p>少年小明利用古老的皮影戏道具，制作出一个皮影勇士，成功保护了村庄免受妖怪的侵扰。
+                                </p>
+                                <p>
+                                    在一个被妖怪困扰的村庄里，住着一位名叫小明的少年。他聪明勇敢，决心要保护村庄免受妖怪的侵扰。一天，小明在村后的山洞里发现了一套古老的皮影戏道具，他决定利用这些道具，制作出一个能够打败妖怪的皮影勇士。经过无数个日夜的练习，小明终于掌握了皮影操控的精髓。在一个月黑风高的夜晚，他操纵着皮影勇士，与妖怪展开了一场惊心动魄的战斗。最终，凭借着智慧和勇气，小明和他的皮影勇士成功地将妖怪赶出了村庄，成为了村民们心中的英雄。
+                                </p>
+                            </div>
+                        </div>
+                        <!-- <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="assets/images/wenh/gansuqinqiang/13.png" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>皮影小剧场：《月牙泉之恋》</h6>
+                                    <p>敦煌戍边将士阿郎与秦腔高手月儿跨越生死、以歌传情的凄美爱情故事</p>
+                                    <p>敦煌月牙泉旁，阿郎与月儿情定终身。阿郎是戍边将士，月儿是村中秦腔高手，歌声如泉。边疆战事起，阿郎出征，两人在泉边许下重逢誓言。月儿日复一日，在泉边以秦腔寄情。阿郎战场英勇，心系月儿。战后归来，阿郎却只见月牙泉，不见月儿身影，原来她已化作泉边一缕轻烟。阿郎悲歌，歌声回荡沙漠。从此，月圆之夜，月牙泉边总有凄美秦腔，似月儿灵魂诉说爱情。
+                                    </p>
+                                </div>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3bae3530e-6a1b-468d-80dc-445dc43a4e44_5.mp4?Expires=1776598996&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Lpe7d8Q866g4taTnbCAcFB%2BQMZc%3D" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>2006年5月20日，由陕西省安康市和湖北省竹溪县联合申报的汉调二簧经中华人民共和国国务院批准列入第一批国家级非物质文化遗产名录，项目编号Ⅳ-31。
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>现代在汉调二簧的传承与发展上，已实施了对老一辈艺术家的保护与技艺传承，鼓励年轻人学习并融入这一传统艺术；同时，通过创新融合现代艺术元素，创作出符合时代潮流的作品；并利用数字化技术对汉调二簧进行记录和保存，为这一非物质文化遗产的广泛传播和持续发展奠定了坚实基础。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c059cce4-4b59-408d-a50a-f92e93f4d614_6.jpg?Expires=1776599014&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=d7mamxPRoOD2RD8DMWbg6pIohY0%3D" alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39a9b21aa-145e-41da-a8ff-ca00eec10c57_7.jpg?Expires=1776599029&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Smv2qeuAXqVkKiwJF2Ilx3CDQdI%3D" alt=" Image">
+                            </div>
+                        </div>
+
+                        <!-- ==== / color switcher end ==== -->
+                    </div>
+                    <!-- ==== js dependencies start ==== -->
+                    <!-- jquery -->
+                    <script src="assets/js/jquery-3.7.1.min.js"></script>
+                    <!-- bootstrap five js -->
+                    <script src="assets/js/bootstrap.bundle.min.js"></script>
+                    <!-- nice select js -->
+                    <script src="assets/js/jquery.nice-select.min.js"></script>
+                    <!-- magnific popup js -->
+                    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                    <!-- swiper slider js -->
+                    <script src="assets/js/swiper-bundle.min.js"></script>
+                    <!-- viewport js -->
+                    <script src="assets/js/viewport.jquery.js"></script>
+                    <!-- odometer js -->
+                    <script src="assets/js/odometer.min.js"></script>
+                    <!-- vanilla tilt js -->
+                    <script src="assets/js/vanilla-tilt.min.js"></script>
+                    <!-- aos js -->
+                    <script src="assets/js/aos.js"></script>
+
+                    <!-- splittext js -->
+                    <script src="assets/js/SplitText.min.js"></script>
+                    <!-- scrollto js -->
+                    <script src="assets/js/ScrollToPlugin.min.js"></script>
+                    <!-- scrolltrigger js -->
+                    <script src="assets/js/ScrollTrigger.min.js"></script>
+                    <!-- gsap js -->
+                    <script src="assets/js/gsap.min.js"></script>
+                    <!-- ==== / js dependencies end ==== -->
+                    <!-- template settings js -->
+                    <script src="assets/js/template-settings.js"></script>
+                    <!-- main js -->
+                    <script src="assets/js/custom.js"></script>
+<!--                     <script src="utils.js"></script>-->
+<!--                    <script>-->
+<!--                        document.addEventListener('DOMContentLoaded', function () {-->
+<!--                            checkLogin();-->
+<!--                        });-->
+<!--                    </script>-->
+
+</body>
+
+</html>

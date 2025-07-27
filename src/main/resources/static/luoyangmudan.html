@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 洛阳牡丹文化节</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 1500px;
+            控制最大宽度，避免太大 */
+            max-height: 750px;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==== 进入动画 ==== -->
+    <div class="preloader">
+        <i class="icon-donation"></i>
+        <p>黄河文化</p>
+    </div>
+    <div class="daohang">
+        <!-- logo 部分，设置为左侧 -->
+        <div class="logo">
+            <img src="assets/image/logo2.png" alt="Logo">
+        </div>
+        <!-- 导航栏部分 -->
+        <button class="mobile-menu-btn">☰</button>
+        <nav>
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="index%20copy.html">首页</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">子菜单1</a></li>
+                                                         <li><a href="#">子菜单2</a></li>
+                                                         <li><a href="#">子菜单3</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="3.1wenhua.html">文化篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                        <li><a href="3.1wenhua.html">传统技艺</a></li>
+                        <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                        <li><a href="3.1wenhua.html">传统音乐</a></li>
+                        <li><a href="3.1wenhua.html">传统体育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="renwu.html">治水篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="renwu.html">治水英雄颂</a></li>
+                        <li><a href="zsjy.html">治水技奇谈</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="shenhua.html">神话篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="shenhua.html">大禹治水</a></li>
+                        <li><a href="shenhua.html">黄河母亲</a></li>
+                        <li><a href="shenhua.html">女娲补天</a></li>
+                        <li><a href="shenhua.html">伏羲创世</a></li>
+                        <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="zhengce.html">政策篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="zhengce.html">要闻</a></li>
+                        <li><a href="zhengce.html">地方新闻</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="rhudong.html">趣味黄河</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">互动答题</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="chat.html">智慧AI</a>
+                    <!-- <ul class="sub-menu">
+                                                                           <li><a href="# ">互动答题</a></li>
+                                                                        </ul> -->
+                </li>
+            </ul>
+        </nav>
+        <div class="dengluzc">
+            <a href="shijianshu.html">黄河
+                史书</a>
+            <a href="dlzc.html">登录</a>
+            <a href="dlzc.html">注册</a>
+
+        </div>
+    </div>
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('active');
+        });
+    </script>
+    <!-- ==== 主体部分 ==== -->
+    <section class="common-banner">
+        <div class="container">
+            <div class="row">
+                <div class="common-banner__content text-center">
+                </div>
+            </div>
+        </div>
+        <div class="banner-bg">
+            <video class="banner-video" autoplay muted loop playsinline>
+                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3a14a32ae-4812-444b-92dc-e0ab107795ac_1.62.mp4?Expires=1776606030&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=dZyMiLXYDseHnbhQuA733JRun88%3D" type="video/mp4">
+                <source src="assets/videos/banner-video.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="shape">
+            <img src="assets/images/shape.png" alt="Image">
+        </div>
+        <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+        </div>
+    </section>
+    <!-- ==== / banner section end ==== -->
+    <!-- ==== faq section start ==== -->
+    <section class="faq">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-8 col-xl-6">
+                    <div class="faq__content">
+                        <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                            <span class="sub-title"><i
+                                    class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;洛阳牡丹文化节根植于黄河文化，展现了黄河流域独特的历史底蕴和文化魅力。牡丹花作为洛阳的“市花”，具有深厚的文化象征意义，代表着富贵、繁荣与吉祥。节庆活动不仅展示了牡丹花的美丽，也承载了黄河文化中对自然、生命和繁荣的敬畏与热爱。洛阳牡丹文化节作为黄河文化的一个重要组成部分，吸引着国内外游客参观，增进了人们对黄河文明的认知和理解，并推动了地方文化的传承和发展。
+                            </span>
+                            <h2 class="title-animation">走 进 <span>洛阳牡丹文化节</span>
+
+                            </h2>
+                        </div>
+                        <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="accordion" id="accordion">
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            洛阳牡丹文化节是什么？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                洛阳牡丹文化节是洛阳市每年春季举办的传统文化活动，至今已有数十年的历史。节庆活动的核心内容围绕洛阳牡丹的盛放与展示展开，同时融入了多种民俗活动、艺术展览、戏曲演出等文化元素。通过这一节庆，洛阳不仅展示了当地深厚的牡丹种植历史，也弘扬了黄河流域的传统文化。每年春天，洛阳的街头巷尾和景区公园被五彩斑斓的牡丹花装点得如诗如画，吸引着成千上万的游客和摄影爱好者。通过节庆活动，洛阳牡丹文化得到了有效的保护与传承。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            洛阳牡丹文化节经历了哪些发展阶段？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                洛阳牡丹文化节的起源可以追溯到唐代，当时洛阳已经是牡丹的主要产地之一。最早的牡丹节主要是为了庆祝花卉的盛放，展示牡丹的美丽和药用价值。到了现代，洛阳牡丹文化节在上世纪80年代正式形成，并成为中国四大花卉节之一。随着经济的快速发展和文化自信的提升，牡丹文化节逐步发展为一个集花卉展览、文化交流、旅游观光为一体的综合性节庆活动。如今，洛阳牡丹文化节不仅吸引了国内游客，还成为了国际文化交流的重要平台，推动了洛阳作为文化旅游城市的形象建设。
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            洛阳牡丹文化节的艺术风格是如何形成的？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                洛阳牡丹文化节的艺术风格形式融合了传统与现代的元素，展现了丰富的地方艺术特色。节庆期间，除了精美的牡丹花卉展示，还会举办多场民间艺术表演，如传统戏曲、歌舞和地方民俗活动。洛阳的地方戏曲如豫剧、皮影戏等会在庙会和广场上演出，展现出浓厚的黄河文化底蕴。此外，节庆中还有以牡丹为主题的艺术展览，艺术家们用画作、雕塑等形式表现牡丹的美丽，进一步提升了牡丹文化的艺术价值。通过这些形式，洛阳牡丹文化节不仅是一个花卉展览，也是一个多元文化的盛宴，充满了浓郁的地方文化氛围。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                            aria-expanded="false" aria-controls="collapseFour">
+                                            洛阳牡丹文化节如何为黄河文化增添加彩？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                洛阳牡丹文化节通过展示牡丹与黄河文化的紧密联系，为黄河文化增添了浓墨重彩的一笔。牡丹花自古以来便是洛阳的象征，黄河流域的人民把它视为繁荣、富贵的象征，而洛阳作为黄河文化的重要城市之一，其牡丹文化节则成为了黄河文化的一个重要表现平台。节庆活动通过花卉展示、民间工艺、戏曲演出等形式，将黄河文化的精神内涵融入其中，吸引着来自全国甚至世界各地的游客参与。这种文化的传承与展示，进一步加深了人们对黄河文明的认同感和自豪感，也促进了当地经济和文化的双重发展。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                    <div class="faq__thumb d-none d-lg-block">
+                        <div class="faq__thumb-inner">
+                            <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/370ad5e13-2cd0-4dbd-a54f-7a22ac6a1067_1.55.png?Expires=1776606040&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=F%2BZ4ppTYiYsb6FPXc4LX0LYaTG8%3D" alt="Image">
+                            </div>
+                            <div class="thumb-sm" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35ebe1f3b-2ac2-4138-9546-639582cf212c_1.56.png?Expires=1776606076&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=IvVte03KHZDO18TL7GE6fHZc6j8%3D" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="shape d-none d-lg-block">
+            <img src="assets/images/faq/shape.png" alt="Image">
+        </div> -->
+    </section>
+    <!-- ==== / faq section end ==== -->
+    <section class="blog-main cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="col-12 col-xl-8">
+                    <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+
+                            <a href="jcmh.html">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35a29f863-8cd9-4eab-bc3c-3bc6c9bba9ed_1.57.png?Expires=1776606095&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=E5v2jzf5ewuGSkpuisyHBJVQcGA%3D" alt="Image">
+                            </a>
+
+                            <div class="tag">
+                                <a href="lymd.html"><i class="fa-solid fa-tags"></i>人文精神</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+                            <div class="blog__single-content">
+                                <h4><a href="lymd.html">人文精神：洛阳牡丹文化节的精神内涵 </a></h4>
+                                <p>中国传统文化中，牡丹雍容华贵，端庄富丽而引发人们诸多联想，派生出与之相关联的文化象征意义，并形成牡丹文化的基本内涵。在人民群众的心目中，牡丹是美的化身，纯洁与爱情的象征。国尊繁荣昌盛，家重富贵平安，人喜幸福吉祥，这些特点和寓意，牡丹兼而有之。
+                                </p>
+                            </div>
+                            <div class="blog__single-cta">
+                                <a href="lymd.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+                            <a href="#">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35298aea5-608c-44a8-a2fb-94f101533518_1.58.png?Expires=1776606130&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=g%2FteFMUgsSV9Clbm4JQCL%2FwVzVM%3D" alt="Image">
+                            </a>
+                            <div class="tag">
+                                <a href="#"><i class="fa-solid fa-tags"></i>品牌升级</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+                            <!-- <div class="blog__single-meta">
+                           <p><i class="icon-user"></i>Robert Fox</p>
+                           <p><i class="icon-message"></i>Comments (03)</p>
+                        </div> -->
+                            <div class="blog__single-content">
+                                <h4><a href="#">品牌升级：洛阳牡丹文化节的创新与发展 </a></h4>
+                                <p>
+                                    与会专家紧紧围绕努力把中国洛阳牡丹文化节办成中国最具国际影响力的文化节会品牌，办成牡丹的盛会、百姓的节日的目标，就如何进一步优化和提升第29届中国洛阳牡丹文化节方案特别是主题、宗旨、目标、特色活动等进行论证。
+                                    据悉，自2011年起，河南省洛阳牡丹花会正式升格为中国洛阳牡丹文化节，由文化部和河南省人民政府共同主办，河南省文化厅和洛阳市人民政府承办。
+                                </p>
+                            </div>
+                            <div class="blog__single-cta">
+                                <!-- <a href="yishutese.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                        class="fa-solid fa-arrow-right-long"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="assets/images/wenh/chuanjv/12.png" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="lianpu.html"><i class="fa-solid fa-tags"></i>脸谱</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+                                <div class="blog__single-meta">
+                           <p><i class="icon-user"></i>Robert Fox</p>
+                           <p><i class="icon-message"></i>Comments (03)</p>
+                        </div>
+                                <div class="blog__single-content">
+                                    <h4><a href="lianpu.html">川剧脸谱：巴蜀戏曲的瑰丽符号 </a></h4>
+                                    <p>
+                                        川剧脸谱是川剧表演艺术中不可或缺的重要组成部分，它不仅是塑造角色的视觉语言，更是历代川剧艺人共同创造并传承下来的艺术瑰宝。脸谱通过色彩、图案、线条的变化，展现人物的性格特征、身份地位和情感表达，使观众一眼便能识别角色的性格与定位。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="lianpu.html" aria-label="blog details" title="blog details">🌍 脸谱欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="blog-main__sidebar">
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3582d2f74-b98e-4736-937d-74fc2c4e9a7f_1.61.png?Expires=1776606154&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=eUSHJLYHW9T04QNcsRxXsmFnxvE%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>牡丹与父亲的约定</h6>
+                                <p>牡丹花见证了一位父亲与儿子之间的承诺。
+                                </p>
+                                <p>
+                                    小李从小在洛阳长大，每年春天都会和父亲一起去观看盛开的牡丹花。父亲常说：“每一朵牡丹都代表着我对你的祝福，愿你将来也能像它们一样，活得自由、灿烂。”但随着时间的推移，小李离开了洛阳，去了外地工作。几年后，父亲因病去世，留下了一个未完成的心愿：小李要回家再看一场盛开的牡丹。几年后，小李终于回到洛阳，站在牡丹花海中，眼中泪光闪烁，仿佛父亲的声音又回荡在耳边。这个故事成为了牡丹节中的一个温暖回忆，也代表了洛阳牡丹文化深深的家国情怀。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3582d2f74-b98e-4736-937d-74fc2c4e9a7f_1.61.png?Expires=1776606154&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=eUSHJLYHW9T04QNcsRxXsmFnxvE%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>牡丹花开的爱情</h6>
+                                <p>牡丹花象征着两个人的爱情与承诺。
+
+
+                                </p>
+                                <p>张宇和李萍是一对青梅竹马，年年在洛阳牡丹文化节时约定一起赏花。某年，张宇准备向李萍求婚，他选了一朵最美的牡丹花作为求婚的信物。在牡丹花开时，张宇带着花走向李萍，深情地说：“这朵牡丹，象征着我对你永恒的爱。”李萍感动地点头答应，两人在人群中许下了永远的誓言。牡丹花见证了这段爱情，也象征着他们共同的人生。这个浪漫的小故事成为了牡丹文化节中的美好传说，展示了牡丹花象征着美好爱情与承诺的文化内涵。
+
+                                </p>
+                            </div>
+                        </div>
+                        <!-- <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="assets/images/wenh/chuanjv/.png" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>传奇故事：戏台上的千面变幻</h6>
+                                    <p>相传，在川剧的戏台
+                                        上，隐藏着一面神奇的铜镜。凡是踏上舞台的戏曲艺人，只要对着镜子一照，便能幻化出不同的脸谱，而这些脸谱不仅是外在的妆容，更是角色性格与命运的映照。
+
+                                    </p>
+                                    <p>川剧的脸谱，色彩斑斓，寓意深远，每一种颜色、每一笔勾画，皆承载着巴蜀文化的厚重底蕴。<br>
+                                        🔴 红色：忠义无双，热血豪情<br>
+                                        ⚫ 黑色：刚直不阿，威武果断<br>
+                                        ⚪ 白色：阴险狡诈，诡计多端<br>
+                                        🔵🟢蓝色/绿色：桀骜不驯，英勇善战<br>
+                                        🟡⚪金色/银色：神秘莫测，超凡脱俗<br>
+                                    </p>
+                                </div>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c72f7916-98df-4b33-91a0-b5b8837b746f_1.54.mp4?Expires=1776606228&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=axbSPOO0TTgALw%2FJLOITxwC2cFk%3D" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>洛阳牡丹文化节作为非物质文化遗产的一部分，通过节庆活动加强了对牡丹文化及其相关技艺的保护与传承。牡丹栽培技艺、传统花卉节庆、地方戏曲等都得到了政府和社会各界的支持与重视。通过非遗保护和传承项目的推进，洛阳不仅保持了牡丹种植的传统技艺，还加强了相关民俗和艺术的保护。在牡丹文化节期间，游客不仅能欣赏到盛开的牡丹花，还能亲身体验到地方传统手工艺和戏曲文化，增强了对非遗项目的认知和热爱，确保了这些传统技艺的延续。
+                            </p>
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>洛阳牡丹文化节的传承与发展不仅仅体现在保留传统的花卉展示和民俗活动，更在于不断创新和融合现代文化元素。随着时代的进步，牡丹文化节逐渐引入了更多的现代技术，如虚拟现实技术、数字化艺术展览等，使传统文化以更加生动有趣的方式呈现给观众。此外，洛阳牡丹文化节还积极促进文化交流与合作，吸引着更多的国际游客参与，推动了牡丹文化的全球传播。通过这些举措，牡丹文化节的传承和创新为洛阳带来了新的活力，确保了这一传统节庆的持续发展与繁荣。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/382c2f7f3-e47b-4269-a39e-5c12c0928694_1.60.png?Expires=1776606226&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=PNI4aO9fmn5NbyVin8XVVlqiKKQ%3D" alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3297955a2-5f23-4c21-8a6c-eeba13647c32_1.59.png?Expires=1776606223&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=UzUQAHsJRYzJ3sC5s%2F9up9rYW%2FM%3D" alt=" Image">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- ==== custom cursor start ==== -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+        <!-- ==== / custom cursor end ==== -->
+        <!-- ==== scroll to top start ==== -->
+        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+            <span></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </button>
+        <!-- ==== / scroll to top end ==== -->
+    </div>
+
+
+
+    <!-- ==== custom cursor start ==== -->
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"></div>
+    <!-- ==== / custom cursor end ==== -->
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

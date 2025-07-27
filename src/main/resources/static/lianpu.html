@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>川剧</title>
+
+    <style>
+        .meixue {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .meixue h1 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+            transition: all 0.3s ease-in-out;
+        }
+
+        .meixue p {
+            margin-top: 5px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .lianpu {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: #800000;
+            background-size: cover;
+        }
+
+        .shell {
+            width: 1700px;
+            margin: 0 auto;
+            height: 750px;
+            display: flex;
+            align-items: flex-end;
+            /*让。card靠底部对齐*/
+        }
+
+        .card {
+            flex-basis: 15%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            border: 3px solid #D4AF37;
+            /* 高级金色边框 */
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.2), rgba(0, 0, 0, 0.8));
+            /* 金色渐变背景 */
+            height: 650px;
+            bottom: 0;
+        }
+
+        .card:not(:nth-child(1)) {
+            margin-left: 20px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            overflow: initial;
+        }
+
+        .box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all .1s cubic-bezier(0.165, 0.84, 0.44, 1);
+            overflow: hidden;
+            border-radius: 10px;
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.3), rgba(128, 0, 0, 0.8));
+            /* 金红渐变背景 */
+
+        }
+
+        .box>img {
+
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, 10%) scale(3);
+            position: relative;
+            z-index: 0;
+            filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.6));
+        }
+
+        .card:hover>.box img {
+            opacity: 0;
+        }
+
+        .card:hover>.box {
+            transform: scaleY(1.5);
+            background-image: initial;
+            background-color: #e0c6ef;
+            z-index: 2;
+            cursor: pointer;
+            background: rgba(212, 175, 55, 0.2);
+            /* 轻微金色辉光 */
+        }
+
+        .card>h4 {
+            color: #FFD700;
+            /* 文字金色 */
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+            bottom: 15px;
+            left: 50%;
+            position: absolute;
+            display: block;
+            width: 140px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.2);
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, -35%);
+            font-size: 28px;
+            z-index: 100;
+            transition: .2s;
+        }
+
+        .card:hover h4 {
+            color: #FFD700;
+            transform: translate(-50%, 179%);
+        }
+
+        .card:hover .character>img {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+
+        .card>.character {
+            position: absolute;
+            top: -100px;
+            left: -400px;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .character>img {
+            width: 820px;
+            height: 820px;
+            object-fit: contain;
+            opacity: 0;
+            transition: all .3s;
+            position: relative;
+            z-index: -10;
+        }
+
+
+
+        .card:hover {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .meixue {
+                display: none;
+            }
+
+            .shell {
+                margin-top: 90px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lianpu">
+        <div class="meixue">
+            <h1>脸谱中的美学</h1>
+            <p>
+                蜀戏冠天下，变脸妙绝伦。五色随心换，惊煞看戏人
+            </p>
+        </div>
+        <div class="shell">
+            <div class="card">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3da67b068-0383-4ccf-9c78-f8078da5a097_1.1.png?Expires=1776592757&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=vcKkbcmTwFhoYmLy6NOIHcVoU%2Fg%3D" />
+                </div>
+                <div class="character">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3da67b068-0383-4ccf-9c78-f8078da5a097_1.1.png?Expires=1776592757&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=vcKkbcmTwFhoYmLy6NOIHcVoU%2Fg%3D" />
+                </div>
+                <h4>红色脸谱</h4>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c40dfd12-1c8d-4036-914f-dd9cf81a48c1_1.2.png?Expires=1776592828&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=gDFwFpD4kyhYRiLEeLiNb0RSAqs%3D" />
+                </div>
+                <div class="character">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c40dfd12-1c8d-4036-914f-dd9cf81a48c1_1.2.png?Expires=1776592828&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=gDFwFpD4kyhYRiLEeLiNb0RSAqs%3D" />
+                </div>
+                <h4>忠勇正直</h4>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3d94c5a51-9a88-4a8f-bf2a-ba070c1cd2ff_2.1.png?Expires=1776592921&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=S8tG1qFjBruuP9%2Fv6BRDiWyJgpY%3D" />
+                </div>
+                <div class="character">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3d94c5a51-9a88-4a8f-bf2a-ba070c1cd2ff_2.1.png?Expires=1776592921&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=S8tG1qFjBruuP9%2Fv6BRDiWyJgpY%3D" />
+                </div>
+                <h4>黑色脸谱</h4>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b8a17654-a7e2-4302-9fb2-23ae7ebfeec0_2.2.png?Expires=1776592951&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=9%2Bdh2hnjrRIKzf67%2BRuQwegf4ic%3D" />
+                </div>
+                <div class="character">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b8a17654-a7e2-4302-9fb2-23ae7ebfeec0_2.2.png?Expires=1776592951&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=9%2Bdh2hnjrRIKzf67%2BRuQwegf4ic%3D" />
+                </div>
+                <h4>刚正不阿</h4>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3629c7d91-6700-42b0-85e3-16151e62953e_3.2.png?Expires=1776592994&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=48hjp22LD3kVxXNq3rQh8%2BHDUUA%3D" />
+                </div>
+                <div class="character">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3629c7d91-6700-42b0-85e3-16151e62953e_3.2.png?Expires=1776592994&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=48hjp22LD3kVxXNq3rQh8%2BHDUUA%3D" />
+                </div>
+                <h4>绿色脸谱</h4>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/309da0045-bd2b-4919-99b2-a7c25a456d9a_3.1.png?Expires=1776593443&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=wumtzdp8kHGtYtWXtQuZOvZmYQ4%3D" />
+                </div>
+                <div class="character">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3629c7d91-6700-42b0-85e3-16151e62953e_3.2.png?Expires=1776592994&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=48hjp22LD3kVxXNq3rQh8%2BHDUUA%3D" />
+                </div>
+                <h4>桀骜不驯</h4>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3770464a0-1745-4933-8b0f-f936dfe905c1_4.2.png?Expires=1776593462&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=OEHyMx3kr1NL07sCAFNkHzj%2FxGE%3D" />
+                </div>
+                <div class="character">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3770464a0-1745-4933-8b0f-f936dfe905c1_4.2.png?Expires=1776593462&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=OEHyMx3kr1NL07sCAFNkHzj%2FxGE%3D" />
+                </div>
+                <h4>金银色脸谱</h4>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3d5e2d1cb-52c8-4fb2-b416-24ada3a72a4a_4.1.png?Expires=1776593486&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=xFyWxUstaH0pTAhcw3jQk1QO%2BUs%3D" />
+                </div>
+                <div class="character">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3d5e2d1cb-52c8-4fb2-b416-24ada3a72a4a_4.1.png?Expires=1776593486&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=xFyWxUstaH0pTAhcw3jQk1QO%2BUs%3D" />
+                </div>
+                <h4>神秘莫测</h4>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3644ae198-a485-424a-8ef8-718351451f70_5.1.png?Expires=1776593510&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=X7m8JWvF%2BuV9cBXBXVN2CDFIUkk%3D" />
+                </div>
+                <div class="character">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3644ae198-a485-424a-8ef8-718351451f70_5.1.png?Expires=1776593510&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=X7m8JWvF%2BuV9cBXBXVN2CDFIUkk%3D" />
+                </div>
+                <h4>蓝色脸谱</h4>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3411a929b-eb7b-4a50-b2ac-478dd74efc41_5.2.png?Expires=1776593536&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=u6IS57mLf5FIU814tVoJD%2FyRhq0%3D" />
+                </div>
+                <div class="character">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3411a929b-eb7b-4a50-b2ac-478dd74efc41_5.2.png?Expires=1776593536&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=u6IS57mLf5FIU814tVoJD%2FyRhq0%3D" />
+                </div>
+                <h4>英勇善战</h4>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

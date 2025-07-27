@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <title>文化篇 | 二人台</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 800px; */
+            /* 控制最大宽度，避免太大 */
+            height: auto;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 9]>
+          <p class="browserupgrade">
+             You are using an <strong>outdated</strong> browser. Please
+             <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+             your experience and security.
+          </p>
+          <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+    <div class="daohang">
+        <!-- logo 部分，设置为左侧 -->
+        <div class="logo">
+            <img src="assets/image/logo2.png" alt="Logo">
+        </div>
+        <!-- 导航栏部分 -->
+        <button class="mobile-menu-btn">☰</button>
+        <nav>
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="index%20copy.html">首页</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">子菜单1</a></li>
+                                                         <li><a href="#">子菜单2</a></li>
+                                                         <li><a href="#">子菜单3</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="3.1wenhua.html">文化篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                        <li><a href="3.1wenhua.html">传统技艺</a></li>
+                        <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                        <li><a href="3.1wenhua.html">传统音乐</a></li>
+                        <li><a href="3.1wenhua.html">传统体育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="renwu.html">治水篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="renwu.html">治水英雄颂</a></li>
+                        <li><a href="zsjy.html">治水技奇谈</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="shenhua.html">神话篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="shenhua.html">大禹治水</a></li>
+                        <li><a href="shenhua.html">黄河母亲</a></li>
+                        <li><a href="shenhua.html">女娲补天</a></li>
+                        <li><a href="shenhua.html">伏羲创世</a></li>
+                        <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="zhengce.html">政策篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="zhengce.html">要闻</a></li>
+                        <li><a href="zhengce.html">地方新闻</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="rhudong.html">趣味黄河</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">互动答题</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="chat.html">智慧AI</a>
+                    <!-- <ul class="sub-menu">
+                                                                           <li><a href="# ">互动答题</a></li>
+                                                                        </ul> -->
+                </li>
+            </ul>
+        </nav>
+        <div class="dengluzc">
+            <a href="shijianshu.html">黄河
+                史书</a>
+            <a href="dlzc.html">登录</a>
+            <a href="dlzc.html">注册</a>
+    
+        </div>
+    </div>
+        <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        </script>
+        <!-- ==== 主体部分 ==== -->
+        <section class="common-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="common-banner__content text-center">
+                        <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                        <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+                    </div>
+                </div>
+            </div>
+            <div class="banner-bg">
+                <video class="banner-video" autoplay muted loop playsinline>
+                    <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ae41b379-0ce0-489d-aa6f-33f8ae3bf321_1.mp4?Expires=1776597261&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ObtBS1O8f%2FBy7U5VEjOpAy3YqQk%3D" type="video/mp4">
+                    <source src="assets/videos/banner-video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="shape">
+                <img src="assets/images/shape.png" alt="Image">
+            </div>
+            <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+            </div>
+        </section>
+        <!-- ==== / banner section end ==== -->
+        <!-- ==== faq section start ==== -->
+        <section class="faq">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-8 col-xl-6">
+                        <div class="faq__content">
+                            <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                                <span class="sub-title"><i
+                                        class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄河作为中华民族的母亲河，孕育了丰富多彩的文化形式。​内蒙古地区的二人台艺术正是在黄河文化的滋养下发展起来的。​黄河流域的民间艺术形式，如山西的秧歌、高跷、道情等，随着“走西口”的移民潮流传入内蒙古，与当地的蒙古族民歌和舞蹈相融合，逐渐形成了具有独特风格的二人台艺术。​这种融合体现了黄河文化的包容性和多样性，为二人台的形成和发展提供了肥沃的土壤。</span>
+                                <h2 class="title-animation">内 蒙 古 <span>历 史 长 河</span>
+                                </h2>
+                            </div>
+                            <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="accordion" id="accordion">
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                二人台是什么？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    二人台，又称二人班、打玩意儿，是中国北方的一种地方戏曲剧种，属于国家级非物质文化遗产。​因其表演形式通常由两人（多为一生一旦或一丑一旦）演绎而得名。​二人台以晋语为主要表演语言，流行于山西省北部、内蒙古自治区西部、陕西省北部、河北省张家口地区等地。​其内容多为喜剧，表演形式生动活泼，深受当地群众喜爱。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                二人台的起源与发展阶段？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    二人台起源于山西，成长于内蒙古。​清朝后期，山西北部的农民为了逃荒，西出塞外，远赴内蒙古中西部地区垦荒、经商，这种行为被称为“走西口”。​他们将山西的民间艺术形式带入内蒙古，与当地的蒙古族音乐和舞蹈相结合，逐渐形成了二人台这一艺术形式。​民国初年，二人台开始出现职业班社，表演形式和内容日益丰富。​新中国成立后，二人台得到了政府的重视和扶持，艺术形式更加成熟，影响范围进一步扩大。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                二人台的艺术风格与形式？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    二人台以其独特的艺术风格和多样的表演形式，在众多地方戏曲中独树一帜。它通常由两名演员表演，一生一旦或一丑一旦，内容多为喜剧，表演生动活泼。语言主要使用晋语，部分剧目采用蒙汉双语演唱。唱腔承袭民歌曲调，伴奏乐器包括笛子、扬琴、四胡、四块瓦等，音乐风格优美清新。表演中融入大量舞蹈元素，如秧歌舞步，舞姿优美、动作丰富。服装与化妆仿效晋剧，道具简单而富有特色，如扇子、手帕、霸王鞭等。这些特点使二人台充满浓郁的地方色彩和艺术魅力，深受观众喜爱。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="false" aria-controls="collapseFour">
+                                                二人台如何为黄河文化增光添彩？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    内蒙古二人台作为黄河文化的重要组成部分，以其独特的艺术形式和丰富的表现内容，为黄河文化增添了光彩。​二人台通过生动的表演，反映了黄河流域人民的生活、劳动和情感，展示了当地的风土人情和社会变迁。​它的传承与发展，不仅丰富了黄河文化的内涵，也增强了黄河文化的影响力和生命力，成为中华民族文化宝库中的一颗璀璨明珠。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                        <div class="faq__thumb d-none d-lg-block">
+                            <div class="faq__thumb-inner">
+                                <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39a2160ea-1624-45f6-8981-d96259d71283_13.png?Expires=1776597330&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=VRKvslTYNbMepsYSVaKb8Txuy8U%3D" alt="Image">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="shape d-none d-lg-block">
+                <img src="assets/images/faq/shape.png" alt="Image">
+            </div> -->
+        </section>
+        <!-- ==== / faq section end ==== -->
+        <section class="blog-main cm-details">
+            <div class="container">
+                <div class="row gutter-60">
+                    <div class="col-12 col-xl-8">
+                        <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="#">
+                                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/392481074-9009-4292-a496-f1257b11844c_1..png?Expires=1776597372&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=eYesjlnCcmnbB89yeXi64mqA3%2Bc%3D" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="#"><i class="fa-solid fa-tags"></i>角色行当</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="#">角色行当 </a></h4>
+                                    <p>
+                                        二人台的行当早期只有一丑一旦，后东路二人台发展出小旦、彩旦、老旦、娃娃旦、小生、老生、小丑、娃娃生等，但仍以丑、旦二人演唱为主。丑又称“滚边儿的”、“丢丑的”，旦又称“抹粉的”。旦角一般头载凤冠，身穿红袄绿裙；丑角载毡帽，身穿黑袄彩裤，鼻梁画一蛤蟆或蝎子图案。表演时亦说亦唱，边歌边舞。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="qvpai.html">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32b84ffe3-21c6-42c2-a25a-5ec46e608831_4.png?Expires=1776597427&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=2j63hovuXrQosG080N%2Baempv1Js%3D" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="eyinyue.html"><i class="fa-solid fa-tags"></i>戏曲音乐</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="eyinyue.html">戏曲音乐 </a></h4>
+                                    <p>
+                                        二人台是一种具有浓郁地方特色的戏曲形式，融合了山曲民歌、陕北民歌和内蒙小曲的元素。它的音乐、表演和唱腔均展现出鲜明的地方色彩，音乐结构多基于民歌曲调，演奏乐器丰富，表演形式多样。二人台通过独特的唱腔、器乐和舞蹈表演，展现了草原的辽阔与北方的豪放，深受蒙汉两族人民喜爱。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="eyinyue.html" aria-label="blog details" title="blog details">🌍
+                                        了解更多<i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="blog-main__sidebar">
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e24ead18-290b-423d-a292-b30994d5875d_13.png?Expires=1776593788&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6LLL0O7wTyJxU1YhOyxhgqkjp50%3D" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>二人台小剧场：《走西口的送别》</h6>
+                                    <p>一对年轻夫妻在西口送别的感人场景
+                                    </p>
+                                    <p>夕阳西下，村口的大柳树下，李大勇背着行囊即将踏上走西口的路。
+                                        “小翠，我这一走，不知何时才能回来……”<br>
+                                        “官人，西口路远，千万保重！”小翠含泪，把一双亲手缝的布鞋递给他。<br>
+
+                                        黄河风轻轻吹拂，小翠哼起了熟悉的曲调：
+                                        “哥哥你走西口，小妹妹我实难留……”<br>
+
+                                        大勇握紧她的手，郑重承诺：“等我赚够银子，一定回来娶你！”<br>
+                                        马蹄声渐远，小翠站在村口，目送他消失在黄沙漫漫的古道上。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e24ead18-290b-423d-a292-b30994d5875d_13.png?Expires=1776593788&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6LLL0O7wTyJxU1YhOyxhgqkjp50%3D" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>二人台小剧场：《喜迎新媳妇》</h6>
+                                    <p>二人台的幽默风格和北方农村的生活气息，欢快喜庆
+                                    </p>
+                                    <p>
+                                        今天是村里张老汉的儿子张大牛成亲的日子，整个村子张灯结彩。大牛骑着高头大马，带着一队迎亲队伍来到了新娘李杏花的家门前。<br>
+                                        丑角媒婆扭着小碎步走出来，笑嘻嘻地喊道：“张大牛，你这马骑得稳当不？新媳妇可娇滴滴的，摔了可不得了！”<br>
+                                        张大牛挠挠头，憨憨一笑：“俺这马稳得很，媳妇就是俺的心尖尖，咋会让她摔着？”<br>
+                                        杏花羞红了脸，轻轻掀开盖头：“你个呆子，倒是赶紧接我上马呀！”
+                                        围观的乡亲们哈哈大笑，吹拉弹唱的二人台乐队也热闹地奏起了《挂红灯》。张大牛一把抱起杏花，利落地将她送上马背，迎亲队伍敲锣打鼓，浩浩荡荡地朝张家大院而去。<br>
+                                        村里人看着这一幕，纷纷笑道：“二人台里演的可不就是咱们的日子嘛！这才叫红红火火，喜气洋洋！”
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/385c7ad08-8758-4283-bfb6-f67315de7ab9_2.mp4?Expires=1776597558&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=WhUuD%2BGskcPTiAa8kF6FzzgshpI%3D" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>2006年，二人台被列入第一批国家级非物质文化遗产名录，得到政府的重点保护和扶持。
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>传统上以 师徒口传心授 为主，如今则通过艺术学校、戏曲团体进行系统培养。2012年，山西河曲县成立“河曲民歌二人台人才培养基地”，专门培养年轻演员。
+                            </p>
+                            <p>
+                                近年来，二人台与现代艺术结合，尝试融入 电影、舞台剧、音乐剧 等形式，使其焕发新的活力。
+                                网络传播： 随着短视频平台的兴起，许多二人台作品被搬上互联网，吸引年轻观众关注。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3fe03869c-12b1-4f58-b27c-338aabcc9a1d_23.png?Expires=1776597592&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=PnLC9PWWoDRH9aFKf6mxRc4LZGc%3D" alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/306509787-72a0-4663-8f64-a37e66d948dd_22.png?Expires=1776597610&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=94vmJ%2FQ6AObX2zT%2FhbQwFLCddP8%3D" alt=" Image">
+                            </div>
+                        </div>
+                        <!-- ==== custom cursor start ==== -->
+                        <div class="mouseCursor cursor-outer"></div>
+                        <div class="mouseCursor cursor-inner"></div>
+                        <!-- ==== / custom cursor end ==== -->
+                        <!-- ==== scroll to top start ==== -->
+                        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                            <span></span>
+                            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                            </svg>
+                        </button>
+                        <!-- ==== / scroll to top end ==== -->
+                        <!-- ==== / color switcher end ==== -->
+                    </div>
+                    <!-- ==== js dependencies start ==== -->
+                    <!-- jquery -->
+                    <script src="assets/js/jquery-3.7.1.min.js"></script>
+                    <!-- bootstrap five js -->
+                    <script src="assets/js/bootstrap.bundle.min.js"></script>
+                    <!-- nice select js -->
+                    <script src="assets/js/jquery.nice-select.min.js"></script>
+                    <!-- magnific popup js -->
+                    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                    <!-- swiper slider js -->
+                    <script src="assets/js/swiper-bundle.min.js"></script>
+                    <!-- viewport js -->
+                    <script src="assets/js/viewport.jquery.js"></script>
+                    <!-- odometer js -->
+                    <script src="assets/js/odometer.min.js"></script>
+                    <!-- vanilla tilt js -->
+                    <script src="assets/js/vanilla-tilt.min.js"></script>
+                    <!-- aos js -->
+                    <script src="assets/js/aos.js"></script>
+
+                    <!-- splittext js -->
+                    <script src="assets/js/SplitText.min.js"></script>
+                    <!-- scrollto js -->
+                    <script src="assets/js/ScrollToPlugin.min.js"></script>
+                    <!-- scrolltrigger js -->
+                    <script src="assets/js/ScrollTrigger.min.js"></script>
+                    <!-- gsap js -->
+                    <script src="assets/js/gsap.min.js"></script>
+                    <!-- ==== / js dependencies end ==== -->
+                    <!-- template settings js -->
+                    <script src="assets/js/template-settings.js"></script>
+                    <!-- main js -->
+                    <script src="assets/js/custom.js"></script>
+<!--                     <script src="utils.js"></script>-->
+<!--                    <script>-->
+<!--                        document.addEventListener('DOMContentLoaded', function () {-->
+<!--                            checkLogin();-->
+<!--                        });-->
+<!--                    </script>-->
+
+</body>
+
+</html>

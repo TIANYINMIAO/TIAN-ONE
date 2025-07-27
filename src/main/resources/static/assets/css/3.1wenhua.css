@@ -1,0 +1,215 @@
+/* ========== 🌟 全局样式优化 🌟 ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: "Georgia", serif;
+
+    color: #F5E6DA;
+    /* 米白色，柔和且易读 */
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-image: url("https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745238896479_12d0b10a-8591-4e7c-a68d-b0c91f6312fc_29.png?Expires=1776774897&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=HWJ%2BIlDXwC357BToXopNDf4Wy5c%3D");
+}
+
+.dahezi {
+    /* padding-top: 30px; */
+    /* background-color: #2D1E12; */
+    /* 深棕色背景，提升文化感 */
+
+    background-image: url("https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745238896479_12d0b10a-8591-4e7c-a68d-b0c91f6312fc_29.png?Expires=1776774897&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=HWJ%2BIlDXwC357BToXopNDf4Wy5c%3D");
+}
+
+/* ========== 🌟 容器优化 🌟 ========== */
+.shop-container {
+
+    max-width: 1400px;
+    margin: 0px auto;
+    padding: 0 20px;
+}
+
+/* ========== 🌟 标题样式优化 🌟 ========== */
+.shop-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.shop-header p {
+    font-size: 1.4rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    line-height: 2;
+    color: #4a2c2a;
+    /* 黄河泥沙色 */
+    font-family: 'ZCOOL XiaoWei', '华文楷体', serif;
+    text-indent: 2em;
+    padding: 30px 50px;
+    position: relative;
+    background:
+        linear-gradient(45deg, #fff5e6 25%, #ffe4c4 100%),
+        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==');
+    /* 宣纸纹理 */
+    border: 3px double #8b4513;
+    /* 青铜器纹路色 */
+    border-radius: 0 20px 20px 0;
+    box-shadow:
+        5px 5px 15px rgba(139, 69, 19, 0.1),
+        inset 0 0 20px rgba(255, 215, 0, 0.1);
+    text-shadow: 0.5px 0.5px 1px rgba(139, 69, 19, 0.3);
+}
+
+/* 左侧黄河纹样装饰 */
+.shop-header p::before {
+    content: "";
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 120%;
+    background:
+        linear-gradient(to right,
+            #8b4513 20%,
+            #cd853f 50%,
+            #8b4513 80%);
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+}
+
+/* 右侧黄河浪花纹样 */
+.shop-header p::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 120%;
+    background:
+        linear-gradient(to right,
+            #8b4513 20%,
+            #cd853f 50%,
+            #8b4513 80%);
+    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+}
+
+/* ========== 🌟 分类按钮优化 🌟 ========== */
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.category-button {
+    padding: 12px 25px;
+    border: 2px solid rgba(255, 223, 186, 0.5);
+    background: rgba(97, 67, 38, 0.3);
+    /* 深色背景，保持沉稳 */
+    color: #F5E6DA;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 按钮悬停&激活状态 */
+.category-button:hover,
+.category-button.active {
+    background: linear-gradient(45deg, #C19A6B, #A07850);
+    border-color: #C19A6B;
+    color: #2D1E12;
+    box-shadow: 0 4px 10px rgba(193, 154, 107, 0.3);
+}
+
+/* ========== 🌟 产品网格布局优化 🌟 ========== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* ========== 🌟 产品卡片优化 🌟 ========== */
+.product-card {
+    background: #4A3628;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 280px;
+}
+
+/* 悬停交互 */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(255, 223, 186, 0.3);
+}
+
+/* ========== 🌟 图片优化 🌟 ========== */
+.product-image {
+    height: 200px;
+    background: linear-gradient(to bottom, #C19A6B, #A07850);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    position: absolute;
+}
+
+/* ========== 🌟 文字部分优化 🌟 ========== */
+.product-details {
+    padding: 10px;
+    text-align: center;
+}
+
+.product-name {
+    font-family: 'PT Serif', serif;
+    font-size: 1.6rem;
+    color: #FFD700;
+    /* 亮金色 */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.product-details a:hover h2 {
+    color: #E6B800;
+    /* 悬停时更亮的金色 */
+    text-decoration: underline;
+}
+
+/* ========== 🌟 适配移动端 🌟 ========== */
+@media (max-width: 768px) {
+    .shop-header h1 {
+        font-size: 2.8rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .category-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}

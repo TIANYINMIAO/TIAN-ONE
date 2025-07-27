@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>藏族刺绣</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/387c702ec-9d0f-4a6f-9ee1-69f261ee6429_1.1.png?Expires=1776598769&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=zdPb7ezUKDcTNtzwU%2FufT1ZXW8I%3D">
+                    <span>文化特征</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/393c9aa95-82d3-439f-aa0b-8ae175f32d66_1.2.png?Expires=1776598792&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=oqctOZxD%2BLqPq2zOu7sx7M7dH7w%3D">
+                    <span>制作工序</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b669a506-94b4-4605-a96f-d014ece01152_1.3.png?Expires=1776598811&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=zt1k9Nyc4nPmBR1VNp%2FGkPgjlNc%3D">
+                    <span>题材作品</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/363aa1c78-e1bb-42d5-a2da-8df0638fd007_1.4.png?Expires=1776598826&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=f%2Fkqy5hg3VJm%2BDdyuZG9Dzw3Y3U%3D">
+                    <span>意义象征</span>
+                </div>
+                <!-- <div class="box">
+                    <img src="assets/images/wenh/chuanjv/5.webp">
+                    <span>丑 角</span>
+                </div> -->
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>深入了解藏族刺绣</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">文化特征</h3>
+                        <p>贵南藏族刺绣具有深厚的文化底蕴和独特的艺术魅力。其传统针法包含平针、串针、套针、跳针、同旋针等十余种技艺，表现出藏族人民的精细与巧思。其中，民族服饰刺绣主要采用缠针和平针，这些针法不仅体现了藏族刺绣的独特技巧，还融合了多种文化的审美，尤其在藏族的服饰、披肩等日常穿戴上展现了丰富的民族色彩和象征意义。而套针和跳针则多用于装饰唐卡、佛像和寺庙的柱帘等宗教艺术品，体现了宗教仪式和文化信仰的深厚联系。这些针法不仅是刺绣技艺的体现，也传承了藏族的历史与文化，反映了藏族人对美好生活的追求和宗教信仰的虔诚。
+
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/34ede484b-1efb-40ad-9ef3-2b98094e2850_1.5.png?Expires=1776598846&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=PgiLtzDhu%2BFr9IIPHgSRXRDaywc%3D"
+                                alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37af86aaf-c58a-4942-9c03-901ab0197efe_1.6.png?Expires=1776598851&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=DPMjWpT%2FdPHSJAOru%2Ba2cf%2FyfT0%3D"
+                                alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">制作工序</h3>
+                        <p>
+                            贵南藏族刺绣的制作过程虽然与其他刺绣形式相似，但其细致入微的工艺流程和文化内涵使其独具特色。刺绣的第一步是“剪样”——这一过程需要艺术家先将花纹设计在白纸上，精细描绘出每个图案，然后按照设计剪裁出相应的图案样本。这一步骤要求设计者具备良好的艺术直觉和对传统图案的深刻理解。接着，用黑布进行缝制，制作成所需的基础物品，如辫套、衣物装饰等。然后，将剪好的花纹样本准确地贴到布面上，以确保花纹的对齐和整体的美观。根据图案的花色和细节要求，刺绣师会使用不同颜色的丝线或棉线，通过精准的针法进行刺绣，这一过程考验着刺绣者的技巧和耐心。在每个细节上，刺绣师都要精心操作，保证每一针每一线都恰到好处，最终展现出美丽的刺绣作品。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/353ad8747-f58f-4b1d-be61-fdcd0a58fa7f_1.7.png?Expires=1776598852&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=A%2Fr%2Brzuq9NyBtDkxkCtj0j1dGJc%3D"
+                                alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3373739d1-a0d2-4857-a356-6ea03accfdca_1.8.png?Expires=1776598856&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ciKteW8LmX4ufTm2rTq11F9c3%2Fc%3D"
+                                alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">题材作品</h3>
+
+                        <p>贵南藏族刺绣的题材丰富多样，既包括传统的唐卡图案和宗教符号，也涵盖了山水、人物、动物等多种题材，展现了贵南藏族人民的生活、信仰和自然景观。唐卡是藏族艺术中最具代表性的作品之一，它以其精美的刺绣工艺和深刻的宗教象征意义，成为藏族文化的重要载体。除去唐卡，贵南藏族的刺绣还吸收了大量的自然元素，如山水画和动物图案，这些作品不仅体现了藏族人民对自然的敬畏和热爱，也使得刺绣作品更具生活气息和艺术价值。此外，贵南藏族的刺绣作品也不乏人物图案，展现了藏族社会中人物的服饰、习俗以及文化精神。这些多样化的题材使得贵南藏族刺绣在中国少数民族刺绣中独树一帜，成为其中内容最为丰实、形式最为多元的一类。
+                        </p>
+                        <p>
+                            贵南藏族刺绣的题材丰富多样，既包括传统的唐卡图案和宗教符号，也涵盖了山水、人物、动物等多种题材，展现了贵南藏族人民的生活、信仰和自然景观。唐卡是藏族艺术中最具代表性的作品之一，它以其精美的刺绣工艺和深刻的宗教象征意义，成为藏族文化的重要载体。除去唐卡，贵南藏族的刺绣还吸收了大量的自然元素，如山水画和动物图案，这些作品不仅体现了藏族人民对自然的敬畏和热爱，也使得刺绣作品更具生活气息和艺术价值。此外，贵南藏族的刺绣作品也不乏人物图案，展现了藏族社会中人物的服饰、习俗以及文化精神。这些多样化的题材使得贵南藏族刺绣在中国少数民族刺绣中独树一帜，成为其中内容最为丰实、形式最为多元的一类。
+                        </p>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

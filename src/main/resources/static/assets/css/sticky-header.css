@@ -1,0 +1,4 @@
+.want-sticky-header .sticky-header {
+  position: relative !important;
+  display: none;
+}

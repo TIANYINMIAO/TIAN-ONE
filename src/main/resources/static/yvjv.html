@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 豫剧</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 800px; */
+            /* 控制最大宽度，避免太大 */
+            height: auto;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+
+        /* 导航部分开始 */
+    </style>
+</head>
+
+<body>
+    <!-- ==== topbar start ==== -->
+    <!--[if lt IE 9]>
+      <p class="browserupgrade">
+         You are using an <strong>outdated</strong> browser. Please
+         <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+         your experience and security.
+      </p>
+      <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+        <div class="daohang">
+            <!-- logo 部分，设置为左侧 -->
+            <div class="logo">
+                <img src="assets/image/logo2.png" alt="Logo">
+            </div>
+            <!-- 导航栏部分 -->
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul class="main-nav">
+                    <li class="nav-item">
+                        <a href="index%20copy.html">首页</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">子菜单1</a></li>
+                                                             <li><a href="#">子菜单2</a></li>
+                                                             <li><a href="#">子菜单3</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="3.1wenhua.html">文化篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                            <li><a href="3.1wenhua.html">传统技艺</a></li>
+                            <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                            <li><a href="3.1wenhua.html">传统音乐</a></li>
+                            <li><a href="3.1wenhua.html">传统体育</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="renwu.html">治水篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="renwu.html">治水英雄颂</a></li>
+                            <li><a href="zsjy.html">治水技奇谈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shenhua.html">神话篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="shenhua.html">大禹治水</a></li>
+                            <li><a href="shenhua.html">黄河母亲</a></li>
+                            <li><a href="shenhua.html">女娲补天</a></li>
+                            <li><a href="shenhua.html">伏羲创世</a></li>
+                            <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="zhengce.html">政策篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="zhengce.html">要闻</a></li>
+                            <li><a href="zhengce.html">地方新闻</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="rhudong.html">趣味黄河</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">互动答题</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="chat.html">智慧AI</a>
+                        <!-- <ul class="sub-menu">
+                                                                               <li><a href="# ">互动答题</a></li>
+                                                                            </ul> -->
+                    </li>
+                </ul>
+            </nav>
+            <div class="dengluzc">
+                <a href="shijianshu.html">黄河
+                    史书</a>
+                <a href="dlzc.html">登录</a>
+                <a href="dlzc.html">注册</a>
+
+            </div>
+        </div>
+        <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        </script>
+
+        <!-- ==== 主体部分 ==== -->
+        <section class="common-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="common-banner__content text-center">
+                        <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                        <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+                    </div>
+                </div>
+            </div>
+            <div class="banner-bg">
+                <video class="banner-video" autoplay muted loop playsinline>
+                    <source src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3064b184a-3f5e-437d-91aa-f5e7a3d41d23_1.1.mp4?Expires=1776599303&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=T%2FN3v%2F57f81L7SCTafVM2ld88z4%3D" type="video/mp4">
+                    <source src="assets/videos/banner-video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="shape">
+                <img src="assets/images/shape.png" alt="Image">
+            </div>
+            <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+            </div>
+        </section>
+        <!-- ==== / banner section end ==== -->
+        <!-- ==== faq section start ==== -->
+        <section class="faq">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-8 col-xl-6">
+                        <div class="faq__content">
+                            <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                                <span class="sub-title"><i
+                                        class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄河文化为河南豫剧提供了丰富的创作土壤。从黄河流域的历史故事、民间传说，到黄河儿女的坚韧精神、不屈意志，都成为豫剧剧目的重要素材。豫剧艺术家们从黄河文化中汲取灵感，创作出大量反映黄河儿女生活、斗争和精神的剧目，使豫剧的艺术生命更加丰富多彩。</span>
+                                <h2 class="title-animation">河 南 的 <span>历 史 长 河</span>
+
+                                </h2>
+                            </div>
+                            <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="accordion" id="accordion">
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                河南豫剧是什么？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    河南豫剧，又称河南梆子、河南高调、河南讴，是河南地区的传统戏曲剧种之一，以其独特的唱腔、表演和剧目在中国戏曲艺术中占有重要地位。在剧目方面，豫剧更是丰富多彩，既有讲述历史故事、传承传统文化的经典剧目，也有反映现实生活、展现时代风貌的现代戏和创新剧目。这些剧目内容丰富，形式多样，满足了不同观众的审美需求。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                河南豫剧的起源与发展阶段？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    河南豫剧起源于明末清初的河南开封，经历了从民间小调、说唱艺术到戏曲剧种的演变过程。早期豫剧以唱为主，以梆子为伴奏乐器，后逐渐发展为唱念做打并重的戏曲剧种。民国时期，豫剧开始走向全国，成为影响广泛的戏曲剧种之一。新中国成立后，豫剧得到了更加广泛的发展，成为河南地区的代表性戏曲剧种。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                河南豫剧的艺术风格与形式？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    河南豫剧的艺术风格形式独特，以唱念做打并重为特点。唱腔方面，豫剧采用真假声相结合的演唱方法，高音激昂、低音婉转，韵味醇厚。表演方面，豫剧注重身段、表情和动作的细腻入微，同时也不乏粗犷豪放、气势磅礴的场面。剧目方面，豫剧既有历史剧、传统戏，也有现代戏、创新剧目，内容丰富多彩。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="false" aria-controls="collapseFour">
+                                                河南豫剧如何为黄河文化增光添彩？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    河南豫剧通过演绎黄河文化中的历史故事、民间传说和现实生活，展现了黄河儿女的精神风貌和黄河文化的独特魅力。豫剧艺术家们通过精湛的演技和独特的艺术风格，将黄河文化中的精髓呈现在舞台上，使观众在欣赏戏曲艺术的同时，也能感受到黄河文化的深厚底蕴和独特魅力。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                        <div class="faq__thumb d-none d-lg-block">
+                            <div class="faq__thumb-inner">
+                                <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35bac7f90-d958-47b0-9476-8920b1494475_2.jpg?Expires=1776599333&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=L7tISIlNmDcpHVM5KHpWNsN0m8c%3D" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==== / faq section end ==== -->
+        <section class="blog-main cm-details">
+            <div class="container">
+                <div class="row gutter-60">
+                    <div class="col-12 col-xl-8">
+                        <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="yj.html">
+                                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c0f86c5d-2048-468e-b822-c57fd4886813_6.jpg?Expires=1776599350&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=hxB%2Fb9GJ%2FxXP009j7fNJ0bfaLs4%3D" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="yj.html"><i class="fa-solid fa-tags"></i>文化特征</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="yj.html">文化特征：河南豫剧的艺术风采 </a></h4>
+                                    <p>
+                                        河南豫剧，作为中国传统戏曲之一，具有浓厚的地方特色和鲜明的文化特征。其唱腔高亢激昂，节奏明快，舞台表演充满力量感，展现了河南人民热情豪放的性格特征。豫剧的剧目题材广泛，涵盖历史、民间故事及社会生活，尤其擅长表现忠孝节义、豪杰传奇等主题，融入了河南地区的民间故事和风俗习惯。其服饰、道具以及舞台设计都体现了浓郁的地域文化色彩，豫剧演员的表演风格兼具粗犷与细腻，极具感染力，深受观众喜爱。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="yj.html" aria-label="blog details" title="blog details">🌍
+                                        文化特征：河南豫剧的艺术风采<i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="#">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/349dcb75b-9acd-4066-902d-332caf98e82a_1.png?Expires=1776599388&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=zquV0Y8EqB4fPv5ubX58%2BAs%2BNJ8%3D" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="#"><i class="fa-solid fa-tags"></i>豫剧现代化</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="#">豫剧现代化 </a></h4>
+                                    <p>
+                                        中州大学毕业的樊粹庭，怀着革新梆剧的强烈愿望，樊先生弃政从艺，以高级知识分子身份接管永乐剧院，
+                                        与陈素真和张子林、赵义庭、恍如秀一起办起了“豫声剧院”。从演员生活、道德作风、演出台风，到舞台装置、服饰、道具、灯光、剧目、表演艺术、声腔乐器、甚至剧场设置等，都进行了全方位改革。同时还制定了台前台后十六项规章制度，让曾经有些粗俗落后的豫剧登上了大雅之堂。
+                                        他要求每位演员都自尊自重，明确演剧是教化育人、净化人类灵魂的正当职业。 樊粹庭自觉，担负起改革豫剧的重任，是河南梆子步入现代化进程的光荣前驱，“现代豫剧之父”。
+                                        豫剧演员陈素真，开创了豫剧舞蹈化、技巧化、形式美之先河。陈素真从化妆，引领了豫剧一个时代的风尚，对唱腔进行了革新。
+                                        陈素真还创造了豫剧的水袖功、扇子功、辫子功等，使豫剧走上了一个新的台阶。
+                                        樊、陈通力合作，广采博取，更新伴奏乐器，扩展祥符调唱腔板式，丰富优化舞台表演技巧，引导豫剧进入经典化、雅致化的审美境界。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <!-- <a href="piyinggushi.html" aria-label="blog details" title="blog details">🌍
+                                        千年光影，一戏乾坤——皮影里的中国叙事密码<i class="fa-solid fa-arrow-right-long"></i></a> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="assets/images/wenh/gansuqinqiang/12.png" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="gansujvmu.html"><i class="fa-solid fa-tags"></i>剧目</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="gansujvmu.html">秦腔的经典剧目 </a></h4>
+                                    <p>
+                                        甘肃秦腔作为西北戏曲艺术的瑰宝，其剧目体系历经数百年积淀，形成以历史纵深、地域风情、奇幻想象与时代创新为主轴的四大经典类别。四类剧目交织出从明清江湖到现代剧场的艺术长卷，既承载着丝绸之路上多民族文化交融的基因，又在当代舞台焕发新生，成为读懂甘肃人文精神与审美嬗变的鲜活注脚。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="gansujvmu.html" aria-label="blog details" title="blog details">🌍 经典欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="blog-main__sidebar">
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e24ead18-290b-423d-a292-b30994d5875d_13.png?Expires=1776593788&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6LLL0O7wTyJxU1YhOyxhgqkjp50%3D" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>豫剧小剧场：《黄河儿女情》</h6>
+                                    <p>黄河之水天上来，儿女情深似海宽。
+                                    </p>
+                                    <p>旁白：在烽火连天的抗战时期，黄河岸边的一对青年男女，用他们的坚韧和深情，书写了一段不朽的传奇。
+                                    <p>女主角（自言自语）：“黄河啊，你是我生命的摇篮，你的波涛是我力量的源泉。在这乱世之中，我要与你共同抗争，守护我们的家园。”</p>
+                                    <p>男主角：“黄河儿女，情深似海。我们愿意携手并肩，为保卫这片土地，为抗击敌人，付出一切！”</p>
+
+                                    <p>旁白：他们共同经历了无数的艰辛和磨难，但正是这份深情和坚韧，让他们始终坚守在抗战的最前线。他们用行动诠释了黄河儿女的精神，也为我们留下了这段不朽的传奇。在黄河的见证下，他们的爱情和信念如同这滔滔河水，永不干涸。
+                                    </p>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e24ead18-290b-423d-a292-b30994d5875d_13.png?Expires=1776593788&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6LLL0O7wTyJxU1YhOyxhgqkjp50%3D" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>豫剧小剧场：《穆桂英挂帅》</h6>
+                                    <p>巾帼不让须眉志，挂帅出征保边疆。
+                                    <p>
+                                        旁白：在平定叛乱之后，穆桂英并未停下脚步，她继续带领军队，保卫着国家的边疆。
+                                    <p>穆桂英：“外敌入侵，边疆告急！我穆桂英身为将领，誓死保卫国家，守护这片土地！”</p>
+
+
+                                    <p>（士兵们上场，整齐列队，齐声呼应）</p>
+
+                                    <p>士兵们：“愿随将军，誓死保卫边疆！”</p>
+
+                                    <p>旁白：在穆桂英的带领下，士兵们士气高昂，英勇善战。他们共同面对外敌的威胁，用智慧和勇气守护着国家的安宁。</p>
+
+
+
+                                    <p>旁白：穆桂英的英勇和智慧，不仅赢得了士兵们的尊敬和爱戴，也为我们留下了这段不朽的传奇。在她的带领下，边疆的安宁得以保障，国家的尊严得以维护。</p>
+                                </div>
+                            </div>
+                            <!-- <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="assets/images/wenh/gansuqinqiang/13.png" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>皮影小剧场：《月牙泉之恋》</h6>
+                                    <p>敦煌戍边将士阿郎与秦腔高手月儿跨越生死、以歌传情的凄美爱情故事</p>
+                                    <p>敦煌月牙泉旁，阿郎与月儿情定终身。阿郎是戍边将士，月儿是村中秦腔高手，歌声如泉。边疆战事起，阿郎出征，两人在泉边许下重逢誓言。月儿日复一日，在泉边以秦腔寄情。阿郎战场英勇，心系月儿。战后归来，阿郎却只见月牙泉，不见月儿身影，原来她已化作泉边一缕轻烟。阿郎悲歌，歌声回荡沙漠。从此，月圆之夜，月牙泉边总有凄美秦腔，似月儿灵魂诉说爱情。
+                                    </p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/348b446db-129f-49db-a099-05ea8702cb94_7.mp4?Expires=1776599486&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=8nH%2FfFzhTSTvQvgBGjYkrcnJ76c%3D" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>2006年5月20日，河南省申报的豫剧被国务院列入第一批国家级非物质文化遗产名录，编号为Ⅳ-23。
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>在剧目创新方面，豫剧艺术家们并未满足于已有的传统剧目，而是不断挖掘和整理这些宝贵的文化遗产，使之焕发新的生机。同时，他们还紧跟时代步伐，创作出一系列反映现实生活、展现时代风貌的现代剧目。这些剧目不仅保留了豫剧艺术的精髓，还融入了新的元素和观念，使豫剧艺术更加丰富多彩，更加贴近现代观众的审美需求。
+                            </p>
+                            <p>在人才培养方面，豫剧艺术家们深知传承的重要性。他们通过设立培训班、开展教学活动、组织演出实践等方式，培养了一批又一批优秀的豫剧演员和创作人才。这些人才不仅技艺精湛，还具备深厚的文化底蕴和创新能力，为豫剧艺术的持续发展提供了坚实的人才保障。
+                            </p>
+                            <p>在市场拓展方面，豫剧艺术家们积极寻求与影视、旅游等产业的融合，推动豫剧艺术的市场化发展。他们通过制作豫剧影视作品、举办豫剧旅游节庆活动等方式，将豫剧艺术推向更广阔的舞台，吸引了更多观众的关注和喜爱。同时，他们还注重与国内外
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/34fdfc856-943b-485f-8913-e90e60b16876_5.jpg?Expires=1776599526&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=KXbSe5zCTMkgVNDakYAuGEPlAd4%3D" alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3fabd99e3-d072-4267-a930-3b3aa2e37613_6.jpg?Expires=1776599541&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=i3ew1vCxYQ7lojQm%2Bc4h8LZ3r7A%3D" alt=" Image">
+                            </div>
+                        </div>
+                        <!-- ==== custom cursor start ==== -->
+                        <div class="mouseCursor cursor-outer"></div>
+                        <div class="mouseCursor cursor-inner"></div>
+                        <!-- ==== / custom cursor end ==== -->
+                        <!-- ==== scroll to top start ==== -->
+                        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                            <span></span>
+                            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                            </svg>
+                        </button>
+                        <!-- ==== / scroll to top end ==== -->
+                        <!-- ==== / color switcher end ==== -->
+                    </div>
+                    <!-- ==== js dependencies start ==== -->
+                    <!-- jquery -->
+                    <script src="assets/js/jquery-3.7.1.min.js"></script>
+                    <!-- bootstrap five js -->
+                    <script src="assets/js/bootstrap.bundle.min.js"></script>
+                    <!-- nice select js -->
+                    <script src="assets/js/jquery.nice-select.min.js"></script>
+                    <!-- magnific popup js -->
+                    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                    <!-- swiper slider js -->
+                    <script src="assets/js/swiper-bundle.min.js"></script>
+                    <!-- viewport js -->
+                    <script src="assets/js/viewport.jquery.js"></script>
+                    <!-- odometer js -->
+                    <script src="assets/js/odometer.min.js"></script>
+                    <!-- vanilla tilt js -->
+                    <script src="assets/js/vanilla-tilt.min.js"></script>
+                    <!-- aos js -->
+                    <script src="assets/js/aos.js"></script>
+
+                    <!-- splittext js -->
+                    <script src="assets/js/SplitText.min.js"></script>
+                    <!-- scrollto js -->
+                    <script src="assets/js/ScrollToPlugin.min.js"></script>
+                    <!-- scrolltrigger js -->
+                    <script src="assets/js/ScrollTrigger.min.js"></script>
+                    <!-- gsap js -->
+                    <script src="assets/js/gsap.min.js"></script>
+                    <!-- ==== / js dependencies end ==== -->
+                    <!-- template settings js -->
+                    <script src="assets/js/template-settings.js"></script>
+                    <!-- main js -->
+                    <script src="assets/js/custom.js"></script>
+<!--                     <script src="utils.js"></script>-->
+<!--                    <script>-->
+<!--                        document.addEventListener('DOMContentLoaded', function () {-->
+<!--                            checkLogin();-->
+<!--                        });-->
+<!--                    </script>-->
+</body>
+
+</html>

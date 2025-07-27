@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黄河文化互动问答</title>
+    <style>
+        body {
+            font-family: '楷体', serif;
+            background: radial-gradient(circle at center, #2b1a0f 0%, #0c0805 100%);
+            background-image: url("https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745237572613_0d7b0f33-469b-47da-8ba3-1aacdd1fb7a0_15.png?Expires=1776773573&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=mbrU1qsid514eH8u6namXFe73CU%3D");
+            background-size: cover;
+            background-position: center;
+            color: #FFF4E6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            margin: 0;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent 25%,
+                    rgba(255, 255, 255, 0.08) 50%,
+                    transparent 75%);
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background-color: rgba(150, 120, 90, 0.7);
+            /* 背景色 */
+            border-radius: 20px;
+            /* 圆角 */
+            padding: 10px 20px;
+            /* 内边距 */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            /* 阴影 */
+            display: inline-block;
+            /* 使背景和阴影不超出文字范围 */
+        }
+
+        #interactiveBtn {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, rgba(150, 120, 90, 0.9) 0%, rgba(110, 85, 50, 0.9) 100%);
+            color: #F4E9D8;
+            border: 2px solid #896C4D;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        #interactiveBtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, rgba(170, 140, 110, 0.9) 0%, rgba(130, 105, 70, 0.9) 100%);
+        }
+
+        #questionContainer {
+            width: 90%;
+            max-width: 800px;
+            background: linear-gradient(135deg,
+                    rgba(50, 35, 25, 0.8) 0%,
+                    rgba(35, 25, 15, 0.9) 100%);
+            border-radius: 15px;
+            padding: 1.0rem;
+            margin: 0rem 0;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(150, 120, 90, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .question h3 {
+            color: #F1D6AB;
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .question h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    #896C4D 50%,
+                    transparent 100%);
+        }
+
+        .option {
+            cursor: pointer;
+            padding: 1.5rem;
+            margin: 1.2rem 0;
+            background: linear-gradient(135deg,
+                    rgba(60, 45, 35, 0.7) 0%,
+                    rgba(40, 30, 20, 0.8) 100%);
+            border: 2px solid #735D47;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            font-size: 1.15rem;
+            color: #E6D5B8;
+            letter-spacing: 0.05rem;
+        }
+
+        .option:hover {
+            background: linear-gradient(135deg,
+                    rgba(80, 65, 55, 0.7) 0%,
+                    rgba(60, 50, 40, 0.8) 100%);
+            transform: translateX(15px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .selected {
+            background: linear-gradient(135deg,
+                    rgba(90, 75, 55, 0.9) 0%,
+                    rgba(70, 55, 35, 0.9) 100%) !important;
+            border-color: #A78B6D !important;
+            color: #FFF4E6 !important;
+        }
+
+        .result {
+            text-align: center;
+            font-size: 1.4rem;
+            margin: 2rem 0;
+            padding: 1.2rem;
+            border-radius: 10px;
+            background: rgba(40, 30, 20, 0.7);
+            border: 1px solid #685643;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 800px;
+            display: none;
+            /* 初始隐藏 */
+        }
+
+        .correct {
+            background: linear-gradient(135deg,
+                    rgba(70, 90, 60, 0.7) 0%,
+                    rgba(50, 70, 40, 0.8) 100%);
+            border-color: #6B8C5E;
+        }
+
+        .incorrect {
+            background: linear-gradient(135deg,
+                    rgba(90, 60, 50, 0.7) 0%,
+                    rgba(70, 40, 30, 0.8) 100%);
+            border-color: #8C5D5E;
+        }
+
+        .summary {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(30, 20, 10, 0.8);
+            border-radius: 15px;
+            margin-top: 2rem;
+            border: 1px solid #796550;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            font-size: 1.3rem;
+            width: 90%;
+            max-width: 800px;
+            display: none;
+            /* 初始隐藏 */
+        }
+
+        a {
+            color: #D4B78F;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px dashed #A78B6D;
+        }
+
+        a:hover {
+            color: #F1D6AB;
+            border-bottom-style: solid;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem;
+                background: radial-gradient(circle at center, #2b1a0f 0%, #0c0805 100%);
+            }
+
+            #questionContainer {
+                width: 95%;
+                padding: 1.5rem;
+            }
+
+            .option {
+                font-size: 1.1rem;
+                padding: 1.2rem;
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-header">
+        <h1>黄河文化知识鉴考</h1>
+    </div>
+    <div id="questionContainer"></div>
+    <div id="resultContainer" class="result"></div>
+    <div id="summaryContainer" class="summary"></div>
+    <script>
+        let questions = []; // 题目数据
+        let currentQuestionIndex = 0; // 当前题目索引
+        let correctAnswers = 0; // 正确题目计数
+        let incorrectAnswers = 0; // 错误题目计数
+
+        // 点击“互动专区”按钮，获取题目
+        // 修改后的初始化逻辑
+        document.addEventListener('DOMContentLoaded', function () {
+            loadQuestions();
+        });
+
+        function loadQuestions() {
+            fetch('/huanghe/question', { method: 'GET' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.code === 1 && Array.isArray(data.data)) {
+                        questions = data.data;
+                        currentQuestionIndex = 0;
+                        displayCurrentQuestion();
+                    } else {
+                        showError('题库加载失败，请刷新重试');
+                    }
+                })
+                .catch(error => {
+                    console.error('获取题目失败:', error);
+                    showError('连接题库失败，请检查网络');
+                });
+        }
+
+        function showError(message) {
+            const container = document.getElementById('questionContainer');
+            container.innerHTML = `
+                <div class="error-message">
+                    ${message}
+                    <button onclick="location.reload()">重新加载</button>
+                </div>
+            `;
+        }
+
+        // 显示当前题目
+        function displayCurrentQuestion() {
+            const container = document.getElementById('questionContainer');
+            const resultContainer = document.getElementById('resultContainer');
+            container.innerHTML = ''; // 清空容器
+            resultContainer.innerText = ''; // 清空反馈信息
+
+            if (currentQuestionIndex >= questions.length) {
+                showSummary(); // 题目完成后显示总结
+                return;
+            }
+
+            const question = questions[currentQuestionIndex];
+            container.innerHTML = `<h3>第 ${currentQuestionIndex + 1} 题: ${question.content}</h3>`;
+
+            // 生成选项
+            const options = [
+                { label: 'A', text: question.optionA },
+                { label: 'B', text: question.optionB },
+                { label: 'C', text: question.optionC },
+                { label: 'D', text: question.optionD }
+            ];
+
+            options.forEach(option => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                optionDiv.innerText = `${option.label}. ${option.text}`;
+                optionDiv.addEventListener('click', function () {
+                    selectOption(question.id, option.label, optionDiv);
+                });
+                container.appendChild(optionDiv);
+            });
+        }
+
+        // 处理用户选择选项
+        function selectOption(questionId, selectedOption, optionDiv) {
+            // 更新选项样式
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            optionDiv.classList.add('selected');
+
+            // 发送 POST 请求到后端
+            fetch('/huanghe/option', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    questionId: questionId,
+                    optionId: selectedOption
+                })
+            })
+                .then(response => response.json())
+                .then(result => {
+                    const resultContainer = document.getElementById('resultContainer');
+                    if (result.code === 1) {
+                        resultContainer.innerText = '回答正确';
+                        resultContainer.className = 'result correct';
+                        correctAnswers++;
+                    } else {
+                        resultContainer.innerText = '回答错误';
+                        resultContainer.className = 'result incorrect';
+                        incorrectAnswers++;
+                    }
+                    resultContainer.style.display = 'block'; // 显示结果容器
+                    // 1.5 秒后显示下一个题目
+                    setTimeout(() => {
+                        currentQuestionIndex++;
+                        displayCurrentQuestion();
+                    }, 1500);
+                })
+                .catch(error => {
+                    console.error('提交答案失败:', error);
+                    document.getElementById('resultContainer').innerText = '提交答案失败，请稍后重试';
+                });
+        }
+
+        // 显示总结信息，并在答对全部题目时请求 /huanghe/download
+        function showSummary() {
+            const summaryContainer = document.getElementById('summaryContainer');
+
+            if (incorrectAnswers === 0) {
+                summaryContainer.innerText = '恭喜你，全部答对！正在为您准备下载...';
+
+                // 发送 GET 请求到 /huanghe/download
+                fetch('/huanghe/download', { method: 'GET' })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP 错误! 状态码: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log("后端返回数据:", data); // 打印返回数据进行调试
+                        if (data.code === 1 && data.data) { // 这里使用 data.data
+                            summaryContainer.innerHTML += `<br><a href="${data.data}" target="_blank">点击这里下载</a>`;
+                        } else {
+                            console.error('下载失败:', data);
+                            summaryContainer.innerHTML += '<br>下载失败，请稍后重试。';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('下载请求失败:', error);
+                        summaryContainer.innerHTML += '<br>下载请求失败，请稍后重试。';
+                    });
+
+            } else {
+                summaryContainer.innerText = `您答错了${incorrectAnswers}道题，继续努力！`;
+            }
+            summaryContainer.style.display = 'block'; // 显示总结容器
+        }
+        const originalFetch = window.fetch;
+        window.fetch = async function (url, options = {}) {
+            options.headers = {
+                ...(options.headers || {}),
+                'Content-Type': options.headers && options.headers['Content-Type'] ? options.headers['Content-Type'] : 'application/json',
+            };
+            const token = localStorage.getItem('token');
+            if (token) {
+                options.headers['Authorization'] = `Bearer ${token}`;
+            }
+            return originalFetch(url, options);
+        };
+    </script>
+     <script src="utils.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        checkLogin();
+    });
+</script>
+
+</body>
+
+</html>

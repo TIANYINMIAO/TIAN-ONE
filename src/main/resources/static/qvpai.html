@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>秦腔</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3abfa1c49-3c17-47f1-8440-1a63c996c3b8_1.1%20%281%29.png?Expires=1776609606&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=SbNyRziUBEpsio0iDQAviKILtEY%3D">
+                    <span>弦乐曲牌</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39b7dda8a-e0a8-4194-9701-35fa24c6c0cf_1.1%20%282%29.png?Expires=1776609633&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=QiYfLnRyhjayMXwX%2FJAVgnq2hTk%3D">
+                    <span>唢呐曲牌
+                    </span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3bc5a4481-4c16-4785-9450-c15db9b1675e_1.1%20%283%29.png?Expires=1776609654&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=9EV1HbW6OJKlbnJXb2FjcC8sQZc%3D">
+                    <span>海笛曲牌</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/30a38523a-ebe7-45ba-9285-f9849afe22c3_1.1%20%284%29.png?Expires=1776609677&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=tF40Wom39%2BoN6qoWWNKsKbuGd%2Fo%3D">
+                    <span>笙管曲牌</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3a5648db1-375b-4db6-a464-3e82088b2aa6_1.1%20%284%29.png?Expires=1776609693&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=IfRAY%2FVM%2FI0m9c%2B1DJ8jL49wNjk%3D">
+                    <span>昆曲曲牌</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ba358de8-bc23-4844-9892-7a1a7b80b124_1.1%20%286%29.png?Expires=1776609715&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=bS%2FMmm%2Ft12uzKMrJ6o9NCeUwrHo%3D">
+                    <span>套曲结构</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>秦腔小课堂—曲牌</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">弦乐曲牌</h3>
+                        <p>弦乐曲牌以板胡、二弦为核心乐器，音色苍凉悲怆，善用滑音与揉弦技法传递情感，如《哭皇天》中连续下行滑音精准模拟啜泣声。代表曲目《柳青娘》保留明清俗曲的“起承转合”结构，《夜深沉》则融合京剧元素，以弦乐织体勾勒深夜沉思之境。此类曲牌多用于文戏内心独白，如《火焰驹·卖水》全折以弦乐铺底，通过“紧拉慢唱”形成独特戏剧张力。1930年代演奏革新中，二弦改用四度定弦（出调），音域拓宽至两个八度，使《周仁回府》等剧的抒情表现力大幅提升。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/384fa54b4-9c6b-40ea-9373-2d3936135d64_15.jpeg?Expires=1776609740&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=PjA3PWjhPRjPtpLKpIqWs4BAilA%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b90fc55f-6383-4833-9cea-a850bccc4e00_17.jpeg?Expires=1776609776&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=D9%2BI6SNYJl9FGTLSl1x1mTmPbl8%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">唢呐曲牌</h3>
+                        <p>
+                            唢呐曲牌以双吐循环换气技法著称，音阶中独特的降si音承袭唐代清商音阶遗韵，《将军令》中连续3分钟不换气的华彩段堪称绝技。经典应用场景中，《朝天子》前16小节复刻唐代宫廷雅乐制式，《马陵道》则以唢呐与马锣合奏模拟战场金戈之音。作为陇东婚丧仪礼的“大笛先儿”，其110分贝的声压穿透黄土高坡，民间视其为生命仪典的声觉图腾。新编剧目《丝路长歌》更将唢呐与电子合成器结合，在赛博朋克式音景中激活传统声腔的现代生命力。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b78ca5cc-ea24-40d2-8199-3136f7bdddf8_21.jpeg?Expires=1776609800&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=I8jOHXIPI1anP7ZhJfo%2FWvz0VVg%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3d83b75fd-193a-467a-bd80-072e04e350c8_23.jpeg?Expires=1776609818&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=iXOTXTIHklWjQBHfeDVCnyIjUkw%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">海笛曲牌</h3>
+
+                        <p>高音小唢呐（海笛）凭借g1-d3的锐利音域，配合指颤音与鼓腮换气技法，营造出敦煌飞天般的奇幻音效。《白蛇传·盗仙草》中白蛇幻化时的空灵旋律，《钟馗嫁妹》鬼卒出场时与铰子合奏的阴森音场，皆赖其独特声学特质。这种音色与陇东道教“过阴”仪式同源，高频泛音被视为沟通人神两界的声波桥梁。当代甘南藏剧团创新性地将其与法号合奏，在《格萨尔王》中重构出横跨汉藏文化的史诗音景。
+                        </p>
+
+                    </div>
+
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3d9d6d77b-8969-4123-aac1-7d4150e297cb_15.png?Expires=1776609844&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Giibcqz9sv8F%2BqzXjr1iv6t0hso%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e76a1bee-1a11-486f-9016-2ce1e434f4b4_17.png?Expires=1776609866&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=X4HYexQP1zz5r6we%2BMd0W62gAPs%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">笙管曲牌</h3>
+                        <p>十七簧笙恪守唐宋“五调朝元”旋宫法，《浪淘沙》曲牌中可见敦煌谱字“丿”“レ”对应的古演奏技法。笙管笛三重奏在《锦堂月》中展现非凡表现力：笙的“呼舌”拟风雨萧瑟，管子的“涮音”仿战马长嘶。这类雅乐专用于《百花亭》等宫廷宴戏，晚清工尺谱中新近发现的《霓裳中序》演奏法，揭示了唐宋燕乐的最后遗响。借助声纹分析技术，民国大师张进财68支曲牌中微妙的微分音细节得以数字化复原。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39de347af-f045-4e56-a7f2-19abd9bdc192_26.png?Expires=1776609911&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=2V3ExWHj2LyPUarqpHMgAAfh1Ug%3D" alt=" Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/38c42c6d4-eabc-4475-b592-5f62bf855946_27.png?Expires=1776609929&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=vKD8ddzOjrYKaveZwts6BpBOb%2B0%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">昆曲曲牌</h3>
+                        <p>清乾隆年间吸收昆腔《玉簪记》精华，通过加速1/4节奏并加入梆子击节，形成“快昆慢秦”的独特对比。《琴挑》保留水磨腔“橄榄形”旋律线，却以秦腔方言重塑咬字方式，旦角“咿呀”拖腔在刚劲中透出婉转。现存32支昆味曲牌弥足珍贵，青年演员在《锁麟囊》哭腔中运用“腔中带昆”技法延续香火。学界对其归属尚有争议，部分学者认为应视作“雅化弦乐曲牌”变体，折射出戏曲融合的复杂性。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b2893b74-0983-4410-a135-75bcdefc767a_24.png?Expires=1776609952&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=xFURt3FItyIEpUibDLhLi7lVg7I%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/35f9da959-5180-4554-954a-470844b6c8bb_25.png?Expires=1776609972&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=qLdALLINZljIGXL%2BIUzJy4u52jk%3D" alt=" Image">
+                        </div>
+                    </div>
+
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">套曲结构</h3>
+                        <p>套曲遵循“散-慢-中-快-散”的速度哲学，《大登殿》通过五种板式转换与四度调性布局，构筑起宏伟的音乐叙事。传统组合中，“征战套”以《将军令》激越开场，“婚庆套”用《寄生草》铺陈喜乐。新编《敦煌节度使》引入计算机分析200支曲牌连接规律，开创“主题动机发展法”。作为“中国传统音乐活化石”，其《西凉乐》套曲中保存的北朝龟兹乐元素，为丝路乐舞研究提供了珍贵活态样本。
+                        </p>
+
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/313999d3a-60c3-4488-b9f3-2a1704beb85a_16.png?Expires=1776609994&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=JUTH9oOmOzxkt3Ia1yu93FB%2B%2F%2FU%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3427bfbaa-56d6-470b-ad2d-d3c2bd08dfad_14.png?Expires=1776610013&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=WVWJ6xuQ1p2LHl32MYJ585YMJx4%3D" alt=" Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--    <script src="utils.js"></script>-->
+<!--     <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

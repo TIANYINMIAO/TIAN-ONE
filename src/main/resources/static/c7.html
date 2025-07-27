@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>韩城行鼓</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3fb9ea8a1-0fb4-42cf-b5e7-bc2b26c9af60_7.1.png?Expires=1776599449&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=OpHB%2FKUTRomRVxt%2Bj7%2BG4KMV%2Fzo%3D">
+                    <span>单击双击</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3170f7dd8-d1fe-492b-b05a-a6ae05652e74_7.2.png?Expires=1776599455&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=tP1vAIjJfX7AwJhZYwMzCEAjI%2FA%3D">
+                    <span>快击慢击</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3a4511568-0c78-4a0f-a158-b5ef5abd8180_7.3.png?Expires=1776599458&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ocd%2FP6JblN8Eb%2FKylDNhFp%2BJ%2B0w%3D">
+                    <span>变化节奏</span>
+                </div>
+                <!-- <div class="box">
+                    <img src="assets/images/wenh/chuanjv/4.webp">
+                    <span>打磨抛光</span>
+                </div> -->
+
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>韩城行鼓小课堂</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">单击与双击：节奏与力度的基础
+                        </h3>
+                        <p>单击：单击是行鼓演奏中最常见的击打方式，鼓手用一只鼓槌击打鼓面，产生简洁明快的声音。单击节奏通常用于表现节奏较为平稳、简洁的音乐段落，能够营造一种整齐有序的氛围。在行鼓表演中，单击往往是构成复杂节奏的基础，尤其是当节奏较为缓慢时，单击的清晰度和力度展现了演奏者的控制力。
+                        </p>
+                        <p>双击：双击则是通过两只鼓槌同时击打鼓面，产生连续而有力的鼓声。这种击打方式常常用于表现快速节奏和高亢激昂的场面。双击具有较强的冲击力，能营造出节奏的快速变化和紧张的氛围。鼓手通过精确的双击，不仅能增加节奏的紧凑感，还能通过速度的变化提升整体的表现力。
+                        </p>
+                    </div>
+                    <!-- <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="assets/ctwh/7.4.png" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="assets/ctwh/7.5.png" alt=" Image">
+                        </div>
+                    </div> -->
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">快击与慢击：节奏的对比与情感的传达
+
+                        </h3>
+                        <p>
+                            快击：快击是通过快速击打鼓面，产生密集而急促的鼓声。快击通常用于表现节奏急促、情绪激昂的部分，鼓声快速而有力，带有强烈的冲击力和动感。行鼓中的快击技巧需要演奏者精准掌握打击的速度和力度，节奏要求既要快速又要有层次，使得音乐的流动性和张力更加丰富。
+                        </p>
+                        <p>慢击：慢击则是节奏较为缓慢的击打方式，常用于情感深沉、庄重的场合。慢击通过每次击打的沉稳和力度，创造出一种悠长的回响。慢击的运用让鼓声更具表现力，可以传达出细腻的情感波动和深刻的内涵。鼓手在慢击时往往会更注重击打的力度和节奏的把控，使得每一次击打都能产生深远的影响。
+                        </p>
+
+                    </div>
+                    <!-- <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="assets/ctwh/7.6.png" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="assets/ctwh/7.7.png" alt=" Image">
+                        </div>
+                    </div> -->
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">变速与变化节奏：增加音乐的层次感</h3>
+                        <p>陕西韩城行鼓的演奏技法中，变速和变化节奏是非常重要的技巧。通过灵活的节奏调整，鼓手能够在表演中自由地掌控音响的效果，使鼓声的层次感和情感表现更加丰富。</p>
+
+                        <p>渐强与渐弱：渐强和渐弱是指鼓手通过逐渐增加或减少击打的力度，使节奏变化更加自然和流畅。渐强能够带动音乐的气氛，增加紧张感；而渐弱则让音乐逐渐回归平静，给人一种舒缓的感觉。渐强和渐弱的运用增强了行鼓演奏的戏剧性和情感的表达，使得鼓声在变化中传递着更丰富的情感。
+                        </p>
+                        <p>
+                            突变节奏：有时，演奏者会在行鼓中突变节奏，使得节奏出现急剧的变化。这种变化节奏通常出现在戏剧性的转折点，通过突然的节奏变化吸引观众的注意力，达到戏剧效果的巅峰。突变节奏在表现情感激烈波动时十分有效，能够增强表演的震撼力和冲击力。
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

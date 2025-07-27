@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <title>皮影</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .circle-container {
+            position: fixed;
+            left: -50dvh;
+            top: 0;
+            width: 100dvh;
+            height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .circle {
+            width: 100dvh;
+            height: 100dvh;
+            border-radius: 50%;
+            position: absolute;
+            transition: transform 0.1s linear;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            transform: rotate(-20deg);
+        }
+
+        .segment {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+
+        /* Her segment için farklı görsel ve pozisyon ayarları */
+        .segment:nth-child(1) {
+            clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 30%);
+        }
+
+
+        .segment:nth-child(1)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745151554378_df26f3f6-bf22-4392-8238-ff8731f90d71_21.jpeg?Expires=1776687555&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=u2Pus5StrjhaJ7wPPLEnmyfwlpU%3D');
+            background-position: 75% 25%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+        .segment:nth-child(2) {
+            clip-path: polygon(50% 50%, 100% 30%, 100% 100%, 80% 100%);
+        }
+
+        .segment:nth-child(2)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745151460598_25367e6e-2eec-41a2-9365-18468bdffda5_17.jpeg?Expires=1776687461&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=S3SsxRS%2BHyHqL9bEomMruem4IeE%3D');
+            background-position: 175% 50%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+        .segment:nth-child(3) {
+            clip-path: polygon(50% 50%, 80% 100%, 30% 100%, 20% 100%);
+        }
+
+        .segment:nth-child(3)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745151448739_83b36007-397c-48a0-bed2-824ed24afbf7_4.jpeg?Expires=1776687449&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=9OxWxO00lGpzmC5zC63uWAjpP9g%3D');
+            background-position: 50% 200%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+        .segment:nth-child(4) {
+            clip-path: polygon(50% 50%, 20% 100%, 0% 100%, 0% 30%);
+        }
+
+        .segment:nth-child(4)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745151466061_54e2fcc9-1f53-4b41-b549-425608d8de9c_13.jpeg?Expires=1776687466&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=lZXUx%2ByT%2Fg1gcS1rKq%2FrpRX%2B%2F4A%3D');
+            background-position: -75% 125%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+        .segment:nth-child(5) {
+            clip-path: polygon(50% 50%, 0% 30%, 0% 0%, 50% 0%);
+        }
+
+        .segment:nth-child(5)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(' https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745151460598_25367e6e-2eec-41a2-9365-18468bdffda5_17.jpeg?Expires=1776687461&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=S3SsxRS%2BHyHqL9bEomMruem4IeE%3D');
+            background-position: 0% -25%;
+            background-size: 75%;
+            border-radius: 50%;
+        }
+
+        /* .segment:nth-child(6) {
+            clip-path: polygon(50% 50%, 30% 0%, 50% 0%, 30% 0%);
+        }
+
+        .segment:nth-child(6)::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('./assets/images/wenh/chuanjv/21.png');
+            background-position: center;
+            background-size: 75%;
+            border-radius: 50%;
+        } */
+
+        .content {
+            width: 100vw;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 100vw;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 默认设置为较矮屏幕样式 */
+        section {
+            min-height: 110vh !important;
+        }
+
+        /* 大屏幕（高度大于等于 900px）使用 height: 100vh */
+        @media (min-height: 900px) {
+            section {
+                min-height: unset !important;
+                height: 100vh;
+            } .shell2 .one {
+                  margin-left: 870px;
+              }
+        }
+
+        .z2 {
+            display: flex;
+            height: 500px;
+
+            overflow-x: auto;
+            /* 让 .z2 内部可以横向滚动 */
+            overflow-y: hidden;
+            /* 防止出现不必要的垂直滚动 */
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            width: 100%;
+        }
+
+
+        .shell2 {
+            -webkit-mask-image: linear-gradient(to right, #0000, #000, #000, #0000);
+            overflow-x: auto;
+            display: flex;
+            gap: 5rem;
+            align-items: start;
+            padding: 70px;
+        }
+
+        .shell2>div {
+            block-size: 320px;
+            background-color: #fff;
+            aspect-ratio: 16/9;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 0 5px 5px rgba(173, 173, 173, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+
+
+        .shell2 .one {
+            margin-left: 500px;
+        }
+
+
+        /* 滚动条样式 */
+        ::-webkit-scrollbar {
+            height: 16px;
+        }
+
+
+
+        /* 文字样式 */
+        .text-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* 按钮样式 */
+        .fullscreen-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .fullscreen-btn:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .biaoti {
+            position: absolute;
+            top: 70px;
+            right: 80px;
+            width: 900px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 轻微渐变背景 */
+            padding: 20px 30px;
+            border-left: 5px solid #C19A6B;
+            /* 复古金色边框 */
+            backdrop-filter: blur(10px);
+            /* 增强玻璃质感 */
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            color: #EAE0D5;
+            /* 典雅的米白色字体 */
+            font-family: "Songti SC", serif;
+            /* 经典宋体，符合戏曲文化 */
+        }
+
+        /* 标题样式 */
+        .biaoti h1 {
+            font-size: 48px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #D4AF37;
+            /* 金色字体，高级感 */
+            text-shadow: 2px 2px 5px rgba(212, 175, 55, 0.5);
+            margin-bottom: 15px;
+        }
+
+        /* 文字段落 */
+        .biaoti p {
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: justify;
+            color: #EAE0D5;
+            font-weight: 400;
+            text-indent: 2em;
+            opacity: 0.9;
+            /* 轻微透明，增加层次感 */
+        }
+
+        /* 额外的动画（可选） */
+        .biaoti {
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* 渐显动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 经典曲目标题样式 */
+        .biaoti2 {
+            position: absolute;
+            top: 350px;
+            /* 调整位置，避免与 .biaoti 重叠 */
+            right: 770px;
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #D4AF37;
+            /* 高级金色 */
+            text-shadow: 2px 2px 5px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体，符合戏曲风格 */
+            padding: 10px 20px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            display: inline-block;
+            box-shadow: 0px 4px 10px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        /* 鼠标悬停效果 */
+        .biaoti2:hover {
+            background: rgba(255, 223, 186, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* 进入动画 */
+        .biaoti2 {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 鼠标悬停效果 */
+        .biaoti2:hover {
+            background: rgba(255, 223, 186, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* 移动端基础样式 */
+        @media (max-width: 768px) {
+            .biaoti {
+                position: relative;
+                top: auto;
+                right: auto;
+                width: 90%;
+                max-width: none;
+                margin: 20px auto;
+                padding: 15px;
+                transform: none;
+                backdrop-filter: blur(5px);
+                border-radius: 6px;
+            }
+
+            .biaoti h1 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+                text-align: center;
+                margin-bottom: 12px;
+            }
+
+            .biaoti p {
+                font-size: 1rem;
+                text-indent: 1.5em;
+                line-height: 1.6;
+            }
+
+            .biaoti2 {
+                position: relative;
+                top: auto !important;
+                right: auto !important;
+                display: block;
+                width: fit-content;
+                margin: 0 auto 30px;
+                font-size: 1.5rem;
+                padding: 8px 15px;
+                border-width: 1px;
+                transform: none !important;
+            }
+
+            /* 视频容器改造 */
+            .z2 {
+                /* position: relative;
+                height: auto;
+                margin-top: 20px; */
+                display: none;
+            }
+
+            .shell2 {
+                flex-direction: column;
+                padding: 0 15px;
+                gap: 25px;
+                -webkit-mask-image: none;
+            }
+
+            .shell2>div {
+                width: 100% !important;
+                min-width: auto;
+                block-size: auto;
+                aspect-ratio: 16/9;
+                margin-left: 0 !important;
+            }
+
+            /* 圆形装饰优化 */
+            .circle-container {
+                display: none;
+                /* 移动端隐藏复杂图形 */
+            }
+
+            /* 全局调整 */
+            section {
+                padding: 30px 0;
+                height: auto !important;
+                /* min-height: 100vh; */
+                flex-direction: column;
+            }
+        }
+
+        /* 小屏手机优化 */
+        @media (max-width: 480px) {
+            .biaoti {
+                width: 95%;
+                padding: 12px;
+            }
+
+            .biaoti h1 {
+                font-size: 1.8rem;
+            }
+
+            .biaoti p {
+                font-size: 0.9rem;
+            }
+
+            .biaoti2 {
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+            }
+
+            .shell2 {
+                padding: 0 10px;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle-container">
+        <div class="circle" id="circle">
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+            <div class="segment"></div>
+        </div>
+    </div>
+    <div class="content">
+        <section id="section1" style="background: #1B1F23; color: white;">
+            <div class="biaoti">
+                <h1>选皮</h1>
+                <p>皮影制作的第一步是精心挑选原材料皮张。通常，优质的牛皮或驴皮因其柔韧性强、透明度好、耐磨损而被选用。选皮时，需注重皮质的均匀度、厚度以及是否有瑕疵，确保最终皮影作品既美观又耐用。
+                </p>
+            </div>
+            <!-- <div class="biaoti2">经典曲目</div> -->
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+                        <!-- 替换video为img -->
+                        <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/368274aec-a8db-4960-8d97-d0d0a9261c2f_5.jpeg?Expires=1776596415&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=RKwDt38RZeBnuNFYlqP2FkA2o20%3D"
+                            class="preview-image">
+                        <!-- 移除全屏按钮 -->
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="section2" style="background: #2C3E50; color: white;">
+            <div class="biaoti">
+                <h1>制皮</h1>
+                <p>选定皮料后，进入制皮阶段。这一步骤包括将皮料浸泡、脱毛、刮薄、晾干等一系列复杂工艺。通过精细的处理，使皮料变得柔软而富有弹性，为后续的雕刻和着色打下良好基础。
+                </p>
+            </div>
+
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+                        <!-- 替换video为img -->
+                        <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3beef088f-a638-496f-9293-05bc4bcb20b7_6.jpeg?Expires=1776596436&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=MSF6BBLnlj24Wi3nvT4v2cdvi%2Fk%3D"
+                            class="preview-image">
+                        <!-- 移除全屏按钮 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section3" style="background: #34495E; color: white;">
+            <div class="biaoti">
+                <h1>过稿</h1>
+                <p>过稿是将设计好的皮影形象图案转移到准备好的皮料上的过程。艺术家们通常先在纸上绘制出精细的图案，然后利用透光法或直接描摹的方式，将图案轮廓准确地勾勒在皮面上，为雕刻做准备。
+                </p>
+            </div>
+
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+                        <!-- 替换video为img -->
+                        <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ea5fab88-d363-4069-8f07-c0f3cb33e772_7.jpeg?Expires=1776596577&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=phjsIE20gJcI1yDnrIJbhSOCKv4%3D"
+                            class="preview-image">
+                        <!-- 移除全屏按钮 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section4" style="background: #4A4E69; color: white;">
+            <div class="biaoti">
+                <h1>定稿</h1>
+                <p>在过稿的基础上，进行定稿细化。这一阶段主要是检查并修正图案线条，确保每一处细节都准确无误。有时，艺术家还会根据个人风格或创作需求，对图案进行最后的调整和优化，使其更加生动传神。
+                </p>
+            </div>
+
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+                        <!-- 替换video为img -->
+                        <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b6ebf80e-1c0e-40c6-a4d8-701e1717cdad_8.jpeg?Expires=1776596600&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2BNEj6bbD9cxwl6XOBO1wGKnxrJY%3D"
+                            class="preview-image">
+                        <!-- 移除全屏按钮 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section5" style="background: #5C677D; color: white;">
+            <div class="biaoti">
+                <h1>雕刻</h1>
+                <p>雕刻是皮影制作中最关键也最具艺术性的环节。使用特制的刀具，艺人沿着定好的线条小心翼翼地雕刻出皮影的各个部分。这一过程考验着艺人的手眼协调能力和对力度的精准控制，每一刀都需恰到好处，以保证皮影的线条流畅、结构完整。
+
+                </p>
+            </div>
+
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+                        <!-- 替换video为img -->
+                        <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/30de03007-1bb1-4c5e-a15c-89d7eb5503f8_9.jpeg?Expires=1776596624&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=SDNTIFrQdR%2BwP%2FtU5Sm6mJ1zJYM%3D"
+                            class="preview-image">
+                        <!-- 移除全屏按钮 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section5" style="background: #5C677D; color: white;">
+            <div class="biaoti">
+                <h1>彩敷</h1>
+                <p>
+                    雕刻完成后，便是为皮影上色，即彩敷。根据设计需要，采用传统矿物颜料或植物颜料，通过手工刷涂或点染的方式，为皮影赋予丰富的色彩。色彩的选择不仅要考虑角色的性格特征，还要注重整体的和谐美感，使皮影作品更加鲜活、富有感染力。
+                </p>
+            </div>
+
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+                        <!-- 替换video为img -->
+                        <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/313c05188-55d2-4efb-bbfb-c181c02041cb_10.jpeg?Expires=1776596663&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=fhjNEPBS67LvXpTSD578iQfeNOs%3D"
+                            class="preview-image">
+                        <!-- 移除全屏按钮 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section5" style="background: #5C677D; color: white;">
+            <div class="biaoti">
+                <h1>发汗熨平</h1>
+                <p>
+                    最后一步是发汗熨平。这一步骤旨在去除皮料中可能残留的水分，同时通过熨烫使皮影更加平整光滑，便于操作和展示。发汗通常是将皮影置于特定环境中自然干燥，而熨平则是利用热熨斗轻轻熨烫皮面，确保皮影既保持原有的柔软度，又能呈现出最佳的视觉效果。至此，一件精美的皮影作品便完成了它的制作之旅。
+                </p>
+            </div>
+
+            <div class="z2">
+                <div class="shell2">
+                    <div class="one">
+                        <!-- 替换video为img -->
+                        <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32c4a7484-82db-40a3-9ce3-255685222c3e_11.jpeg?Expires=1776596795&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=CZJDntO1g6emqC75de9uWY4yNzs%3D"
+                            class="preview-image">
+                        <!-- 移除全屏按钮 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <section id="section6" style="background: #5C677D; color: white;"></section> -->
+
+    </div>
+    <script>
+        const circle = document.getElementById("circle");
+        const sections = document.querySelectorAll("section");
+        const sectionCount = sections.length;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+        window.addEventListener("scroll", () => {
+            let scrollPercentage = window.scrollY / maxScroll;
+            let rotation = (scrollPercentage * 360) - 20;
+            // Scroll ile dönmeyi sağlayan mantığı düzeltmek
+            circle.style.transform = `rotate(${rotation}deg)`;
+        });
+    </script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

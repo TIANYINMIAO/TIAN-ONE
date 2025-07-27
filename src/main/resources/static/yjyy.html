@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- required meta -->
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- #favicon -->
+   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+   <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+   <!-- #title -->
+   <title>文化篇 | 豫剧音乐</title>
+   <!-- #keywords -->
+   <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+   <!-- #description -->
+   <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+   <!-- google fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com/">
+   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet">
+   <!-- main css -->
+   <link rel="stylesheet" href="assets/css/main.css">
+   <!-- responsive css -->
+   <link rel="stylesheet" href="assets/css/responsive.css">
+   <!-- color themes -->
+   <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+   <!-- want sticky header -->
+   <link rel="stylesheet" href="assets/css/sticky-header.css">
+   <!-- box layout css -->
+   <link rel="stylesheet" href="assets/css/box-layout.css">
+   <!-- dark mode css -->
+   <link rel="stylesheet" href="assets/css/dark-mode.css">
+   <!-- rtl css -->
+   <link rel="stylesheet" href="assets/css/rtl.css">
+   <link rel="stylesheet" href="assets/css/daohang.css">
+   <style>
+      .video-poster {
+         width: 100%;
+         /* max-width: 800px; */
+         /* 控制最大宽度，避免太大 */
+         height: auto;
+         border-radius: 10px;
+         /* 圆角，使视频更有质感 */
+         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+         /* 添加阴影，增加层次感 */
+         object-fit: cover;
+         /* 确保视频内容充满容器 */
+         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      /* 鼠标悬停时，稍微放大并增强阴影 */
+      .video-poster:hover {
+         transform: scale(1.05);
+         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      }
+
+      /* 适应移动端 */
+      @media (max-width: 768px) {
+         .video-poster {
+            max-width: 100%;
+            border-radius: 5px;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <!-- ==== / banner section end ==== -->
+   <!-- ==== header start ==== -->
+   <!--[if lt IE 9]>
+         <p class="browserupgrade">
+            You are using an <strong>outdated</strong> browser. Please
+            <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+            your experience and security.
+         </p>
+         <![endif]-->
+   <div class="page-wrapper">
+      <!-- ==== 进入动画 ==== -->
+      <div class="preloader">
+         <i class="icon-donation"></i>
+         <p>黄河文化</p>
+      </div>
+      <div class="daohang">
+         <!-- logo 部分，设置为左侧 -->
+         <div class="logo">
+            <img src="assets/image/logo2.png" alt="Logo">
+         </div>
+         <!-- 导航栏部分 -->
+         <button class="mobile-menu-btn">☰</button>
+         <nav>
+            <ul class="main-nav">
+               <li class="nav-item">
+                  <a href="index%20copy.html">首页</a>
+                  <!-- <ul class="sub-menu">
+                                                    <li><a href="#">子菜单1</a></li>
+                                                    <li><a href="#">子菜单2</a></li>
+                                                    <li><a href="#">子菜单3</a></li>
+                                                 </ul> -->
+               </li>
+               <li class="nav-item">
+                  <a href="3.1wenhua.html">文化篇</a>
+                  <ul class="sub-menu">
+                     <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                     <li><a href="3.1wenhua.html">传统技艺</a></li>
+                     <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                     <li><a href="3.1wenhua.html">传统音乐</a></li>
+                     <li><a href="3.1wenhua.html">传统体育</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a href="#">治水篇</a>
+                  <ul class="sub-menu">
+                     <li><a href="renwu.html">治水英雄颂</a></li>
+                     <li><a href="zsjy.html">治水技奇谈</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a href="shenhua.html">神话篇</a>
+                  <ul class="sub-menu">
+                     <li><a href="#">大禹治水</a></li>
+                     <li><a href="#">黄河母亲</a></li>
+                     <li><a href="#">女娲补天</a></li>
+                     <li><a href="#">伏羲创世</a></li>
+                     <li><a href="#">黄帝蚩尤</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a href="zhengce.html">政策篇</a>
+                  <ul class="sub-menu">
+                     <li><a href="#">要闻</a></li>
+                     <li><a href="#">地方新闻</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a href="rhudong.html">趣味黄河</a>
+                  <!-- <ul class="sub-menu">
+                                                    <li><a href="#">互动答题</a></li>
+                                                 </ul> -->
+               </li>
+               <li class="nav-item">
+                  <a href="chat.html">智慧AI</a>
+                  <!-- <ul class="sub-menu">
+                                                                      <li><a href="# ">互动答题</a></li>
+                                                                   </ul> -->
+               </li>
+            </ul>
+         </nav>
+         <div class="dengluzc">
+            <a href="shijianshu.html">黄河
+               史书</a>
+            <a href="dlzc.html">登录</a>
+            <a href="">注册</a>
+
+         </div>
+      </div>
+      <script>
+         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('active');
+         });
+      </script>
+      <!-- ==== 主体部分 ==== -->
+      <section class="common-banner">
+
+         <div class="container">
+            <div class="row">
+               <div class="common-banner__content text-center">
+                  <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                  <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+               </div>
+            </div>
+         </div>
+         <div class="banner-bg">
+            <video class="banner-video" autoplay muted loop playsinline>
+               <source
+                  src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3dd537531-362c-4279-ba68-29f1fe0ddd6b_23.mp4?Expires=1776602708&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=NgjMMEPUvR8IG8MSpnkPaqw3QJE%3D"
+                  type="video/mp4">
+               <source src="assets/videos/banner-video.webm" type="video/webm">
+               Your browser does not support the video tag.
+            </video>
+         </div>
+         <div class="shape">
+            <!-- <img src="assets/images/shape.png" alt="Image"> -->
+         </div>
+         <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+         </div>
+      </section>
+      <!-- ==== / banner section end ==== -->
+      <!-- ==== faq section start ==== -->
+      <section class="faq">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-12 col-lg-8 col-xl-6">
+                  <div class="faq__content">
+                     <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                        <span class="sub-title"><i
+                              class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄河文化丰富的历史和深厚的民俗传统为豫剧音乐的发展提供了滋养。豫剧作为河南省的地方戏曲形式，吸收了黄河流域的文化精髓，展现了黄河文化中的英雄气概、豪迈精神和对自然的敬畏。豫剧音乐融合了黄河流域的多元文化元素，使得其音乐表现力更为丰富，情感更加深刻。</span>
+                        <h2 class="title-animation">豫剧音乐的 <span>历 史 长 河</span>
+
+                        </h2>
+                     </div>
+                     <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-delay="100">
+                        <div class="accordion" id="accordion">
+                           <div class="accordion-item">
+                              <h6 class="accordion-header" id="headingOne">
+                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    豫剧音乐是什么
+                                 </button>
+                              </h6>
+                              <div id="collapseOne" class="accordion-collapse collapse show"
+                                 aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                 <div class="accordion-body">
+                                    <p>
+                                       豫剧音乐是河南传统戏曲豫剧中的音乐部分，具有悠久的历史和鲜明的地方特色。它的音乐包括唱腔、乐器伴奏和节奏等，注重表达戏剧情感，旋律既有高亢激昂的部分，也有柔和婉转的段落。豫剧音乐常用的乐器包括二胡、唢呐、锣鼓等，形成了独特的音色和节奏感。
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="accordion-item">
+                              <h6 class="accordion-header" id="headingTwo">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    豫剧音乐的起源和发展阶段
+                                 </button>
+                              </h6>
+                              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                 data-bs-parent="#accordion">
+                                 <div class="accordion-body">
+                                    <p>
+                                       豫剧音乐起源于明清时期，最初在河南及周边地区的民间艺术中逐渐形成。随着时间的推移，豫剧音乐吸收了京剧、梆子等其他剧种的影响，逐步完善。19世纪末至20世纪初，豫剧在河南逐渐盛行，并发展成为地方戏曲的主流形式之一。随着时代的变迁，豫剧音乐在继承传统的基础上，也进行了一定的创新和融合。
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="accordion-item">
+                              <h6 class="accordion-header" id="headingThree">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    豫剧音乐的艺术风格形式
+                                 </button>
+                              </h6>
+                              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                 data-bs-parent="#accordion">
+                                 <div class="accordion-body">
+                                    <p>
+                                       豫剧音乐的艺术风格深受黄河文化影响，既有豪迈激昂的唱腔，又不乏细腻柔美的旋律。其唱腔有“二黄”、“快板”等形式，情感丰富且变化多样，表现了豫剧独特的艺术魅力。豫剧的音乐形式包括独唱、对唱、群唱等，具有较强的戏剧性，能够有效地推动剧情发展，增强观众的情感共鸣。
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="accordion-item">
+                              <h6 class="accordion-header" id="headingFour">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    豫剧音乐如何为黄河文化增添加彩
+                                 </button>
+                              </h6>
+                              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                 data-bs-parent="#accordion">
+                                 <div class="accordion-body">
+                                    <p>
+                                       豫剧音乐作为黄河文化的重要组成部分，展现了黄河流域的民间风情与人民精神。其音乐风格豪放、激昂，体现了黄河流域人民的坚韧和勇气。豫剧的传唱不仅丰富了黄河文化的表现形式，也使得这一文化得以更加生动和广泛地传承。通过豫剧音乐，黄河文化的历史、精神和情感得到了深刻的表达与传承，增添了更多的文化色彩和艺术魅力。
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                  <div class="faq__thumb d-none d-lg-block">
+                     <div class="faq__thumb-inner">
+                        <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                           <img
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/317898cae-037d-434c-9476-5157cddf6909_1.15.png?Expires=1776602752&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=JXxk5nL9w%2F%2BF2AfMJRGJ%2F1%2B%2Bckc%3D"
+                              alt="Image">
+                        </div>
+                        <div class="thumb-sm" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                           <img
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3177af148-631c-49ac-822f-7f085cd5232e_1.16.png?Expires=1776602754&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=s2gnojG8YdLVA4jqpqqSQ4GILBE%3D"
+                              alt="Image">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="shape d-none d-lg-block">
+            <!-- <img src="assets/images/faq/shape.png" alt="Image"> -->
+         </div>
+      </section>
+      <!-- ==== / faq section end ==== -->
+      <!-- ==== event details section start ==== -->
+      <div class="cm-details">
+         <div class="container">
+            <div class="row gutter-60">
+               <div class="">
+                  <div class="cm-details__content">
+                     <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                           <source
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3d044de7d-5912-453f-a670-9f3ed2d7e382_24.mp4?Expires=1776602728&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=f%2B%2F5rK0BFfWgf%2BMOnKYWggsrpc8%3D"
+                              type="video/mp4">
+                           您的浏览器不支持视频播放。
+                        </video>
+                     </div>
+                     <div class="cm-details-meta">
+                        <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                        <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                     </div>
+                     <div class="cm-group cta">
+                        <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;《穆桂英挂帅》
+                        </h3>
+                        <p>《穆桂英挂帅》是豫剧的经典剧目之一，讲述了北宋女将穆桂英在岳飞之后继承帅位，带领大军抵抗敌人、捍卫国家的故事。该剧强调了穆桂英的智勇双全以及她为国家和人民奉献一生的精神。通过她的传奇经历，展现了女性英雄主义的力量和家国情怀。《穆桂英挂帅》中的豫剧音乐旋律激昂，充满英雄气概。歌曲使用豫剧传统的“二黄”、“快板”等唱腔，节奏感强，展现了穆桂英的刚毅与决心。音乐通过高亢激昂的曲调表达了战争的紧张氛围，也通过柔和的旋律传达了人物的内心情感和对家国的深情。
+                     </div>
+
+                     <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                           <source
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/355cee67e-6dad-4ad9-ada0-51da46b3cd5b_55.mp4?Expires=1776602800&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=BoXFXa4%2BcDM0IexByNWHlo42dAU%3D"
+                              type="video/mp4">
+                           您的浏览器不支持视频播放。
+                        </video>
+                     </div>
+                     <div class="cm-details-meta">
+                        <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                        <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                     </div>
+                     <div class="cm-group cta">
+                        <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;《花木兰》
+                        </h3>
+                        <p>《花木兰》是豫剧中的另一部经典剧目，讲述了古代女英雄花木兰代父从军的故事。花木兰以其忠孝和英勇的形象成为中国古代女性的代表之一。她代父从军，浴血沙场，最终立下赫赫战功，展现了她的勇气、智慧与坚韧。《花木兰》的豫剧音乐融合了丰富的情感表达，旋律时而激昂、时而柔美，充分表现了花木兰的英勇和内心的柔情。豫剧中的唱腔，如“二黄”和“快板”常用于展现木兰的英雄气概，而较为柔和的段落则传达了她作为女儿的孝心与责任感。通过这些音乐手段，观众能深切感受到木兰代父从军的情感冲突与成长历程。
+                        </p>
+                     </div>
+
+                     <!-- <div class="cm-img-group cta">
+                                <div class="cm-img-single">
+                                    <img src="assets/images/wenh/chuanjv/28.png" alt="Image">
+                                </div>
+                                <div class="cm-img-single">
+                                    <img src="assets/images/wenh/chuanjv/29.png" alt=" Image">
+                                </div>
+                            </div> -->
+                     <!-- ==== custom cursor start ==== -->
+                     <div class="mouseCursor cursor-outer"></div>
+                     <div class="mouseCursor cursor-inner"></div>
+                     <!-- ==== / custom cursor end ==== -->
+                     <!-- ==== scroll to top start ==== -->
+                     <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                        <span></span>
+                        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                           <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                        </svg>
+                     </button>
+                     <!-- ==== / scroll to top end ==== -->
+                     <!-- <div class="cm-event cta">
+                     <div class="cm-event-single">
+                        <a href="index.html">
+                           <i class="fa-brands fa-facebook-f"></i>
+                           Facebook
+                           <img src="assets/images/shape-sc.png" alt="Image">
+                        </a>
+                     </div>
+                     <div class="cm-event-single">
+                        <a href="index.html">
+                           <i class="fa-brands fa-twitter"></i>
+                           Twitter
+                           <img src="assets/images/shape-sc.png" alt="Image">
+                        </a>
+                     </div>
+                     <div class="cm-event-single">
+                        <a href="index.html">
+                           <i class="fa-brands fa-pinterest"></i>
+                           Pinterest
+                           <img src="assets/images/shape-sc.png" alt="Image">
+                        </a>
+                     </div>
+                     <div class="cm-event-single">
+                        <a href="index.html">
+                           <i class="fa-brands fa-linkedin-in"></i>
+                           Linkedin
+                           <img src="assets/images/shape-sc.png" alt="Image">
+                        </a>
+                     </div>
+                     <div class="cm-event-single">
+                        <a href="index.html">
+                           <i class="fa-brands fa-stumbleupon"></i>
+                           Tumblr
+                           <img src="assets/images/shape-sc.png" alt="Image">
+                        </a>
+                     </div>
+                  </div> -->
+                     <!-- <div class="cm-map cta">
+                     <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280051853!2d-74.14448645698116!3d40.69763123317469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew York%2C NY%2C USA!5e0!3m2!1sen!2sbd!4v1731143311697!5m2!1sen!2sbd"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                  <div class="blog-comment" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="comment-header mb-40">
+                        <h4 class="mt-8 title-animation">03 Comments</h4>
+                     </div>
+                     <div class="comment-single">
+                        <div class="thumb">
+                           <img src="assets/images/author-four.png" alt="Image">
+                        </div>
+                        <div class="comment-single__content">
+                           <h5>Martha Grey</h5>
+                           <p>Ut sint posse sit, eum sumo diam ea. Liber consectetuer in mei, sea in imperdiet
+                              assueverit
+                              contentiones, an his cib.
+                           </p>
+                           <div class="comment-single__meta">
+                              <button title="like" class="single"><i class="icon-heart"></i> Like</button>
+                              <div class="reply-button">
+                                 <button aria-label="reply"><i class="fa-solid fa-reply"></i>Reply</button>
+                              </div>
+                              <p>2 min ago</p>
+                           </div>
+                           <div class="reply-comment">
+                              <form action="#" method="post">
+                                 <div class="input-group">
+                                    <div class="input-single">
+                                       <textarea placeholder="Join the discussion..." required></textarea>
+                                    </div>
+                                    <div class="btn-wrapper">
+                                       <button type="submit" class="btn--secondary">Reply</button>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="comment-single comment-single-reply">
+                        <div class="thumb">
+                           <img src="assets/images/team/one.png" alt="Image">
+                        </div>
+                        <div class="comment-single__content">
+                           <h5>Jackie Dawson</h5>
+                           <p>Ut sint posse sit, eum sumo diam ea. Liber consectetuer in mei, sea in imperdiet
+                              assueverit
+                              contentiones, an his cib.
+                           </p>
+                           <div class="comment-single__meta">
+                              <button title="like" class="single"><i class="icon-heart"></i> Like</button>
+                              <div class="reply-button">
+                                 <button aria-label="reply"><i class="fa-solid fa-reply"></i>Reply</button>
+                              </div>
+                              <p>2 min ago</p>
+                           </div>
+                           <div class="reply-comment">
+                              <form action="#" method="post">
+                                 <div class="input-group">
+                                    <div class="input-single">
+                                       <textarea placeholder="Join the discussion..." required></textarea>
+                                    </div>
+                                    <div class="btn-wrapper">
+                                       <button type="submit" class="btn--secondary">Reply</button>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="comment-single">
+                        <div class="thumb">
+                           <img src="assets/images/author-two.png" alt="Image">
+                        </div>
+                        <div class="comment-single__content">
+                           <h5>Hesia Lara</h5>
+                           <p>Ut sint posse sit, eum sumo diam ea. Liber consectetuer in mei, sea in imperdiet
+                              assueverit
+                              contentiones, an his cib.
+                           </p>
+                           <div class="comment-single__meta">
+                              <button title="like" class="single"><i class="icon-heart"></i> Like</button>
+                              <div class="reply-button">
+                                 <button aria-label="reply"><i class="fa-solid fa-reply"></i>Reply</button>
+                              </div>
+                              <p>2 min ago</p>
+                           </div>
+                           <div class="reply-comment">
+                              <form action="#" method="post">
+                                 <div class="input-group">
+                                    <div class="input-single">
+                                       <textarea placeholder="Join the discussion..." required></textarea>
+                                    </div>
+                                    <div class="btn-wrapper">
+                                       <button type="submit" class="btn--secondary">Reply</button>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="comment__form mt-120" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="comment-header mb-40">
+                           <h4 class="mt-8 fw-6">Leave A Comment</h4>
+                        </div>
+                        <form action="#" method="post">
+                           <div class="form-group">
+                              <div class="input-icon">
+                                 <input type="text" required name="comment-name" id="commentName"
+                                    placeholder="Your Name">
+                                 <i class="fa-solid fa-user"></i>
+                              </div>
+                              <div class="input-icon">
+                                 <input type="email" required name="comment-email" id="commentEmail"
+                                    placeholder="Enter Email">
+                                 <i class="fa-regular fa-envelope"></i>
+                              </div>
+                           </div>
+                           <div class="input-icon input-icon-alt">
+                              <textarea name="comment-message" id="commentMessage" cols="30" rows="10"
+                                 placeholder="Type Your Comments..."></textarea>
+                              <i class="fa-regular fa-comments"></i>
+                           </div>
+                           <div class="cta mt-40">
+                              <div class="btn-wrapper">
+                                 <button type="submit" class="btn--secondary">Submit
+                                    Comment</button>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div> -->
+                  </div>
+               </div>
+               <!-- <div class="col-12 col-xl-4">
+               <div class="cm-details__sidebar">
+                  <div class="cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="intro">
+                        <h5>search here</h5>
+                     </div>
+                     <form action="#" method="post">
+                        <input type="text" name="search-product" id="searchProduct" placeholder="Search Here..."
+                           required>
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                     </form>
+                  </div>
+                  <div class="cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="intro">
+                        <h5>Recent Posts</h5>
+                     </div>
+                     <div class="cm-sidebar-post">
+                        <div class="single-item">
+                           <div class="thumb">
+                              <a href="blog-details.html">
+                                 <img src="assets/images/blog/ph-one.png" alt="Image">
+                              </a>
+                           </div>
+                           <div class="content">
+                              <p><i class="fa-solid fa-calendar-days"></i> <span>November 19, 2024</span>
+                              </p>
+                              <p><a href="blog-details.html">Where Innovation Meets Foundation</a>
+                              </p>
+                           </div>
+                        </div>
+                        <div class="single-item">
+                           <div class="thumb">
+                              <a href="blog-details.html">
+                                 <img src="assets/images/blog/ph-two.png" alt="Image">
+                              </a>
+                           </div>
+                           <div class="content">
+                              <p><i class="fa-solid fa-calendar-days"></i> <span>November 19, 2024</span>
+                              </p>
+                              <p><a href="blog-details.html">Where Innovation Meets Foundation</a>
+                              </p>
+                           </div>
+                        </div>
+                        <div class="single-item">
+                           <div class="thumb">
+                              <a href="blog-details.html">
+                                 <img src="assets/images/blog/three.png" alt="Image">
+                              </a>
+                           </div>
+                           <div class="content">
+                              <p><i class="fa-solid fa-calendar-days"></i> <span>November 22, 2024</span>
+                              </p>
+                              <p><a href="blog-details.html">Structures That Stand,
+                                    Dreams That Soar</a>
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="intro">
+                        <h5>Tags</h5>
+                     </div>
+                     <div class="tag-wrapper">
+                        <a href="shop.html">t-shirt</a>
+                        <a href="shop.html">Banner Design</a>
+                        <a href="shop.html">Brochures</a>
+                        <a href="shop.html">Landing</a>
+                        <a href="shop.html">Print</a>
+                        <a href="shop.html">Business Card</a>
+                     </div>
+                  </div>
+                  <div class="cm-sidebar-overview" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="cm-logo">
+                        <img src="assets/images/event/logo.png" alt="Image">
+                     </div>
+                     <div class="cm-content">
+                        <p>Small Donations Bigger Impact</p>
+                        <h4>Education Health
+                           for Every Child
+                        </h4>
+                     </div>
+                     <div class="cm-cta">
+                        <a href="contact-us.html" aria-label="contact us" title="contact us" class="btn--primary">
+                           Get A Quote <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                     </div>
+                     <img src="assets/images/event/overview.png" alt="Image" class="parallax-image">
+                  </div>
+               </div>
+            </div> -->
+            </div>
+         </div>
+      </div>
+      <!-- ==== / event details section end ==== -->
+      <!-- ==== cta section start ==== -->
+      <!-- <section class="cta-section">
+      <div class="container-fluid">
+         <div class="row gutter-40">
+            <div class="col-12 col-xxl-4">
+               <div class="cta-section__first cta-section__single">
+                  <div class="cta-section__group" data-aos="fade-up" data-aos-duration="1000">
+                     <div class="thumb">
+                        <i class="icon-spread-love"></i>
+                     </div>
+                     <div class="content">
+                        <span>We give child a gift of a education</span>
+                        <h3 class="title-animation">Become a volunteer?</h3>
+                     </div>
+                     <div class="cta-s">
+                        <a href="become-volunteer.html" aria-label="become a volunteer" title="become a volunteer"
+                           class="btn--tertiary">Contact Now</a>
+                     </div>
+                  </div>
+                  <div class="cta-img">
+                     <img src="assets/images/cta/one.png" alt="Image">
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-xxl-4">
+               <div class="cta-section__center cta-section__single">
+                  <div class="video-btn-wrapper">
+                     <a href="https://www.youtube.com/watch?v=RvreULjnzFo" target="_blank" title="video Player"
+                        class="open-video-popup">
+                        <i class="icon-play"></i>
+                     </a>
+                  </div>
+                  <div class="cta-img">
+                     <img src="assets/images/cta/two.png" alt="Image" class="parallax-image">
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-xxl-4">
+               <div class="cta-section__last cta-section__single">
+                  <div class="cta-section__group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                     <div class="thumb">
+                        <i class="icon-spread-love"></i>
+                     </div>
+                     <div class="content">
+                        <span>We give child a gift of a education</span>
+                        <h3 class="title-animation">Make donation to us?</h3>
+                     </div>
+                     <div class="cta-s">
+                        <a href="donate-us.html" aria-label="make a donation" title="make a donation"
+                           class="btn--primary">Donate Now</a>
+                     </div>
+                  </div>
+                  <div class="cta-img">
+                     <img src="assets/images/cta/three.png" alt="Image">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section> -->
+      <!-- ==== / cta section end ==== -->
+      <!-- ==== footer start ==== -->
+
+      <!-- ==== / footer end ==== -->
+      <!-- ==== custom cursor start ==== -->
+      <div class="mouseCursor cursor-outer"></div>
+      <div class="mouseCursor cursor-inner"></div> -->
+      <!-- ==== / custom cursor end ==== -->
+      <!-- ==== 四个人团队介绍 ==== -->
+      <!-- <section class="team">
+      <div class="container">
+         <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-6">
+               <div class="section__header text-center" data-aos="fade-up" data-aos-duration="1000">
+                  <span class="sub-title"><i class="icon-donation"></i>Start donating poor
+                     people</span>
+                  <h2 class="title-animation">Meet Our Volunteer
+                     <span>Team</span> members
+                  </h2>
+               </div>
+            </div>
+         </div>
+         <div class="row gutter-40">
+            <div class="col-12 col-sm-6 col-xl-3">
+               <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000">
+                  <div class="team__single van-tilt">
+                     <div class="team__single-thumb">
+                        <a href="team-details.html">
+                           <img src="assets/images/team/one.png" alt="Image">
+                        </a>
+                        <div class="team__icons">
+                           <div class="team__single-content__icon">
+                              <i class="fa-solid fa-plus"></i>
+                           </div>
+                           <div class="team__single__thumb-social">
+                              <ul>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-behance"></i>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team__single-content">
+                        <h6><a href="team-details.html">Michel Fokluz</a></h6>
+                        <p>Volunteer</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+               <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                  <div class="team__single van-tilt">
+                     <div class="team__single-thumb">
+                        <a href="team-details.html">
+                           <img src="assets/images/team/two.png" alt="Image">
+                        </a>
+                        <div class="team__icons">
+                           <div class="team__single-content__icon">
+                              <i class="fa-solid fa-plus"></i>
+                           </div>
+                           <div class="team__single__thumb-social">
+                              <ul>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-behance"></i>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team__single-content">
+                        <h6><a href="team-details.html">Arian Drobloas</a></h6>
+                        <p>Volunteer</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+               <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                  <div class="team__single van-tilt">
+                     <div class="team__single-thumb">
+                        <a href="team-details.html">
+                           <img src="assets/images/team/three.png" alt="Image">
+                        </a>
+                        <div class="team__icons">
+                           <div class="team__single-content__icon">
+                              <i class="fa-solid fa-plus"></i>
+                           </div>
+                           <div class="team__single__thumb-social">
+                              <ul>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-behance"></i>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team__single-content">
+                        <h6><a href="team-details.html">Jara Klintof</a></h6>
+                        <p>Volunteer</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-3">
+               <div class="team__single-wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="900">
+                  <div class="team__single van-tilt">
+                     <div class="team__single-thumb">
+                        <a href="team-details.html">
+                           <img src="assets/images/team/four.png" alt="Image">
+                        </a>
+                        <div class="team__icons">
+                           <div class="team__single-content__icon">
+                              <i class="fa-solid fa-plus"></i>
+                           </div>
+                           <div class="team__single__thumb-social">
+                              <ul>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="index.html">
+                                       <i class="fa-brands fa-behance"></i>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="team__single-content">
+                        <h6><a href="team-details.html">Aiden Markram</a></h6>
+                        <p>Volunteer</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-12">
+               <div class="section__cta cta text-center">
+                  <a href="our-team.html" aria-label="our team" title="our team" class="btn--primary">View All
+                     <i class="fa-solid fa-arrow-right"></i></a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="spade">
+         <img src="assets/images/sprade-green.png" alt="Image">
+      </div>
+   </section> -->
+      <!-- ==== / 四个人团队介绍结束 ==== -->
+      <!-- ==== footer start ==== -->
+      <!-- <footer class="footer-two">
+      <div class="container">
+         <div class="row align-items-center gutter-30">
+            <div class="col-12 col-lg-7 col-xxl-6">
+               <div class="footer-two__newsletter-content">
+                  <h3 class="title-animation">
+                     Subscribe to Our Newsletter
+                  </h3>
+                  <p>Regular inspections and feedback mechanisms</p>
+               </div>
+            </div>
+            <div class="col-12 col-lg-5 col-xxl-5 offset-xxl-1">
+               <div class="footer-two__newsletter-form">
+                  <form action="#" method="post">
+                     <input type="email" required name="subscribe-email" id="subscribeEmail" placeholder="Enter Email">
+                     <button type="submit" aria-label="subscribe to our newsletter" title="subscribe to our newsletter"
+                        class="btn--primary"> <i class="fa-solid fa-paper-plane"></i>
+                     </button>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-12">
+               <hr class="divider">
+            </div>
+         </div>
+         <div class="row gutter-60">
+            <div class="col-12 col-md-6 col-xl-3">
+               <div class="footer-two__widget" data-aos="fade-up" data-aos-duration="1000">
+                  <div class="footer-two__widget-logo">
+                     <a href="index.html">
+                        <img src="assets/images/logo-light.png" alt="Image">
+                     </a>
+                  </div>
+                  <div class="footer-two__widget-content">
+                     <p>Our secure online donation platform allows you to make contributions quickly and
+                        safely. Choose from various.
+                     </p>
+                     <div class="social">
+                        <a href="https://www.facebook.com/" target="_blank" aria-label="share us on facebook"
+                           title="facebook">
+                           <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://vimeo.com/" target="_blank" aria-label="share us on vimeo" title="vimeo">
+                           <i class="fa-brands fa-vimeo-v"></i>
+                        </a>
+                        <a href="https://x.com/" target="_blank" aria-label="share us on twitter" title="twitter">
+                           <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/" target="_blank" aria-label="share us on linkedin"
+                           title="linkedin">
+                           <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-2 offset-xl-1">
+               <div class="footer-two__widget" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                  <div class="footer-two__widget-intro">
+                     <h5>Quick Links</h5>
+                     <div class="line">
+                        <span class="large-line"></span>
+                        <span class="small-line"></span>
+                        <span class="small-line"></span>
+                     </div>
+                  </div>
+                  <div class="footer-two__widget-content">
+                     <ul>
+                        <li><a href="about-us.html"><i class="fa-solid fa-arrow-right"></i>About Us</a>
+                        </li>
+                        <li><a href="blog-list.html"><i class="fa-solid fa-arrow-right"></i>Our
+                              News</a>
+                        </li>
+                        <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Our
+                              Campaign</a>
+                        </li>
+                        <li><a href="faq.html"><i class="fa-solid fa-arrow-right"></i>FAQ</a></li>
+                        <li><a href="contact-us.html"><i class="fa-solid fa-arrow-right"></i>Get A
+                              Quote</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3">
+               <div class="footer-two__widget footer-two__widget--alternate" data-aos="fade-up" data-aos-duration="1000"
+                  data-aos-delay="400">
+                  <div class="footer-two__widget-intro">
+                     <h5>Our Services</h5>
+                     <div class="line">
+                        <span class="large-line"></span>
+                        <span class="small-line"></span>
+                        <span class="small-line"></span>
+                     </div>
+                  </div>
+                  <div class="footer-two__widget-content">
+                     <ul>
+                        <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Our Causes</a>
+                        </li>
+                        <li><a href="events.html"><i class="fa-solid fa-arrow-right"></i>Education
+                              Support</a>
+                        </li>
+                        <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Our
+                              Campaign</a>
+                        </li>
+                        <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Food
+                              Support</a>
+                        </li>
+                        <li><a href="our-causes.html"><i class="fa-solid fa-arrow-right"></i>Health
+                              Support</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3">
+               <div class="footer-two__widget footer-two__widget--alternate" data-aos="fade-up" data-aos-duration="1000"
+                  data-aos-delay="600">
+                  <div class="footer-two__widget-intro">
+                     <h5>Get In Touch</h5>
+                     <div class="line">
+                        <span class="large-line"></span>
+                        <span class="small-line"></span>
+                        <span class="small-line"></span>
+                     </div>
+                  </div>
+                  <div class="footer-two__widget-content footer-two__widget-content--contact">
+                     <ul>
+                        <li><a href="https://maps.app.goo.gl/Gr9pTNqz5FRNrjQw8" target="_blank"><i
+                                 class="fa-solid fa-location-dot"></i>455 West Orchard Street Kings
+                              Mountain, NC 280867</a>
+                        </li>
+                        <li><a href=""><i class="fa-solid fa-phone"></i>+088 (246)
+                              642-27-10</a>
+                        </li>
+                        <li><a href="mailto:support@example.com"><i
+                                 class="fa-regular fa-envelope"></i>example@email.com</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="footer-two__copyright">
+         <div class="container">
+            <div class="row align-items-center gutter-12">
+               <div class="col-12 col-lg-6">
+                  <div class="footer-two__copyright-inner text-center text-lg-start">
+                     <p>Copyright &copy; <span id="copyrightYear"></span> by <a
+                           href="https://www.bootstrapmb.com">bootstrapMB</a>.
+                        All rights
+                        reserved.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-12 col-lg-6">
+                  <div class="footer__bottom-left">
+                     <ul class="footer__bottom-list justify-content-center justify-content-lg-end">
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="privacy-policy.html">Cookie Settings</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+         <img src="assets/images/sprade.png" alt="Image" class="base-img">
+      </div>
+      <div class="sprade-light" data-aos="zoom-in" data-aos-duration="1000">
+         <img src="assets/images/sprade-light.png" alt="Image">
+      </div>
+   </footer> -->
+      <!-- ==== / footer end ==== -->
+      <!-- ==== custom cursor start ==== -->
+      <!-- <div class="mouseCursor cursor-outer"></div>
+   <div class="mouseCursor cursor-inner"></div> -->
+      <!-- ==== / custom cursor end ==== -->
+      <!-- ==== scroll to top start ==== -->
+      <!-- <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+      <span></span>
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+   </button> -->
+      <!-- ==== / scroll to top end ==== -->
+      <!-- ==== color switcher start ==== -->
+      <!-- <div class="color-palate">
+      <button class="color-trigger">
+         <i class="fa-solid fa-gear"></i>
+      </button>
+      <button class="close-color-trigger">
+         <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="color-palate-inner">
+         <div class="various-color clearfix">
+            <h6>Multiple Colors</h6>
+            <br>
+            <div class="colors-list">
+               <span class="palate default-color active" data-theme-file="assets/css/default-theme.css"></span>
+               <span class="palate blue-color" data-theme-file="assets/css/blue-theme.css"></span>
+               <span class="palate brown-color" data-theme-file="assets/css/brown-theme.css"></span>
+               <span class="palate green-color" data-theme-file="assets/css/green-theme.css"></span>
+               <span class="palate orange-color" data-theme-file="assets/css/orange-theme.css"></span>
+               <span class="palate purple-color" data-theme-file="assets/css/purple-theme.css"></span>
+               <span class="palate teal-color" data-theme-file="assets/css/teal-theme.css"></span>
+               <span class="palate yellow-color" data-theme-file="assets/css/yellow-theme.css"></span>
+            </div>
+         </div>
+         <h6>RTL Version</h6>
+         <ul class="rtl-version option-box">
+            <li class="rtl">RTL Version</li>
+            <li>LTR Version</li>
+         </ul>
+         <h6>Boxed Version</h6>
+         <ul class="box-version option-box">
+            <li class="box">Boxed</li>
+            <li>Full width</li>
+         </ul>
+         <h6>Sticky Header</h6>
+         <ul class="header-version option-box">
+            <li class="box">Yes</li>
+            <li>No</li>
+         </ul>
+         <h6>Dark Verion</h6>
+         <ul class="dark-version option-box">
+            <li class="box">Yes</li>
+            <li>No</li>
+         </ul>
+         <div class="purchase-box">
+            <p>You will find much more options for colors and styling in admin panel. This color picker is used
+               only for demonstration purposes.
+            </p>
+            <a href="index.html" class="purchase-box__btn">buy now</a>
+         </div>
+      </div>
+   </div> -->
+      <!-- ==== / color switcher end ==== -->
+   </div>
+   <!-- ==== js dependencies start ==== -->
+   <!-- jquery -->
+   <script src="assets/js/jquery-3.7.1.min.js"></script>
+   <!-- bootstrap five js -->
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <!-- nice select js -->
+   <script src="assets/js/jquery.nice-select.min.js"></script>
+   <!-- magnific popup js -->
+   <script src="assets/js/jquery.magnific-popup.min.js"></script>
+   <!-- swiper slider js -->
+   <script src="assets/js/swiper-bundle.min.js"></script>
+   <!-- viewport js -->
+   <script src="assets/js/viewport.jquery.js"></script>
+   <!-- odometer js -->
+   <script src="assets/js/odometer.min.js"></script>
+   <!-- vanilla tilt js -->
+   <script src="assets/js/vanilla-tilt.min.js"></script>
+   <!-- aos js -->
+   <script src="assets/js/aos.js"></script>
+
+   <!-- splittext js -->
+   <script src="assets/js/SplitText.min.js"></script>
+   <!-- scrollto js -->
+   <script src="assets/js/ScrollToPlugin.min.js"></script>
+   <!-- scrolltrigger js -->
+   <script src="assets/js/ScrollTrigger.min.js"></script>
+   <!-- gsap js -->
+   <script src="assets/js/gsap.min.js"></script>
+   <!-- ==== / js dependencies end ==== -->
+   <!-- template settings js -->
+   <script src="assets/js/template-settings.js"></script>
+   <!-- main js -->
+   <script src="assets/js/custom.js"></script>
+<!--    <script src="utils.js"></script>-->
+<!--   <script>-->
+<!--      document.addEventListener('DOMContentLoaded', function () {-->
+<!--         checkLogin();-->
+<!--      });-->
+<!--   </script>-->
+</body>
+
+</html>

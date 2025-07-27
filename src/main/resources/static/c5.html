@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>回族剪纸</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3a9db1210-2614-43db-ae93-f594c490eae3_5.1.png?Expires=1776599327&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=QTS0JuYLfp2OC4VXgZBJ2zPwNmw%3D">
+                    <span>动物图案</span>
+                </div>
+                <div class="box">
+                    <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37309f0ec-9243-4f0c-a4dd-47e9ef00b9a8_5.2.png?Expires=1776599331&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=lDL6pD67axi%2FVR0PxxyAZYTLsKQ%3D">
+                    <span>宗教图案</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/311336385-3a15-4c71-abd3-73b4a7d204ad_5.3.png?Expires=1776599334&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=JRuIb0ljv31Ejn6MPe9Ng82AV5U%3D">
+                    <span>花卉</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/301838bf9-7743-4e0f-902d-361d3b11aaae_5.4.png?Expires=1776599340&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Ep31a30YQKerUdCQqe88glvzrRA%3D">
+                    <span>山水</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>走进回族剪纸</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">动物图案</h3>
+                        <p>动物在回族剪纸中的表现具有重要的文化意义。回族人民通过剪纸中的动物图案传递了他们对幸福、繁荣与生命力的祈求。以下是几种常见的动物图案及其象征意义：
+                        </p>
+                        <p>
+                            **鱼**：鱼常出现在回族剪纸作品中，代表着“年年有余”的寓意。鱼在中国传统文化中是富贵和好运的象征，尤其在节庆如春节、婚礼等场合中尤为常见。鱼不仅代表着财富和丰收，也寓意着生生不息的生命力。
+                        </p>
+                        <p>
+                            **鸡**：鸡在回族剪纸中也有广泛的表现，尤其在婚礼和祝福类剪纸作品中。鸡象征着吉祥、家庭和谐，尤其是“雄鸡报晓”这一形象，寓意着新的开始、希望和家庭的安康。
+                        </p>
+                        <p>
+                            **牛**：牛在剪纸中常常用来象征勤劳与朴实，代表着脚踏实地的生活态度和农业社会中的生产力。在回族地区，牛作为劳动力的象征，意味着努力工作和充实的生活，也在节庆中常被用来祝愿家庭安定和富裕。
+                        </p>
+                        <p>
+                            **龙与凤**：龙和凤在回族剪纸中也偶尔出现，尤其是在传统吉祥图案中。龙是中华文化的象征，代表着权力、尊贵和吉祥；而凤则象征着和平、繁荣和女性的美丽。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3020577df-592d-4c85-98c8-d206e2a3ab59_5.5.png?Expires=1776599345&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=8T25WiBfYm4j13atWUIfV7fu8ZQ%3D"
+                                alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/339db98b8-e241-40b3-b1b8-366c7e0eab34_5.6.png?Expires=1776599349&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Zc%2Boy9WGEf7WPGtXx0WB%2BEou%2Fl8%3D"
+                                alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">宗教图案
+                        </h3>
+                        <p>
+                            回族剪纸的宗教题材通常与伊斯兰教的符号和象征性图案紧密相关。回族是中国的一个主要信仰伊斯兰教的民族，因此在其剪纸艺术中，许多作品都表现了对宗教的敬仰与信仰。常见的宗教图案包括：
+                        </p>
+                        <p>
+                            **星月**：回族剪纸中常见的一个宗教符号是星月，这一图案广泛存在于清真寺的装饰和回族日常生活中。星月象征着伊斯兰教的信仰，也代表了神圣和庇护，寓意着神灵的守护和指引。
+
+
+
+                        </p>
+                        <p>
+                            **清真寺**：清真寺是伊斯兰教的宗教活动场所，许多回族剪纸作品中表现了清真寺的形象，尤其是其尖顶和圆顶的建筑特色。这种图案体现了回族人民对宗教场所的敬仰和对宗教仪式的重视。
+                        </p>
+                        <p>
+                            **阿拉伯文**：一些回族剪纸作品中还会融入阿拉伯文字，尤其是与祈祷和祝福相关的文字，如“真主至大”等，表达了回族人民对真主的崇敬和虔诚。
+                        </p>
+                        <p>
+                            这些宗教图案不仅装饰着回族家庭的窗户、门框、墙壁等，还常常出现在节庆、婚礼和宗教活动的装饰中，起到祝福、祈求安宁的作用。
+                        </p>
+                    </div>
+                    <!-- <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="assets/images/wenh/chuanjv/6.webp" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="assets/images/wenh/chuanjv/7.webp" alt=" Image">
+                        </div>
+                    </div> -->
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">花卉</h3>
+
+                        <p>花卉图案是回族剪纸中最常见的题材之一，尤其是牡丹、莲花、菊花等具有吉祥寓意的花卉。牡丹象征着富贵和繁荣，莲花则代表着纯洁和吉祥，菊花则寓意着长寿与节气的更替。花卉图案不仅装饰着家庭生活，也常常出现在节庆和婚礼场合，传达着人们对美好生活的祝愿。
+                        </p>
+
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">山水</h3>
+
+                        <p>树木在回族剪纸中常常象征着生命力和长久。树木作为生命的象征，代表着家族的繁荣和长寿。常见的树木题材有槐树、榕树、松树等，它们在剪纸中不仅表现出自然的生长力，也传递着对健康、家庭幸福和长寿的期许。
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

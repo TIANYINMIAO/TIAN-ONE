@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>川剧</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ef09bb5c-8be1-4fc0-ad59-ea5583d52cb3_1.webp?Expires=1776531900&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=oqwVkyCkNHDtvBneMr2o9CmIYr4%3D">
+                    <span>小 生</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/36b77738a-8b5d-42ae-bd32-0f96aa8500ea_2.webp?Expires=1776532154&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Cv9N2eXsht9dYppo07OXGVroc4w%3D">
+                    <span>须 生</span>
+                </div>
+                <div class="box">
+                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3d2a0e870-bc55-42ed-b228-ba571045af90_3.webp?Expires=1776532278&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=x%2BO5g%2FCZEWvUX%2FeqFHMJur3Je%2B4%3D">
+                    <span>旦 角</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3677b4b07-d1f7-4fdc-a2f2-8aa60722db53_4.webp?Expires=1776532303&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=3rPcv5u2HPcEAWxeyPo7WHq6xlE%3D">
+                    <span>净 角</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3c2894b58-3cbf-429f-8c1e-e3506aace808_5.webp?Expires=1776532360&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=BZqa%2BlPZ08uRG%2FzNniRXUSNDR7I%3D">
+                    <span>丑 角</span>
+                </div>
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>川剧小课堂—行当</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">生旦净丑各有道，一招一式尽功夫</h3>
+                        <p>“神仙老虎狗，生旦净末丑”，这句俗语形象地描绘了中国传统戏曲中角色的多样性和丰富性。然而，随着时代的发展，戏曲剧种在传承中不断演变，一些行当逐渐融合或消失。例如，“末”这一角色在许多戏曲剧种中已经归入“生行”，使得京剧等现代戏曲形成了“生旦净丑”四大行当的基本格局。而在川剧中，行当的划分则更为细致，分为小生、旦角、生角（即须生）、花脸（即净角）、丑角五大行当，每一行当都有其独特的艺术风格和表演特色。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/30ad7b0ba-c641-4699-8299-983bcdc70180_30.png?Expires=1776532387&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=InwT%2BeOsAFoQS0Aqn3RRLp5GpGY%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e4634da4-27c0-4209-93f6-8b7ad40f9831_31.png?Expires=1776532408&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=7QxKl7GAV4Xr2JRNo%2B%2FQtIM85ko%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">川剧舞台上的翩翩公子——小生角色解析</h3>
+                        <p>
+                            小生，作为川剧中的重要行当，是青春与英气的化身，扮演着青年或少年男子的角色。小生又通常分为文生和武生。</p>
+                        <p>
+                            文生：书生墨客的风采
+                            文生是小生类角色的核心，他们扮演的剧中人物大都是文人墨客、王孙公子，多数都为少年英俊、知书识礼的正面人物。文生的表演注重唱念做打舞和手眼身法步的综合运用，通过细腻的情感表达和生动的形象塑造，展现了其青春活力和英气勃勃的形象。
+
+                            在川剧的经典剧目中，文生角色往往扮演着重要的情节推动者和情感表达者。如《玉簪记》中的潘必正，他是一位温文尔雅的书生，与女主角陈妙常之间有着动人的爱情故事；又如《红梅阁》中的裴禹，他是一位才华横溢的青年才俊，在剧情中扮演着重要的角色。
+
+                            文生的头饰和服饰也极具特色，他们以头帽来区分不同的角色类型，如书生、商生、穷生、官生等。此外，还有以化妆和年龄划分的文生丑、娃娃生、红黑霸儿脸等角色，这些角色在川剧的舞台上都有着独特的艺术魅力。
+                        </p>
+                        <p>
+                            武生：武艺高强的英雄
+                            与文生相比，武生则更注重武功和武艺的展现。他们扮演的角色通常具有高超的武艺和英勇的气质，如靠甲、短打、袍带、龙箭等角色类型。武生的表演风格豪放不羁，气势磅礴，通过激烈的打斗场面和激昂的唱腔来展现其威猛与粗犷的形象。
+
+                            在川剧的舞台上，武生角色往往扮演着英雄人物或反派角色，为剧情的发展增添了丰富的色彩。他们的表演风格灵活多变，既注重传统戏曲的规范性，又敢于创新突破，形成了独特的艺术风格。
+                        </p>
+                        <p>值得注意的是，武生行当中还包含了一些归本行应工的角色，如武丑、红霸儿脸、须生等。这些角色在川剧的舞台上也有着独特的艺术表现力和魅力。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/389b03950-e3b5-4b74-a86a-c64c30d81759_6.webp?Expires=1776532431&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=1wTfZxgYxD%2FG9hD%2FQBfxdh0D9js%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3f0dfdf69-7df3-47b6-a89e-1c206e1bb5ff_7.webp?Expires=1776532451&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=DXBM9nd1CTHC3ymSC0m9slqwOZ4%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">岁月沉淀的智慧——川剧须生角色探析</h3>
+
+                        <p>川剧须生，作为川剧五大行当之一，承载着丰富的历史文化底蕴，是展现中老年男性魅力的独特艺术形式。自古以来，须生在川剧中扮演着不可或缺的角色，主要刻画中老年男子的形象，他们通常被塑造成有气度、举止潇洒的正面人物，如威严的皇帝、清廉的官员、忠诚的臣子等。这些角色不仅展现了中老年男性的成熟稳重与独特魅力，还传递了深厚的文化内涵和道德观念。
+                        </p>
+                        <p>在表演技巧上，须生行当注重胡须的运用，这是其独特魅力之一。演员们通过抖、甩、摆等多种动作，巧妙地利用胡须来丰富角色的情感表达和形象塑造。同时，须生的唱腔高亢圆润，讲白雄浑敦厚，这些独特的艺术表现方式使得须生角色更加鲜活立体。此外，须生行当还有文武之分，文须生以文雅风度著称，他们的表演细腻而富有内涵；武须生则身手敏捷，擅长武打技巧，为观众带来了惊险刺激的视觉体验。
+                        </p>
+                        <p>在角色类型上，须生行当涵盖了老生、正生、红生等多种类型。老生多扮演老年男性角色，他们的形象多样，既有威严的帝王将相，也有平凡的百姓奴仆。正生则因戴口条而得名，可细分为文正生和武正生，他们的角色范围广泛，既有温文尔雅的书生才子，也有英勇善战的武将豪杰。红生则是川剧须生行当中的一种特殊类型，他们通常扮演具有英雄气度的角色，如三国时期的关羽等，这些角色以其高亢激昂的唱腔和鲜明的红色脸谱成为了观众心中的英雄典范。
+                        </p>
+
+                    </div>
+
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3abcc9de5-4c45-4b2f-9adf-4ee3db3b33a9_32.png?Expires=1776532471&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=wblx18g85HN%2FYi4KqEoUGGCUigI%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e5403638-c8aa-40c9-af97-a2a6bceb5a4c_33.png?Expires=1776532491&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=CF0l%2BXrf9ETdjiqBD9syWTb8NLo%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">柔情似水，风华绝代——川剧旦角艺术魅力赏析</h3>
+                        <p>旦角俗称“小旦”，是川剧中不可或缺的女性角色行当。她们通过精湛的演技和丰富的角色类型，展现了女性的多样性和复杂性。旦角的角色以年龄、身份、文武、技路、性格等为依据，进一步细分为青衣旦、闺门旦、花旦、摇旦、武旦、仙狐旦、泼辣旦、奴旦、老旦和娃娃旦等多种类型，各具特色，共同构成了川剧旦角的丰富画卷。
+                        </p>
+                        <p>旦角的起源可追溯至古代戏曲，早在汉代就有优人装扮妓女的记载，这被视为后世装旦之始。而在四川戏剧史上，旦角则见载于唐代，随着时间的推移，旦角在川剧中逐渐发展壮大，形成了今天我们所见的丰富多彩的角色类型。川剧旦角不仅继承了古代戏曲的优秀传统，还融入了四川地区的文化特色，形成了独特的艺术风格。
+                        </p>
+                        <p>旦角行当涌现出了众多杰出的代表名家，如陈书舫、阳友鹤、许倩云等。他们通过精湛的演技和独特的艺术风格，为旦角行当的发展做出了卓越贡献。在表演技巧上，旦角注重唱、念、做、打等多方面的训练，要求演员具备扎实的唱功、灵活的身段和丰富的表情。同时，旦角还注重与观众的互动，通过细腻的表演和生动的角色塑造，让观众感受到角色的内心世界和情感变化。
+                        </p>
+                        <p>主要角色类型与特点
+                        </p>
+                        <p>青衣旦:多扮演身世清苦或遭遇不幸的青、中年妇女，性格善良、吃苦耐劳、端庄贤淑。如《琵琶记》中的赵五娘、《白兔记》中的李三娘等角色，展现了青衣旦的沉稳与坚韧。<br>
+                            闺门:旦主要扮演待字闺中的青春少女，分为大家闺秀和小家碧玉两类。大家闺秀端庄淑雅，小家碧玉爽朗活泼。如《西厢记》中的崔莺莺、《法门寺》中的孙玉姣等角色，展现了闺门旦的纯真与灵动。<br>
+
+                            花旦:多扮演性格明快活泼或轻浮放浪的青年妇女，服饰花哨，表演灵巧。如《西厢记》中的红娘、《牡丹亭》中的春香等角色，展现了花旦的活泼与热情。<br>
+                            摇旦:主要扮演中年以上较为诙谐、幽默、风趣的妇女，表演上突出“摇”字，步法大、腰灵活。如《拾玉镯》中的刘媒婆等角色，展现了摇旦的幽默与风趣。<br>
+                            武旦:扮演勇武的女性角色，表演上着重武打，要求具备翻腾扑跌等武功。如《挡马》中的杨八姐等角色，展现了武旦的英勇与刚强。<br>
+                            仙狐:旦多扮演鬼狐化身的人物，身段灵动、步法矫健。如《槐荫记》中的七仙女、《煮海记》中的三公主等角色，展现了仙狐旦的神秘与魅力。</p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3a3c08d47-7402-4b2e-a0b1-a00bb0e6baa4_8.webp?Expires=1776532520&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Ojn7x8tQL%2FSU0X4L%2FAv5ZQ9Ecfk%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745861636258_ccb27dde-0430-4222-b0a6-18fac4dd2d97_%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250429013340.png?Expires=1777397638&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=SG0KVHq3ZHmuFKzQssqU%2Bidxqio%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">威猛刚毅，气吞山河——川剧净角角色风采展示</h3>
+                        <p>川剧净角专指川剧舞台上通过红、黑、蓝、白等多种色彩的脸谱来展示人物性格特征的男性角色。这些角色通常具有鲜明的性格特点和强烈的视觉冲击力，是川剧舞台上的重要组成部分。净角的表演风格粗犷豪放，唱腔高亢激昂，动作幅度大，富有力度和节奏感。
+                        </p>
+                        <p>川剧净角根据服饰、性格及表演特点的不同，可分为靠甲花脸（架子花脸），多扮演武将或英雄，如楚霸王、张飞等，以华丽服饰和威武气势著称，表演时强调身段与功架，动作幅度大，节奏鲜明；袍带花脸，则常饰文臣或官员，如包拯、曹操，服饰简约而色彩款式独特，表演注重唱功与念白，细腻展现角色内心世界；以及草鞋花脸，多演绎草莽英雄或江湖好汉，如鲁智深、李逵，服饰朴素，常着草鞋，表演时动作与表情夸张，展现豪放不羁与英勇善战的特质。
+                        </p>
+                        <p>川剧净角的脸谱是其独特之处，通过红、黑、蓝、白等多种色彩和线条的组合来展示角色的性格特征和身份地位。不同的脸谱代表着不同的性格和命运，如红脸代表忠义英勇，黑脸代表刚直果断，蓝脸代表坚毅勇敢等。同时，川剧净角的服饰也极具特色，根据角色的身份和性格来设计不同的款式和色彩搭配，使角色形象更加鲜明突出。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39521fe6c-d1b0-4cdd-95e3-c7450cd304bf_12.webp?Expires=1776532566&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=8KRklz557219aiZUM4L4eLKzdWs%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3f0906735-dfcc-41fa-b1b7-1008402d941d_13.webp?Expires=1776532590&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Pl76txxIw1TZZmPRF%2BXDzWSZq%2FM%3D" alt=" Image">
+                        </div>
+                    </div>
+
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">诙谐幽默，笑料不断——川剧丑角角色魅力解读</h3>
+                        <p>丑角小丑，这一角色名称中的“丑”字，直观地揭示了其外貌上的特征——并非传统意义上的美，而是以一种夸张、幽默甚至略显滑稽的“丑”来呈现。然而，这种“丑”并非贬义，而是戏剧艺术中一种独特的表现手法，旨在通过外貌上的反差，凸显角色的性格特点和故事情节的幽默元素。
+                        </p>
+                        <p>丑角小丑的外貌特征通常包括夸张的表情、滑稽的妆容、以及色彩鲜艳、款式独特的服饰。他们的妆容往往以黑白为主色调，通过夸张的眼线、腮红和口红等手法，营造出一种既滑稽又略带讽刺的视觉效果。服饰方面，则根据角色的身份、性格和剧情需要，设计出各种款式新颖、色彩鲜明的服装，以进一步突出角色的个性特点。
+                        </p>
+                        <p>在表现风格上，丑角小丑多以幽默滑稽、机智诙谐的表演风格著称。他们善于运用夸张的动作、幽默的语言和机智的反应，来逗乐观众，营造轻松愉快的剧场氛围。同时，丑角小丑也常常扮演一些庸俗浅薄、自私自利或愚蠢可笑的角色，通过他们的表演，让观众在笑声中反思人性的弱点和社会现象。
+                        </p>
+
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b3df3fde-9f5f-4b57-8743-5f200d03ad73_10.webp?Expires=1776532608&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=pssLVZEFOo8fkIdycl5sPPyVlNE%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/345764cb6-751f-48f5-a510-d5a748a31359_11.webp?Expires=1776532627&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=HU3AGnmmxwjqu%2BibuWNnV4Rh7zE%3D" alt=" Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

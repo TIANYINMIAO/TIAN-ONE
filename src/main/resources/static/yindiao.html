@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>秦腔</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b25ee298-1bf4-4f2f-946c-100af5c1dbfb_2.2%20%284%29.png?Expires=1776594010&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=tbCqJ3hJSDiskCHsS2r6x0JtwiI%3D">
+                    <span>板胡</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3fcd85cc0-10da-42c8-bb15-82df96bb1552_2.2%20%281%29.png?Expires=1776594029&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=zPLg60hWNHDxLnlRLy%2FEIj35SY0%3D ">
+                    <span>二弦 </span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/30f421756-d709-4ed0-985a-6168da44b5e9_2.2%20%282%29.png?Expires=1776594048&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=g5KiBqiUzFHudGJ0Ba%2Bos2dHHeY%3D">
+                    <span>笛子</span>
+                </div>
+                <div class="box">
+                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/397593868-b162-4484-b29f-f01df6a66e81_2.2%20%283%29.png?Expires=1776594070&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6PB9eFa643YVba1tTKnBRpPoWYA%3D">
+                    <span>三弦</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>秦腔小课堂—音乐伴奏</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">板胡</h3>
+                        <p>板胡是秦腔音乐伴奏中的主奏乐器，其音色清脆响亮，富有表现力。作为北方戏曲的主要伴奏乐器之一，板胡在秦腔中扮演着至关重要的角色。它不仅能够细腻地描绘出唱腔中的激昂与柔情，还能与演员的表演形成完美的和谐。板胡的形制与二胡相似，但琴筒用薄木板粘成，且琴杆、千斤、弓杆等部分也有独特的设计。在演奏技巧上，板胡注重弓法的运用和指法的灵活多变，能够表现出高亢激昂、热烈火爆的情绪，同时也具备优美细腻的特点。在秦腔的舞台上，板胡的每一次演奏都是对古老艺术的致敬与传承。
+
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37950d74c-cadf-408f-9bad-5f9714390565_banhu.jpg?Expires=1776594417&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=RMer0t2tVsPE7itV3G27iJUT%2FGc%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/395e04d6d-b5e8-4b5f-bc16-bb5123695628_banh.png?Expires=1776594499&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=myTUGkFZKPVzAMX6kuZ0BZXmXDI%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">二弦</h3>
+                        <p>
+                            在秦腔的早期发展中，二弦作为主奏乐器之一，为秦腔的音乐伴奏提供了重要的支持。二弦，又称二股弦、二弦子、奚琴，是秦腔早期使用的弦乐器之一。虽然在现代秦腔中，板胡已经取代了二弦的主奏地位，但二弦在秦腔音乐历史中仍然占据着重要的地位。二弦的琴杆木制，较短且粗壮，通常使用乌木等优质木材制成。琴筒由桐木或杉木旋成，形状类似圆形二胡琴筒，但体积较小。筒面覆以桐木薄板，发音高亢而清晰。演奏时，使用竹弓系马尾，纳两弦间轧之发声。其音色高亢而横，与秦腔的唱腔和表演风格相契合。随着秦腔音乐的发展和变革，板胡逐渐取代了二弦的主奏地位。尽管如此，二弦在秦腔音乐中仍然占据着重要的地位，其独特的音色和演奏技巧仍然被广大观众所喜爱和传承。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39ce3f0f9-3ef4-4ba2-8ea5-303ede6ce4c7_erx.png?Expires=1776594550&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=EjeaACBdLRFki9sAOuXNd%2BdQx6w%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3dc5a5fd2-be68-4119-990a-ac129b2a0614_erx2.png?Expires=1776594576&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2Fa1CnuTriiuKIXzFfCSAErVAhD8%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">笛子</h3>
+
+                        <p>笛子在秦腔伴奏中同样占据着重要的地位。作为吹奏乐器，笛子的音色悠扬动听，富有古风古韵。它不仅能够营造出独特的舞台氛围，还能与唱腔形成和谐的对话。在秦腔的演出中，笛子常用于引导剧情的发展、烘托人物的情感以及表现特定的场景。笛子的演奏技巧多样，包括气息控制、指法运用以及吹奏技巧等，这些技巧的运用使得笛子在秦腔伴奏中能够发挥出独特的艺术魅力。同时，笛子也在不断改进和发展中，逐渐从曾经以伴奏为主的角色，走上了独奏的舞台。
+                        </p>
+                    </div>
+
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/301062a35-c563-4416-bc71-d2b9b76705ff_diz.png?Expires=1776594614&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=fa93qY7Jp%2FyyHtuozJN%2B95QttqA%3D" alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3fa7433d2-68ab-4c78-b50d-43130d571cbd_diz2.png?Expires=1776594638&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=gjhzENWSLEGTZ7FR6BUt5iK9wOw%3D" alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">三弦</h3>
+                        <p>三弦在秦腔伴奏中同样发挥着重要的作用。作为弹拨乐器，三弦的音色浑厚而富有穿透力。它能够灵活地配合唱腔和表演，通过不同的演奏手法和力度变化，展现出秦腔音乐中的细腻与磅礴。三弦的形制独特，由琴头、琴杆、琴筒、琴轸、琴码和琴弦等部分组成。在演奏技巧上，三弦注重指法的运用和力度的控制，能够表现出丰富的音乐情感和细腻的音乐质感。在秦腔的舞台上，三弦的每一次弹奏都是对古老艺术的致敬与传承。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/392864fd4-7ccc-4d4a-b1ac-dbbb61d66584_sanx.png?Expires=1776594664&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=g5BKQC6NqMFga5gytIzBfkdSJ6U%3D" alt=" Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3a79a05c1-a5ac-420d-b3c3-19e8820467d6_sanx1.png?Expires=1776594696&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=pb2ZcuADg3GL4wRQXI0eX8i%2BpSI%3D" alt=" Image">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

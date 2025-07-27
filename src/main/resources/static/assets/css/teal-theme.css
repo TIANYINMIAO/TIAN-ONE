@@ -1,0 +1,12 @@
+:root {
+  --base-color: #44a9aa;
+}
+
+.base-img {
+  -webkit-filter: brightness(0) saturate(100%) invert(65%) sepia(13%) saturate(1623%) hue-rotate(132deg) brightness(88%) contrast(83%);
+          filter: brightness(0) saturate(100%) invert(65%) sepia(13%) saturate(1623%) hue-rotate(132deg) brightness(88%) contrast(83%);
+}
+
+.bottom-line {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='196' height='15' viewBox='0 0 196 15' fill='none'%3E %3Cpath d='M1 13C42.1844 2.92057 142.978 -3.87406 195 9.2668' stroke='%2344a9aa' stroke-width='4'/%3E %3C/svg%3E");
+}

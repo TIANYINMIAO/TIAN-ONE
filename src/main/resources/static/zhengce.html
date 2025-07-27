@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>黄河拾遗--政策篇</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        :root {
+            --xuan-bg: #f8f4e8;
+            --ink-black: #2d1e12;
+            --vermillion: #b02a1f;
+            /* 调整朱砂色，使其更柔和 */
+            --gold: #b68c42;
+            /* 适配黄色导航栏 */
+            --paper-texture: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+        }
+
+
+        /* body {
+                background: var(--xuan-bg);
+                min-height: 100vh;
+                padding: 2rem;
+                font-family: 'SimSun', serif;
+                text-align: center;
+            } */
+        .xinwen {
+            background-image: url("https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/329.png?Expires=1776509272&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=kI3VV66EhnybHs1Pkq0f%2BVGxvm8%3D");
+            min-height: 100vh;
+            padding: 2rem;
+            /* max-width: 85%; */
+            font-family: 'SimSun', serif;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.3rem;
+            font-family: 'LiSu', '隶书', cursive;
+            color: var(--ink-black);
+            text-align: center;
+            position: relative;
+            padding: 1.0rem 2rem;
+            margin: 2rem auto;
+            display: inline-block;
+            background:
+                linear-gradient(15deg,
+                    rgba(197, 161, 90, 0.1) 0%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(203, 61, 47, 0.1) 100%),
+                url('data:image/svg+xml;utf8,<svg width="120" height="12" viewBox="0 0 120 12" xmlns="http://www.w3.org/2000/svg"><path d="M5 6Q15 3 25 6 35 9 45 6 55 3 65 6 75 9 85 6 95 3 105 6 115 9 115 6" stroke="%23cb3d2f" fill="none" stroke-width="1.5" opacity="0.8"/></svg>') bottom center/contain no-repeat;
+
+            /* 书法文字阴影 */
+            text-shadow:
+                2px 2px 0px rgba(197, 161, 90, 0.2),
+                4px 4px 0px rgba(203, 61, 47, 0.1);
+
+            /* 立体边框效果 */
+            border: 3px double var(--gold);
+            border-image:
+                linear-gradient(135deg,
+                    var(--gold) 20%,
+                    transparent 50%,
+                    var(--vermillion) 80%) 1;
+
+            /* 卷轴展开动画 */
+            animation: scrollUnfold 1s ease-out forwards;
+            transform-origin: top center;
+
+            /* 印章伪元素 */
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                background:
+                    linear-gradient(45deg,
+                        var(--vermillion) 0%,
+                        #b02a1f 100%);
+                opacity: 0.8;
+                clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%);
+            }
+
+            &::before {
+                left: -20px;
+                top: -20px;
+            }
+
+            &::after {
+                right: -20px;
+                bottom: -20px;
+                transform: rotate(180deg);
+            }
+
+            /* 悬停动效 */
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+            &:hover {
+                transform:
+                    rotate(-1deg) scale(1.02);
+                box-shadow:
+                    0 10px 30px rgba(45, 30, 18, 0.15),
+                    0 0 30px rgba(197, 161, 90, 0.1);
+            }
+        }
+
+        @keyframes scrollUnfold {
+            0% {
+                transform:
+                    scaleY(0.8) rotate(-2deg);
+                opacity: 0;
+            }
+
+            100% {
+                transform:
+                    scaleY(1) rotate(-1deg);
+                opacity: 1;
+            }
+        }
+
+
+        /* 新闻标题样式 */
+
+
+        /* 筛选按钮容器 */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 3rem 0;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        /* 筛选按钮样式 */
+        .filter-buttons button {
+            padding: 0.8rem 1.8rem;
+            border: 3px solid var(--gold);
+            background: linear-gradient(135deg, #fffaf0, #f8f4e8);
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+            font-size: 1.2rem;
+            font-family: "KaiTi", "SimHei", serif;
+            color: var(--ink-black);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 激活状态 */
+        .filter-buttons button.active {
+            background: var(--vermillion);
+            color: white;
+            border-color: var(--vermillion);
+            box-shadow: 3px 3px 10px rgba(203, 61, 47, 0.5);
+        }
+
+        /* 筛选按钮容器 */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        /* 传统云纹装饰线 */
+        /* .filter-buttons::before {
+            content: "";
+            position: absolute;
+            top: -1.5rem;
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    var(--gold) 20%,
+                    var(--vermillion) 80%,
+                    transparent 100%);
+            opacity: 0.6;
+        } */
+
+        /* 基础按钮样式 */
+        .filter-buttons button {
+            padding: 12px 25px;
+            border: 2px solid rgba(255, 223, 186, 0.5);
+            background: rgba(97, 67, 38, 0.3);
+            /* 深色背景，保持沉稳 */
+            color: #F5E6DA;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* 按钮悬停&激活状态 */
+        .filter-buttons button:hover,
+        .filter-buttons button.active {
+            background: linear-gradient(45deg, #C19A6B, #A07850);
+            border-color: #C19A6B;
+            color: #2D1E12;
+            box-shadow: 0 4px 10px rgba(193, 154, 107, 0.3);
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .filter-buttons {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .filter-buttons button {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .filter-buttons::before {
+                display: none;
+            }
+        }
+
+        /* 新闻容器 */
+        .news-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .news-item {
+            display: flex;
+            border-radius: 15px;
+            gap: 2rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .news-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+            border: 2px solid transparent;
+            background-image:
+                linear-gradient(white, white),
+                linear-gradient(45deg,
+                    #8B4513 0%,
+                    #D4AF37 50%,
+                    #8B4513 100%);
+            background-clip: padding-box, border-box;
+            background-origin: border-box;
+            animation: border-flow 1.5s infinite linear;
+        }
+
+        @keyframes border-flow {
+            from {
+                background-position: 0% 0%;
+            }
+
+            to {
+                background-position: 200% 200%;
+            }
+        }
+
+        .news-image {
+            flex: 0 0 280px;
+            height: 200px;
+            border: 3px solid var(--gold);
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: all 0.6s;
+        }
+
+        .news-content {
+            flex: 1;
+            padding-right: 2rem;
+            text-align: left;
+        }
+
+        .news-title {
+            font-size: 1.8rem;
+            color: var(--ink-black);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .news-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.4em;
+            width: 5px;
+            height: 1em;
+            background: var(--vermillion);
+            transition: height 0.3s;
+        }
+
+        .news-excerpt {
+            color: #66594d;
+            line-height: 1.8;
+            max-height: 4.8em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .news-date {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            padding: 1rem 1rem;
+            background: #4A3628;
+            font-family: 'PT Serif', serif;
+            font-size: 1.2rem;
+            color: #FFD700;
+            /* 亮金色 */
+            font-weight: bold;
+            text-decoration: none;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+            transition: all 0.4s;
+        }
+
+        /* 水墨遮罩 */
+        .ink-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--x) var(--y),
+                    rgba(0, 0, 0, 0.05) 0%,
+                    transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        /* 悬停效果 */
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .news-item:hover .news-image {
+            flex-basis: 300px;
+        }
+
+        .news-item:hover .news-image img {
+            filter: grayscale(0);
+            transform: scale(1.03);
+        }
+
+        .news-item:hover .news-title::before {
+            height: 1.6em;
+        }
+
+        .news-item:hover .ink-overlay {
+            opacity: 1;
+        }
+
+        .news-item:hover .news-date {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .news-item {
+                flex-direction: column;
+            }
+
+            .news-image {
+                flex-basis: auto;
+                height: 200px;
+            }
+        }
+
+        /* 分页 */
+        /* 分页样式优化 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 10px;
+            border-radius: 8px;
+            /* background: #f8f8f8; */
+            /* 背景色，提升层次感 */
+            /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+        }
+
+        /* 按钮基础样式 */
+        .pagination button {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #e63946, #d62828);
+            /* 按钮渐变色 */
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 按钮悬停 & 点击效果 */
+        .pagination button:hover {
+            background: linear-gradient(135deg, #d62828, #b91d1d);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .pagination button:active {
+            transform: scale(0.95);
+        }
+
+        /* 当前页码高亮 */
+        .pagination span {
+            font-family: 'PT Serif', serif;
+            font-size: 1.3rem;
+            color: #FFD700;
+            /* 亮金色 */
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* 页码输入框优化 */
+        .pagination input {
+            width: 60px;
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        /* 输入框聚焦时优化 */
+        .pagination input:focus {
+            border-color: #e63946;
+            box-shadow: 0 0 8px rgba(230, 57, 70, 0.5);
+            outline: none;
+        }
+
+        /* 确定按钮 */
+        #jump-button {
+            background: #f4a261;
+        }
+
+        #jump-button:hover {
+            background: #e76f51;
+        }
+
+
+        /* ========== 🌟 标题样式优化 🌟 ========== */
+        .shop-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+
+        .shop-header p {
+            font-size: 1.4rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            line-height: 2;
+            color: #4a2c2a;
+            /* 黄河泥沙色 */
+            font-family: 'ZCOOL XiaoWei', '华文楷体', serif;
+            text-indent: 2em;
+            padding: 30px 50px;
+            position: relative;
+            background:
+                linear-gradient(45deg, #fff5e6 25%, #ffe4c4 100%),
+                url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==');
+            /* 宣纸纹理 */
+            border: 3px double #8b4513;
+            /* 青铜器纹路色 */
+            border-radius: 0 20px 20px 0;
+            box-shadow:
+                5px 5px 15px rgba(139, 69, 19, 0.1),
+                inset 0 0 20px rgba(255, 215, 0, 0.1);
+            text-shadow: 0.5px 0.5px 1px rgba(139, 69, 19, 0.3);
+        }
+
+        /* 左侧黄河纹样装饰 */
+        .shop-header p::before {
+            content: "";
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 120%;
+            background:
+                linear-gradient(to right,
+                    #8b4513 20%,
+                    #cd853f 50%,
+                    #8b4513 80%);
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+        }
+
+        /* 右侧黄河浪花纹样 */
+        .shop-header p::after {
+            content: "";
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 120%;
+            background:
+                linear-gradient(to right,
+                    #8b4513 20%,
+                    #cd853f 50%,
+                    #8b4513 80%);
+            clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 9]>
+         <p class="browserupgrade">
+            You are using an <strong>outdated</strong> browser. Please
+            <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+            your experience and security.
+         </p>
+         <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+        <!-- ==== 主体部分 ==== -->
+        <div class="daohang">
+            <!-- logo 部分，设置为左侧 -->
+            <div class="logo">
+                <img src="assets/image/logo2.png" alt="Logo">
+            </div>
+            <!-- 导航栏部分 -->
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul class="main-nav">
+                    <li class="nav-item">
+                        <a href="index%20copy.html">首页</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">子菜单1</a></li>
+                                                             <li><a href="#">子菜单2</a></li>
+                                                             <li><a href="#">子菜单3</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="3.1wenhua.html">文化篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                            <li><a href="3.1wenhua.html">传统技艺</a></li>
+                            <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                            <li><a href="3.1wenhua.html">传统音乐</a></li>
+                            <li><a href="3.1wenhua.html">传统体育</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="renwu.html">治水篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="renwu.html">治水英雄颂</a></li>
+                            <li><a href="zsjy.html">治水技奇谈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shenhua.html">神话篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="shenhua.html">大禹治水</a></li>
+                            <li><a href="shenhua.html">黄河母亲</a></li>
+                            <li><a href="shenhua.html">女娲补天</a></li>
+                            <li><a href="shenhua.html">伏羲创世</a></li>
+                            <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="zhengce.html">政策篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="zhengce.html">要闻</a></li>
+                            <li><a href="zhengce.html">地方新闻</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="rhudong.html">趣味黄河</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">互动答题</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="chat.html">智慧AI</a>
+                        <!-- <ul class="sub-menu">
+                                                                               <li><a href="# ">互动答题</a></li>
+                                                                            </ul> -->
+                    </li>
+                </ul>
+            </nav>
+            <div class="dengluzc">
+                <a href="shijianshu.html">黄河
+                    史书</a>
+                <a href="dlzc.html">登录</a>
+                <a href="dlzc.html">注册</a>
+
+            </div>
+        </div>
+        <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        </script>
+        <div class="xinwen">
+            <div class="shop-header">
+                <p>国家针对黄河流域制定了综合性的政策体系，涵盖生态保护、经济发展、文化传承、民生保障和区域协调等多个领域。这些政策在应对环境变化、推动可持续发展和保护文化遗产等方面发挥了关键作用，共同构成了黄河流域发展的坚实保障。
+                </p>
+            </div>
+
+            <!-- 筛选按钮 -->
+            <div class="filter-buttons">
+                <button data-category="all" class="active">全部</button>
+                <button data-category="one">要闻</button>
+                <button data-category="two">地方新闻</button>
+            </div>
+
+            <!-- 新闻列表 -->
+            <div class="news-container" id="news-container"></div>
+
+            <!-- 分页 -->
+            <div class="pagination">
+                <button id="prev-page">«</button>
+                <span id="page-numbers"></span>
+                <button id="next-page">»</button>
+                <span>跳转至 <input type="number" id="jump-page" min="1"> 页</span>
+                <button id="jump-button">确定</button>
+            </div>
+        </div>
+
+        <!-- ==== 主体部分结束 ==== -->
+
+        <!-- ==== custom cursor start ==== -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+        <!-- ==== / custom cursor end ==== -->
+        <!-- ==== scroll to top start ==== -->
+        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+            <span></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </button>
+        <!-- ==== / scroll to top end ==== -->
+    </div>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+    <script>
+        const newsData = [
+            { title: "《黄河文化保护传承弘扬规划》出台实施", excerpt: " 为贯彻落实习近平总书记关于保护传承弘扬黄河文化的重要指示精神，文化和旅游部、国家文物局、国家发展改革委近日联合印发了《黄河文化保护传承弘扬规划》...", date: "2022-06-21", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776509431&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=xhKi%2B607c9lyIH%2Bu3NT7gUdMbiU%3D", category: "one", url: "1.1.html" },
+            { title: "祖雷鸣参加所在党支部2024年度组织生活会", excerpt: "3月21日，黄委党组书记、主任祖雷鸣以普通党员身份参加所在黄委办公室党支部2024年度组织生活会...", date: "2025-03-21", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31.3.png?Expires=1776509496&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=NZrksLNoyS%2FQwW0%2FDaHZKM1goWI%3D", category: "two", url: "2.1.html" },
+            { title: "  “情系黄河，春满人间” 滨州市沿着黄河去普法”暨“美在滨州”美术名家黄河主题写生", excerpt: "  3月21日上午9时，“情系黄河，春满人间”滨州市“沿着黄河去普法”暨“美在滨州”美术名家黄河主题写生活动启动仪式... ", date: "2025-03-21", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776509529&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Z9aJsYxxAmJVS4rtvLzUXewb9tc%3D", category: "two", url: "1.10.html" },
+            { title: "黄委与河南省人大教科文卫委员会共商推动保护传承弘扬黄河文化", excerpt: "3月19日，河南省人大教科文卫委主任委员、省人大常委会教科文卫工委主任王小平一行来黄委专题调研黄河文化保护传承弘扬工作...", date: "2025-03-20", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31.1.png?Expires=1776509825&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=XbcLyDqdWH6GjHufmxN5k6rNVvs%3D", category: "two", url: "2.2.html" },
+            { title: "  山东黄河信息中心扎实推进宣传文化工作", excerpt: "   近日，山东黄河信息中心紧扣“服务民生、助力发展”主线，以创新宣传形式、拓展传播渠道、深化内容建设为抓手，多维度推进宣传文... ", date: "2025-03-20", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776509529&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Z9aJsYxxAmJVS4rtvLzUXewb9tc%3D", category: "two", url: "1.11.html" },
+            { title: "黄河全线开河 安全度过2024-2025年度凌汛期", excerpt: "3月19日14时，黄河内蒙古河段全线平稳开河，标志着2024-2025年度黄河防凌工作顺利结束。本年度凌汛期黄河凌情整体平稳，未发生凌汛灾...", date: "2025-3-19", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.png?Expires=1776509873&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=NHSHUtSj%2FVOPBtYeK97DHyEkCiM%3D", category: "one", url: "2.3.html" },
+            { title: "大河文脉万古流 ——从首批黄河水利遗产看河南保护弘扬黄河文化", excerpt: "一观阅千年，有着300多年历史的嘉应观，古今黄河治理波澜壮阔的画卷呈现于世人眼前... ", date: "2025-03-18 ", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776509529&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Z9aJsYxxAmJVS4rtvLzUXewb9tc%3D", category: "one", url: "1.13.html" },
+            { title: "人民日报|首批黄河水利遗产名录公布", excerpt: " 首批黄河水利遗产名录由水利部黄河水利委员会正式对外发布。首批黄河水利遗产名录包括嘉应观、林公堤、三门峡水利枢纽工程...", date: "2025-03-18", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776509529&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Z9aJsYxxAmJVS4rtvLzUXewb9tc%3D", category: "one", url: "1.3.html" },
+            { title: "黄河流域应协同推进引黄灌区配套设施建设", excerpt: "今年全国两会期间，全国政协委员、黄委副主任徐雪红建议，协同推进黄河流域引黄灌区配套设施建设，不断夯实粮食安全水利根基...", date: "2025-03-10", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/39.png?Expires=1776509930&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=2iAN8F%2BWJQskdJqafIiMNE8SjAE%3D", category: "one", url: "2.4.html" },
+            { title: "黄河封冻河段开河进一步发展 水利部滚动部署防御工作", excerpt: "3月份以来，黄河内蒙古封冻河段开河速度总体呈加快趋势，日均开河7千米。截至3月5日，黄河累计开河188.6千米，剩余封冻539.8千米，其中上游内蒙古河段封河517千米、中游封河22.8千米，开河过程总体平稳，未...", date: "2025-03-05", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3232c0252-9490-4cf7-8668-c0a8e44d9098_24.png?Expires=1776524638&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=J22wLergxj165Y3ZQciZKxLc6mk%3D", category: "one", url: "2.5.html" },
+            { title: "黑河黄藏寺工程加速复工复产 全力冲刺并网发电目标", excerpt: "一年春作首，万事干为先。3月1日，黑河黄藏寺建管中心全面落实上级党组决策部署，加速工程复工复产，全力冲刺并网发电建设目标...", date: "2025-03-03", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/34b11f08d-47cf-4bc6-ba86-c0d9ac86dea6_8.png?Expires=1776524830&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=JECVS7fNe%2FQ%2BfJCi0dDUdCzn9XM%3D", category: "two", url: "2.6.html" },
+            { title: "黄委与河南移动共商数字孪生黄河建设", excerpt: "2月28日，黄委副主任李群与中国移动通信集团河南有限公司（以下简称“河南移动”）董事、副总经理王磊一行座谈，双方围绕信息技术与战略合作展开交流...", date: "2025-02-28", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37e9ee645-7c5e-4b72-997d-448c34770230_9.png?Expires=1776524890&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=bmlsyFknHB%2BUSThxZm497M3Cr8E%3D", category: "two", url: "2.7.html" },
+            { title: "黄河水利委员会安排部署2025年水旱灾害防御工作", excerpt: "2月27日，黄河水利委员会召开2025年黄河水旱灾害防御工作会议，深入贯彻习近平总书记关于防汛抗旱工作的重要讲话指示批示精神，认真落...", date: "2025-02-27", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ec28866f-3af8-4d0f-a3de-9838913b66e4_15.png?Expires=1776524940&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6Agy8WS1OYyBt2N9mNamtwXzE5k%3D", category: "one", url: "2.8.html" },
+            { title: "黄河文化研究中心组织召开《黄河水利文化史论》书稿编撰研讨会", excerpt: " 2月17日至19日，黄科院黄河文化研究中心在济源市黄河水利作家协会创作基地组织召开《黄河水利文化史论》书稿编撰研讨会...", date: "2025-02-27", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776509529&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Z9aJsYxxAmJVS4rtvLzUXewb9tc%3D", category: "one", url: "1.4.html" },
+            { title: "黄委推进黄河工程与文化融合建设规范提升", excerpt: "  近日，黄委正式印发《黄河工程与文化融合建设指引》（以下简称《指引》），对黄河水利工程与文化融合建设作出规范，明确相关建设参照标准和禁止性事项...", date: "2025-02-19", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776509529&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Z9aJsYxxAmJVS4rtvLzUXewb9tc%3D", category: "one", url: "1.5.html" },
+            { title: "水利部调研黄河流域灌溉试验站网建设", excerpt: "为着力提升灌溉试验站网综合能力，加强灌溉试验成果应用，加快建立健全科学灌溉制度体系，2月14日，水利部农村水利水电司司长倪文进一行赴黄河流域灌溉试验中心站、水利部农田...", date: "2025-02-18", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745234581329_9f6f950f-ab85-4092-854f-b9df06ef1b3e_16.png?Expires=1776770585&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=x2y1dLUVGlVE2kkLCXxFY1JdTjI%3D", category: "one", url: "2.9.html" },
+            { title: "黄河内蒙古河段进入开河期", excerpt: "随着气温逐步回升，2月17日，黄河内蒙古海勃湾水利枢纽上游23千米处以上封冻河段开河10千米，标志着黄河内蒙古河段进入开河期...", date: "2025-02-17", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745234624002_312813a4-d22c-4ce0-9808-9529795a4097_17.png?Expires=1776770626&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Y%2FXeOGVv%2Bkli%2B9IgDscbhxTy8xI%3D", category: "two", url: "2.10.html" },
+            { title: "黄委与山东省水利厅共商数字孪生水利建设", excerpt: "月14日，黄委总工程师魏向阳与山东省水利厅副厅长崔培学一行座谈，双方围绕共同推进数字孪生水利建设深入交流...", date: "2025-02-14", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745234638015_6e5716c5-15df-495b-88f4-9fe9e2a6aa2b_20.png?Expires=1776770640&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=vJEZvIpuNsSvBFtBfSrOVszqsK4%3D", category: "two", url: "2.11.html" },
+            { title: "赞！武陟黄河飞龙登上央视春晚！", excerpt: "欢声笑语辞旧岁，四海同乐贺新春。1月28日晚，中央广播电视总台2025年春节联欢晚会为全球受众献上异彩纷呈、情深意长的“文化年夜饭”，共迎喜庆欢乐和充满希望的乙巳年... ", date: "2025-01-28", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776509529&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Z9aJsYxxAmJVS4rtvLzUXewb9tc%3D", category: "one", url: "1.12.html" },
+            { title: "黄河宁夏河段本年度再次出现流凌", excerpt: "1月26日，记者从黄委防御局获悉，受寒潮天气影响，黄河宁夏河段再次出现流凌，流凌上首位于石嘴山红崖子黄河大桥上游2千米处，流凌...", date: "2025-01-26", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745234649583_e50c36a9-eada-4b3e-9a3e-01b04cf26a62_25.png?Expires=1776770651&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=pUI8nC6bdOtJUpdXiq%2B37JnLvTs%3D", category: "two", url: "2.12.html" },
+            { title: "《黄河故事·治理篇》出版发行", excerpt: " 《黄河故事·治理篇》由黄河水利出版社正式出版发行。这是黄委推进传承弘扬黄河文化，讲好“黄河故事”的又一成果...", date: "2025-01-22", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776509529&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Z9aJsYxxAmJVS4rtvLzUXewb9tc%3D", category: "two", url: "1.6.html" },
+            { title: "【故事集】《河山正气——中国治水代表人物廉洁故事》出版", excerpt: " 精选包括大禹、孙叔敖、李冰等12位古代人物，李仪祉、汪胡桢、王化云等11位近现代人物在内的23位具有代表性和影响力的治水人物... ", date: "2025-01-22", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776509529&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Z9aJsYxxAmJVS4rtvLzUXewb9tc%3D", category: "two", url: "1.7.html" },
+            { title: "中央政治局审议《关于全面推动黄河流域生态保护和高质量发展的意见》", excerpt: "会议强调，要持续完善黄河流域生态大保护大协同格局，系统提升上游水源涵养能力，加强中游水土保持...", date: "2025-01-21", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745234727752_5d09358b-56fc-428f-b455-592cfbd7233e_19.png?Expires=1776770728&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=aG1sdfL%2FIQWNm4Q4VCHjx9Kd7SM%3D", category: "one", url: "2.13.html" },
+            { title: "2025年全河工作会议在郑州召开", excerpt: "强调：深化改革 团结实干 推动黄河流域水利高质量发展迈上新台阶为保障国家水安全、推进中国式现代化作出新的更大贡献...", date: "2025-01-16", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/37b510d39-1193-4086-8c3f-fcca900f5636_1.2.png?Expires=1776529259&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=KPYV93PEDWiWjz22PsscoUYvq8M%3D", category: "one", url: "2.14.html" },
+            { title: "萌娃闹新春：共赴黄河文化之约", excerpt: " 第二届黄河摇篮文化节暨元旦活动欢乐开场，萌娃在家长、老师的陪伴下，尽享传统民俗的魅力... ", date: "2024-12-31", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776509529&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Z9aJsYxxAmJVS4rtvLzUXewb9tc%3D", category: "two", url: "1.8.html" },
+            { title: "全球万名中华儿女唱响新时代“黄河大合唱”", excerpt: "  中华儿女大团结，同心共圆中国梦。11月30日，全球百支华人合唱团唱响新时代《黄河之歌》公益MV全球首发式在郑州市黄河博物馆举行... ", date: "2024-12-09", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776509529&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Z9aJsYxxAmJVS4rtvLzUXewb9tc%3D", category: "one", url: "1.9.html" },
+            { title: "黄河水文宣传思想文化工作要点确定", excerpt: " 3月18日，黄委水文局组织召开宣传思想文化工作会议，强调宣传思想文化工作是黄河水文事业发展的重要组成部分，要担当新使命新职责，明确新命题新...", date: "2024-03-24", img: "https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776509529&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Z9aJsYxxAmJVS4rtvLzUXewb9tc%3D", category: "one", url: "1.2.html" },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ];
+
+        let currentCategory = "all";
+        let currentPage = 1;
+        const newsPerPage = 5;
+
+        function filterNews() {
+            return currentCategory === "all" ? newsData : newsData.filter(news => news.category === currentCategory);
+        }
+
+        function renderNews(page) {
+            const container = document.getElementById("news-container");
+            container.innerHTML = "";
+            const filteredNews = filterNews();
+            const totalPages = Math.ceil(filteredNews.length / newsPerPage);
+            currentPage = Math.max(1, Math.min(page, totalPages)); // 确保页码有效
+
+            const start = (currentPage - 1) * newsPerPage;
+            const end = start + newsPerPage;
+            const newsItems = filteredNews.slice(start, end);
+
+            newsItems.forEach(news => {
+                const article = document.createElement("article");
+                article.classList.add("news-item");
+
+                // 判断是否有 URL，如果有则添加 <a> 标签
+                if (news.url) {
+                    article.innerHTML = `
+                <a href="${news.url}" class="news-link">
+                    <div class="news-image">
+                        <img src="${news.img}" alt="新闻图片">
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">${news.title}</h3>
+                        <p class="news-excerpt">${news.excerpt}</p>
+                        <div class="news-date">${news.date}</div>
+                    </div>
+                </a>
+            `;
+                } else {
+                    article.innerHTML = `
+                <div class="news-image">
+                    <img src="${news.img}" alt="新闻图片">
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title">${news.title}</h3>
+                    <p class="news-excerpt">${news.excerpt}</p>
+                    <div class="news-date">${news.date}</div>
+                </div>
+            `;
+                }
+
+                container.appendChild(article);
+            });
+
+            updatePagination(filteredNews.length);
+        }
+
+
+        function updatePagination(totalItems) {
+            const totalPages = Math.ceil(totalItems / newsPerPage);
+            document.getElementById("page-numbers").textContent = `第 ${currentPage} / ${totalPages} 页`;
+        }
+
+        function changeCategory(category) {
+            currentCategory = category;
+            currentPage = 1;
+            document.querySelectorAll(".filter-buttons button").forEach(btn => {
+                btn.classList.toggle("active", btn.dataset.category === category);
+            });
+            renderNews(currentPage);
+        }
+
+        document.getElementById("prev-page").addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderNews(currentPage);
+            }
+        });
+
+        document.getElementById("next-page").addEventListener("click", () => {
+            const totalPages = Math.ceil(filterNews().length / newsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderNews(currentPage);
+            }
+        });
+
+        document.getElementById("jump-button").addEventListener("click", () => {
+            const jumpInput = document.getElementById("jump-page");
+            const jumpTo = parseInt(jumpInput.value);
+            const totalPages = Math.ceil(filterNews().length / newsPerPage);
+
+            if (!isNaN(jumpTo) && jumpTo >= 1 && jumpTo <= totalPages) {
+                currentPage = jumpTo;
+                renderNews(currentPage);
+            } else {
+                alert("请输入有效的页码");
+            }
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const paginationButtons = document.querySelectorAll(".pagination button");
+
+            paginationButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    // 这里可以添加你的分页逻辑
+
+                    // 页面滚动到顶部
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth" // 平滑滚动
+                    });
+                });
+            });
+        });
+
+        document.querySelectorAll(".filter-buttons button").forEach(button => {
+            button.addEventListener("click", () => changeCategory(button.dataset.category));
+        });
+
+        renderNews(currentPage);
+    </script>
+    <!-- <script src="utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            checkLogin();
+        });
+    </script> -->
+</body>
+
+</html>

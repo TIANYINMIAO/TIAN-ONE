@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>洛阳唐三彩</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        /* === 1. 玻璃质感标题区域 === */
+        .meixue {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            padding: 1px 1px;
+            border-radius: 8px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            /* 玻璃质感 */
+            border: 2px solid #D4AF37;
+            /* 金色边框 */
+            backdrop-filter: blur(8px);
+            /* 模拟磨砂玻璃 */
+            box-shadow: 0px 4px 12px rgba(212, 175, 55, 0.4);
+            /* 金色光影 */
+
+        }
+
+        .meixue h2 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        .meixue p {
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #FFD700;
+            /* 金色 */
+            text-shadow: 3px 3px 6px rgba(212, 175, 55, 0.5);
+            font-family: "KaiTi", serif;
+            /* 书法楷体 */
+        }
+
+        /* 悬停时文字放大+光影变化 */
+        .meixue:hover h1 {
+            transform: scale(1.05);
+            text-shadow: 4px 4px 8px rgba(255, 215, 0, 0.8);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .beijing {
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434); */
+            /* background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); */
+            /* 轻微渐变背景 */
+            /* background: linear-gradient(to bottom, #8B0000, #CDA434, #F5EFE6); */
+            /* 皇家红 → 金色 → 淡米色，过渡到白色 */
+            background: linear-gradient(to bottom, #B8860B, #CDA434, #F5EFE6);
+            /* 深金棕 → 金色 → 淡米色，柔和过渡到白色 */
+            width: 100%;
+            height: 100vh;
+        }
+
+        .tupian {
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .shell {
+            width: 90%;
+            height: 700px;
+            display: flex;
+        }
+
+        .box {
+            flex: 1;
+            overflow: hidden;
+            transition: .5s;
+            margin: 0 20px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
+            border-radius: 20px;
+            border: 10px solid #fff;
+            background-color: #fff;
+            border: 6px solid #D4AF37;
+            /* 金色边框 */
+            background-color: #2E1A17;
+            /* 深色木质背景 */
+            transform-style: preserve-3d;
+        }
+
+        /* 3D 悬停旋转 */
+        .box:hover {
+            transform: rotateY(12deg) scale(1.08);
+            box-shadow: 0px 12px 32px rgba(255, 215, 0, 0.8);
+        }
+
+        .box>img {
+            width: 200%;
+            height: 85%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .box>span {
+            font: 200 42px 'Ma Shan Zheng', "KaiTi", serif;
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box:hover {
+            flex-basis: 40%;
+        }
+
+        .box:hover>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* === 4. 动画效果 === */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* === 1. 让两张图片横向排列 === */
+        .cm-img-group {
+            display: flex;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            gap: 20px;
+            /* 图片之间的间距 */
+            margin-top: 20px;
+        }
+
+        /* === 2. 统一图片样式，增强高级感 === */
+        .cm-img-single {
+            flex: 1;
+            /* 让两个图片均匀占据空间 */
+            max-width: 45%;
+            /* 限制最大宽度，避免过大 */
+            overflow: hidden;
+            border-radius: 12px;
+            /* 圆角，增加质感 */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            /* 柔和的阴影，增加立体感 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* === 3. 图片优化，增加交互感 === */
+        .cm-img-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            /* 确保图片本身也有圆角 */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* === 4. 悬停效果，增加高级感 === */
+        .cm-img-single:hover {
+            transform: scale(1.05);
+            /* 悬停时轻微放大 */
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+            /* 阴影增强，增加悬浮感 */
+        }
+
+        .cm-img-single:hover img {
+            transform: scale(1.01);
+            /* 图片轻微放大，增强动态效果 */
+        }
+
+        /* 隐藏在手机端 */
+        @media (max-width: 768px) {
+            .beijing {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beijing">
+        <div class="tupian">
+            <div class="shell">
+                <div class="box">
+                    <img
+                        src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/348706737-8385-43db-9e2d-881510266dc6_9.1.png?Expires=1776599527&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=mefg%2BHb4u4%2BsRL5mk%2F%2FneIOE5kk%3D">
+                    <span>釉色</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/394bd1196-89df-44e8-9e70-25f245238743_9.2.png?Expires=1776599534&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=8VV4UetkItwQLk%2BH%2FliOkAA10So%3D">
+                    <span>造型</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/357507085-860f-4de5-ae1f-1717a946c5a3_9.3.png?Expires=1776599539&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=9jar7ObyImKh8Xw4SwtfEEGlHD0%3D">
+                    <span>装饰手法</span>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b7a72c16-7686-49fa-96c4-6f322eb55cba_9.4.png?Expires=1776599545&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2BuyAWWQ8DWP4xcyykt2%2FQS2Ba%2FQ%3D">
+                    <span>艺术风格</span>
+                </div>
+
+                <!-- <div class="box">
+                    <img src="assets/images/wenh/chuanjv/4.webp">
+                    <span>打磨抛光</span>
+                </div> -->
+
+            </div>
+        </div>
+        <div class="meixue">
+            <h2>洛阳三彩工艺特征</h2>
+        </div>
+
+    </div>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">艳丽的釉色：色彩的奇妙交融
+                        </h3>
+                        <p>洛阳三彩的釉色被称为“艳、亮、透、流”，其鲜艳、明亮的特点使得每一件作品都充满了生命力。三彩釉的颜色是通过低温铅釉的特殊配方调配而成，铅成分的加入使得釉料更具光泽，并降低了烧成温度，使得工艺更加可操作。通过铜、铁、锰、钴等金属元素的使用，三彩的釉色在烧制过程中得以展现出丰富的层次感和变化，呈现出绿色、黄色、褐色等多种自然色彩。
+                        </p>
+                        <p>其中，铜元素用于打造绿色釉色，铁则赋予作品黄色和棕色调，锰元素用于深褐色的渲染，钴的加入能够使作品呈现出更深的蓝色调。这些颜色的交替、流动和混合产生了丰富的视觉效果，犹如流光溢彩。洛阳三彩的釉色采用了多层叠加、流动交融的工艺，使得每件作品的色彩层次更为丰富且自然，展现出釉色的独特魅力。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/30ca20542-87d9-4ec3-bd61-633c8cf3ae26_9.5.png?Expires=1776599566&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=mTQvl23jS9tXrK8jF%2F7tSzELVaA%3D"
+                                alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3a8e8ff5c-931d-4177-b21d-507fdae8cb14_9.6.png?Expires=1776599573&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=4HKMEpULswDku%2FRVIUnwcIrLdRc%3D"
+                                alt=" Image">
+                        </div>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">精致的造型：人物、动物与器物的多样性
+
+                        </h3>
+                        <p>
+                            洛阳三彩的造型精致且多样，从人物俑、动物模型到各种器皿，几乎涵盖了所有生活场景和艺术表现形式。最具代表性的造型是唐三彩人物俑，如马、骆驼、侍女等形象生动，传递着唐代社会的繁荣景象。动物造型的俑，如马、鸡、猪、狗等，不仅具有高度的艺术性，还通过细腻的表现传达了人们对动物的喜爱和敬意。这些陶俑造型栩栩如生，细节处理十分精致，如人物的衣饰、姿态、表情等都经过了细致的雕刻与修饰，展现了工匠的精湛技艺。
+                        </p>
+
+                        <p>
+                            不仅是人物和动物，洛阳三彩的器皿造型同样多种多样。酒壶、碗、盘、瓶等器物的造型，不仅符合实际使用需求，还具备高度的装饰性。其线条流畅，外形简洁却富有变化，展现了洛阳三彩在日常生活器物中所追求的美学理想。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">装饰手法：雕刻与镶嵌的精湛技艺</h3>
+                        <p>洛阳三彩的装饰手法丰富且精细，除了常见的釉色装饰外，雕刻与镶嵌也是其重要特点之一。雕刻技法主要用于人物、动物和植物图案的细节描绘，工匠们通过刀刻手法细致地雕刻出形象的面部特征、衣物纹理、动物的肌肉线条等，使得每一件作品都生动有趣。雕刻的精度要求极高，工匠需要用小刀或雕刻工具仔细地雕刻出细节，体现出传统工艺中对完美的追求。
+                        </p>
+
+                        <p>镶嵌工艺则常常用来增加作品的层次感和豪华感。在一些三彩作品中，工匠们使用金、银、玉、珠、宝石等贵重材料作为装饰，进行镶嵌，使得作品更加璀璨夺目。通过不同材质的镶嵌，作品的装饰性与实用性得到了完美结合，进一步提升了其艺术价值和文化价值。
+                        </p>
+                    </div>
+                    <div class="cm-img-group cta">
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3afe7c894-711d-496c-bd82-1649cb548846_9.7.png?Expires=1776599955&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=zBHK4M3VpIr9Y%2FGT2idAO4QlAdw%3D"
+                                alt="Image">
+                        </div>
+                        <div class="cm-img-single">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39da9be44-ad8a-4a8a-8434-5a82183b2caa_9.8.png?Expires=1776599965&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=M1l6fMoBspcXAm1O11%2Fd3Ak9%2BP4%3D"
+                                alt="Image">
+                        </div>
+                    </div>
+
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">艺术风格：华丽与精美的完美结合</h3>
+                        <p>洛阳三彩的艺术风格兼具华丽与精美，既不失唐代气派的雄浑与气势，也融合了细腻的民间艺术特点。其造型表现出一种优雅、庄重的美感，既符合实用性，又具备极高的观赏性。其艺术风格的多样性和复杂性，反映了当时洛阳作为国际文化交流中心的艺术氛围，集中了不同文化背景和艺术流派的影响。
+                        </p>
+
+                        <p>无论是在人物的表现、动物的雕刻还是器物的装饰，洛阳三彩都通过细腻的工艺和丰富的表现手法展现了高度的艺术价值。其华丽的色彩、精细的雕刻和独特的装饰技术，至今仍是世界陶瓷艺术中的一大亮点。
+                        </p>
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">阴房设置：控制湿度，确保漆面干燥</h3>
+                        <p>漆器的干燥不仅仅是漆中水分的蒸发，还需要控制温度和湿度。平遥推光漆器的制作过程中，阴房的设置至关重要。阴房是一个温湿度适宜的环境，它通过调控湿度和温度，为漆器的每一层漆提供最佳的干燥条件。每当一层漆涂抹完成后，漆器便需要放置在阴房内进行干燥。阴房的湿度控制非常严格，过高或过低都会影响漆面的效果。阴房内的温度和湿度需保持在一定范围内，才能让漆面达到理想的干燥效果。
+                        </p>
+
+
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">推光漆工艺：匠心打磨，光亮如镜</h3>
+                        <p>推光漆工艺是平遥漆器的最大亮点之一，也是漆器表面呈现光滑、亮丽效果的关键工艺。在这个工艺环节中，漆器的表面需要经过多次精细的打磨和抛光。首先，工匠会使用细砂纸对漆面进行初步打磨，去除粗糙的部分，使漆面更加平滑。接着，使用由椴木烧制的木炭块，蘸取水分反复打磨，使漆面黑度更高。最后，用特制的头发蘸油进行细致的打磨，最终用手掌蘸上细砖灰和麻油进行推光，使漆面达到镜面般的效果。每一层漆的打磨和抛光都需要工匠们耐心细致地操作，这个过程不仅需要技术，还需要大量的时间和精力。最终，漆器表面会呈现出如镜面般的光泽，散发出耀眼的光辉。
+                        </p>
+
+
+                    </div>
+                    <div class="privacy-group" data-aos="fade-up" data-aos-duration="1200">
+                        <h3 class="title-animation">镶嵌、雕刻、罩金等装饰技法：赋予漆器灵魂</h3>
+                        <p>为了增加漆器的艺术性和独特性，平遥推光漆器常常采用镶嵌、雕刻、罩金等装饰技法。这些技法不仅增加了漆器的视觉效果，还赋予了漆器更深刻的文化象征意义。漆器表面常常镶嵌金、银、玉、珠、石等贵重材料，甚至有些作品还会进行雕刻和堆鼓处理。雕刻和镶嵌工艺要求极高，工匠需要用心雕刻出精美的图案，确保每一块嵌入的材料都完美契合。罩金工艺则为漆器增添了豪华的金色装饰，进一步提升了漆器的艺术价值和收藏价值。
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

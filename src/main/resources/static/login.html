@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录注册页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('login-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            padding: 20px;
+        }
+
+        body.register-mode {
+            background-image: url('register-bg.webp');
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            backdrop-filter: blur(20px);
+        }
+
+        .error-message {
+            color: #e53e3e;
+            margin-bottom: 1.2rem;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            background: rgba(231, 76, 60, 0.1);
+            display: none;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 2px solid rgba(226, 232, 240, 0.8);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 1.5rem;
+        }
+
+        button:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .switch-form {
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .switch-form a {
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        #getCodeBtn {
+            background: linear-gradient(135deg, #e67e22, #d35400);
+            font-size: 0.9rem;
+            padding: 0.75rem 1.2rem;
+            width: auto;
+            white-space: nowrap;
+        }
+
+        .verification-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .verification-group input {
+            flex: 1;
+        }
+
+        #loginForm,
+        #registerForm {
+            transition: all 0.5s ease;
+        }
+
+        #loginForm.hide {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        #registerForm.hide {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 登录表单 -->
+        <form id="loginForm">
+            <h2>欢迎回来</h2>
+            <div class="error-message" id="loginError"></div>
+            <div class="form-group">
+                <label for="loginUsername">用户名</label>
+                <input type="text" id="loginUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">密码</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <button type="submit" id="loginButton">登录</button>
+            <div class="switch-form">
+                还没有账号？<a href="#" id="showRegister">立即注册</a>
+            </div>
+        </form>
+
+        <!-- 注册表单 -->
+        <form id="registerForm" style="display: none;">
+            <h2>创建账号</h2>
+            <div class="error-message" id="registerError"></div>
+            <div class="form-group">
+                <label for="registerUsername">用户名</label>
+                <input type="text" id="registerUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="registerEmail">邮箱</label>
+                <input type="email" id="registerEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="registerPassword">密码</label>
+                <input type="password" id="registerPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">确认密码</label>
+                <input type="password" id="confirmPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="verificationCode">验证码</label>
+                <div class="verification-group">
+                    <input type="text" id="verificationCode" required>
+                    <button type="button" id="getCodeBtn">获取验证码</button>
+                </div>
+            </div>
+            <button type="submit" id="registerButton">注册</button>
+            <div class="switch-form">
+                已有账号？<a href="#" id="showLogin">立即登录</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 获取页面元素
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const showRegisterLink = document.getElementById('showRegister');
+            const showLoginLink = document.getElementById('showLogin');
+            const loginError = document.getElementById('loginError');
+            const registerError = document.getElementById('registerError');
+            const getCodeBtn = document.getElementById('getCodeBtn');
+            const loginButton = document.getElementById('loginButton');
+            const registerButton = document.getElementById('registerButton');
+
+            // 正则表达式验证
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+            const unsafeCharsRegex = /[<>&"']/g; // 过滤不安全字符的正则表达式
+
+            // 安全过滤函数，清除可能导致XSS的特殊字符
+            function sanitizeInput(input) {
+                if (typeof input !== 'string') return '';
+                return input.replace(unsafeCharsRegex, function (match) {
+                    switch (match) {
+                        case '<': return '&lt;';
+                        case '>': return '&gt;';
+                        case '&': return '&amp;';
+                        case '"': return '&quot;';
+                        case "'": return '&#x27;';
+                        default: return match;
+                    }
+                });
+            }
+
+            // JWT令牌相关函数
+            function saveToken(token) {
+                // 确保token是有效的
+                if (!token) {
+                    console.error('尝试保存无效的令牌:', token);
+                    return;
+                }
+
+                try {
+                    localStorage.setItem('jwtToken', token);
+                    console.log('JWT令牌已成功保存:', token.substring(0, 20) + '...');
+
+                    // 验证是否成功保存
+                    const savedToken = localStorage.getItem('jwtToken');
+                    if (savedToken) {
+                        console.log('验证令牌已保存成功');
+                    } else {
+                        console.error('令牌保存失败，无法从localStorage读取');
+                    }
+                } catch (error) {
+                    console.error('保存令牌时出错:', error);
+                }
+            }
+
+            function getToken() {
+                try {
+                    const token = localStorage.getItem('jwtToken');
+                    return token;
+                } catch (error) {
+                    console.error('获取令牌时出错:', error);
+                    return null;
+                }
+            }
+
+            function removeToken() {
+                try {
+                    localStorage.removeItem('jwtToken');
+                    console.log('JWT令牌已移除');
+                } catch (error) {
+                    console.error('移除令牌时出错:', error);
+                }
+            }
+
+            // 设置请求头的辅助函数
+            function getAuthHeaders() {
+                const token = getToken();
+                const headers = {
+                    'Content-Type': 'application/json'
+                };
+
+                if (token) {
+                    headers['Authorization'] = `Bearer ${token}`;
+                }
+
+                return headers;
+            }
+
+            // 登录表单提交
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault(); // 阻止表单默认提交
+                console.log('登录表单提交');
+
+                let username = document.getElementById('loginUsername').value;
+                let password = document.getElementById('loginPassword').value;
+
+                // 过滤输入中的不安全字符
+                username = sanitizeInput(username);
+                // 密码不需要进行HTML实体转换，因为它不会被显示为HTML
+
+                // 简单验证
+                if (!username || !password) {
+                    showError(loginError, '请填写所有必填字段');
+                    return;
+                }
+
+                // 显示登录中状态
+                loginButton.disabled = true;
+                loginButton.textContent = '登录中...';
+                console.log('正在发送登录请求...');
+
+                // 发送登录请求
+                fetch('http://localhost:8080/huanghe/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        username: username,
+                        password: password
+                    })
+                })
+                    .then(response => {
+                        console.log('登录响应状态:', response.status);
+                        return response.json();
+                    })
+                    .then(result => {
+                        console.log('登录响应完整数据:', result);
+
+                        if (result.code === 1) {
+                            // 确保 isLoggedIn 和用户信息被正确存储
+                            localStorage.setItem('isLoggedIn', 'true');
+                            localStorage.setItem('userName', result.data.userName || '用户');
+                            localStorage.setItem('justLoggedIn', 'true');
+                            localStorage.setItem('token', result.data.token); // 存储 Token
+
+                            console.log('已存储 isLoggedIn:', localStorage.getItem('isLoggedIn'));
+                            console.log('已存储 userName:', localStorage.getItem('userName'));
+
+                            console.log('登录成功，代码进入成功分支');
+                            // 从data对象中获取令牌
+                            if (result.data && result.data.token) {
+                                console.log('找到令牌在data.token中:', result.data.token);
+                                saveToken(result.data.token);
+                                console.log('令牌已保存');
+                            } else {
+                                console.warn('登录成功但未找到令牌');
+                            }
+
+                            // 显示成功消息
+                            alert('登录成功！');
+                            console.log('显示成功提示后，准备跳转');
+
+                            try {
+                                console.log('开始执行跳转倒计时');
+                                // 通过多个日志点来确认代码执行流程
+                                setTimeout(function () {
+                                    console.log('跳转倒计时结束，即将执行跳转');
+                                    try {
+                                        console.log('当前URL:', window.location.href);
+                                        console.log('尝试跳转到index.html');
+                                        window.location.href = '/index.html'; // 使用相对路径
+                                        console.log('跳转指令已执行');
+                                    } catch (redirectError) {
+                                        console.error('跳转过程中出错:', redirectError);
+                                    }
+                                }, 1000);
+                                console.log('跳转倒计时已设置');
+                            } catch (timerError) {
+                                console.error('设置跳转倒计时出错:', timerError);
+                            }
+                        } else {
+                            // 登录失败 - 修正了这里的错误提示
+                            console.log('登录失败，服务器返回错误:', result.msg);
+                            showError(loginError, result.msg || '登录失败，请检查用户名和密码');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('登录请求错误:', error);
+                        showError(loginError, '网络错误，请稍后再试');
+                    })
+                    .finally(() => {
+                        // 恢复按钮状态
+                        loginButton.disabled = false;
+                        loginButton.textContent = '登录';
+                        console.log('登录流程结束，按钮状态已恢复');
+                    });
+            });
+
+
+            showRegisterLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.body.classList.add('register-mode');
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                // 清除之前的错误信息
+                loginError.style.display = 'none';
+                registerError.style.display = 'none';
+            });
+
+            showLoginLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.body.classList.remove('register-mode');
+                registerForm.style.display = 'none';
+                loginForm.style.display = 'block';
+                // 清除之前的错误信息
+                loginError.style.display = 'none';
+                registerError.style.display = 'none';
+            });
+
+            // 获取验证码
+            getCodeBtn.addEventListener('click', function () {
+                let email = document.getElementById('registerEmail').value;
+                email = sanitizeInput(email);
+
+                if (!email) {
+                    showError(registerError, '请输入邮箱地址');
+                    return;
+                }
+
+                // 邮箱格式验证
+                if (!emailRegex.test(email)) {
+                    showError(registerError, '请输入有效的邮箱地址');
+                    return;
+                }
+
+                sendVerificationCode(email);
+            });
+
+            // 注册表单提交
+            registerForm.addEventListener('submit', function (e) {
+                e.preventDefault(); // 阻止表单默认提交
+                console.log('注册表单提交');
+
+                let username = document.getElementById('registerUsername').value;
+                let email = document.getElementById('registerEmail').value;
+                let password = document.getElementById('registerPassword').value;
+                let confirmPassword = document.getElementById('confirmPassword').value;
+                let verificationCode = document.getElementById('verificationCode').value;
+
+                // 过滤输入中的不安全字符
+                username = sanitizeInput(username);
+                email = sanitizeInput(email);
+                verificationCode = sanitizeInput(verificationCode);
+                // 密码不需要进行HTML实体转换
+
+                // 表单验证
+                if (!username || !email || !password || !confirmPassword || !verificationCode) {
+                    showError(registerError, '请填写所有必填字段');
+                    return;
+                }
+
+                // 使用正则表达式验证邮箱
+                if (!emailRegex.test(email)) {
+                    showError(registerError, '请输入有效的邮箱地址');
+                    return;
+                }
+
+                // 使用正则表达式验证密码强度
+                if (!passwordRegex.test(password)) {
+                    showError(registerError, '密码必须至少包含8个字符，至少一个大写字母，一个小写字母和一个数字');
+                    return;
+                }
+
+                if (password !== confirmPassword) {
+                    showError(registerError, '两次输入的密码不一致');
+                    return;
+                }
+
+                // 显示注册中状态
+                registerButton.disabled = true;
+                registerButton.textContent = '注册中...';
+
+                // 发送注册请求
+                fetch('http://localhost:8080/huanghe/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        username: username,
+                        email: email,
+                        password: password,
+                        verificationcode: verificationCode // 注意此处字段名为小写
+                    })
+                })
+                    .then(response => {
+                        console.log('注册响应状态:', response.status);
+                        return response.json();
+                    })
+                    .then(result => {
+                        console.log('注册响应数据:', result);
+                        if (result.code === 1) {
+                            // 注册成功
+                            alert('注册成功！请登录');
+                            // 切换到登录表单
+                            document.body.classList.remove('register-mode');
+                            registerForm.style.display = 'none';
+                            loginForm.style.display = 'block';
+
+                            // 如果注册成功也返回了令牌（在data对象中），可以选择保存
+                            if (result.data && result.data.token) {
+                                saveToken(result.data.token);
+                            }
+                        } else {
+                            showError(registerError, result.msg || '注册失败，请重试');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('注册请求错误:', error);
+                        showError(registerError, '网络错误，请稍后再试');
+                    })
+                    .finally(() => {
+                        // 恢复按钮状态
+                        registerButton.disabled = false;
+                        registerButton.textContent = '注册';
+                    });
+            });
+
+            function sendVerificationCode(email) {
+                // 禁用按钮，显示发送中状态
+                getCodeBtn.disabled = true;
+                getCodeBtn.textContent = '发送中...';
+
+                fetch('http://localhost:8080/huanghe/sendVerificationCode', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.code === 1) {
+                            alert('验证码已发送，请查收邮件！');
+                            startCountdown();
+                        } else {
+                            showError(registerError, result.msg || '验证码发送失败');
+                            getCodeBtn.disabled = false;
+                            getCodeBtn.textContent = '获取验证码';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('验证码请求错误:', error);
+                        showError(registerError, '网络错误，无法发送验证码');
+                        getCodeBtn.disabled = false;
+                        getCodeBtn.textContent = '获取验证码';
+                    });
+            }
+
+            function startCountdown() {
+                let countdown = 60;
+                getCodeBtn.disabled = true;
+                getCodeBtn.textContent = `重新获取(${countdown}s)`;
+
+                let timer = setInterval(() => {
+                    countdown--;
+                    getCodeBtn.textContent = `重新获取(${countdown}s)`;
+                    if (countdown <= 0) {
+                        clearInterval(timer);
+                        getCodeBtn.disabled = false;
+                        getCodeBtn.textContent = '获取验证码';
+                    }
+                }, 1000);
+            }
+
+            // 显示错误信息
+            function showError(element, message) {
+                // 确保错误消息本身不包含不安全字符
+                message = sanitizeInput(message);
+                element.textContent = message; // 使用textContent而不是innerHTML以增加安全性
+                element.style.display = 'block';
+
+                // 5秒后自动隐藏错误信息
+                setTimeout(() => {
+                    element.style.display = 'none';
+                }, 5000);
+            }
+
+            // 示例：如何在其他页面使用JWT令牌发送请求
+            window.fetchWithAuth = function (url, options = {}) {
+                const token = getToken();
+                if (!token) {
+                    console.error('未找到认证令牌，请先登录');
+                    window.location.href = '/';
+                    return Promise.reject('未找到认证令牌');
+                }
+
+                // 合并默认选项和传入的选项
+                const fetchOptions = {
+                    ...options,
+                    headers: {
+                        ...options.headers,
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                };
+
+                return fetch(url, fetchOptions)
+                    .then(response => {
+                        if (response.status === 401) {
+                            // 令牌无效或过期
+                            removeToken();
+                            window.location.href = '/?sessionExpired=true';
+                            throw new Error('会话已过期，请重新登录');
+                        }
+                        return response;
+                    });
+            };
+
+            // 退出登录函数
+            window.logout = function () {
+                removeToken();
+                window.location.href = '/'; // 返回登录页
+            };
+        });
+    </script>
+<!--    <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

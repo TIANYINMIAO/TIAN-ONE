@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>治水篇 | 治水技巧谈</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        body {
+            background-image: url(" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745238896479_12d0b10a-8591-4e7c-a68d-b0c91f6312fc_29.png?Expires=1776774897&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=HWJ%2BIlDXwC357BToXopNDf4Wy5c%3D");
+        }
+
+
+        /* 移动端按钮适配 */
+        @media (max-width: 1200px) {
+            .dengluzc .nav-item>a {
+                /* font-size: 14px; */
+                padding: 10px 15px;
+            }
+
+            .main-nav {
+                display: none;
+            }
+        }
+
+        /* ===== 中等屏幕黄金比例方案 (1200-768px) ===== */
+        @media (max-width: 1200px) and (min-width: 768px) {
+            .daohang {
+                padding: 8px 20px;
+                background: linear-gradient(135deg,
+                        rgba(20, 20, 20, 0.98) 0%,
+                        rgba(40, 40, 40, 0.97) 100%);
+            }
+
+            /* 智能LOGO缩放系统 */
+            .logo {
+                flex: 0 1 12%;
+                /* 黄金比例分配 */
+                min-width: 100px;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .logo img {
+                height: 58px;
+                margin-left: 10px;
+                filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.1));
+            }
+
+            /* 动态导航核心 */
+            .main-nav {
+                flex: 1 1 68%;
+                gap: 4px;
+                padding: 0 2%;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .nav-item {
+                scroll-snap-align: start;
+                margin: 0 6px;
+                position: relative;
+            }
+
+            .nav-item>a {
+                font-size: clamp(14px, 1.25vw, 16px);
+                /* 视口动态字体 */
+                padding: 10px 16px;
+                letter-spacing: 0.05em;
+                backdrop-filter: blur(4px);
+                border: 1px solid transparent;
+                transition:
+                    transform 0.3s ease,
+                    background 0.2s,
+                    border-color 0.4s;
+            }
+
+            .nav-item>a:hover {
+                transform: translateY(-1px);
+                border-color: rgba(255, 215, 0, 0.3);
+                background: linear-gradient(135deg,
+                        rgba(255, 215, 0, 0.08) 0%,
+                        rgba(255, 215, 0, 0.04) 100%);
+            }
+
+            /* 子菜单微交互 */
+            .sub-menu {
+                width: 160px;
+                background: rgba(30, 30, 30, 0.98);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(12px);
+            }
+
+            .sub-menu li a {
+                padding: 10px 16px;
+                font-size: 13px;
+                position: relative;
+            }
+
+            .sub-menu li a::before {
+                content: '';
+                position: absolute;
+                left: 8px;
+                top: 50%;
+                width: 4px;
+                height: 4px;
+                background: #ffd700;
+                transform: translateY(-50%);
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            .sub-menu li a:hover::before {
+                opacity: 1;
+            }
+
+            /* 登录区域空间优化 */
+            .dengluzc {
+                flex: 0 1 20%;
+                margin-right: 20px;
+                gap: 8px;
+            }
+
+            .dengluzc a {
+                padding: 8px 18px;
+                font-size: 13px;
+                background: linear-gradient(45deg,
+                        rgba(139, 69, 19, 0.8),
+                        rgba(101, 67, 33, 0.8));
+                border-radius: 20px;
+            }
+
+            /* 动态呼吸间隙 */
+            .nav-item::after {
+                content: '';
+                position: absolute;
+                right: -8px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 24px;
+                background: linear-gradient(to bottom,
+                        transparent 0%,
+                        rgba(255, 215, 0, 0.2) 50%,
+                        transparent 100%);
+            }
+
+            .nav-item:last-child::after {
+                display: none;
+            }
+        }
+
+        /* ===== 精致微调层 (992-768px) ===== */
+        @media (max-width: 992px) and (min-width: 768px) {
+            .daohang {
+                padding: 8px 15px;
+            }
+
+            .logo img {
+                height: 54px;
+            }
+
+            .nav-item>a {
+                padding: 8px 14px;
+                font-size: clamp(13px, 1.15vw, 15px);
+            }
+
+            .sub-menu {
+                width: 140px;
+            }
+
+            .dengluzc a {
+                padding: 7px 16px;
+            }
+
+            /* 激活动态投影 */
+            .nav-item:hover>a {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        /* 移动端菜单处理 */
+        @media (max-width: 768px) {
+            .daohang {
+                position: relative;
+                padding: 10px;
+            }
+
+            .daohang .logo {
+                width: 120px;
+                margin-left: 10px;
+            }
+
+            .daohang .logo img {
+                height: 50px;
+            }
+
+            /* 隐藏主导航 */
+            .daohang .main-nav {
+                display: none;
+            }
+
+            /* 显示移动菜单按钮 */
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 24px;
+                margin-right: 15px;
+            }
+
+            /* 调整登录注册区域 */
+            .daohang .dengluzc {
+                margin-right: 20px;
+                gap: 10px;
+            }
+
+            .daohang .dengluzc a {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            /* 展开的移动菜单 */
+            .main-nav.active {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: rgba(0, 0, 0, 0.95);
+                padding: 15px;
+            }
+
+            .main-nav.active .nav-item {
+                margin: 8px 0;
+            }
+
+            .main-nav.active .sub-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                background: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        /* 小屏幕手机优化 */
+        @media (max-width: 480px) {
+            .daohang {
+                gap: 10px;
+            }
+
+            .daohang .dengluzc {
+                margin-right: 10px;
+            }
+
+            .daohang .dengluzc a {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+
+            .daohang .logo {
+                width: 100px;
+            }
+
+            .daohang .logo img {
+                height: 45px;
+            }
+        }
+
+        /* 分隔线 */
+        .daohang .nav-divider {
+            height: 30px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 0 15px;
+        }
+
+        /* 导航部分结束 */
+        .shop-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+
+        .shop-header p {
+            font-size: 1.4rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            line-height: 2;
+            color: #4a2c2a;
+            /* 黄河泥沙色 */
+            font-family: 'ZCOOL XiaoWei', '华文楷体', serif;
+            text-indent: 2em;
+            padding: 30px 50px;
+            position: relative;
+            background:
+                linear-gradient(45deg, #fff5e6 25%, #ffe4c4 100%),
+                url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==');
+            /* 宣纸纹理 */
+            border: 3px double #8b4513;
+            /* 青铜器纹路色 */
+            border-radius: 0 20px 20px 0;
+            box-shadow:
+                5px 5px 15px rgba(139, 69, 19, 0.1),
+                inset 0 0 20px rgba(255, 215, 0, 0.1);
+            text-shadow: 0.5px 0.5px 1px rgba(139, 69, 19, 0.3);
+        }
+
+        /* 左侧黄河纹样装饰 */
+        .shop-header p::before {
+            content: "";
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 120%;
+            background:
+                linear-gradient(to right,
+                    #8b4513 20%,
+                    #cd853f 50%,
+                    #8b4513 80%);
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+        }
+
+        /* 右侧黄河浪花纹样 */
+        .shop-header p::after {
+            content: "";
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 120%;
+            background:
+                linear-gradient(to right,
+                    #8b4513 20%,
+                    #cd853f 50%,
+                    #8b4513 80%);
+            clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+        }
+
+        /* 响应式 */
+        /* 平板布局 (992px) */
+        @media (max-width: 992px) {
+            .team-details {
+                width: 94%;
+                padding: 3rem 0;
+                border-radius: 1.5rem;
+            }
+
+            .team-details__thumb img {
+                margin-top: -2rem;
+                max-width: 80%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .team-details__content {
+                padding: 0 2rem;
+            }
+
+            .designation {
+                font-size: 1.4rem !important;
+                line-height: 1.4;
+            }
+
+            .my-word h5 {
+                font-size: 1.3rem;
+            }
+
+            .team-details__list ul {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .btn--primary {
+                padding: 1rem 2rem !important;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* 移动端布局 (768px) */
+        @media (max-width: 768px) {
+            .team-details {
+                width: 96%;
+                margin: 2rem auto;
+                padding: 2rem 0;
+                border-radius: 1.2rem;
+            }
+
+            .row.gutter-40 {
+                gap: 2rem;
+            }
+
+            .team-details__thumb {
+                order: 2;
+                margin-top: 1.5rem;
+            }
+
+            .team-details__thumb img {
+                margin-top: 0;
+                max-width: 100%;
+                border-radius: 1rem;
+            }
+
+            .team-details__meta {
+                text-align: center;
+            }
+
+            .designation {
+                font-size: 1.2rem !important;
+            }
+
+            .progress-wrapper {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .team-details__list ul {
+                grid-template-columns: 1fr;
+            }
+
+            .social {
+                justify-content: center;
+            }
+
+            .btn--primary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* 小屏手机优化 (576px) */
+        @media (max-width: 576px) {
+            .team-details {
+                padding: 1.5rem 0;
+                border-radius: 1rem;
+            }
+
+            .team-details__content {
+                padding: 0 1rem;
+            }
+
+            .designation {
+                font-size: 1.1rem !important;
+            }
+
+            .de {
+                font-size: 1rem !important;
+            }
+
+            .team-details__list ul li {
+                font-size: 0.9rem;
+                gap: 0.8rem;
+            }
+
+            .social a {
+                width: 40px !important;
+                height: 40px !important;
+            }
+
+            .btn--primary {
+                font-size: 0.9rem !important;
+                padding: 0.8rem 1.5rem !important;
+            }
+        }
+
+        /* 微交互动画增强 */
+        @media (hover: hover) {
+            .btn--primary {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 20px rgba(184, 155, 90, 0.2);
+                }
+            }
+
+            .social a {
+                transition: transform 0.2s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        /* 深色模式适配 */
+        @media (prefers-color-scheme: dark) {
+            .team-details {
+                background: linear-gradient(15deg,
+                        rgba(30, 20, 10, 0.98) 0%,
+                        rgba(50, 35, 20, 0.95) 100%),
+                    url('data:image/png;base64,...');
+                border-color: #8a6d4b;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 9]>
+      <p class="browserupgrade">
+         You are using an <strong>outdated</strong> browser. Please
+         <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+         your experience and security.
+      </p>
+      <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+
+        <div class="daohang">
+            <!-- logo 部分，设置为左侧 -->
+            <div class="logo">
+                <img src="assets/image/logo2.png" alt="Logo">
+            </div>
+            <!-- 导航栏部分 -->
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul class="main-nav">
+                    <li class="nav-item">
+                        <a href="index%20copy.html">首页</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">子菜单1</a></li>
+                                                             <li><a href="#">子菜单2</a></li>
+                                                             <li><a href="#">子菜单3</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="3.1wenhua.html">文化篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                            <li><a href="3.1wenhua.html">传统技艺</a></li>
+                            <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                            <li><a href="3.1wenhua.html">传统音乐</a></li>
+                            <li><a href="3.1wenhua.html">传统体育</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="renwu.html">治水篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="renwu.html">治水英雄颂</a></li>
+                            <li><a href="zsjy.html">治水技奇谈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shenhua.html">神话篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="shenhua.html">大禹治水</a></li>
+                            <li><a href="shenhua.html">黄河母亲</a></li>
+                            <li><a href="shenhua.html">女娲补天</a></li>
+                            <li><a href="shenhua.html">伏羲创世</a></li>
+                            <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="zhengce.html">政策篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="zhengce.html">要闻</a></li>
+                            <li><a href="zhengce.html">地方新闻</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="rhudong.html">趣味黄河</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">互动答题</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="chat.html">智慧AI</a>
+                        <!-- <ul class="sub-menu">
+                                                                               <li><a href="# ">互动答题</a></li>
+                                                                            </ul> -->
+                    </li>
+                </ul>
+            </nav>
+            <div class="dengluzc">
+                <a href="shijianshu.html">黄河
+                    史书</a>
+                <a href="dlzc.html">登录</a>
+                <a href="dlzc.html">注册</a>
+
+            </div>
+        </div>
+        <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        </script>
+        <!-- ==== 主体部分 ==== -->
+        <div class="shop-header">
+            <p>古时的治水先辈们，面对滔滔洪水，凭借着超凡的智慧与无畏的勇气，创造出了诸多令人惊叹的治水奇技。他们观天象、察地理，巧妙运用自然规律，或疏导河道使洪水驯服归流，或修筑堤坝阻挡汹涌波涛。那些看似简单却蕴含深意的治水方法，背后是无数次实践与探索的结晶。治水技奇谈，不仅是对这些神奇技艺的记录，更是对先辈们智慧与精神的礼赞，激励着后人在面对自然挑战时，不断传承创新，续写治水传奇。
+            </p>
+        </div>
+        <!-- ==== / banner section end ==== -->
+        <!-- ==== team details section start ==== -->
+
+        <section class="team-details">
+            <div class="container">
+                <div class="row gutter-40 align-items-center">
+                    <div class="col-12 col-lg-6 col-xl-5">
+                        <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                            <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/30fd2448d-7d8a-4be5-b9d3-f926acc10303_3.3.png?"
+                                alt="Image">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-7">
+                        <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="team-details__meta">
+                                <h4 class="title-animation"></h4>
+                                <p class="designation">三门峡水利枢纽 - - 新中国治黄里程碑</p>
+                                <p>“蓄清排浑，除害兴利；防洪减灾，惠泽万代。”
+                                </p>
+                            </div>
+                            <div class="my-word">
+                                <h5>治水奇技</h5>
+                            </div>
+                            <div class="progress-wrapper">
+                                <div class="cause__progress progress-bar-single">
+                                    <div class="cause-progress__bar">
+                                        <p>✅ 排沙效率
+                                        </p>
+                                        <div class="progress-bar-wrapper" data-percent="90%">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-percent"><span class="percent-value"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cause__progress progress-bar-single">
+                                    <div class="cause-progress__bar">
+                                        <p>✅ 影响度
+                                        </p>
+                                        <div class="progress-bar-wrapper" data-percent="100%">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-percent"><span class="percent-value"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-details__list">
+                                <ul>
+                                    <li><i class="icon-circle-check"></i>大坝：主坝长713.2米，最大坝高106米
+                                    </li>
+                                    <li><i class="icon-circle-check"></i>电站：枢纽总装机容量40万千瓦
+                                    </li>
+                                    <li><i class="icon-circle-check"></i>灌溉效益：黄河下游沿黄地区70多个市县用上黄河水
+                                    </li>
+                                    <li><i class="icon-circle-check"></i>生态保护效益：三门峡库区形成了200多平方公里的水域</li>
+                                </ul>
+                            </div>
+                            <div class="team-details__cta cta">
+                                <a href="sanxia.html" aria-label="make a donation" title="make a donation"
+                                    class="btn--primary">
+                                    走 进 三 门 峡 水 利 <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="team-details">
+            <div class="container">
+                <div class="row gutter-40 align-items-center">
+                    <div class="col-12 col-lg-6 col-xl-5">
+                        <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/360482f09-7280-4f9f-a5d0-e4b4242472f9_3.4.png?"
+                                alt="Image">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-7">
+                        <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="team-details__meta">
+                                <h4 class="title-animation"></h4>
+                                <p class="designation">小浪底水利枢纽：黄河治理的里程碑工程</p>
+                                <p>“科学治水，兴利除害；小浪底铸就黄河安澜梦。”
+                                </p>
+                            </div>
+                            <div class="my-word">
+                                <h5>治水奇技</h5>
+                            </div>
+                            <div class="progress-wrapper">
+                                <div class="cause__progress progress-bar-single">
+                                    <div class="cause-progress__bar">
+                                        <p>✅ 排沙效率
+                                        </p>
+                                        <div class="progress-bar-wrapper" data-percent="90%">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-percent"><span class="percent-value"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cause__progress progress-bar-single">
+                                    <div class="cause-progress__bar">
+                                        <p>✅ 影响度
+                                        </p>
+                                        <div class="progress-bar-wrapper" data-percent="100%">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-percent"><span class="percent-value"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-details__list">
+                                <ul>
+                                    <li><i class="icon-circle-check"></i>大坝：主坝为斜心墙堆石坝
+                                    </li>
+                                    <li><i class="icon-circle-check"></i>电站：总装机容量180万千瓦
+                                    </li>
+                                    <li><i class="icon-circle-check"></i>泄流建筑物：包括9条泄洪排水洞、6条引水发电洞和1条灌溉洞
+                                    </li>
+                                    <li><i class="icon-circle-check"></i>防洪效益：可使黄河下游花园口的防洪标准由六十年一遇提高到千年一遇</li>
+                                </ul>
+                            </div>
+                            <div class="team-details__cta cta">
+                                <a href="xiaolangdi.html" aria-label="make a donation" title="make a donation"
+                                    class="btn--primary">
+                                    走 进 小 浪 底 水 利 <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="team-details">
+            <div class="container">
+                <div class="row gutter-40 align-items-center">
+                    <div class="col-12 col-lg-6 col-xl-5">
+                        <div class="team-details__thumb" data-aos="zoom-in" data-aos-duration="1000">
+                            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ad57e542-acc6-495e-8027-cfa1749100cf_3.6.png?"
+                                alt="Image">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 col-xl-7">
+                        <div class="team-details__content" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="team-details__meta">
+                                <h4 class="title-animation"></h4>
+                                <p class="designation">黄河调水调沙工程- -协调水沙关系的治黄壮举
+                                <p>“科学治水，调沙安澜；调水调沙铸就黄河生态梦。”
+                                </p>
+                            </div>
+                            <div class="my-word">
+                                <h5>治水奇技</h5>
+                            </div>
+                            <div class="progress-wrapper">
+                                <div class="cause__progress progress-bar-single">
+                                    <div class="cause-progress__bar">
+                                        <p>✅ 排沙效率
+                                        </p>
+                                        <div class="progress-bar-wrapper" data-percent="90%">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-percent"><span class="percent-value"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cause__progress progress-bar-single">
+                                    <div class="cause-progress__bar">
+                                        <p>✅ 影响度
+                                        </p>
+                                        <div class="progress-bar-wrapper" data-percent="100%">
+                                            <div class="progress-bar">
+                                                <div class="progress-bar-percent"><span class="percent-value"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-details__list">
+                                <ul>
+                                    <li><i class="icon-circle-check"></i>联合调度：利用干支流水库群的联合调度
+                                    </li>
+                                    <li><i class="icon-circle-check"></i>减淤效益：有效减少了库区和下游河道的泥沙淤积
+                                    </li>
+                                    <li><i class="icon-circle-check"></i>三条黄河体系：通过原型黄河、数字黄河、模型黄河的协同作用
+                                    </li>
+                                    <li><i class="icon-circle-check"></i>防洪效益：主槽河底普遍刷深，降低了洪水风险。</li>
+                                </ul>
+                            </div>
+                            <div class="team-details__cta cta">
+                                <a href="dsds.html" aria-label="make a donation" title="make a donation"
+                                    class="btn--primary">
+                                    走 进 黄 河 调 水 调 沙 工 程 <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- ==== team details section end ==== -->
+        <!-- ==== footer start ==== -->
+        <footer class="footer-two">
+            <div class="container">
+                <div class="row align-items-center gutter-30">
+                    <div class="col-12 col-lg-7 col-xxl-6">
+                        <div class="footer-two__newsletter-content">
+                            <h3 class="title-animation">
+                                黄 河 的 史 诗 从 未 落 幕
+                            </h3>
+                            <p>她的浪纹里沉睡着千万双治水者的草鞋，涛声中回响着无数智者的低语</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-two__copyright">
+                    <div class="container">
+                        <div class="row align-items-center gutter-12">
+                            <div class="col-12 col-lg-6">
+                                <div class="footer-two__copyright-inner text-center text-lg-start">
+
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="footer__bottom-left">
+                                    <ul class="footer__bottom-list justify-content-center justify-content-lg-end">
+                                        <li><a href="#">Q Q</a></li>
+                                        <li><a href="#">微 信</a></li>
+                                        <li><a href="#">联 系 我 们</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+                    <img src="assets/images/sprade.png" alt="Image" class="base-img">
+                </div>
+                <div class="sprade-light" data-aos="zoom-in" data-aos-duration="1000">
+                    <img src="assets/images/sprade-light.png" alt="Image">
+                </div>
+        </footer>
+        <!-- ==== / footer end ==== -->
+        <!-- ==== custom cursor start ==== -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+        <!-- ==== / custom cursor end ==== -->
+        <!-- ==== scroll to top start ==== -->
+        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+            <span></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </button>
+        <!-- ==== / scroll to top end ==== -->
+
+    </div>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

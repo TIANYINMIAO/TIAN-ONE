@@ -1,0 +1,54 @@
+.onepart {
+    background-image: url('../images/wenh/chuanjv/6.png') ! important;
+    background-position: center;
+    background-size: cover;
+    margin-top: 170px;
+    /* background-color: #d66464; */
+    width: 100%;
+    height: 100vh;
+    /* or set height */
+    position: relative;
+}
+
+.onepart p {
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    text-indent: 2em;
+    font-size: 25px;
+    line-height: 1.9;
+
+}
+
+.onepart .onew {
+    position: absolute;
+    text-align: center;
+    padding: 2em;
+    background: #fff5;
+    border: 1px solid #9996;
+    border-radius: 1em;
+    max-width: 70vw;
+    backdrop-filter: url(#squiggly-1) blur(.4em);
+    z-index: 1000;
+    top: 345px;
+    left: 215px;
+}
+
+/* 第二部分 */
+.twopart {
+    background-image: url('../images/wenh/chuanjv/7..png') ! important;
+    background-position: center;
+    background-size: cover;
+
+    /* background-color: #d66464; */
+    width: 100%;
+    height: 100vh;
+    /* or set height */
+    position: relative;
+}
+
+.kb {
+    width: 100%;
+    height: 100px;
+
+}

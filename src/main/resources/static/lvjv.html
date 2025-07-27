@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 吕剧</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 800px; */
+            /* 控制最大宽度，避免太大 */
+            height: auto;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==== topbar start ==== -->
+    <!--[if lt IE 9]>
+      <p class="browserupgrade">
+         You are using an <strong>outdated</strong> browser. Please
+         <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+         your experience and security.
+      </p>
+      <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+        <div class="daohang">
+            <!-- logo 部分，设置为左侧 -->
+            <div class="logo">
+                <img src="assets/image/logo2.png" alt="Logo">
+            </div>
+            <!-- 导航栏部分 -->
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul class="main-nav">
+                    <li class="nav-item">
+                        <a href="index%20copy.html">首页</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">子菜单1</a></li>
+                                                             <li><a href="#">子菜单2</a></li>
+                                                             <li><a href="#">子菜单3</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="3.1wenhua.html">文化篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                            <li><a href="3.1wenhua.html">传统技艺</a></li>
+                            <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                            <li><a href="3.1wenhua.html">传统音乐</a></li>
+                            <li><a href="3.1wenhua.html">传统体育</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="renwu.html">治水篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="renwu.html">治水英雄颂</a></li>
+                            <li><a href="zsjy.html">治水技奇谈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shenhua.html">神话篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="shenhua.html">大禹治水</a></li>
+                            <li><a href="shenhua.html">黄河母亲</a></li>
+                            <li><a href="shenhua.html">女娲补天</a></li>
+                            <li><a href="shenhua.html">伏羲创世</a></li>
+                            <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="zhengce.html">政策篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="zhengce.html">要闻</a></li>
+                            <li><a href="zhengce.html">地方新闻</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="rhudong.html">趣味黄河</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">互动答题</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="chat.html">智慧AI</a>
+                        <!-- <ul class="sub-menu">
+                                                                               <li><a href="# ">互动答题</a></li>
+                                                                            </ul> -->
+                    </li>
+                </ul>
+            </nav>
+            <div class="dengluzc">
+                <a href="shijianshu.html">黄河
+                    史书</a>
+                <a href="dlzc.html">登录</a>
+                <a href="dlzc.html">注册</a>
+
+            </div>
+        </div>
+        <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+                document.querySelector('.main-nav').classList.toggle('active');
+            });
+        </script>
+
+        <!-- ==== 主体部分 ==== -->
+        <section class="common-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="common-banner__content text-center">
+                        <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                        <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+                    </div>
+                </div>
+            </div>
+            <div class="banner-bg">
+                <video class="banner-video" autoplay muted loop playsinline>
+                    <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/34eaf399e-93e4-47ec-b740-da64ca18dd68_7.mp4?Expires=1776599896&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=vt5YxmC9oU0%2F58wwnbtkYR5cZWU%3D" type="video/mp4">
+                    <source src="assets/videos/banner-video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="shape">
+                <img src="assets/images/shape.png" alt="Image">
+            </div>
+            <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+            </div>
+        </section>
+        <!-- ==== / banner section end ==== -->
+        <!-- ==== faq section start ==== -->
+        <section class="faq">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-8 col-xl-6">
+                        <div class="faq__content">
+                            <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                                <span class="sub-title"><i
+                                        class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黄河文化为山东吕剧提供了丰富的创作素材和灵感。黄河沿岸的风土人情、历史故事、民间传说等，都成为吕剧剧本的重要来源。同时，黄河文化中的坚韧不拔、勤劳勇敢等精神特质，也深刻影响了吕剧的表演风格和主题思想。
+                                </span>
+                                <h2 class="title-animation">山 东 的 <span>历 史 长 河</span>
+
+                                </h2>
+                            </div>
+                            <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="accordion" id="accordion">
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                山东吕剧是什么？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    山东吕剧是中国八大戏曲剧种之一，山东最具代表性的地方剧种，又称化妆扬琴、琴戏，流行于山东大部和江苏、安徽、东北三省的部分地区。它以淳朴生动的语言、优美悦耳的唱腔和丰富多彩的音乐语汇而深得广大人民群众喜爱。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                山东吕剧的起源与发展阶段？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    起源：吕剧起源于山东北部黄河三角洲，由山东琴书演变而来。山东琴书最早产生于鲁西南一带，后逐渐发展为吕剧。
+                                                </p>
+                                                <p>
+                                                    发展阶段：吕剧自形成以来，经历了从说唱艺术到戏曲艺术的转变。初期为说唱形式的琴书，后发展为化妆扬琴，最终定名为吕剧。在发展过程中，吕剧不断吸收其他剧种的优点，逐渐完善其表演形式和剧目。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                山东吕剧的艺术风格与形式？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    吕剧的艺术风格形式独特，既有戏曲的规范性，又有曲艺的灵活性。其唱腔以板腔体为主，兼唱曲牌，曲调简单朴实、优美动听。表演上注重生活化，动作自然流畅，语言通俗易懂。伴奏乐器以坠琴、扬琴、三弦、琵琶为主，称为“吕剧四大件”。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h6 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="false" aria-controls="collapseFour">
+                                                山东吕剧如何为黄河文化增光添彩？
+                                            </button>
+                                        </h6>
+                                        <div id="collapseFour" class="accordion-collapse collapse"
+                                            aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    吕剧作为黄河文化的重要组成部分，通过其独特的艺术表现形式，传承和弘扬了黄河文化的精髓。吕剧剧目中蕴含的黄河故事、黄河精神，不仅丰富了黄河文化的内涵，也提高了黄河文化的知名度和影响力。同时，吕剧的表演艺术也为黄河文化增添了独特的艺术魅力。
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                        <div class="faq__thumb d-none d-lg-block">
+                            <div class="faq__thumb-inner">
+                                <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3f974195e-3571-43d8-bf2e-805be081fab3_1.jpg?Expires=1776599938&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=B%2FYyPZ6RXfY7rTkcIseD0wwKEjE%3D" alt="Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ==== / faq section end ==== -->
+        <section class="blog-main cm-details">
+            <div class="container">
+                <div class="row gutter-60">
+                    <div class="col-12 col-xl-8">
+                        <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lj.html">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39d0b8c67-9c71-459a-b37a-47a8232422ab_2.jpg?Expires=1776599957&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=FdQ0MaoJBcIzL9%2BgbomA6uUHZa4%3D" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="lj.html"><i class="fa-solid fa-tags"></i>剧种简史</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="lj.html">剧种简史：山东吕剧的艺术瑰宝 </a></h4>
+                                    <p>
+                                        山东吕剧，起源于山东省，历史悠久，深受广大观众喜爱。它最早的雏形可追溯至清朝末期，经过长期的发展与演变，形成了独特的艺术风格。吕剧最初源自于山东地方的民间小曲，逐渐吸收了京剧、黄梅戏等剧种的元素，形成了具有山东地方特色的剧种。20世纪初，吕剧逐渐发展成一个成熟的剧种，并在上世纪50年代得到官方的认定与支持，成为山东省内最具代表性的地方戏曲之一。吕剧以其高亢激昂的唱腔、丰富的表演形式以及浓厚的民俗气息著称，至今仍然在山东及其他地区拥有广泛的观众群体。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="lj.html" aria-label="blog details" title="blog details">🌍
+                                        山东吕剧的剧种简史<i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="#">
+                                    <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3f7b1231e-1fd2-4176-ae07-e3c25be379c3_3.jpg?Expires=1776599976&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=vZmKROiFleYb%2Fmwr8c9MaiTws3M%3D" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="#"><i class="fa-solid fa-tags"></i>著名班社</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+
+                                <div class="blog__single-content">
+                                    <h4><a href="#">著名班社：山东吕剧的艺术传承者 </a></h4>
+                                    <p>
+                                        山东吕剧的著名班社众多，其中最具代表性的包括“济南吕剧团”和“泰安吕剧团”。这些班社不仅继承和发扬了吕剧的传统艺术，还在表演技巧、剧目创作等方面进行了创新，成为了吕剧发展的重要推动力量。特别是济南吕剧团，在吕剧的传播和发展过程中发挥了重要作用，其经典剧目和优秀演员为吕剧的艺术成就做出了巨大贡献。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <!-- <a href="piyinggushi.html" aria-label="blog details" title="blog details">🌍
+                                        千年光影，一戏乾坤——皮影里的中国叙事密码<i class="fa-solid fa-arrow-right-long"></i></a> -->
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="blog-main__sidebar">
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src= https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e24ead18-290b-423d-a292-b30994d5875d_13.png?Expires=1776593788&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6LLL0O7wTyJxU1YhOyxhgqkjp50%3D" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>吕剧小剧场：《王小赶脚》</h6>
+                                    <p>一段脚夫王小与二姑娘的欢乐旅程，笑料百出，温馨满满。
+                                    </p>
+                                    <p>我，王小，一个脚踏实地的年轻脚夫，每天与我的驴儿为伴，穿梭在乡间小道上。那天，阳光正好，微风不燥，我迎来了一个特别的客人——二姑娘。
+                                    </p>
+                                    <p>她，笑颜如花，眼神中闪烁着对生活的热爱与好奇。她雇我赶驴送她回家，一路上，我们谈笑风生，从家长里短到天文地理，无所不谈。</p>
+                                    <p>记得那次，驴儿突然闹起了脾气，不肯前行。二姑娘却毫不慌张，她轻声细语地安抚着驴儿，仿佛在与一个老朋友对话。那一刻，我被她的温柔与智慧深深打动。</p>
+                                    <p>我们的旅程充满了欢声笑语，也见证了彼此的成长与蜕变。最终，我们安全到达目的地，二姑娘的笑容如同阳光般温暖，我也在这段旅程中收获了满满的快乐与感动。</p>
+                                </div>
+                            </div>
+                            <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e24ead18-290b-423d-a292-b30994d5875d_13.png?Expires=1776593788&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6LLL0O7wTyJxU1YhOyxhgqkjp50%3D" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>吕剧小剧场：《姊妹易嫁》</h6>
+                                    <p>一场因婚姻引发的姐妹互换身份大戏，爱情与亲情交织，笑中有泪，感人至深。
+                                    <p>
+                                        我，张素花，一个性格泼辣、热爱自由的女孩。我的姐姐张素梅即将嫁给一个有钱人家，但她内心却充满了抗拒与不安。
+                                    </p>
+                                    <p>看着姐姐日渐消瘦的脸庞，我决定挺身而出，与她互换身份，由我代替她出嫁。那一刻，我并不知道未来会面临怎样的挑战与机遇，但我愿意为了姐姐的幸福去冒险。</p>
+
+                                    <p>婚礼那天，我身着华丽的嫁衣，心中却五味杂陈。然而，在婚礼的喧嚣中，我却意外地遇到了一个让我心动的男子。他的眼神深邃而温柔，仿佛能看透我的内心。</p>
+                                    <p>我们之间的故事充满了曲折与惊喜，但正是这些经历让我们更加珍惜彼此。最终，我们两姐妹都找到了属于自己的幸福，而这一切的起点，正是那场看似荒诞却充满深情的“姊妹易嫁”。
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="assets/images/wenh/gansuqinqiang/13.png" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>皮影小剧场：《月牙泉之恋》</h6>
+                                    <p>敦煌戍边将士阿郎与秦腔高手月儿跨越生死、以歌传情的凄美爱情故事</p>
+                                    <p>敦煌月牙泉旁，阿郎与月儿情定终身。阿郎是戍边将士，月儿是村中秦腔高手，歌声如泉。边疆战事起，阿郎出征，两人在泉边许下重逢誓言。月儿日复一日，在泉边以秦腔寄情。阿郎战场英勇，心系月儿。战后归来，阿郎却只见月牙泉，不见月儿身影，原来她已化作泉边一缕轻烟。阿郎悲歌，歌声回荡沙漠。从此，月圆之夜，月牙泉边总有凄美秦腔，似月儿灵魂诉说爱情。
+                                    </p>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3747e6a84-3426-4b60-b99a-28ec7f508abf_4.mp4?Expires=1776600118&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=IyZMrX6W3sA%2B8tMgRp41mJSOGvA%3D" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>2024年12月19日，山东省人民政府公布第六批省级非物质文化遗产代表性项目名录，《吕剧》在列。
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>在传承方面，山东吕剧注重培养新一代的传承人，通过师徒传承、学校教育等方式，确保吕剧艺术的薪火相传。在发展方面，吕剧积极创新剧目和表演形式，以适应现代观众的审美需求。同时，还加强与其他剧种的交流与合作，推动吕剧的多元化发展。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/31883460a-e0c8-436e-942a-ea01839c94d8_4.jpg?Expires=1776600157&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=2oAxAeCXvsunCvhtFLQUH0iQ0zM%3D" alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3893a84b5-287e-49b9-8910-f31225f2aed6_5.jpg?Expires=1776600171&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=0NsuW16V%2Bxzv9EwrJr7kLdFwlxE%3D" alt=" Image">
+                            </div>
+                        </div>
+                        <!-- ==== custom cursor start ==== -->
+                        <div class="mouseCursor cursor-outer"></div>
+                        <div class="mouseCursor cursor-inner"></div>
+                        <!-- ==== / custom cursor end ==== -->
+                        <!-- ==== scroll to top start ==== -->
+                        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                            <span></span>
+                            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                            </svg>
+                        </button>
+                        <!-- ==== / scroll to top end ==== -->
+                        <!-- ==== / color switcher end ==== -->
+                    </div>
+                    <!-- ==== js dependencies start ==== -->
+                    <!-- jquery -->
+                    <script src="assets/js/jquery-3.7.1.min.js"></script>
+                    <!-- bootstrap five js -->
+                    <script src="assets/js/bootstrap.bundle.min.js"></script>
+                    <!-- nice select js -->
+                    <script src="assets/js/jquery.nice-select.min.js"></script>
+                    <!-- magnific popup js -->
+                    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                    <!-- swiper slider js -->
+                    <script src="assets/js/swiper-bundle.min.js"></script>
+                    <!-- viewport js -->
+                    <script src="assets/js/viewport.jquery.js"></script>
+                    <!-- odometer js -->
+                    <script src="assets/js/odometer.min.js"></script>
+                    <!-- vanilla tilt js -->
+                    <script src="assets/js/vanilla-tilt.min.js"></script>
+                    <!-- aos js -->
+                    <script src="assets/js/aos.js"></script>
+
+                    <!-- splittext js -->
+                    <script src="assets/js/SplitText.min.js"></script>
+                    <!-- scrollto js -->
+                    <script src="assets/js/ScrollToPlugin.min.js"></script>
+                    <!-- scrolltrigger js -->
+                    <script src="assets/js/ScrollTrigger.min.js"></script>
+                    <!-- gsap js -->
+                    <script src="assets/js/gsap.min.js"></script>
+                    <!-- ==== / js dependencies end ==== -->
+                    <!-- template settings js -->
+                    <script src="assets/js/template-settings.js"></script>
+                    <!-- main js -->
+                    <script src="assets/js/custom.js"></script>
+<!--                     <script src="utils.js"></script>-->
+<!--                    <script>-->
+<!--                        document.addEventListener('DOMContentLoaded', function () {-->
+<!--                            checkLogin();-->
+<!--                        });-->
+<!--                    </script>-->
+
+</body>
+
+</html>

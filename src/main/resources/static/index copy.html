@@ -1,0 +1,2778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- required meta -->
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- #favicon -->
+   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+   <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+   <title>黄河文化--首页</title>
+   <!-- #keywords -->
+   <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+   <!-- #description -->
+   <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+   <!-- google fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com/">
+   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet">
+   <!-- main css -->
+   <link rel="stylesheet" href="assets/css/main.css">
+   <!-- responsive css -->
+   <link rel="stylesheet" href="assets/css/responsive.css">
+   <!-- color themes -->
+   <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+   <!-- want sticky header -->
+   <link rel="stylesheet" href="assets/css/sticky-header.css">
+   <!-- box layout css -->
+   <link rel="stylesheet" href="assets/css/box-layout.css">
+   <!-- dark mode css -->
+   <link rel="stylesheet" href="assets/css/dark-mode.css">
+   <!-- rtl css -->
+   <link rel="stylesheet" href="assets/css/rtl.css">
+   <link rel="stylesheet" href="assets/css/daohang.css">
+   <style>
+      /* 定义全局变量 */
+      :root {
+         --rotate-speed: 40;
+         --count: 8;
+         --easing: cubic-bezier(0.000, 0.37, 1.000, 0.63);
+      }
+
+      /* 设置页面样式 */
+      .zhou {
+         height: 100vh;
+         margin: 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         background-color: #002F6C;
+         background-image: url("https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32f2ee523-a2cb-4e27-beaf-9c340b44ddf4_10.pngtian?Expires=1776678085&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=MlrnnRZbEnOTDICZwS0L3gXJfiM%3D");
+         background-size: cover;
+         background-position: center;
+      }
+
+      /* 设置容器样式 */
+      .zhou .void {
+         width: 100%;
+         max-width: 1024px;
+         margin: auto;
+         position: relative;
+         aspect-ratio: 1 / 1;
+      }
+
+      @keyframes fadeIn {
+         0% {
+            opacity: 0;
+            transform: translateY(20px);
+         }
+
+         100% {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+
+      .zhou .w {
+         width: 600px;
+         text-align: center;
+         margin-left: 30px;
+         animation: fadeIn 1s ease-out forwards;
+      }
+
+      .zhou .w h2 {
+         font-size: 2.7em;
+         color: #f9c001;
+         font-family: 'SimHei', 'SimSun', 'KaiTi', 'LiSu';
+         margin-bottom: 70px;
+      }
+
+      .zhou .w p {
+         font-size: 1.4em;
+         color: #FFFFFF;
+         font-family: 'SimSun', 'KaiTi', 'LiSu';
+         line-height: 1.6;
+         margin-top: 0;
+         padding-bottom: 20px;
+         animation: fadeIn 2s ease-out 0.5s forwards;
+         /* 延迟段落的显示 */
+      }
+
+      @media (max-width: 768px) {
+         .w {
+            width: 100%;
+            padding: 20px;
+         }
+
+         .w h2 {
+            font-size: 2em;
+            /* 在小屏幕上调整字体大小 */
+         }
+
+         .w p {
+            font-size: 1.1em;
+         }
+      }
+
+      @media (min-width: 769px) {
+         .w {
+            width: 600px;
+            padding: 40px;
+         }
+      }
+
+
+
+
+      /* 鼠标悬停时暂停动画 */
+      .zhou .crop ul:hover * {
+         animation-play-state: paused;
+      }
+
+      /* 设置列表样式 */
+      .zhou .crop ul {
+         list-style-type: none;
+         margin: 0;
+         padding: 0;
+         position: relative;
+         width: 100%;
+         aspect-ratio: 3 / 3;
+         z-index: 1;
+      }
+
+      /* 设置列表项样式 */
+      .zhou .crop li {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 100%;
+         animation: rotateCW calc(var(--rotate-speed) * 1s) var(--easing) infinite;
+      }
+
+      /* 设置卡片样式 */
+      .zhou .card {
+         width: 27%;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         padding: 15px 15px;
+         gap: 12px;
+         background: rgba(255, 255, 255, 0.15);
+         /* 半透明白色背景，适应深色调 */
+         backdrop-filter: blur(8px);
+         /* 背景模糊效果 */
+         box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.4), 0px 20px 40px rgba(0, 0, 0, 0.3);
+         /* 适当的阴影效果 */
+         border-radius: 16px;
+         font: 500 16px 'SimSun', 'KaiTi', sans-serif;
+         /* 保持传统的中式字体 */
+         color: #FDFEFE;
+         /* 白色文字，增加可读性 */
+         border: 1px solid rgba(255, 255, 255, 0.3);
+         /* 轻微的边框，适合背景 */
+         animation: rotateCCW calc(var(--rotate-speed) * 1s) var(--easing) infinite;
+         overflow: hidden;
+         /* 避免内容溢出 */
+      }
+
+      .zhou .card:hover {
+         transform: scale(1.05);
+         /* 鼠标悬停时放大 */
+         box-shadow: 0px 12px 36px rgba(0, 0, 0, 0.6), 0px 25px 60px rgba(0, 0, 0, 0.5);
+         /* 强化阴影 */
+      }
+
+      .zhou .card h2 {
+         font-size: 17px;
+         font-weight: bold;
+         color: #F1C40F;
+         /* 金色文字，呼应奢华氛围 */
+         margin-bottom: 3px;
+      }
+
+      .zhou .card p {
+         font-size: 14px;
+         color: #D5D8DC;
+         /* 浅灰色，增强视觉层次感 */
+      }
+
+
+      /* 设置图片样式 */
+      .zhou .card img {
+         width: 100%;
+      }
+
+      /* 设置链接样式 */
+      .crop a {
+         text-decoration: none;
+         color: unset;
+         display: block;
+         height: 80px;
+         overflow: hidden;
+      }
+
+      /* 设置模型名称样式 */
+      .model-name {
+         font-weight: 500;
+         font-size: 18px;
+         line-height: 150%;
+         color: #A41E24;
+         /* 朱红色文字 */
+         display: block;
+      }
+
+      /* 设置不同列表项的动画延迟 */
+      .crop li:nth-child(2),
+      .crop li:nth-child(2) .card {
+         animation-delay: calc((var(--rotate-speed)/var(--count)) * -1s);
+      }
+
+      .crop li:nth-child(3),
+      .crop li:nth-child(3) .card {
+         animation-delay: calc((var(--rotate-speed)/var(--count)) * -2s);
+      }
+
+      .crop li:nth-child(4),
+      .crop li:nth-child(4) .card {
+         animation-delay: calc((var(--rotate-speed)/var(--count)) * -3s);
+      }
+
+      .crop li:nth-child(5),
+      .crop li:nth-child(5) .card {
+         animation-delay: calc((var(--rotate-speed)/var(--count)) * -4s);
+      }
+
+      .crop li:nth-child(6),
+      .crop li:nth-child(6) .card {
+         animation-delay: calc((var(--rotate-speed)/var(--count)) * -5s);
+      }
+
+      /* 定义顺时针旋转动画 */
+      @keyframes rotateCW {
+         from {
+            transform: translate3d(0px, -50%, -1px) rotate(-45deg);
+         }
+
+         to {
+            transform: translate3d(0px, -50%, 0px) rotate(-315deg);
+         }
+      }
+
+      /* 定义逆时针旋转动画 */
+      @keyframes rotateCCW {
+         from {
+            transform: rotate(45deg);
+         }
+
+         to {
+            transform: rotate(315deg);
+         }
+      }
+
+      /* 设置中心圆样式 */
+      .center-circle {
+         position: absolute;
+         width: 230px;
+         aspect-ratio: 1 / 1;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         background-image: url("https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3a46eeff4-5c74-49fd-9023-9676af0b02be_24.pngtian?Expires=1776678191&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2BBk6M%2FZyHX5rzI90xctvaUtrIiI%3D");
+         box-shadow: 0px 18px 36px -18px rgba(12, 5, 46, 0.3),
+            0px 30px 60px -12px rgba(12, 5, 46, 0.25);
+         border-radius: 50%;
+         background-size: cover;
+         background-position: -35px 0;
+      }
+
+      /* 设置第二个圆样式 */
+      .second-circle {
+         position: absolute;
+         width: 40%;
+         aspect-ratio: 1 / 1;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         background: #A3986F;
+         /* 调整为古铜色背景，和背景更协调 */
+         opacity: 0.6;
+         /* 增加一点透明度 */
+         box-shadow: 0px 18px 36px -18px rgba(12, 5, 46, 0.3),
+            0px 30px 60px -12px rgba(12, 5, 46, 0.25);
+         /* 保持阴影效果 */
+         border-radius: 50%;
+         background-image: url(./03.gif);
+      }
+
+      /* 设置最后一个圆样式 */
+      .last-circle {
+         position: absolute;
+         width: 66%;
+         aspect-ratio: 1 / 1;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+         background: #9B8B6A;
+         /* 调整为深金色背景，与古风背景相配 */
+         opacity: 0.4;
+         /* 调整透明度，保持和背景的融合感 */
+         box-shadow: 0px 18px 36px -18px rgba(12, 5, 46, 0.3),
+            0px 30px 60px -12px rgba(12, 5, 46, 0.25);
+         /* 保持阴影效果 */
+         border-radius: 50%;
+         background-image: url(./03.gif);
+      }
+
+
+      /* 设置裁剪样式 */
+      .crop {
+         -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%,
+               rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 1));
+      }
+
+      /* 修改容器布局为垂直堆叠在小屏幕上 */
+      .zhou {
+         height: auto;
+         /* 改为自动高度适应内容 */
+         min-height: 100vh;
+         flex-direction: column;
+         /* 移动端垂直排列 */
+         padding: 40px 20px;
+         background-attachment: fixed;
+         /* 保持背景稳定 */
+      }
+
+      @media (min-width: 1024px) {
+         .zhou {
+            flex-direction: row;
+            /* 大屏幕恢复水平布局 */
+            padding: 0;
+         }
+      }
+
+      /* 文字部分适配 */
+      .zhou .w {
+         width: 100%;
+         max-width: 600px;
+         margin: 0 auto 40px;
+         padding: 0 20px;
+      }
+
+      @media (min-width: 1024px) {
+         .zhou .w {
+            margin: 0 40px 0 0;
+            flex-shrink: 0;
+         }
+      }
+
+      .zhou .w h2 {
+         font-size: 2em;
+         margin-bottom: 30px;
+      }
+
+      .zhou .w p {
+         font-size: 1.1em;
+      }
+
+      @media (min-width: 768px) {
+         .zhou .w h2 {
+            font-size: 2.7em;
+         }
+
+         .zhou .w p {
+            font-size: 1.4em;
+         }
+      }
+
+      /* 时间轴容器适配 */
+      .zhou .void {
+         width: 100%;
+         max-width: 90vw;
+         min-width: 300px;
+         aspect-ratio: 1;
+         margin: 0 auto;
+      }
+
+      @media (min-width: 1024px) {
+         .zhou .void {
+            max-width: 50vw;
+         }
+      }
+
+      /* 卡片尺寸适配 */
+      .zhou .card {
+         width: 35%;
+         padding: 12px;
+      }
+
+      @media (min-width: 768px) {
+         .zhou .card {
+            width: 27%;
+            padding: 15px;
+         }
+      }
+
+      /* 调整动画速度 */
+      .zhou .crop li,
+      .zhou .crop li .card {
+         --rotate-speed: 40;
+         /* 降低旋转速度 */
+      }
+
+      /* 手机端隐藏 */
+      @media (max-width: 768px) {
+         .zhou {
+            display: none;
+         }
+      }
+
+      /* 第二部分--时间轴结束 */
+      /* 地图板块开始 */
+      :root {
+         --primary-color: #d4af37;
+         /* 鎏金色 */
+         --secondary-color: #2a5c7a;
+         /* 青金石蓝 */
+         --accent-color: #c53d13;
+         /* 朱砂红 */
+         --text-light: #f0f0f0;
+         --text-dark: #333333;
+         --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      }
+
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+      }
+
+      body {
+         font-family: 'Alibaba PuHuiTi', 'Noto Serif SC', serif;
+         line-height: 1.8;
+         min-height: 100vh;
+      }
+
+      .ditu {
+         position: relative;
+         min-height: 100vh;
+         height: auto;
+         padding: 20px 0;
+         background: url("https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/31782407d-a09e-4d76-a619-c06a0fb7cb11_tian1.jpg?Expires=1776679662&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=uFnW8dsjHm4KowpRxbHpYHbNuew%3D") center/cover no-repeat;
+         overflow: hidden;
+      }
+
+      .ditu h2 {
+         /* margin-top: 100px; */
+         top: auto;
+         font-family: 'ZCOOL XiaoWei', serif;
+         font-size: 3.5rem;
+         text-align: center;
+         color: var(--primary-color);
+         /* margin-bottom: 2rem; */
+         margin: auto auto;
+         margin-top: 5rem;
+         /* letter-spacing: 2px; */
+         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+         padding: 0 15px;
+         position: relative;
+         /* top: 20px; */
+         /* left: 50%; */
+         /* transform: translateX(-50%); */
+         transform: none;
+         width: 100%;
+      }
+
+      /* 平板设备优化 */
+      @media (min-width: 769px) and (max-width: 1024px) {
+         .ditu h2 {
+            font-size: 3rem;
+         }
+
+         .ditu .container {
+            width: 90% !important;
+         }
+      }
+
+      /* 超宽屏幕优化 */
+      @media (min-width: 1600px) {
+         .ditu .container {
+            width: 1400px !important;
+         }
+      }
+
+      /* 地图板块结束 */
+      .ditu h2::after {
+         content: '';
+         position: absolute;
+         bottom: -1rem;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 120px;
+         height: 3px;
+         background: linear-gradient(90deg, transparent 0%, var(--primary-color) 50%, transparent 100%);
+      }
+
+      /* .ditu .container {
+         position: relative !important;
+         width: min(90%, 1200px) !important;
+         margin: 10vh auto !important;
+         padding: 4rem 3rem !important;
+         border-radius: 20px !important;
+         transform: translateY(50px) !important;
+         margin-top: 290px !important;
+         animation: fadeInUp 1s ease-out forwards !important;
+      } */
+      .ditu .container {
+         width: 95% !important;
+         margin: 2rem auto !important;
+         padding: 2rem 1rem !important;
+         transform: none !important;
+         animation: none;
+         /* 移动端关闭动画 */
+      }
+
+      /* 添加表格容器 */
+      .table-container {
+         overflow-x: auto;
+         -webkit-overflow-scrolling: touch;
+         margin: 1rem -15px;
+         margin-top: 5rem;
+         border-radius: 12px;
+      }
+
+      /* .ditu .sub-header {
+         font-size: 1.4rem;
+         text-align: center;
+         color: rgba(240, 240, 240, 0.9);
+         margin: 2rem 0 3rem;
+         font-weight: 300;
+         letter-spacing: 1px;
+      } */
+
+      .ditu table {
+         min-width: 600px;
+         width: 100%;
+         border-collapse: collapse;
+         margin: 2rem 0 !important;
+         background: rgba(30, 30, 30, 0.8) !important;
+         border-radius: 12px !important;
+         overflow: hidden !important;
+         position: relative !important;
+      }
+
+      .ditu th,
+      .ditu td {
+         padding: 1.4rem !important;
+         font-size: 0.9rem;
+         text-align: center !important;
+         position: relative !important;
+         transition: all 0.3s ease !important;
+         white-space: nowrap;
+      }
+
+      /* 移动端优化 */
+      @media (max-width: 768px) {
+         .ditu h2 {
+            font-size: 2rem;
+            margin: 1.5rem auto;
+         }
+
+         .ditu .container {
+            padding: 1.5rem 0.5rem !important;
+         }
+
+         .ditu th,
+         .ditu td {
+            padding: 0.8rem !important;
+            font-size: 0.85rem;
+         }
+
+         /* 移动端隐藏装饰元素 */
+         .ditu h2::after {
+            display: none;
+         }
+
+         /* 移动端禁用悬停效果 */
+         .ditu tr:hover td {
+            transform: none !important;
+         }
+      }
+
+      .ditu th {
+         background: rgba(1, 29, 46, 0.6) !important;
+         font-weight: 500 !important;
+         font-size: 1.1rem !important;
+         letter-spacing: 1px !important;
+         text-transform: uppercase !important;
+         color: #FFFFFF;
+      }
+
+      .ditu td {
+         color: #c5b595;
+         background: rgba(40, 40, 40, 0.6) !important;
+         border-bottom: 1px solid rgba(212, 175, 55, 0.1) !important;
+      }
+
+      .ditu tr:hover td {
+         background: rgba(50, 50, 50, 0.7) !important;
+         transform: translateX(8px) !important;
+      }
+
+      .ditu .highlight {
+         color: var(--primary-color) !important;
+         font-weight: 600 !important;
+         position: relative !important;
+      }
+
+      .ditu .highlight::before {
+         content: '✦';
+         position: absolute;
+         left: -1.2rem;
+         color: var(--accent-color);
+         font-size: 1.2rem;
+         animation: pulse 1.5s infinite;
+      }
+
+      @keyframes fadeInUp {
+         from {
+            opacity: 0;
+            transform: translateY(80px);
+         }
+
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+
+      @keyframes pulse {
+         0% {
+            opacity: 0.4;
+         }
+
+         50% {
+            opacity: 1;
+         }
+
+         100% {
+            opacity: 0.4;
+         }
+      }
+
+      /* 响应式设计 */
+      @media (max-width: 768px) {
+         .ditu .container {
+            padding: 2rem 1.5rem;
+            width: 95%;
+         }
+
+         .ditu h2 {
+            font-size: 2.5rem;
+         }
+
+         .ditu th,
+         .ditu td {
+            padding: 1rem;
+            font-size: 0.9rem;
+         }
+      }
+
+      /* 地图板块结束 */
+      /* 政策板块开始 */
+      /* 桌面端样式 */
+      .home4 {
+         background-image: url("https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3bcdbb9e2-f457-4664-83f8-f8e4ca4286c9_1.pngtian?Expires=1776679446&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=V4AH5TIZNdajWqyvCUhkjLLiaw4%3D");
+         width: 100%;
+         height: 100vh;
+         position: relative;
+         top: 0;
+         left: 0;
+         margin: 0;
+         padding: 0;
+         overflow-y: auto;
+         /* 允许垂直滚动 */
+      }
+
+      .home4 a {
+         color: #3c4f67;
+         font-family: "微软雅黑", sans-serif;
+         text-decoration: none;
+         transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .home4 a:hover {
+         color: #7a6e44;
+         transform: scale(1.05);
+      }
+
+      .home4 a:focus {
+         outline: none;
+         border-bottom: 2px solid #7a6e44;
+      }
+
+      .home4 .t_more a:hover {
+         background-color: #d7d0b3;
+         color: #7a6e44;
+      }
+
+      .home4 .row9 {
+         position: absolute;
+         left: 0;
+         right: 0;
+         top: 20%;
+         text-align: center;
+         color: #3c4f67;
+      }
+
+      .home4 .col9 {
+         display: inline-block;
+         width: 27%;
+         vertical-align: top;
+      }
+
+      .home4 .box9 {
+         margin: 0 8%;
+      }
+
+      .home4 .title {
+         margin-bottom: 14%;
+         overflow: hidden;
+      }
+
+      .home4 .title .h30 {
+         position: relative;
+         float: left;
+         padding: 0 32px;
+      }
+
+      .home4 .title .h30:before,
+      .home4 .title .h30:after {
+         content: '';
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         width: 22px;
+         height: 30px;
+         background: url("https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/379ef5b63-b8a4-449d-a4dc-b0f48dd6e421_png7.pngtian?Expires=1776678423&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=mdDWD%2BjLLCin864MMS%2FIPKwWqvY%3D") no-repeat;
+      }
+
+      .home4 .title .h30:before {
+         left: 0;
+         background-position: left;
+      }
+
+      .home4 .title .h30:after {
+         right: 0;
+         background-position: right;
+      }
+
+      .home4 .title .t_more {
+         float: right;
+         margin-top: 14px;
+      }
+
+      .home4 .img {
+         position: relative;
+         height: 248px;
+         background: center no-repeat;
+         background-size: cover;
+      }
+
+      .home4 .img .link {
+         position: absolute;
+         left: 0;
+         right: 0;
+         top: 0;
+         bottom: 0;
+         font-family: "微软雅黑";
+         color: #fff;
+         opacity: 0.8;
+         transition: opacity 0.3s ease;
+      }
+
+      .home4 .img .link:hover {
+         color: #fff !important;
+         opacity: 1;
+      }
+
+      .home4 .img .h16 {
+         position: absolute;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         padding: 20px;
+         background: rgba(255, 255, 255, 0.6);
+         text-align: left;
+         color: #3c4f67;
+      }
+
+      .home4 .h16 {
+         overflow: hidden;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+      }
+
+      .home4 .li {
+         font-family: "微软雅黑";
+         text-align: left;
+      }
+
+      .home4 .li:hover {
+         color: #7a6e44;
+      }
+
+      .home4 .date {
+         font-family: Arial;
+         color: #4a4a4a;
+      }
+
+      .home4 .ul1 {
+         padding: 37px 0 21px;
+         border-bottom: 1px dashed #b5b5b5;
+      }
+
+      .home4 .ul1 .li {
+         overflow: hidden;
+      }
+
+      .home4 .ul1 .li+.li {
+         margin-top: 11px;
+      }
+
+      .home4 .ul1 .date {
+         float: right;
+         margin-left: 20px;
+      }
+
+      .home4 .ul1 .h16 {
+         overflow: hidden;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+         color: #3c4f67;
+      }
+
+      .home4 .ul2 .li {
+         padding-bottom: 25px;
+         border-bottom: 1px dashed #b5b5b5;
+      }
+
+      .home4 .ul2 .li+.li {
+         margin-top: 28px;
+      }
+
+      .home4 .ul2 .h16 {
+         margin-bottom: 10px;
+         color: #3c4f67;
+      }
+
+      .home4 .ul2 .p {
+         margin-bottom: 15px;
+         height: 42px;
+         overflow: hidden;
+         color: #5b5b5b;
+         line-height: 36px;
+      }
+
+      .home4 .ul3 {
+         margin-bottom: 27px;
+      }
+
+      .home4 .ul3 .li+.li {
+         margin-top: 15px;
+      }
+
+      .home4 .ul3 .h16 {
+         margin-bottom: 10px;
+         color: #3c4f67;
+      }
+
+      .t_more {
+         position: relative;
+         display: inline-block;
+         padding: 0 22px;
+         font-family: "微软雅黑";
+         vertical-align: middle;
+         color: #4a4a4a;
+         border: 1px solid #d6d6d6;
+         border-radius: 30px;
+         transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .t_more:hover {
+         color: #7a6e44;
+         background-color: #d7d0b3;
+      }
+
+      .t_more:before,
+      .t_more:after {
+         content: '';
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         width: 21px;
+         height: 23px;
+         background: url(https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/332ea2b9a-7c3a-452d-bdb6-024ada3e1b90_horn21_b.pngtian?Expires=1776678470&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=y%2BO6Yz5oWsZj2JcZOpO3HjI09pA%3D) no-repeat;
+      }
+
+      .t_more:before {
+         left: 0;
+         background-position: left top;
+      }
+
+      .t_more:after {
+         right: 0;
+         background-position: right top;
+      }
+
+      .t_more:hover:before {
+         background-position: left bottom;
+      }
+
+      .t_more:hover:after {
+         background-position: right bottom;
+      }
+
+      /* 平板端样式（768px 到 1024px） */
+      @media (max-width: 1024px) and (min-width: 768px) {
+         .home4 .col9 {
+            width: 48%;
+            margin: 0 1%;
+         }
+
+         .home4 .box9 {
+            margin: 0 1%;
+            margin-bottom: 20px;
+         }
+
+         .home4 .title {
+            margin-bottom: 10%;
+         }
+
+         .home4 .img {
+            height: 200px;
+         }
+
+         .home4 .ul1 {
+            padding: 20px 0 15px;
+         }
+
+         .home4 .ul2 .li {
+            padding-bottom: 20px;
+         }
+
+         .home4 .ul3 {
+            margin-bottom: 20px;
+         }
+
+         .t_more {
+            font-size: 14px;
+            padding: 0 15px;
+         }
+      }
+
+      /* 移动端样式（小于 768px） */
+      @media (max-width: 768px) {
+         .home4 .row9 {
+            top: 10%;
+         }
+
+         .home4 .col9 {
+            width: 100%;
+            margin: 0;
+            margin-bottom: 30px;
+         }
+
+         .home4 .box9 {
+            margin: 0;
+            margin-bottom: 30px;
+         }
+
+         .home4 .title {
+            margin-bottom: 15%;
+         }
+
+         .home4 .title .h30 {
+            padding: 0 20px;
+         }
+
+         .home4 .img {
+            height: 180px;
+         }
+
+         .home4 .img .h16 {
+            padding: 15px;
+         }
+
+         .home4 .ul1 {
+            padding: 15px 0 10px;
+         }
+
+         .home4 .ul1 .date {
+            font-size: 12px;
+         }
+
+         .home4 .ul2 .li {
+            padding-bottom: 15px;
+         }
+
+         .home4 .ul2 .p {
+            height: 36px;
+            line-height: 24px;
+         }
+
+         .home4 .ul3 {
+            margin-bottom: 15px;
+         }
+
+         .t_more {
+            font-size: 12px;
+            padding: 0 12px;
+         }
+      }
+
+      /* 政策板块结束 */
+      .shenhua {
+         background-image: url("https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/328049a3d-c8f4-4aad-9b57-bb5bd3bccf32_17.pngtian?Expires=1776678516&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=hGW6%2FUfIVbmIiUpXAwHsU3d3rsI%3D");
+         background-size: cover;
+         background-position: center;
+         width: 100%;
+         height: 100vh;
+         background-repeat: no-repeat;
+         z-index: 9;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+
+      }
+
+
+
+      .shenhua .shell1 {
+         width: 90%;
+         height: 700px;
+         display: flex;
+         justify-content: center;
+         /* 水平居中 */
+
+      }
+
+      .shenhua .box {
+         flex: 1;
+         overflow: hidden;
+         transition: .5s;
+         margin: 0 20px;
+         box-shadow:
+            0 8px 32px rgba(176, 48, 48, 0.3),
+            0 0 20px rgba(255, 215, 0, 0.2) inset;
+         border-radius: 8px;
+         border: 3px solid;
+         border-image: linear-gradient(45deg,
+               #b03030,
+               /* 朱砂红 */
+               #8b5d33,
+               /* 深檀木色 */
+               #d1a15d)
+            /* 鎏金色 */
+            1;
+         background: linear-gradient(45deg,
+               rgba(107, 34, 34, 0.8),
+               rgba(38, 70, 59, 0.6));
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-end;
+         text-align: center;
+      }
+
+      .shenhua .box>img {
+         width: 200%;
+         height: 85%;
+         object-fit: cover;
+         transition: .5s;
+      }
+
+      .shenhua .box>span {
+         font: 200 45px '优设标题黑';
+         text-align: center;
+         height: 15%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         color: #f1e4b3;
+         /* 古风暖黄色 */
+      }
+
+      .shenhua .box:hover {
+         flex-basis: 40%;
+      }
+
+      .shenhua .box:hover>img {
+         width: 100%;
+         height: 100%;
+      }
+
+      .page-wrapper {
+         height: 100vh;
+         width: 100vw;
+         scroll-snap-type: y mandatory;
+         overflow-y: scroll;
+      }
+
+      .zhou {
+         scroll-snap-align: start;
+         height: 100vh;
+         width: 100%;
+      }
+
+      section {
+         scroll-snap-align: start;
+         height: 100vh;
+         width: 100%;
+
+      }
+
+      .banner-two {
+         margin-top: 150px;
+      }
+
+      /* 手机端隐藏整个板块 */
+      @media (max-width: 767px) {
+         section.ditu {
+            display: none !important;
+         }
+
+
+      }
+
+      /* 手机端隐藏 .shenhua 部分 */
+      @media (max-width: 768px) {
+         .shenhua {
+            display: none;
+            /* 在屏幕宽度为 768px 或更小的设备上隐藏该部分 */
+         }
+      }
+
+      /* 原始页面全屏样式 */
+      .fullscreen-video-container {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100vw;
+         height: 100vh;
+         overflow: hidden;
+         z-index: 999;
+      }
+
+      .main-video {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         cursor: pointer;
+      }
+
+      /* 移动端适配 */
+      @media (max-width: 767px) {
+         .mobile-media {
+            display: block;
+            width: 100%;
+            height: auto;
+         }
+
+         .fullscreen-video-container {
+            display: none;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <!--[if lt IE 9]>
+      <p class="browserupgrade">
+         You are using an <strong>outdated</strong> browser. Please
+         <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+         your experience and security.
+      </p>
+      <![endif]-->
+   <div class="page-wrapper">
+      <!-- ==== 进入动画 ==== -->
+      <div class="preloader">
+         <i class="icon-donation"></i>
+         <p>黄河文化</p>
+      </div>
+
+      <!-- ==== 横幅部分开始==== -->
+      <section class="banner-two">
+         <div class="daohang">
+            <!-- logo 部分，设置为左侧 -->
+            <div class="logo">
+               <img src="assets/image/logo2.png" alt="Logo">
+            </div>
+            <!-- 导航栏部分 -->
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+               <ul class="main-nav">
+                  <li class="nav-item">
+                     <a href="index%20copy.html">首页</a>
+                     <!-- <ul class="sub-menu">
+                                                          <li><a href="#">子菜单1</a></li>
+                                                          <li><a href="#">子菜单2</a></li>
+                                                          <li><a href="#">子菜单3</a></li>
+                                                       </ul> -->
+                  </li>
+                  <li class="nav-item">
+                     <a href="3.1wenhua.html">文化篇</a>
+                     <ul class="sub-menu">
+                        <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                        <li><a href="3.1wenhua.html">传统技艺</a></li>
+                        <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                        <li><a href="3.1wenhua.html">传统音乐</a></li>
+                        <li><a href="3.1wenhua.html">传统体育</a></li>
+                     </ul>
+                  </li>
+                  <li class="nav-item">
+                     <a href="renwu.html">治水篇</a>
+                     <ul class="sub-menu">
+                        <li><a href="renwu.html">治水英雄颂</a></li>
+                        <li><a href="zsjy.html">治水技奇谈</a></li>
+                     </ul>
+                  </li>
+                  <li class="nav-item">
+                     <a href="shenhua.html">神话篇</a>
+                     <ul class="sub-menu">
+                        <li><a href="shenhua.html">大禹治水</a></li>
+                        <li><a href="shenhua.html">黄河母亲</a></li>
+                        <li><a href="shenhua.html">女娲补天</a></li>
+                        <li><a href="shenhua.html">伏羲创世</a></li>
+                        <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                     </ul>
+                  </li>
+                  <li class="nav-item">
+                     <a href="zhengce.html">政策篇</a>
+                     <ul class="sub-menu">
+                        <li><a href="zhengce.html">要闻</a></li>
+                        <li><a href="zhengce.html">地方新闻</a></li>
+                     </ul>
+                  </li>
+                  <li class="nav-item">
+                     <a href="rhudong.html">趣味黄河</a>
+                     <!-- <ul class="sub-menu">
+                                                          <li><a href="#">互动答题</a></li>
+                                                       </ul> -->
+                  </li>
+                  <li class="nav-item">
+                     <a href="chat.html">智慧AI</a>
+                     <!-- <ul class="sub-menu">
+                                                                            <li><a href="# ">互动答题</a></li>
+                                                                         </ul> -->
+                  </li>
+               </ul>
+            </nav>
+            <div class="dengluzc">
+               <a href="shijianshu.html">黄河
+                  史书</a>
+               <a href="dlzc.html">登录</a>
+               <a href="dlzc.html">注册</a>
+
+            </div>
+         </div>
+         <script>
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+               document.querySelector('.main-nav').classList.toggle('active');
+            });
+         </script>
+         <!-- <span class="sub-title"><i class="icon-donation"></i>凿山导洪开禹迹，驼铃摇碎汉唐烟；<br>
+                                    沉沙叠印兴衰事，万里奔流纪岁年。</span>
+                                 <h1>万 里 惊 涛 <br>
+                                    镌 刻<span class="bottom-line">千 秋 史 脉</span>
+                                 </h1> -->
+         <div class="banner-two__slider swiper">
+            <div class="swiper-wrapper">
+               <!-- 视频 -->
+               <div class="swiper-slide">
+                  <div class="banner-two__slider-single">
+                     <div class="banner-two__slider-bg">
+                        <!-- 添加包裹视频的链接 -->
+
+
+                        <a href="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/34.mp4?Expires=1776494898&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=cKu%2BEiDGPLYoVjbRu1mhIRpydFI%3D"
+                           target="_blank" class="video-link desktop-media">
+                           <video autoplay loop muted playsinline>
+                              <source
+                                 src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/34.mp4?Expires=1776494898&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=cKu%2BEiDGPLYoVjbRu1mhIRpydFI%3D"
+                                 type="video/mp4">
+                              您的浏览器不支持 video 标签。
+                           </video>
+                        </a>
+
+                        <div class="fullscreen-video-container">
+                           <video autoplay loop muted playsinline class="main-video"
+                              data-video-src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/34.mp4?Expires=1776494898&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=cKu%2BEiDGPLYoVjbRu1mhIRpydFI%3D">
+
+                           </video>
+                        </div>
+
+                        <!-- 移动端显示优化图片 -->
+                        <picture class="mobile-media">
+                           <!-- 竖屏手机显示 -->
+                           <source media="(max-width:767px)"
+                              srcset="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/36.png?Expires=1776496252&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=GHRZ6MJZ9hD%2BtnQBGRwsAXkNAGU%3D">
+                           <img
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/36.png?Expires=1776496252&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=GHRZ6MJZ9hD%2BtnQBGRwsAXkNAGU%3D"
+                              alt="">
+                        </picture>
+                     </div>
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-12 col-md-9 col-lg-7 col-xxl-6">
+                              <!-- <div class="banner-two__slider-content">
+                                 <span class="sub-title"><i class="icon-donation"></i>八卦始生河洛波，诗仙醉饮天上河；<br>
+                                    窑火淬炼青瓷韵，麦浪翻出信天游。</span>
+                                 <h1>河 洛 波 光 <br>
+                                    淬炼 <span class="bottom-line">文 明 原 色</span>
+
+                                 </h1>
+                                 <div class="banner__content-cta cta">
+                                    <a href="our-causes.html" aria-label="about us" title="about us"
+                                       class="btn--tertiary">Discover More <i class="fa-solid fa-arrow-right"></i></a>
+
+                                 </div>
+                              </div> -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <script>
+                  document.addEventListener('DOMContentLoaded', () => {
+                     const video = document.querySelector('.main-video');
+
+                     // 点击 video，触发播放页面打开
+                     video.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        const videoSrc = this.dataset.videoSrc;
+
+                        const playerWindow = window.open('', '_blank', 'fullscreen=yes');
+
+                        playerWindow.document.write(`
+           <!DOCTYPE html>
+           <html lang="zh-CN">
+           <head>
+             <meta charset="UTF-8">
+             <title>视频播放器</title>
+             <style>
+               html, body {
+                 margin: 0;
+                 padding: 0;
+                 height: 100%;
+                 background: black;
+               }
+               video {
+                 width: 100vw;
+                 height: 100vh;
+                 object-fit: contain;
+                 background-color: black;
+               }
+               .close-btn {
+                 position: fixed;
+                 top: 20px;
+                 right: 20px;
+                 z-index: 1000;
+                 background: rgba(0,0,0,0.6);
+                 color: white;
+                 border: none;
+                 padding: 10px 15px;
+                 font-size: 16px;
+                 border-radius: 6px;
+                 cursor: pointer;
+               }
+             </style>
+           </head>
+           <body>
+             <video id="player" autoplay controls>
+               <source src="${videoSrc}" type="video/mp4">
+               您的浏览器不支持 video 标签。
+             </video>
+             <button class="close-btn" onclick="window.close()">关闭</button>
+   
+             <script>
+               const player = document.getElementById('player');
+               player.muted = false;
+               player.play(); // 用户手势触发，允许有声音自动播放
+             <\/script>
+           </body>
+           </html>
+         `);
+                     });
+                  });
+               </script>
+
+
+               <div class="swiper-slide">
+                  <div class="banner-two__slider-single">
+                     <div class="banner-two__slider-bg"
+                        data-background=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/36.jpg?Expires=1776496353&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=TQPP%2Ba1rQkEoJMvsw2OgpRqXDzY%3D">
+                        <!-- 移动端显示优化图片 -->
+                        <picture class="mobile-media">
+                           <!-- 竖屏手机显示 -->
+                           <source media="(max-width:767px)"
+                              srcset="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/37.png?Expires=1776496290&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=CDG85hI4kf4GU9Q3GP4UDYy1S2A%3D">
+                           <img
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/37.png?Expires=1776496290&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=CDG85hI4kf4GU9Q3GP4UDYy1S2A%3D"
+                              alt="">
+                        </picture>
+                     </div>
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-12 col-md-9 col-lg-7 col-xxl-6">
+                              <div class="banner-two__slider-content">
+                                 <span class="sub-title"><i class="icon-donation"></i><br>
+                                 </span>
+                                 <h1><span class="bottom-line"></span>
+                                 </h1>
+                                 <div class="banner__content-cta cta">
+                                    <!-- <a href="our-causes.html" aria-label="about us" title="about us"
+                                       class="btn--tertiary">Discover More <i class="fa-solid fa-arrow-right"></i></a> -->
+
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+
+
+               <div class="swiper-slide">
+                  <div class="banner-two__slider-single">
+                     <div class="banner-two__slider-bg">
+                        <!-- 添加包裹视频的链接 -->
+                        <a href="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/33.mp4?Expires=1776495256&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2BR3yEC8otNEGRZlJRzwtFzb5B%2B8%3D"
+                           target="_blank" class="video-link desktop-media">
+                           <video autoplay loop muted playsinline>
+                              <source
+                                 src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/33.mp4?Expires=1776495256&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2BR3yEC8otNEGRZlJRzwtFzb5B%2B8%3D"
+                                 type="video/mp4">
+                              您的浏览器不支持 video 标签。
+                           </video>
+                        </a>
+
+                        <div class="fullscreen-video-container">
+                           <video autoplay loop muted playsinline class="main-video1"
+                              data-video-src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/33.mp4?Expires=1776495256&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=%2BR3yEC8otNEGRZlJRzwtFzb5B%2B8%3D">
+
+                           </video>
+                        </div>
+
+                        <!-- 移动端显示优化图片 -->
+                        <picture class="mobile-media">
+                           <!-- 竖屏手机显示 -->
+                           <source media="(max-width:767px)"
+                              srcset="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/33.png?Expires=1776496444&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=iGFt815epjnlYDhgQ69M0uKDN%2FI%3D">
+                           <img
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/33.png?Expires=1776496444&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=iGFt815epjnlYDhgQ69M0uKDN%2FI%3D"
+                              alt="">
+                        </picture>
+                     </div>
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-12 col-md-9 col-lg-7 col-xxl-6">
+                              <!-- <div class="banner-two__slider-content">
+                                                            <span class="sub-title"><i class="icon-donation"></i>八卦始生河洛波，诗仙醉饮天上河；<br>
+                                                               窑火淬炼青瓷韵，麦浪翻出信天游。</span>
+                                                            <h1>河 洛 波 光 <br>
+                                                               淬炼 <span class="bottom-line">文 明 原 色</span>
+                           
+                                                            </h1>
+                                                            <div class="banner__content-cta cta">
+                                                               <a href="our-causes.html" aria-label="about us" title="about us"
+                                                                  class="btn--tertiary">Discover More <i class="fa-solid fa-arrow-right"></i></a>
+                           
+                                                            </div>
+                                                         </div> -->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <script>
+                  document.addEventListener('DOMContentLoaded', () => {
+                     const video = document.querySelector('.main-video1');
+
+                     // 点击 video，触发播放页面打开
+                     video.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        const videoSrc = this.dataset.videoSrc;
+
+                        const playerWindow = window.open('', '_blank', 'fullscreen=yes');
+
+                        playerWindow.document.write(`
+                    <!DOCTYPE html>
+                    <html lang="zh-CN">
+                    <head>
+                      <meta charset="UTF-8">
+                      <title>视频播放器</title>
+                      <style>
+                        html, body {
+                          margin: 0;
+                          padding: 0;
+                          height: 100%;
+                          background: black;
+                        }
+                        video {
+                          width: 100vw;
+                          height: 100vh;
+                          object-fit: contain;
+                          background-color: black;
+                        }
+                        .close-btn {
+                          position: fixed;
+                          top: 20px;
+                          right: 20px;
+                          z-index: 1000;
+                          background: rgba(0,0,0,0.6);
+                          color: white;
+                          border: none;
+                          padding: 10px 15px;
+                          font-size: 16px;
+                          border-radius: 6px;
+                          cursor: pointer;
+                        }
+                      </style>
+                    </head>
+                    <body>
+                      <video id="player" autoplay controls>
+                        <source src="${videoSrc}" type="video/mp4">
+                        您的浏览器不支持 video 标签。
+                      </video>
+                      <button class="close-btn" onclick="window.close()">关闭</button>
+            
+                      <script>
+                        const player = document.getElementById('player');
+                        player.muted = false;
+                        player.play(); // 用户手势触发，允许有声音自动播放
+                      <\/script>
+                    </body>
+                    </html>
+                  `);
+                     });
+                  });
+               </script>
+
+
+               <div class="swiper-slide">
+                  <div class="banner-two__slider-single">
+                     <div class="banner-two__slider-bg"
+                        data-background="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/345.png?Expires=1776496534&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=39MVS%2FwGk3Aseo%2F58sY%2B8UWUDOQ%3D">
+                        <!-- 移动端显示优化图片 -->
+                        <picture class="mobile-media">
+                           <!-- 竖屏手机显示 -->
+                           <source media="(max-width:767px)"
+                              srcset="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/33.png?Expires=1776496444&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=iGFt815epjnlYDhgQ69M0uKDN%2FI%3D">
+                           <img
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/33.png?Expires=1776496444&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=iGFt815epjnlYDhgQ69M0uKDN%2FI%3D"
+                              alt="">
+                        </picture>
+                     </div>
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-12 col-md-9  col-lg-7 col-xxl-6">
+                              <div class="banner-two__slider-content">
+                                 <span class="sub-title"><br><br>
+                                    <br></span>
+                                 <h1> <br><br>
+                                    <span class="bottom-line"><br></span>
+
+                                 </h1>
+                                 <div class="banner__content-cta cta">
+                                    <!-- <a href="our-causes.html" aria-label="about us" title="about us"
+                                       class="btn--tertiary">Discover
+                                       More <i class="fa-solid fa-arrow-right"></i></a> -->
+
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="slider-navigation d-none d-md-flex">
+            <button type="button" aria-label="prev slide" title="prev slide" class="prev-banner slider-btn">
+               <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button type="button" aria-label="next slide" title="next slide"
+               class="next-banner slider-btn slider-btn-next">
+               <i class="fa-solid fa-arrow-right"></i>
+            </button>
+         </div>
+         <div class="shape-left" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
+            <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3banner-two-shape.png?" alt="Image">
+         </div>
+         <div class="sprade-shape">
+            <!-- <img src="assets/images/sprade-base.png" alt="Image" class="base-img" data-aos="zoom-in"
+               data-aos-duration="1000"> -->
+         </div>
+
+      </section>
+
+      <!-- ==== 横幅部分结束==== -->
+
+      <!-- ==== 时间轴部分开始==== -->
+
+      <div class="zhou">
+         <div class="w">
+            <h2>《长 河 九 问 刻 春 秋》</h2>
+            <p>
+               这是一条万古奔流的大河。
+            </p>
+            <p>
+               都说她哺育了五千年中华文明。
+            </p>
+            <p>
+               有人赞美她的滋养，也有人畏惧她的巨浪。
+            </p>
+            <p>
+               她从哪来，又到哪里去？
+            </p>
+            <p>
+               她曾路过哪座高山，又留在了谁的笔端？
+            </p>
+            <p>
+               她曾奔流过哪片荒原，又见证过几段灿烂？
+            </p>
+         </div>
+         <div class="void" id="void">
+            <div class="crop">
+               <ul class="card-list" style="--count:6;">
+                  <li>
+                     <div class="card"><a href="shijianshu.html">
+                           <h2>公元前5000年 - 公元前1600年</h2>
+                           <p>远古至青铜时代的黄河文化起源</p>
+                        </a></div>
+                  </li>
+                  <li>
+                     <div class="card"><a href="shijianshu.html">
+                           <img
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/319.png?Expires=1776503397&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=JkxZrhR87G%2Fi%2FHBYRTwXKa9woow%3D"
+                              alt="">
+                        </a></div>
+                  </li>
+                  <li>
+                     <div class="card"><a href="shijianshu.html">
+                           <h2>公元前1046年 - 公元1271年</h2>
+                           <p>封建王朝与水利工程的建设</p>
+                        </a></div>
+                  </li>
+                  <li>
+                     <div class="card"><a href="shijianshu.html">
+                           <img
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/320.png?Expires=1776503439&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=EI9GO610dwYDXu%2Br7hZzozFJ1I4%3D"
+                              alt="">
+                        </a></div>
+                  </li>
+                  <li>
+                     <div class="card"><a href="shijianshu.html">
+                           <h2>20世纪 - 21世纪</h2>
+                           <p>现代治黄与生态保护</p>
+                        </a></div>
+                  </li>
+                  <li>
+                     <div class="card"><a href="shijianshu.html">
+                           <img
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/321.png?Expires=1776503466&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ylemZ22QpfdjP%2BjjveGAWPEOpec%3D"
+                              alt="">
+                        </a></div>
+                  </li>
+               </ul>
+               <div class="last-circle"></div>
+               <div class="second-circle"></div>
+            </div>
+            <div class="mask"></div>
+            <div class="center-circle"></div>
+         </div>
+      </div>
+      <!-- ==== 时间轴结束==== -->
+
+      <!-- ==== 文化基因板块开始 ==== -->
+      <section class="cause"
+         data-background=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31.png?Expires=1776503760&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=4Sm%2BnHm1bJHD9qi2cstTFiSgNgo%3D">
+         <div class="container">
+            <div class="row gutter-30 align-items-center">
+               <div class="col-12 col-md-8 col-xl-7">
+                  <div class="section__header">
+                     <span class="sub-title"><i class="icon-donation"></i>河畔文化传千古
+                     </span>
+                  </div>
+               </div>
+               <div class="col-12 col-md-4 col-xl-5">
+                  <div class="slider-navigation">
+                     <button type="button" aria-label="prev slide" title="prev slide" class="prev-cause slider-btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                     </button>
+                     <button type="button" aria-label="next slide" title="next slide"
+                        class="next-cause slider-btn slider-btn-next">
+                        <i class="fa-solid fa-arrow-right"></i>
+                     </button>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-12">
+                  <div class="cause__slider-wrapper">
+                     <div class="cause__slider swiper">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide">
+                              <div class="cause__slider-inner">
+                                 <div class="cause__slider-single">
+                                    <div class="thumb">
+                                       <a href="3.1wenhua.html">
+                                          <img
+                                             src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3xijv.png?Expires=1776503902&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=vH62SVgEaF8IKqYBDLAtbXzrbTA%3D"
+                                             alt="Image">
+                                       </a>
+                                       <div class="tag">
+                                          <a href="3.1wenhua.html">传统戏剧</a>
+                                       </div>
+                                    </div>
+                                    <div class="content">
+                                       <h6><a href="3.1wenhua.html">黄河流域的戏韵长流</a></h6>
+                                       <p>一颦一笑，唱念做打，黄河流域的戏曲艺术承载着中华戏韵，余音绕梁
+                                       </p>
+                                    </div>
+                                    <div class="cause__slider-cta">
+                                       <div class="cause__progress progress-bar-single">
+                                          <!-- <div class="cause-progress__intro">
+                                             <p><span>文化传承度</span>
+                                                <span class="percent-value">90%</span>
+                                             </p>
+                                          </div> -->
+                                          <div class="cause-progress__bar">
+                                             <div class="progress-bar-wrapper" data-percent="85%">
+                                                <div class="progress-bar">
+                                                   <div class="progress-bar-percent">
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="cause-progress__goal">
+                                             <p>现存影响力指数： <span class="raised"><svg t="1740658952211" class="icon"
+                                                      viewBox="0 0 1024 1024" version="1.1"
+                                                      xmlns="http://www.w3.org/2000/svg" p-id="11424" width="200"
+                                                      height="200">
+                                                      <path
+                                                         d="M891.52 525.312s-14.72 71.68-108.544 73.6v88.128s-3.712 110.464-161.024 137.6H407.616s-220.8 7.744-225.408-154.048c0 0-2.752-51.328 19.328-133.696 0 0 11.008-75.52-73.6-227.648h106.688s44.16 81.408 105.792 50.368c0 0 171.136-143.36 359.744 57.152 0 0 42.304-65.856 114.048-43.584 0 0 102.144 18.432 77.312 152.128z m-56.64-77.44c-24.896-32.384-58.24-27.456-69.696-22.336-19.328 9.984-31.936 37.76-31.936 37.76 3.712 1.92 30.4 58.112 37.76 77.504 21.12 3.84 34.048 0 48.768-4.864 44.16-18.368 26.56-75.328 15.104-88.064zM486.272 305.408c-30.272 0-54.784-43.456-54.784-68.288 0-24.896 24.512-45.056 54.784-45.056 30.208 0 54.72 20.16 54.72 45.056 0 24.832-24.512 68.288-54.72 68.288z"
+                                                         fill="#1296db" p-id="11425"></path>
+                                                   </svg>8500</span></p>
+                                             <p>目标影响力指数： <span class="goal"><svg t="1740658952211" class="icon"
+                                                      viewBox="0 0 1024 1024" version="1.1"
+                                                      xmlns="http://www.w3.org/2000/svg" p-id="11424" width="200"
+                                                      height="200">
+                                                      <path
+                                                         d="M891.52 525.312s-14.72 71.68-108.544 73.6v88.128s-3.712 110.464-161.024 137.6H407.616s-220.8 7.744-225.408-154.048c0 0-2.752-51.328 19.328-133.696 0 0 11.008-75.52-73.6-227.648h106.688s44.16 81.408 105.792 50.368c0 0 171.136-143.36 359.744 57.152 0 0 42.304-65.856 114.048-43.584 0 0 102.144 18.432 77.312 152.128z m-56.64-77.44c-24.896-32.384-58.24-27.456-69.696-22.336-19.328 9.984-31.936 37.76-31.936 37.76 3.712 1.92 30.4 58.112 37.76 77.504 21.12 3.84 34.048 0 48.768-4.864 44.16-18.368 26.56-75.328 15.104-88.064zM486.272 305.408c-30.272 0-54.784-43.456-54.784-68.288 0-24.896 24.512-45.056 54.784-45.056 30.208 0 54.72 20.16 54.72 45.056 0 24.832-24.512 68.288-54.72 68.288z"
+                                                         fill="#d81e06" p-id="11425"></path>
+                                                   </svg>1,0000</span></p>
+                                          </div>
+                                       </div>
+                                       <div class="cause__cta">
+                                          <a href="3.1wenhua.html" aria-label="donate now" title="donate now"
+                                             class="btn--secondary">了解更多</a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="cause__slider-inner">
+                                 <div class="cause__slider-single">
+                                    <div class="thumb">
+                                       <a href="3.1wenhua.html">
+                                          <img
+                                             src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3taoci.png?Expires=1776503962&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ZUfHy8XeH7qF4xPQ5fqdaUUcwgw%3D"
+                                             alt="Image">
+                                       </a>
+                                       <div class="tag">
+                                          <a href="3.1wenhua.html">传统技艺</a>
+                                       </div>
+                                    </div>
+                                    <div class="content">
+                                       <h6><a href="3.1wenhua.html">黄河流域的匠心独运</a></h6>
+                                       <p>千年技艺，薪火相传，黄河流域的匠人们以双手雕琢历史，塑造时代之美
+                                       </p>
+                                    </div>
+                                    <div class="cause__slider-cta">
+                                       <div class="cause__progress progress-bar-single">
+                                          <div class="cause-progress__intro">
+                                             <!-- <p><span>文化传承度</span>
+                                                <span class="percent-value">75%</span>
+                                             </p> -->
+                                          </div>
+                                          <div class="cause-progress__bar">
+                                             <div class="progress-bar-wrapper" data-percent="90%">
+                                                <div class="progress-bar">
+                                                   <div class="progress-bar-percent">
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="cause-progress__goal">
+                                             <p>现存影响力指数: <span class="raised"><svg t="1740658335312" class="icon"
+                                                      viewBox="0 0 1024 1024" version="1.1"
+                                                      xmlns="http://www.w3.org/2000/svg" p-id="11266" width="200"
+                                                      height="200">
+                                                      <path
+                                                         d="M891.52 525.312s-14.72 71.68-108.544 73.6v88.128s-3.712 110.464-161.024 137.6H407.616s-220.8 7.744-225.408-154.048c0 0-2.752-51.328 19.328-133.696 0 0 11.008-75.52-73.6-227.648h106.688s44.16 81.408 105.792 50.368c0 0 171.136-143.36 359.744 57.152 0 0 42.304-65.856 114.048-43.584 0 0 102.144 18.432 77.312 152.128z m-56.64-77.44c-24.896-32.384-58.24-27.456-69.696-22.336-19.328 9.984-31.936 37.76-31.936 37.76 3.712 1.92 30.4 58.112 37.76 77.504 21.12 3.84 34.048 0 48.768-4.864 44.16-18.368 26.56-75.328 15.104-88.064zM486.272 305.408c-30.272 0-54.784-43.456-54.784-68.288 0-24.896 24.512-45.056 54.784-45.056 30.208 0 54.72 20.16 54.72 45.056 0 24.832-24.512 68.288-54.72 68.288z"
+                                                         fill="#A6A6A6" p-id="11267"></path>
+                                                   </svg>8500</span></p>
+                                             <p>目标影响力指数： <span class="goal"><svg t="1740658335312" class="icon"
+                                                      viewBox="0 0 1024 1024" version="1.1"
+                                                      xmlns="http://www.w3.org/2000/svg" p-id="11266" width="200"
+                                                      height="200">
+                                                      <path
+                                                         d="M891.52 525.312s-14.72 71.68-108.544 73.6v88.128s-3.712 110.464-161.024 137.6H407.616s-220.8 7.744-225.408-154.048c0 0-2.752-51.328 19.328-133.696 0 0 11.008-75.52-73.6-227.648h106.688s44.16 81.408 105.792 50.368c0 0 171.136-143.36 359.744 57.152 0 0 42.304-65.856 114.048-43.584 0 0 102.144 18.432 77.312 152.128z m-56.64-77.44c-24.896-32.384-58.24-27.456-69.696-22.336-19.328 9.984-31.936 37.76-31.936 37.76 3.712 1.92 30.4 58.112 37.76 77.504 21.12 3.84 34.048 0 48.768-4.864 44.16-18.368 26.56-75.328 15.104-88.064zM486.272 305.408c-30.272 0-54.784-43.456-54.784-68.288 0-24.896 24.512-45.056 54.784-45.056 30.208 0 54.72 20.16 54.72 45.056 0 24.832-24.512 68.288-54.72 68.288z"
+                                                         fill="#A6A6A6" p-id="11267"></path>
+                                                   </svg>1,0000</span></p>
+                                          </div>
+                                       </div>
+                                       <div class="cause__cta">
+                                          <a href="3.1wenhua.html" aria-label="donate now" title="donate now"
+                                             class="btn--secondary">了解更多</a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="cause__slider-inner">
+                                 <div class="cause__slider-single">
+                                    <div class="thumb">
+                                       <a href="3.1wenhua.html">
+                                          <img
+                                             src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3minsu.png?Expires=1776504024&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=18No%2BZAI%2Bc6scQgieZ4j7z77s2E%3D"
+                                             alt="Image">
+                                       </a>
+                                       <div class="tag">
+                                          <a href="3.1wenhua.html">民俗节庆</a>
+                                       </div>
+                                    </div>
+                                    <div class="content">
+                                       <h6><a href="3.1wenhua.html">黄河流域的节庆风情</a></h6>
+                                       <p>从龙舟竞渡到社火表演，黄河两岸的节庆活动不断见证着岁月流转
+                                       </p>
+                                    </div>
+                                    <div class="cause__slider-cta">
+                                       <div class="cause__progress progress-bar-single">
+                                          <div class="cause-progress__intro">
+                                             <!-- <p><span>文化传承度</span>
+                                                <span class="percent-value">78%</span>
+                                             </p> -->
+                                          </div>
+                                          <div class="cause-progress__bar">
+                                             <div class="progress-bar-wrapper" data-percent="75%">
+                                                <div class="progress-bar">
+                                                   <div class="progress-bar-percent">
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="cause-progress__goal">
+                                             <p>现存影响力指数: <span class="raised"><svg t="1740658335312" class="icon"
+                                                      viewBox="0 0 1024 1024" version="1.1"
+                                                      xmlns="http://www.w3.org/2000/svg" p-id="11266" width="200"
+                                                      height="200">
+                                                      <path
+                                                         d="M891.52 525.312s-14.72 71.68-108.544 73.6v88.128s-3.712 110.464-161.024 137.6H407.616s-220.8 7.744-225.408-154.048c0 0-2.752-51.328 19.328-133.696 0 0 11.008-75.52-73.6-227.648h106.688s44.16 81.408 105.792 50.368c0 0 171.136-143.36 359.744 57.152 0 0 42.304-65.856 114.048-43.584 0 0 102.144 18.432 77.312 152.128z m-56.64-77.44c-24.896-32.384-58.24-27.456-69.696-22.336-19.328 9.984-31.936 37.76-31.936 37.76 3.712 1.92 30.4 58.112 37.76 77.504 21.12 3.84 34.048 0 48.768-4.864 44.16-18.368 26.56-75.328 15.104-88.064zM486.272 305.408c-30.272 0-54.784-43.456-54.784-68.288 0-24.896 24.512-45.056 54.784-45.056 30.208 0 54.72 20.16 54.72 45.056 0 24.832-24.512 68.288-54.72 68.288z"
+                                                         fill="#A6A6A6" p-id="11267"></path>
+                                                   </svg>8500</span></p>
+                                             <p>目标影响力指数：<span class="goal"><svg t="1740658335312" class="icon"
+                                                      viewBox="0 0 1024 1024" version="1.1"
+                                                      xmlns="http://www.w3.org/2000/svg" p-id="11266" width="200"
+                                                      height="200">
+                                                      <path
+                                                         d="M891.52 525.312s-14.72 71.68-108.544 73.6v88.128s-3.712 110.464-161.024 137.6H407.616s-220.8 7.744-225.408-154.048c0 0-2.752-51.328 19.328-133.696 0 0 11.008-75.52-73.6-227.648h106.688s44.16 81.408 105.792 50.368c0 0 171.136-143.36 359.744 57.152 0 0 42.304-65.856 114.048-43.584 0 0 102.144 18.432 77.312 152.128z m-56.64-77.44c-24.896-32.384-58.24-27.456-69.696-22.336-19.328 9.984-31.936 37.76-31.936 37.76 3.712 1.92 30.4 58.112 37.76 77.504 21.12 3.84 34.048 0 48.768-4.864 44.16-18.368 26.56-75.328 15.104-88.064zM486.272 305.408c-30.272 0-54.784-43.456-54.784-68.288 0-24.896 24.512-45.056 54.784-45.056 30.208 0 54.72 20.16 54.72 45.056 0 24.832-24.512 68.288-54.72 68.288z"
+                                                         fill="#A6A6A6" p-id="11267"></path>
+                                                   </svg>1,0000</span></p>
+                                          </div>
+                                       </div>
+                                       <div class="cause__cta">
+                                          <a href="3.1wenhua.html" aria-label="donate now" title="donate now"
+                                             class="btn--secondary">了解更多</a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="cause__slider-inner">
+                                 <div class="cause__slider-single">
+                                    <div class="thumb">
+                                       <a href="3.1wenhua.html">
+                                          <img
+                                             src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3yinyue.png?Expires=1776504092&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=OfeSocFRsz1nLBzikiM7kTnZ5rM%3D"
+                                             alt="Image">
+                                       </a>
+                                       <div class="tag">
+                                          <a href="3.1wenhua.html">传统音乐</a>
+                                       </div>
+                                    </div>
+                                    <div class="content">
+                                       <h6><a href="3.1wenhua.html">黄河流域的乐韵悠扬</a></h6>
+                                       <p>丝竹声声，黄河儿女弹奏千年乐章，悠扬旋律诉说着家国情怀。
+                                       </p>
+                                    </div>
+                                    <div class="cause__slider-cta">
+                                       <div class="cause__progress progress-bar-single">
+                                          <div class="cause-progress__intro">
+                                             <!-- <p><span>文化传承度</span>
+                                                <span class="percent-value">70%</span>
+                                             </p> -->
+                                          </div>
+                                          <div class="cause-progress__bar">
+                                             <div class="progress-bar-wrapper" data-percent="65%">
+                                                <div class="progress-bar">
+                                                   <div class="progress-bar-percent">
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="cause-progress__goal">
+                                             <p>现存影响力指数：<span class="raised"><svg t="1740658335312" class="icon"
+                                                      viewBox="0 0 1024 1024" version="1.1"
+                                                      xmlns="http://www.w3.org/2000/svg" p-id="11266" width="200"
+                                                      height="200">
+                                                      <path
+                                                         d="M891.52 525.312s-14.72 71.68-108.544 73.6v88.128s-3.712 110.464-161.024 137.6H407.616s-220.8 7.744-225.408-154.048c0 0-2.752-51.328 19.328-133.696 0 0 11.008-75.52-73.6-227.648h106.688s44.16 81.408 105.792 50.368c0 0 171.136-143.36 359.744 57.152 0 0 42.304-65.856 114.048-43.584 0 0 102.144 18.432 77.312 152.128z m-56.64-77.44c-24.896-32.384-58.24-27.456-69.696-22.336-19.328 9.984-31.936 37.76-31.936 37.76 3.712 1.92 30.4 58.112 37.76 77.504 21.12 3.84 34.048 0 48.768-4.864 44.16-18.368 26.56-75.328 15.104-88.064zM486.272 305.408c-30.272 0-54.784-43.456-54.784-68.288 0-24.896 24.512-45.056 54.784-45.056 30.208 0 54.72 20.16 54.72 45.056 0 24.832-24.512 68.288-54.72 68.288z"
+                                                         fill="#A6A6A6" p-id="11267"></path>
+                                                   </svg>8500</span></p>
+                                             <p>目标影响力指数： <span class="goal"><svg t="1740658335312" class="icon"
+                                                      viewBox="0 0 1024 1024" version="1.1"
+                                                      xmlns="http://www.w3.org/2000/svg" p-id="11266" width="200"
+                                                      height="200">
+                                                      <path
+                                                         d="M891.52 525.312s-14.72 71.68-108.544 73.6v88.128s-3.712 110.464-161.024 137.6H407.616s-220.8 7.744-225.408-154.048c0 0-2.752-51.328 19.328-133.696 0 0 11.008-75.52-73.6-227.648h106.688s44.16 81.408 105.792 50.368c0 0 171.136-143.36 359.744 57.152 0 0 42.304-65.856 114.048-43.584 0 0 102.144 18.432 77.312 152.128z m-56.64-77.44c-24.896-32.384-58.24-27.456-69.696-22.336-19.328 9.984-31.936 37.76-31.936 37.76 3.712 1.92 30.4 58.112 37.76 77.504 21.12 3.84 34.048 0 48.768-4.864 44.16-18.368 26.56-75.328 15.104-88.064zM486.272 305.408c-30.272 0-54.784-43.456-54.784-68.288 0-24.896 24.512-45.056 54.784-45.056 30.208 0 54.72 20.16 54.72 45.056 0 24.832-24.512 68.288-54.72 68.288z"
+                                                         fill="#A6A6A6" p-id="11267"></path>
+                                                   </svg>1,0000</span></p>
+                                          </div>
+                                       </div>
+                                       <div class="cause__cta">
+                                          <a href="3.1wenhua.html" aria-label="donate now" title="donate now"
+                                             class="btn--secondary">了解更多</a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="cause__slider-inner">
+                                 <div class="cause__slider-single">
+                                    <div class="thumb">
+                                       <a href="3.1wenhua.html">
+                                          <img
+                                             src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3gongfu.png?Expires=1776504153&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=t1xUueJsVm16N1StWEsI97N%2FkHM%3D"
+                                             alt="Image">
+                                       </a>
+                                       <div class="tag">
+                                          <a href="3.1wenhua.html">传统体育</a>
+                                       </div>
+                                    </div>
+                                    <div class="content">
+                                       <h6><a href="3.1wenhua.html">黄河流域的武动风华</a></h6>
+                                       <p>一招一式，刚柔并济，黄河流域的传统武术承载着千年的文化精神。
+                                       </p>
+                                    </div>
+                                    <div class="cause__slider-cta">
+                                       <div class="cause__progress progress-bar-single">
+                                          <div class="cause-progress__intro">
+                                             <!-- <p><span>文化传承度</span>
+                                                <span class="percent-value">65%</span>
+                                             </p> -->
+                                          </div>
+                                          <div class="cause-progress__bar">
+                                             <div class="progress-bar-wrapper" data-percent="85%">
+                                                <div class="progress-bar">
+                                                   <div class="progress-bar-percent">
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="cause-progress__goal">
+                                             <p>现存影响力指数：<span class="raised"><svg t="1740658335312" class="icon"
+                                                      viewBox="0 0 1024 1024" version="1.1"
+                                                      xmlns="http://www.w3.org/2000/svg" p-id="11266" width="200"
+                                                      height="200">
+                                                      <path
+                                                         d="M891.52 525.312s-14.72 71.68-108.544 73.6v88.128s-3.712 110.464-161.024 137.6H407.616s-220.8 7.744-225.408-154.048c0 0-2.752-51.328 19.328-133.696 0 0 11.008-75.52-73.6-227.648h106.688s44.16 81.408 105.792 50.368c0 0 171.136-143.36 359.744 57.152 0 0 42.304-65.856 114.048-43.584 0 0 102.144 18.432 77.312 152.128z m-56.64-77.44c-24.896-32.384-58.24-27.456-69.696-22.336-19.328 9.984-31.936 37.76-31.936 37.76 3.712 1.92 30.4 58.112 37.76 77.504 21.12 3.84 34.048 0 48.768-4.864 44.16-18.368 26.56-75.328 15.104-88.064zM486.272 305.408c-30.272 0-54.784-43.456-54.784-68.288 0-24.896 24.512-45.056 54.784-45.056 30.208 0 54.72 20.16 54.72 45.056 0 24.832-24.512 68.288-54.72 68.288z"
+                                                         fill="#A6A6A6" p-id="11267"></path>
+                                                   </svg>8500</span></p>
+                                             <p>目标影响力指数：<span class="goal"><svg t="1740658335312" class="icon"
+                                                      viewBox="0 0 1024 1024" version="1.1"
+                                                      xmlns="http://www.w3.org/2000/svg" p-id="11266" width="200"
+                                                      height="200">
+                                                      <path
+                                                         d="M891.52 525.312s-14.72 71.68-108.544 73.6v88.128s-3.712 110.464-161.024 137.6H407.616s-220.8 7.744-225.408-154.048c0 0-2.752-51.328 19.328-133.696 0 0 11.008-75.52-73.6-227.648h106.688s44.16 81.408 105.792 50.368c0 0 171.136-143.36 359.744 57.152 0 0 42.304-65.856 114.048-43.584 0 0 102.144 18.432 77.312 152.128z m-56.64-77.44c-24.896-32.384-58.24-27.456-69.696-22.336-19.328 9.984-31.936 37.76-31.936 37.76 3.712 1.92 30.4 58.112 37.76 77.504 21.12 3.84 34.048 0 48.768-4.864 44.16-18.368 26.56-75.328 15.104-88.064zM486.272 305.408c-30.272 0-54.784-43.456-54.784-68.288 0-24.896 24.512-45.056 54.784-45.056 30.208 0 54.72 20.16 54.72 45.056 0 24.832-24.512 68.288-54.72 68.288z"
+                                                         fill="#A6A6A6" p-id="11267"></path>
+                                                   </svg>1,0000</span></p>
+                                          </div>
+                                       </div>
+                                       <div class="cause__cta">
+                                          <a href="3.1wenhua.html" aria-label="donate now" title="donate now"
+                                             class="btn--secondary">了解更多</a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-12">
+                  <div class="cause-pagination pagination-one"></div>
+               </div>
+            </div>
+         </div>
+         <div class="spade">
+            <img
+               src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3spade.png?Expires=1776504205&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ARrfoT74aVtDV6Q9G3WecZ4SmWY%3D"
+               alt="Image">
+         </div>
+      </section>
+      <!-- ==== 文化基因板块结束 ==== -->
+      <!-- 地图板块开始-->
+      <section class="ditu">
+         <div class="ditu">
+            <h2>黄河是中国第二长河</h2>
+            <div class="container">
+               <div class="table-container">
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>河流</th>
+                           <th>长度 (km)</th>
+                           <th>流域面积 (km²)</th>
+                           <th>平均流量 (m³/s)</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>长江</td>
+                           <td>6,300</td>
+                           <td>1,807,199</td>
+                           <td>31,060</td>
+                        </tr>
+                        <tr>
+                           <td class="highlight">黄河</td>
+                           <td class="highlight">5,464</td>
+                           <td class="highlight">752,443</td>
+                           <td class="highlight">1,820</td>
+                        </tr>
+                        <tr>
+                           <td>黑龙江</td>
+                           <td>3,420</td>
+                           <td>1,620,170</td>
+                           <td>8,600</td>
+                        </tr>
+                        <tr>
+                           <td>珠江</td>
+                           <td>2,197</td>
+                           <td>452,616</td>
+                           <td>11,070</td>
+                        </tr>
+                        <tr>
+                           <td>淮河</td>
+                           <td>1,160</td>
+                           <td>185,700</td>
+                           <td>1,110</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- 地图板块结束 -->
+
+      <!-- ==== 治水开始 ==== -->
+      <section class="testimonial"
+         data-background="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/311.png?Expires=1776504249&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=SCrfPY5RVmQMeNkBpooTUrrMi4k%3D">
+         <h2>治水英雄有话说</h2>
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-12 col-md-8 col-xl-7">
+                  <div class="section__header text-center" data-aos="fade-up" data-aos-duration="1000">
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="testimonial__inner">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="testimonial__slider swiper">
+                        <div class="swiper-wrapper">
+
+                           <div class="swiper-slide">
+                              <div class="testimonial__slider-single">
+                                 <div class="review">
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                 </div>
+                                 <div class="content">
+                                    <blockquote>
+                                       <q>在蜀地治水的过程中，积累了丰富的经验。虽然我的主要功绩在岷江，但我的治水智慧同样适用于黄河流域。我深知因地制宜的重要性，因此，我根据黄河的地理环境，设计了一系列水利工程，确保了农业灌溉的安全。</q>
+                                    </blockquote>
+                                 </div>
+                                 <div class="author-info">
+                                    <div class="author-thumb">
+                                       <a href="libing.html"><img
+                                             src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3libing.png?Expires=1776504356&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=yUi5X%2Ff5I8YdiW0MhLyt7%2FBYrrI%3D"
+                                             alt="Image"></a>
+                                    </div>
+                                    <div class="author-content">
+                                       <h6>李 冰</h6>
+                                       <p>公元前4世纪.</p>
+                                    </div>
+                                 </div>
+                                 <div class="quote">
+                                    <img
+                                       src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3logo.png?Expires=1776504384&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=1qBd%2FXw9L6%2F2kUwvWa7tXXD4igQ%3D"
+                                       alt="Image">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="testimonial__slider-single">
+                                 <div class="review">
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                 </div>
+                                 <div class="content">
+                                    <blockquote>
+                                       <q>作为西汉初年的政治家和史学家，我深知治水的重要性。我主张治水不仅要防洪，还要兼顾农业生产，因此我提出了修筑堤防、疏通河道的策略，这些策略不仅保护了百姓的生命财产安全，还促进了社会的稳定与发展。</q>
+                                    </blockquote>
+                                 </div>
+                                 <div class="author-info">
+                                    <div class="author-thumb">
+                                       <img
+                                          src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3jiayi.png?Expires=1776504451&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=1U4ihVN1ICkRqHbo7%2F2CiWL3nEg%3D"
+                                          alt="Image">
+                                    </div>
+                                    <div class="author-content">
+                                       <h6>贾 谊</h6>
+                                       <p>西汉初.</p>
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="testimonial__slider-single">
+                                 <div class="review">
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                 </div>
+                                 <div class="content">
+                                    <blockquote>
+                                       <q>我是东汉时期的水利专家。我深知黄河治理的艰巨性，因此实施了河道疏浚、堤防加固等工程，这些措施显著改善了黄河的水流状况。我始终秉持“水利为民”的理念，确保水利工程能够真正惠及百姓。</q>
+                                    </blockquote>
+                                 </div>
+                                 <div class="author-info">
+                                    <div class="author-thumb">
+                                       <img
+                                          src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3wangjing.png?Expires=1776504660&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=66zFu2uwJITEEqbCqITS3LYWc6o%3D"
+                                          alt="Image">
+                                    </div>
+                                    <div class="author-content">
+                                       <h6>王 景</h6>
+                                       <p>东汉.</p>
+                                    </div>
+                                 </div>
+                                 <div class="quote">
+                                    <img
+                                       src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3logo2.png?Expires=1776504691&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Ue%2BRL0TiH%2FQ8TVTi0sqNrHlpZHM%3D"
+                                       alt="Image">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="testimonial__slider-single">
+                                 <div class="review">
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                 </div>
+                                 <div class="content">
+                                    <blockquote>
+                                       <q>作为三国时期魏国的奠基者，我深知黄河流域的稳定对于国家的重要性。因此，我通过军事与政治手段统一了北方，并推行了屯田制，解决了粮食问题，为黄河流域的治理提供了有力的保障。</q>
+                                    </blockquote>
+                                 </div>
+                                 <div class="author-info">
+                                    <div class="author-thumb">
+                                       <img
+                                          src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3caocao.png?Expires=1776504719&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=DLLFTUPy49HyuO6nJ%2BXDOjiym68%3D"
+                                          alt="Image">
+                                    </div>
+                                    <div class="author-content">
+                                       <h6>曹 操</h6>
+                                       <p>155年-220年.</p>
+                                    </div>
+                                 </div>
+                                 <div class="quote">
+                                    <img
+                                       src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3logo3.png?Expires=1776504740&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=GNcaMOsQx3SD3%2BfOs7IRJ2Mx%2Fnc%3D"
+                                       alt="Image">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="testimonial__slider-single">
+                                 <div class="review">
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                 </div>
+                                 <div class="content">
+                                    <blockquote>
+                                       <q>作为唐朝的第二任皇帝，我深知水利对于农业的重要性。因此，我在位期间大力推动黄河流域的农业与水利工程建设，这些措施不仅提高了农业生产效率，还为唐朝的盛世奠定了基础。</q>
+                                    </blockquote>
+                                 </div>
+                                 <div class="author-info">
+                                    <div class="author-thumb">
+                                       <img
+                                          src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3lishimin.png?Expires=1776504762&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=LNDEFKvlHwtyZpKfVMatJg%2F0Ebk%3D"
+                                          alt="Image">
+                                    </div>
+                                    <div class="author-content">
+                                       <h6>李世民</h6>
+                                       <p>598年-649年.</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="testimonial__slider-single">
+                                 <div class="review">
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                 </div>
+                                 <div class="content">
+                                    <blockquote>
+                                       <q>作为北宋开国皇帝，我深知黄河稳定对国至关重要。因此，自登基之日起，我便将治理黄河视为头等大事，通过精心策划的军事战略与周全的治水政策，确保了黄河流域的安定，为宋朝的繁荣奠定了坚实的基础。</q>
+                                    </blockquote>
+                                 </div>
+                                 <div class="author-info">
+                                    <div class="author-thumb">
+                                       <img
+                                          src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3zhaokuangyin.png?Expires=1776504807&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=6Gb2f07RQsdvzTtrIj%2BK5cQTfhs%3D"
+                                          alt="Image">
+                                    </div>
+                                    <div class="author-content">
+                                       <h6>赵匡胤</h6>
+                                       <p>960年-976年.</p>
+                                    </div>
+                                 </div>
+                                 <div class="quote">
+                                    <img
+                                       src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3logo2.png?Expires=1776504691&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Ue%2BRL0TiH%2FQ8TVTi0sqNrHlpZHM%3D"
+                                       alt="Image">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="testimonial__slider-single">
+                                 <div class="review">
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                 </div>
+                                 <div class="content">
+                                    <blockquote>
+                                       <q>作为宋代的政治家和改革家，我深知水利建设对于国家的重要性。因此，我推行了“王安石变法”，大力推动黄河流域的水利工程建设，这些措施不仅提高了农业生产效率，还为国家的经济发展提供了有力的支持。</q>
+                                    </blockquote>
+                                 </div>
+                                 <div class="author-info">
+                                    <div class="author-thumb">
+                                       <img
+                                          src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3wanganshi.png?Expires=1776504856&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=s%2Bp6EYm0TzHCWA2ROp0JOyuOekY%3D"
+                                          alt="Image">
+                                    </div>
+                                    <div class="author-content">
+                                       <h6>王安石</h6>
+                                       <p>1021年-1086年.</p>
+                                    </div>
+                                 </div>
+                                 <div class="quote">
+                                    <img
+                                       src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3logo3.png?Expires=1776504740&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=GNcaMOsQx3SD3%2BfOs7IRJ2Mx%2Fnc%3D"
+                                       alt="Image">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="testimonial__slider-single">
+                                 <div class="review">
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                 </div>
+                                 <div class="content">
+                                    <blockquote>
+                                       <q>作为清代的学者和政治家，我深知黄河治理的重要性。因此，我积极为清政府提出治水政策，并亲自参与水利工程的建设，这些措施不仅改善了黄河流域的水流状况，还提高了百姓的生活质量。</q>
+                                    </blockquote>
+                                 </div>
+                                 <div class="author-info">
+                                    <div class="author-thumb">
+                                       <img
+                                          src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3jixiaolan.png?Expires=1776504907&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=xa3FrMf3bwfhY4na9sHwN3ThaLo%3D"
+                                          alt="Image">
+                                    </div>
+                                    <div class="author-content">
+                                       <h6>纪晓岚</h6>
+                                       <p>1724年-1805年.</p>
+                                    </div>
+                                 </div>
+
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="testimonial__slider-single">
+                                 <div class="review">
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                 </div>
+                                 <div class="content">
+                                    <blockquote>
+                                       <q>作为清朝的著名的水利专家，我深知黄河流域的生态环境对于国家的重要性。我提倡水土保持，关注黄河水源的保护，并实施了一系列水利保护措施，这些措施不仅保护了黄河流域的生态环境，并且主力了国家的可持续发展</q>
+                                    </blockquote>
+                                 </div>
+                                 <div class="author-info">
+                                    <div class="author-thumb">
+                                       <img
+                                          src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3linzexv.png?Expires=1776504943&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=IvVMF6CppYZzJVkjlhdSbF57yyI%3D"
+                                          alt="Image">
+                                    </div>
+                                    <div class="author-content">
+                                       <h6>林则徐</h6>
+                                       <p>1785年-1850年.</p>
+                                    </div>
+                                 </div>
+                                 <div class="quote">
+                                    <img
+                                       src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3logo2.png?Expires=1776504691&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Ue%2BRL0TiH%2FQ8TVTi0sqNrHlpZHM%3D"
+                                       alt="Image">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="testimonial__slider-single">
+                                 <div class="review">
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                    <i class="icon-star"></i>
+                                 </div>
+                                 <div class="content">
+                                    <blockquote>
+                                       <q>作为近现代中国的革命家，我深知水利建设对于国家的重要性。我提出了“兴水利”的理念，并强调利用现代技术和设施科学治理黄河。虽然我的治水方案未能完全实现，但我的理念为后世的黄河治理提供了新的思路。</q>
+                                    </blockquote>
+                                 </div>
+                                 <div class="author-info">
+                                    <div class="author-thumb">
+                                       <img
+                                          src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3sunzhongs.png?Expires=1776504982&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=mYp%2F6mM2i38B2hDUbdc4gt0DqDY%3D"
+                                          alt="Image">
+                                    </div>
+                                    <div class="author-content">
+                                       <h6>孙中山</h6>
+                                       <p>1866年-1925年.</p>
+                                    </div>
+                                 </div>
+                                 <div class="quote">
+                                    <img
+                                       src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3logo3.png?Expires=1776504740&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=GNcaMOsQx3SD3%2BfOs7IRJ2Mx%2Fnc%3D"
+                                       alt="Image">
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="slider-navigation">
+               <button type="button" aria-label="prev slide" title="prev slide" class="prev-testimonial slider-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+               </button>
+               <button type="button" aria-label="next slide" title="next slide"
+                  class="next-testimonial slider-btn slider-btn-next">
+                  <i class="fa-solid fa-arrow-right"></i>
+               </button>
+            </div>
+         </div>
+         <div class="shape" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+            <!-- <img src="assets/images/community/shape.png" alt="Image" class="base-img"> -->
+         </div>
+      </section>
+      <!-- ==== 治水结束==== -->
+      <!-- ==== 习近平眼中的黄河开始 ==== -->
+      <section class="help">
+         <div class="container">
+            <div class="row align-items-center gutter-40">
+               <div class="col-12 col-lg-5 col-xxl-6 d-none d-lg-block">
+                  <div class="help__thumb">
+                     <div class="help__thumb-inner">
+                        <div class="image">
+                           <img
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/38.png?Expires=1776505053&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=xxGhGB%2Fug5uDJTiUXpuKeyUocfw%3D"
+                              alt="Image">
+                           <a href="xjp.html" class="cultural-link">
+                              <span class="link-text">了解更多</span>
+                              <span class="link-decoration"></span>
+                           </a>
+
+                        </div>
+                        <div class="thumb-lg thumb" data-aos="fade-left" data-aos-duration="1000">
+
+
+                        </div>
+                        <div class="line">
+                           <img
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3line.png?Expires=1776505165&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=hqxMpgySBL0O%2F3Ds8IYdCgw1vNI%3D"
+                              alt="Image">
+                        </div>
+                        <div class="grid-line">
+                           <img
+                              src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3grid.png?Expires=1776505556&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ReX0WcJDq7UtoAgFbPazH8BYJLc%3D"
+                              alt="Image" class="base-img">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-12 col-lg-7 col-xxl-6">
+                  <div class="one">
+                     <a href="xjp.html">
+                        <h5>
+                           习近平主席的黄河愿景与实践
+                        </h5>
+                     </a>
+                  </div>
+                  <div class="help__content">
+
+                     <p>2024年9月10日-13日，习近平总书记赴陕西宝鸡，甘肃天水、兰州考察，并在兰州主持召开全面推动黄河流域生态保护和高质量发展座谈会
+                     </p>
+                     <div class="help__content-icon-group">
+                        <div class="help__content-icon">
+                           <div class="thumb">
+                           </div>
+                           <div class="content">
+                              <h6>
+                                 “习近平总书记对黄河流域生态保护和高质量发展高度重视，我们感到工作更有干劲了。”渭河生态公园主任仵尧如表示，将以习近平生态文明思想为指引，坚持生态优先、绿色发展，以人为本、服务于民，守护好一江碧水。
+                              </h6>
+                              <!-- <h6>“金城”兰州，黄河穿城而过。沿着“黄河百年铁桥”中山桥跨越黄河，城河相融的美丽画卷徐徐铺展。</h6> -->
+                              <h6>
+                                 “大家要心怀感恩，人人参与、人人尽责，共同保护好黄河，让母亲河永续惠泽子孙后代。”习近平总书记的话，令甘肃省发展和改革委员会主任丁巨胜感触很深：“我们要坚持量水而行、节水优先，全面落实生态保护红线制度和‘四水四定’原则，推动发展方式全面绿色转型，让母亲河更加美丽。”
+                              </h6>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="spade">
+            <img
+               src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3spade.png?Expires=1776505623&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=Q0QbBWOVX2qMqTU7v6stkwMZLBk%3D"
+               alt="Image">
+         </div>
+      </section>
+
+      <!-- ==== 习近平眼中的黄河结束==== -->
+
+      <!-- 政策开始 -->
+      <section class="home4">
+         <div class="section home4">
+            <div class="row9">
+               <div class="col9">
+                  <div class="box9">
+                     <div class="title">
+                        <div class='h30'>
+                           <div>新闻动态</div>
+                        </div>
+                        <div class='t_more'>
+                           <div><a href="zhengce.html">更多</a></div>
+                        </div>
+                     </div>
+                     <div edit_params="category_id%3D9%26tabs%3D1%26width%3D440%26height%3D248%26pagesize%3D1">
+                        <div class="img"
+                           style="background-image: url(https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/32.2.png?Expires=1776505851&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=vsUwuRulX8oJaOb0XKC8JU8xLIA%3D);">
+                           <a title="" class="link" href="1.1.html" target="_blank">
+                              <div class="h16" title="">《黄河文化保护传承弘扬规划》出台实施</div>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="ul1" edit_params="category_id%3D9%26pagesize%3D5">
+                        <div class="li">
+                           <div class="date">2024.03.24</div>
+                           <div class="h16"><a title="读书 | 徒步，以最笨拙的方式致敬丝绸之路" href="1.2.html" target="_blank">新使命新职责 |
+                                 黄河水文宣传思想文化工作要点确定</a></div>
+                        </div>
+                        <div class="li">
+                           <div class="date">2025.03.18</div>
+                           <div class="h16"><a title="弘扬丝路精神，共创共享美好未来" href="1.3.html" target="_blank">人民日报 |
+                                 首批黄河水利遗产名录公布</a>
+                           </div>
+                        </div>
+                        <div class="li">
+                           <div class="date">2025.02.27</div>
+                           <div class="h16"><a title="丝绸之路：中华民族开辟的友好交往之路" href="1.4.html"
+                                 target="_blank">黄河文化研究中心组织召开《黄河水利文化史论》书稿编撰研讨会</a>
+                           </div>
+                        </div>
+                        <div class="li">
+                           <div class="date">2025.02.19</div>
+                           <div class="h16"><a title="焦点访谈：丝路同行 双向奔赴的繁荣之路" href="1.5.html"
+                                 target="_blank">黄委推进黄河工程与文化融合建设规范提升</a></div>
+                        </div>
+                        <div class="li">
+                           <div class="date">2025.01.22</div>
+                           <div class="h16"><a title="丝绸之路上，1400多年前的“世博会”" href="1.6.html"
+                                 target="_blank">《黄河故事·治理篇》出版发行</a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col9">
+                  <div class="box9">
+                     <div class="title">
+                        <div class='h31'>
+                        </div>
+                        <div class='t_more'>
+                        </div>
+                     </div>
+                     <div class="ul2" edit_params="category_id%3D25%26pagesize%3D3">
+                        <div class="li">
+                           <div class="h16"><a href="1.7.html" target="_blank">【故事集】《河山正气——中国治水代表人物廉洁故事》出版</a></div>
+                           <div class="p">
+                              精选包括大禹、孙叔敖、李冰等12位古代人物，李仪祉、汪胡桢、王化云等11位近现代人物在内的23位具有代表性和影响力的治水人物... </div>
+                           <div class="date" title="1709776560">2025.01.22</div>
+                        </div>
+                        <div class="li">
+                           <div class="h16"><a href="1.8.html" target="_blank">萌娃闹新春
+                                 共赴黄河文化之约...</a></div>
+                           <div class="p">
+                              第二届黄河摇篮文化节暨元旦活动欢乐开场，萌娃在家长、老师的陪伴下，尽享传统民俗的魅力。</div>
+                           <div class="date" title="1709776380">2024.12.31</div>
+                        </div>
+                        <div class="li">
+                           <div class="h16"><a title="“一带一路”国际技能大赛，今年6月重庆见" href="1.9.html"
+                                 target="_blank">全球万名中华儿女唱响新时代“黄河大合唱”</a></div>
+                           <div class="p">
+                              中华儿女大团结，同心共圆中国梦。11月30日，全球百支华人合唱团唱响新时代《黄河之歌》公益MV全球首发式在郑州市黄河博物馆举行... </div>
+                           <div class="date" title="1709255820">2024.12.09</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col9">
+                  <div class="box9">
+                     <div class="title">
+                        <div class='h30'>
+                           <div>地方新闻</div>
+                        </div>
+                        <div class='t_more'>
+                           <div><a href="zhengce.html">更多</a></div>
+                        </div>
+                     </div>
+                     <div class="ul3" edit_params="category_id%3D12%26pagesize%3D3">
+                        <div class="li">
+                           <div class="h16"><a title="" href="1.10.html" target="_blank">
+                                 “情系黄河，春满人间” 滨州市沿着黄河去普法”暨“美在滨州”美术名家黄河主题写生</a></div>
+                           <div class="date">2025.03.21</div>
+                        </div>
+                        <div class="li">
+                           <div class="h16"><a title="" href="1.11.html" target="_blank">“服务民生、助力发展”
+                                 山东黄河信息中心扎实推进宣传文化工作</a>
+                           </div>
+                           <div class="date">2025.03.20</div>
+                        </div>
+                        <div class="li">
+                           <div class="h16"><a title="" href="1.12.html" target="_blank">“欢声笑语辞旧岁”
+                                 武陟黄河飞龙登上央视春晚...</a>
+                           </div>
+                           <div class="date">2025.01.28</div>
+                        </div>
+                     </div>
+                     <div edit_params="category_id%3D12%26tabs%3D1%26width%3D440%26height%3D248%26pagesize%3D1">
+                        <div class="img"
+                           style="background-image: url(https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/343.png?Expires=1776505908&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=dkHwLf0pGQyCUgbAY5sDrIsHkpw%3D);">
+                           <a title="" class="link" href="1.13.html" target="_blank">
+                              <div class="h16" title="">大河文脉万古流 —— 从首批黄河水利遗产看河南保护弘扬黄河文化</div>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- 政策结束 -->
+
+
+      <style>
+         .shenhua .box a {
+            font: 200 45px '优设标题黑';
+            text-align: center;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #f1e4b3;
+            /* 古风暖黄色 */
+         }
+      </style>
+
+      <!-- ==== blog section start ==== -->
+      <section>
+         <div class="shenhua">
+            <div class="shell1">
+               <div class="box">
+                  <img
+                     src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3huanghemuqin.png?Expires=1776506046&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=IOUYKcJQrXYqR5CPoF%2B6PEHxJBU%3D">
+                  <a href="shenhua.html"><span>黄河母亲</span></a>
+               </div>
+               <div class="box">
+                  <img
+                     src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3nvwa1.png?Expires=1776506076&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=JfSu0RH8JrSEMirv3LG5je69CDM%3D">
+                  <a href="shenhua.html"><span>女娲补天</span></a>
+               </div>
+               <div class="box">
+                  <img
+                     src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3fuxi.png?Expires=1776506021&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=pJDPW%2B9gRx4uXi4UBCJ2Xe6%2FBfg%3D">
+                  <a href="shenhua.html"><span>伏羲创世</span></a>
+               </div>
+               <div class="box">
+                  <img
+                     src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3chiyou.png?Expires=1776505959&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=qQnKHinBzvS7JER%2Bu3jiO0MMTA0%3D">
+                  <a href="shenhua.html"><span>黄帝蚩尤</span></a>
+               </div>
+               <div class="box">
+                  <img
+                     src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/3dayv.png?Expires=1776505994&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=y59exmHB2MMFwh2gnslrGmzGLjY%3D">
+                  <a href="shenhua.html"><span>大禹治水</span></a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- ==== / blog section end ==== -->
+      <!-- ==== footer start ==== -->
+      <!-- ==== / footer end ==== -->
+      <!-- ==== custom cursor start ==== -->
+      <div class="mouseCursor cursor-outer"></div>
+      <div class="mouseCursor cursor-inner"></div>
+      <!-- ==== / custom cursor end ==== -->
+      <!-- ==== scroll to top start ==== -->
+      <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+         <span></span>
+         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+         </svg>
+      </button>
+      <!-- ==== / scroll to top end ==== -->
+      <!-- ==== color switcher start ==== -->
+
+   </div>
+   <!-- ==== js dependencies start ==== -->
+   <!-- jquery -->
+   <script src="assets/js/jquery-3.7.1.min.js"></script>
+   <!-- bootstrap five js -->
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <!-- nice select js -->
+   <script src="assets/js/jquery.nice-select.min.js"></script>
+   <!-- magnific popup js -->
+   <script src="assets/js/jquery.magnific-popup.min.js"></script>
+   <!-- swiper slider js -->
+   <script src="assets/js/swiper-bundle.min.js"></script>
+   <!-- viewport js -->
+   <script src="assets/js/viewport.jquery.js"></script>
+   <!-- odometer js -->
+   <script src="assets/js/odometer.min.js"></script>
+   <!-- vanilla tilt js -->
+   <script src="assets/js/vanilla-tilt.min.js"></script>
+   <!-- aos js -->
+   <script src="assets/js/aos.js"></script>
+   <!-- splittext js -->
+   <script src="assets/js/SplitText.min.js"></script>
+   <!-- scrollto js -->
+   <script src="assets/js/ScrollToPlugin.min.js"></script>
+   <!-- scrolltrigger js -->
+   <script src="assets/js/ScrollTrigger.min.js"></script>
+   <!-- gsap js -->
+   <script src="assets/js/gsap.min.js"></script>
+   <!-- ==== / js dependencies end ==== -->
+   <!-- template settings js -->
+   <script src="assets/js/template-settings.js"></script>
+   <!-- main js -->
+   <script src="assets/js/custom.js"></script>
+   <script>
+      document.querySelectorAll('.navbar__dropdown-label').forEach(item => {
+         item.addEventListener('click', function (event) {
+            // 只有在没有展开子菜单的情况下才跳转
+            if (!this.parentElement.classList.contains('open')) {
+               window.location.href = this.href;
+            }
+         });
+      });
+      function delayedRedirect(event, url) {
+         event.preventDefault(); // 阻止立即跳转
+         setTimeout(() => {
+            window.location.href = url;
+         }, 500); // 3秒延迟
+      }
+   </script>
+<!--   <script src="utils.js"></script>-->
+<!--   <script>-->
+<!--      document.addEventListener('DOMContentLoaded', function () {-->
+<!--         checkLogin();-->
+<!--      });-->
+<!--   </script>-->
+</body>
+
+</body>
+
+</html>

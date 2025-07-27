@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>文化篇 | 泰山封禅大典</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/daohang.css">
+    <style>
+        .video-poster {
+            width: 100%;
+            /* max-width: 1500px;
+            控制最大宽度，避免太大 */
+            max-height: 750px;
+            border-radius: 10px;
+            /* 圆角，使视频更有质感 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            /* 添加阴影，增加层次感 */
+            object-fit: cover;
+            /* 确保视频内容充满容器 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* 鼠标悬停时，稍微放大并增强阴影 */
+        .video-poster:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 适应移动端 */
+        @media (max-width: 768px) {
+            .video-poster {
+                max-width: 100%;
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ==== 进入动画 ==== -->
+    <div class="preloader">
+        <i class="icon-donation"></i>
+        <p>黄河文化</p>
+    </div>
+    <div class="daohang">
+        <!-- logo 部分，设置为左侧 -->
+        <div class="logo">
+            <img src="assets/image/logo2.png" alt="Logo">
+        </div>
+        <!-- 导航栏部分 -->
+        <button class="mobile-menu-btn">☰</button>
+        <nav>
+            <ul class="main-nav">
+                <li class="nav-item">
+                    <a href="index%20copy.html">首页</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">子菜单1</a></li>
+                                                         <li><a href="#">子菜单2</a></li>
+                                                         <li><a href="#">子菜单3</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="3.1wenhua.html">文化篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                        <li><a href="3.1wenhua.html">传统技艺</a></li>
+                        <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                        <li><a href="3.1wenhua.html">传统音乐</a></li>
+                        <li><a href="3.1wenhua.html">传统体育</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="renwu.html">治水篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="renwu.html">治水英雄颂</a></li>
+                        <li><a href="zsjy.html">治水技奇谈</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="shenhua.html">神话篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="shenhua.html">大禹治水</a></li>
+                        <li><a href="shenhua.html">黄河母亲</a></li>
+                        <li><a href="shenhua.html">女娲补天</a></li>
+                        <li><a href="shenhua.html">伏羲创世</a></li>
+                        <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="zhengce.html">政策篇</a>
+                    <ul class="sub-menu">
+                        <li><a href="zhengce.html">要闻</a></li>
+                        <li><a href="zhengce.html">地方新闻</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="rhudong.html">趣味黄河</a>
+                    <!-- <ul class="sub-menu">
+                                                         <li><a href="#">互动答题</a></li>
+                                                      </ul> -->
+                </li>
+                <li class="nav-item">
+                    <a href="chat.html">智慧AI</a>
+                    <!-- <ul class="sub-menu">
+                                                                           <li><a href="# ">互动答题</a></li>
+                                                                        </ul> -->
+                </li>
+            </ul>
+        </nav>
+        <div class="dengluzc">
+            <a href="shijianshu.html">黄河
+                史书</a>
+            <a href="dlzc.html">登录</a>
+            <a href="dlzc.html">注册</a>
+
+        </div>
+    </div>
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('active');
+        });
+    </script>
+    <!-- ==== 主体部分 ==== -->
+    <section class="common-banner">
+        <div class="container">
+            <div class="row">
+                <div class="common-banner__content text-center">
+                </div>
+            </div>
+        </div>
+        <div class="banner-bg">
+            <video class="banner-video" autoplay muted loop playsinline>
+                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/335f0d01e-57a3-4e38-8c86-ea5eac76f9c3_1.63.mp4?Expires=1776606376&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=MIasBQfeOLgYhZduhfCWnZYn%2FAg%3D" type="video/mp4">
+                <source src="assets/videos/banner-video.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="shape">
+            <img src="assets/images/shape.png" alt="Image">
+        </div>
+        <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+        </div>
+    </section>
+    <!-- ==== / banner section end ==== -->
+    <!-- ==== faq section start ==== -->
+    <section class="faq">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-8 col-xl-6">
+                    <div class="faq__content">
+                        <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                            <span class="sub-title"><i
+                                    class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;泰山封禅作为中国古代重要的祭天仪式，深深植根于黄河文化的沃土。黄河文化的悠久历史、深邃的宗教信仰和对天命的崇敬，为泰山封禅的产生和发展提供了丰富的精神支撑。泰山不仅是自然景观的象征，更是黄河流域文明的标志。帝王通过在泰山举行封禅仪式，表达了对天地神灵的敬畏和对黄河文化的尊崇。黄河文化滋养了泰山封禅的精神，使这一仪式成为古代帝王宣示天命、强化统治合法性的核心活动，既展示了权力的神圣性，也象征着黄河文化中对天地力量的敬仰。
+                            </span>
+                            <h2 class="title-animation">走 进 <span>泰山封禅</span>
+
+                            </h2>
+                        </div>
+                        <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="accordion" id="accordion">
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            泰山封禅是什么？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                泰山封禅是中国古代祭天的重大典礼，最初由帝王在泰山举行的仪式，旨在向天地神灵祈求国家的安定与人民的幸福。封禅仪式源于中国古代对自然的崇敬，尤其是天命的观念。在这个仪式中，帝王会在泰山的高处祭拜天地，宣告其统治的合法性，并祈愿国家富强、社会和谐。封禅不仅是一种政治象征，也体现了古代皇权与神权的紧密结合，象征着人与自然、人与天地的和谐共生。随着历史的发展，封禅逐渐演变为具有政治、文化、宗教等多重意义的仪式，成为中国传统文化的重要组成部分。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            泰山封禅经历了哪些发展阶段？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                泰山封禅的起源可追溯至西周时期，最早的封禅仪式是为帝王祭天以宣告天命。在西周和春秋时期，封禅仪式尚简朴，但随着帝国的扩张和文化的发展，封禅逐渐变得更加庄重和复杂。秦汉时期，封禅仪式达到了巅峰，帝王不仅在泰山举行大规模的封禅大典，还将其视为展示统治合法性的核心活动。随着时代变迁，封禅的形式有所变化，明清时期尽管不再频繁举行封禅仪式，但它依然具有强烈的文化象征意义。到了近现代，封禅仪式逐渐成为历史遗产，体现了中国古代对天命、皇权及自然的尊重与敬畏。
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            泰山封禅的艺术风格是如何形成的？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                泰山封禅仪式的艺术风格形式极具庄重性与象征意义，其整体设计展现了古代中国礼仪文化的精致与严谨。封禅仪式包括了祭天、宣告天命、礼乐舞蹈等多个环节，现场的艺术表现形式涵盖了传统的礼仪、舞蹈、音乐以及视觉艺术等。祭天时，帝王和大臣们穿着华丽的礼服，遵循古代礼制行事，仪式的每一个环节都充满了对天地神灵的敬畏。伴随着鼓乐和歌舞，祭祀活动更显庄重神圣，现场气氛隆重而肃穆。这些艺术形式不仅展示了古代社会的礼仪制度，还反映了封禅仪式中对天地、自然和皇权神圣性的强烈信仰。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h6 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                            aria-expanded="false" aria-controls="collapseFour">
+                                            泰山封禅如何为黄河文化增添加彩？
+                                        </button>
+                                    </h6>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFour" data-bs-parent="#accordion">
+                                        <div class="accordion-body">
+                                            <p>
+                                                泰山封禅仪式是黄河文化中的一颗璀璨明珠，通过这一仪式，黄河流域的文化精神得到了升华与展示。封禅活动将黄河文化与祭天文化紧密结合，体现了黄河文明对天命和自然的崇拜。泰山作为黄河流域的文化象征，其封禅仪式不仅是政治和宗教的仪式，更是黄河文化的深刻体现。封禅活动通过对自然神灵的祭拜，传递了古人对天命和自然力量的敬畏，也象征着黄河文化中的和谐与统一。泰山封禅与黄河文化相互交融，共同推进了中国古代文化的繁荣和发展，也为后代传承提供了精神力量。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                    <div class="faq__thumb d-none d-lg-block">
+                        <div class="faq__thumb-inner">
+                            <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/33da378fc-3b54-4660-aa7c-47e116788933_1.64.png?Expires=1776606388&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=uK0IS%2Bjf2sjg4TeSGXGiHkcWiF4%3D" alt="Image">
+                            </div>
+                            <div class="thumb-sm" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/34c786ca4-d23b-4e7b-858f-03bac4984836_1.65.png?Expires=1776606418&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=97McOv7keWadfJJR182w0C%2FiwF0%3D" alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="shape d-none d-lg-block">
+            <img src="assets/images/faq/shape.png" alt="Image">
+        </div> -->
+    </section>
+    <!-- ==== / faq section end ==== -->
+    <section class="blog-main cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="col-12 col-xl-8">
+                    <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+
+                            <a href="tsfs.html">
+                                <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3e900dfa3-95d8-460c-a81f-447d95ab9bc0_1.57.png?Expires=1776606440&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=BgiRRJ1BXOiEDG2wPStJ5ApEhwE%3D" alt="Image">
+                            </a>
+
+
+                            <div class="tag">
+                                <a href="lymd.html"><i class="fa-solid fa-tags"></i>历代帝王封禅</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+                            <div class="blog__single-content">
+                                <h4><a href="tsfs.html">历代帝王封禅：泰山封禅的王朝传承 </a></h4>
+                                <p>泰山封禅自古以来是中国皇帝最高的祭天大典，象征着帝王的天命与政治权威，历代帝王均将其作为一种国家盛事，彰显其治国安邦的权威与宗教信仰的合一。最早的封禅可追溯至西周时期，周武王在泰山封禅，奠定了这一古老仪式的基础。自此，封禅成为中国封建帝王登基后的重要礼仪。秦始皇作为第一个统一中国的皇帝，在泰山进行了盛大的封禅大典，进一步强化了封禅的政治象征意义。汉武帝、唐太宗等历代帝王也都前往泰山进行封禅，巩固了自己的天命正当性与治国理政的合法性。封禅大典不仅是祭天的宗教仪式，也是政治权力的象征，表达了帝王对上天的敬畏与对百姓的承诺。在长期的历史演变中，泰山封禅逐渐成为中华文明的重要文化象征，至今仍在人民心中留有深刻印象，体现了中国古代皇权与神权交融的独特精神。
+                                </p>
+                            </div>
+                            <div class="blog__single-cta">
+                                <a href="tsfs.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                        class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="blog__single-thumb">
+                            <a href="yishutese.html">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3b0975271-d465-4614-b97a-88f5406fbf07_1.66.png?Expires=1776606464&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=42vnr%2F6OVfn9id8IR6PM1cykw8M%3D" alt="Image">
+                            </a>
+                            <div class="tag">
+                                <a href="yishutese.html"><i class="fa-solid fa-tags"></i>意义</a>
+                            </div>
+                        </div>
+                        <div class="blog__single-inner">
+                            <!-- <div class="blog__single-meta">
+                           <p><i class="icon-user"></i>Robert Fox</p>
+                           <p><i class="icon-message"></i>Comments (03)</p>
+                        </div> -->
+                            <div class="blog__single-content">
+                                <h4><a href="yishutese.html">意义的解析 </a></h4>
+                                <p>
+
+                                    封禅的实际意义是什么？这个问题或许能帮助我们更好地认识封禅起源。汉代班固《白虎通义》说：“王者受命，易姓而起，必升封泰山。何？教告之义也。始受命之时，改制应天，天下太平，物成封禅，以告太平也。”《五经通义》曰：“天命以为王，使理群生，告太平于天，报群神之功。”这似乎纯粹出于政治目的，表示帝王受命于天，向天告太平，对佑护之功表示答谢，当然更要报告帝王的政绩如何显赫。
+                                    <br>封禅的具体仪式富有象征性。班固说：“故升封者，增高也；下禅梁父之基，广厚也；刻石纪号者，著己之功绩以自效也。天以高为尊，地以厚为德，故增泰山之高以报天，附梁父之阯以报地，明天地之所命,功成事遂,有益于天地，若高者加高，厚者加厚矣。”（《白虎通义》）《礼记正义》云：“祭天则燔柴也，天谓日也；祭地，瘗者，祭月也。”原来封禅的种种目的与象征，都包含着一层更为深潜的意识：沟通天人之际，协调天、地、神、人之间的关系，使之达到精神意志与外在行为的和谐统一。
+                                </p>
+                            </div>
+                            <div class="blog__single-cta">
+                                <!-- <a href="yishutese.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                        class="fa-solid fa-arrow-right-long"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                            <div class="blog__single-thumb">
+                                <a href="lianpu.html">
+                                    <img src="assets/images/wenh/chuanjv/12.png" alt="Image">
+                                </a>
+                                <div class="tag">
+                                    <a href="lianpu.html"><i class="fa-solid fa-tags"></i>脸谱</a>
+                                </div>
+                            </div>
+                            <div class="blog__single-inner">
+                                <div class="blog__single-meta">
+                           <p><i class="icon-user"></i>Robert Fox</p>
+                           <p><i class="icon-message"></i>Comments (03)</p>
+                        </div>
+                                <div class="blog__single-content">
+                                    <h4><a href="lianpu.html">川剧脸谱：巴蜀戏曲的瑰丽符号 </a></h4>
+                                    <p>
+                                        川剧脸谱是川剧表演艺术中不可或缺的重要组成部分，它不仅是塑造角色的视觉语言，更是历代川剧艺人共同创造并传承下来的艺术瑰宝。脸谱通过色彩、图案、线条的变化，展现人物的性格特征、身份地位和情感表达，使观众一眼便能识别角色的性格与定位。
+                                    </p>
+                                </div>
+                                <div class="blog__single-cta">
+                                    <a href="lianpu.html" aria-label="blog details" title="blog details">🌍 脸谱欣赏<i
+                                            class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div> -->
+
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="blog-main__sidebar">
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/341959d4e-b00e-4a14-8dcd-833b4feae402_1.68.png?Expires=1776606483&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=9fayqYFOFivmMPC7YfxPH7MZsss%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>帝王的祈天仪式</h6>
+                                <p>帝王通过封禅祈求天下安康。
+                                </p>
+                                <p>
+                                    公元前206年，刘邦成功称帝后决定亲自去泰山举行封禅大典，祈求天命和国家安定。当天，刘邦带领数千士兵攀登泰山，抵达封禅台进行祭天仪式。仪式庄严肃穆，帝王在祭坛前跪拜天地，献上祭品，祈求百姓安康、风调雨顺。正当仪式结束时，天空突然放晴，众人纷纷感叹这是天意的回应。刘邦深知这场封禅典礼象征着他的合法性，也代表了黄河文化中对自然和神灵的敬畏。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <div class="author-thumb">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/341959d4e-b00e-4a14-8dcd-833b4feae402_1.68.png?Expires=1776606483&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=9fayqYFOFivmMPC7YfxPH7MZsss%3D" alt="Image">
+                            </div>
+                            <div class="author-meta">
+                                <h6>祭天的庙会</h6>
+                                <p>庙会中百姓通过祭天表达祈愿。
+
+
+                                </p>
+                                <p>封禅大典当天，泰山脚下的庙会热闹非凡。百姓们带着祭品参与祭天活动，场面充满了欢庆和虔诚。在庙会中，舞龙舞狮、传统舞蹈和鼓乐演出交相辉映，展现出古老的民俗风情。百姓们相信，祭天不仅是对神明的尊敬，也能带来丰收与平安。整个庙会的氛围既庄重又充满生活气息，体现了泰山封禅文化中帝王与百姓共同的信仰与文化认同。
+
+                                </p>
+                            </div>
+                        </div>
+                        <!-- <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                                data-aos-delay="100">
+                                <div class="author-thumb">
+                                    <img src="assets/images/wenh/chuanjv/.png" alt="Image">
+                                </div>
+                                <div class="author-meta">
+                                    <h6>传奇故事：戏台上的千面变幻</h6>
+                                    <p>相传，在川剧的戏台
+                                        上，隐藏着一面神奇的铜镜。凡是踏上舞台的戏曲艺人，只要对着镜子一照，便能幻化出不同的脸谱，而这些脸谱不仅是外在的妆容，更是角色性格与命运的映照。
+
+                                    </p>
+                                    <p>川剧的脸谱，色彩斑斓，寓意深远，每一种颜色、每一笔勾画，皆承载着巴蜀文化的厚重底蕴。<br>
+                                        🔴 红色：忠义无双，热血豪情<br>
+                                        ⚫ 黑色：刚直不阿，威武果断<br>
+                                        ⚪ 白色：阴险狡诈，诡计多端<br>
+                                        🔵🟢蓝色/绿色：桀骜不驯，英勇善战<br>
+                                        🟡⚪金色/银色：神秘莫测，超凡脱俗<br>
+                                    </p>
+                                </div>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- ==== event details section start ==== -->
+    <div class="cm-details">
+        <div class="container">
+            <div class="row gutter-60">
+                <div class="">
+                    <div class="cm-details__content">
+                        <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100">
+                            <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                                <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39a0f871a-0195-46df-beb4-e1a6212ca1eb_1.69.mp4?Expires=1776606543&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=a2lUIhRuQDFb5E0EG4j2epqbP94%3D" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                        </div>
+                        <div class="cm-details-meta">
+                            <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                            <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                        </div>
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;非 遗 保 护
+                            </h3>
+                            <p>泰山封禅作为中国古代祭祀文化的重要遗产，是中国传统文化的瑰宝之一。随着现代化的进程，泰山封禅这一传统仪式面临着消失的风险。因此，泰山封禅的非遗保护显得尤为重要。近年来，政府和文化机构通过组织研究、考古发掘、文献保存等方式保护这一传统。与此同时，现代社会通过重现封禅仪式和文化展览的形式，让现代人了解和参与这一文化遗产，进一步推动了泰山封禅文化的传承与保护。此外，泰山地区也开始进行文化旅游开发，将封禅文化与旅游相结合，吸引了大量游客，助力非遗的活态传承。
+                            </p>
+                        </div>
+
+                        <div class="cm-group cta">
+                            <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;传 承 与 发 展
+                            </h3>
+                            <p>泰山封禅的传承不仅限于传统仪式的延续，还包括文化内涵的挖掘和创新。通过现代学者的研究与文化活动的组织，泰山封禅的历史背景和文化价值得到了更广泛的传播和认知。如今，泰山地区通过举办祭天典礼、文化节庆等活动，让更多人接触并了解封禅文化。与此同时，封禅文化还与当代文化艺术相结合，通过戏剧、影视等现代传媒形式展现封禅的历史故事与文化象征，使这一传统文化焕发出新的生机。通过这些方式，泰山封禅的精神得以传承，并融入到当代文化的发展中，继续发挥着文化教育和民族认同的作用。
+                            </p>
+                        </div>
+                        <div class="cm-img-group cta">
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ad2fd139-40cf-48df-8eaa-b694e85170f2_1.70.png?Expires=1776606529&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=v5aYQux3pd7GFAw7SE4sTzsZJRk%3D" alt="Image">
+                            </div>
+                            <div class="cm-img-single">
+                                <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/361dc41e6-d6f5-49ce-ba01-d50f4f51527a_1.71.png?Expires=1776606540&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=RCMiNsaudfO6X0Nb9GG%2BdRmhzcg%3D" alt=" Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ==== custom cursor start ==== -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+        <!-- ==== / custom cursor end ==== -->
+        <!-- ==== scroll to top start ==== -->
+        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+            <span></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </button>
+        <!-- ==== / scroll to top end ==== -->
+    </div>
+
+
+
+    <!-- ==== custom cursor start ==== -->
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"></div>
+    <!-- ==== / custom cursor end ==== -->
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--     <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

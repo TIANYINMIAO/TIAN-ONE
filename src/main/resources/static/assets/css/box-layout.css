@@ -1,0 +1,51 @@
+.box-layout .page-wrapper {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 0px;
+}
+
+.box-layout::before {
+  position: fixed;
+  content: "";
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: url("../images/pattern.jpg");
+  opacity: 0.4;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+.box-layout .topbar {
+  max-width: 1400px;
+  margin-inline: auto;
+}
+.box-layout .header {
+  max-width: 1400px;
+  margin-inline: auto;
+}
+.box-layout .topbar--secondary .topbar__extra {
+  display: none;
+}
+.box-layout .header-secondary .contact-btn {
+  display: none;
+}
+@media only screen and (min-width: 1200px) {
+  .box-layout .header-primary .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .box-layout .topbar .container {
+    max-width: 1320px;
+  }
+}

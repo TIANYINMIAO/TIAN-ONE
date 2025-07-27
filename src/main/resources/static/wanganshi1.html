@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- #title -->
+    <title>治水英雄颂 | 王安石</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+    <!-- #description -->
+    <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- color themes -->
+    <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+    <!-- want sticky header -->
+    <link rel="stylesheet" href="assets/css/sticky-header.css">
+    <!-- box layout css -->
+    <link rel="stylesheet" href="assets/css/box-layout.css">
+    <!-- dark mode css -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <!-- rtl css -->
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        body {
+            background-image: url(" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745242764856_50de70e5-6fa5-4068-b671-10d977b46837_12.png?Expires=1776778768&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=wMoG5y%2BQiqa9LaPKBtJwxXBpLwU%3D");
+        }
+
+        /* 导航部分开始 */
+        /* 导航栏整体背景 */
+        .daohang {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 30, 30, 0.95) 100%) !important;
+            padding: 15px 0px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Logo 样式 */
+        .daohang .logo {
+            width: 180px;
+        }
+
+        .daohang .logo img {
+            width: auto;
+            margin-left: 50px;
+            height: 80px;
+            border-radius: 12px;
+            /* 添加圆角 */
+            object-fit: contain;
+            /* 保持比例不变缩放 */
+            /* padding: 4px; */
+            /* 添加内边距，避免贴边 */
+            /* background-color: #fff; */
+            /* 设置背景色以更清晰展示 logo */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            /* 柔和阴影 */
+            transition: transform 0.3s ease;
+            /* 添加交互动画效果 */
+        }
+
+        .daohang .logo img:hover {
+            transform: scale(1.05);
+            /* 鼠标悬停轻微放大 */
+        }
+
+        /* 导航菜单的样式 */
+        .daohang .main-nav {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-family: 'KaiTi', 'SimHei', serif;
+            flex: 1;
+            justify-content: center;
+        }
+
+        /* 每个菜单项 */
+        .daohang .nav-item {
+            position: relative;
+            margin: 0 15px;
+            text-align: center;
+        }
+
+        .daohang .nav-item>a {
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 25px;
+            display: block;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .daohang .nav-item>a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 8px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .daohang .nav-item>a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .daohang .nav-item>a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        /* 子菜单 */
+        .daohang .sub-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(30, 30, 30, 0.95) 100%);
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            width: 200px;
+            z-index: 100;
+        }
+
+        /* 鼠标悬停时显示子菜单 */
+        .daohang .nav-item:hover .sub-menu {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .daohang .sub-menu li {
+            margin: 5px 0;
+            z-index: 100;
+        }
+
+        .daohang .sub-menu li a {
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .daohang .sub-menu li a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        .daohang .sub-menu li a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .daohang .sub-menu li a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+        }
+
+        /* 登录注册按钮样式 */
+        .daohang .dengluzc {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-right: 50px;
+        }
+
+        .daohang .dengluzc a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            background: linear-gradient(45deg, rgba(139, 69, 19, 0.7), rgba(160, 82, 45, 0.7));
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-size: 16px;
+            font-weight: bold;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .daohang .dengluzc a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.5), rgba(255, 165, 0, 0.5));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .daohang .dengluzc a:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, rgba(139, 69, 19, 0.9), rgba(160, 82, 45, 0.9));
+            color: #fff;
+        }
+
+        .daohang .dengluzc a:hover::before {
+            opacity: 1;
+        }
+
+        /* 移动端按钮适配 */
+        @media (max-width: 768px) {
+            .dengluzc a {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .main-nav {
+                display: none;
+            }
+        }
+
+        /* 分隔线 */
+        .daohang .nav-divider {
+            height: 30px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 0 15px;
+        }
+
+        /* 导航部分结束 */
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 9]>
+         <p class="browserupgrade">
+            You are using an <strong>outdated</strong> browser. Please
+            <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+            your experience and security.
+         </p>
+         <![endif]-->
+    <div class="page-wrapper">
+        <!-- ==== 进入动画 ==== -->
+        <div class="preloader">
+            <i class="icon-donation"></i>
+            <p>黄河文化</p>
+        </div>
+        <div class="daohang">
+            <!-- logo 部分，设置为左侧 -->
+            <div class="logo">
+                <img src="assets/image/logo2.png" alt="Logo">
+            </div>
+            <!-- 导航栏部分 -->
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <ul class="main-nav">
+                    <li class="nav-item">
+                        <a href="index%20copy.html">首页</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">子菜单1</a></li>
+                                                             <li><a href="#">子菜单2</a></li>
+                                                             <li><a href="#">子菜单3</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="3.1wenhua.html">文化篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                            <li><a href="3.1wenhua.html">传统技艺</a></li>
+                            <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                            <li><a href="3.1wenhua.html">传统音乐</a></li>
+                            <li><a href="3.1wenhua.html">传统体育</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="renwu.html">治水篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="renwu.html">治水英雄颂</a></li>
+                            <li><a href="zsjy.html">治水技奇谈</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shenhua.html">神话篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="shenhua.html">大禹治水</a></li>
+                            <li><a href="shenhua.html">黄河母亲</a></li>
+                            <li><a href="shenhua.html">女娲补天</a></li>
+                            <li><a href="shenhua.html">伏羲创世</a></li>
+                            <li><a href="shenhua.html">黄帝蚩尤</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="zhengce.html">政策篇</a>
+                        <ul class="sub-menu">
+                            <li><a href="zhengce.html">要闻</a></li>
+                            <li><a href="zhengce.html">地方新闻</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="rhudong.html">趣味黄河</a>
+                        <!-- <ul class="sub-menu">
+                                                             <li><a href="#">互动答题</a></li>
+                                                          </ul> -->
+                    </li>
+                    <li class="nav-item">
+                        <a href="chat.html">智慧AI</a>
+                        <!-- <ul class="sub-menu">
+                                                                               <li><a href="# ">互动答题</a></li>
+                                                                            </ul> -->
+                    </li>
+                </ul>
+            </nav>
+            <div class="dengluzc">
+                <a href="shijianshu.html">黄河
+                    史书</a>
+                <a href="dlzc.html">登录</a>
+                <a href="dlzc.html">注册</a>
+
+            </div>
+        </div>
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('active');
+        });
+    </script>
+        <!-- ==== product details tab section start ==== -->
+        <div class="product-tab">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="product-tab__inner">
+                            <div class="product-tab__btns">
+                                <button class="product-tab__btn active" data-target="#productDetails"
+                                    aria-label="product details" title="product details">治水理念的初步探索</button>
+                                <button class="product-tab__btn" data-target="#pInformation"
+                                    aria-label="product information" title="product information">系统化治水政策的制定</button>
+                                <button class="product-tab__btn" data-target="#pReview" aria-label="product review"
+                                    title="product review">治水工程的全面实施</button>
+                                <button class="product-tab__btn" data-target="#pfaq" aria-label="product faq"
+                                    title="product faq">治水成果的巩固与后续传承</button>
+                            </div>
+                            <div class="product-tab__content">
+                                <div class="product-tab-content-single" id="productDetails">
+                                    <div class="content">
+                                        <p>
+                                            王安石，作为宋代著名的政治家和改革家，提出了“治河如理财”的治水理念，强调治水不仅是应急性的工程任务，更是与国家财政和经济稳定紧密相关的长期治理工作。在这一阶段，王安石开始初步探索如何通过系统化的管理来治理黄河流域的水患问题。
+                                        </p>
+                                        <h4>治水与财政的紧密关系</h4>
+                                        <p>
+                                            王安石深知治水是长期且需要大量资金投入的任务，因此治水的财政支持必须与国家经济稳定紧密相关。他提倡将治水工作纳入国家的长期财政预算，而非依赖临时性捐款或应急措施。
+                                            <br>
+                                            他认为，治水不仅是应急性工程，更是与国家财政管理息息相关的系统性工作。通过长远的财政规划，保障治水的资金来源，以确保治水工作可以持续开展并取得效果。这一思路强调了财政管理与治水工程的结合，为后期治水工作提供了坚实的资金保障基础。
+                                            <br>
+                                            王安石的这一治水理念为后来的治水政策和水利管理体系提供了重要参考，凸显了治水工作不应仅仅依赖临时应对，而是应通过科学规划和合理的财政安排确保其长久性。
+                                        </p>
+                                        <h4>“水旱相济”治水思想的初步提出</h4>
+                                        <p>
+
+                                            在早期的治水探索中，王安石提出了“水旱相济”的治水思想。这一思想主张，治水不仅仅是应对洪水问题，还应考虑干旱时的水资源调度，保证农业灌溉的持续性。王安石认识到黄河流域的水患问题复杂，既有洪水的威胁，也有干旱造成的农田灌溉困难。
+                                            <br>
+                                            因此，他主张通过合理调配水资源，在防洪的同时确保旱灾时也能通过水源调度来支持农业生产。他的这一治水理念在当时具有革命性，突破了传统治水单纯防洪的局限，首次提出了综合治理水资源的观念，并强调了水灾和旱灾之间的平衡与调控。这一思想为后期黄河流域的水利管理与农业发展提供了理论基础。
+                                        </p>
+                                        <h4>初步的水利管理措施</h4>
+                                        <p>
+
+                                            在治水理论逐渐成型的同时，王安石也开始提出并实施一些初步的水利管理措施。他着手对黄河流域的堤防进行修复，并试图通过疏浚河道减少泥沙的淤积，改善水流通畅性。王安石意识到，黄河水患的根源之一在于堤防不坚固和河道的泥沙沉积，因此他在这一阶段加强了河道的清理和堤防的加固工作。
+                                            <br>
+                                            他还试图通过水流调度来解决水患问题，力图通过合理管理水资源来缓解洪水对农田的威胁。尽管这些措施处于实验阶段，且未能完全解决黄河流域的水患问题，但它们为后期更为系统的治水政策奠定了理论基础和实践经验
+                                        </p>
+                                    </div>
+
+                                </div>
+                                <div class="product-tab-content-single" id="pInformation">
+                                    <div class="content">
+                                        <p>
+                                            进入这一阶段，王安石的治水理念逐步从理论探索转向具体的政策制定和系统化治理。王安石不仅提出了更为详细的治水方针，还开始实施一系列治水工程，推动黄河流域的治水工作。
+                                        </p>
+                                        <h4>系统治水政策的提出</h4>
+                                        <p>在治水探索逐步深化的过程中，王安石提出了更加系统化的治水政策，特别是在治理黄河方面，他提出了“水旱相济”和“淤田固本”两大核心思想。他认为，治水不仅仅是防洪，还需要综合利用水资源，保持农业灌溉的稳定。王安石主张通过修建水库、加固堤防、疏通河道等手段来应对洪水，同时确保水资源合理利用，减少干旱灾害对农业的影响。
+                                            <br>
+                                            此外，他提出“淤田固本”的治水理念，认为通过疏浚河道和减少泥沙淤积，能够改善农田土壤质量，提升灌溉能力，确保农业的持续性发展。这一阶段，王安石的治水方针逐渐明确，并开始着手实施一系列治水工程，为后期治水工作的推进提供了系统化的指导。
+                                        </p>
+                                        <h4>“淤田固本”的治水思路</h4>
+                                        <p>“淤田固本”是王安石在治水过程中提出的另一重要治水思路，旨在通过疏浚河道、加固堤防来减少泥沙的淤积，并通过改善土壤质量来增强农田的灌溉能力。这一思路强调水土保持与农田灌溉的结合，突破了传统治水单纯以防洪为主的局限。
+                                            <br>
+                                            在黄河流域，泥沙淤积是水患的主要原因之一，影响着河道的流畅性和农田的灌溉效果。王安石提出通过疏浚河道、修建堤坝来减少泥沙的堆积，改善河道环境，为农业灌溉提供更为稳定的水源。这一思路不仅着眼于洪水的防治，也考虑到土壤的保持与农业发展的长期需求，成为后期治水工程的重要指导原则。
+                                        </p>
+                                        <h4>水利系统建设的实施</h4>
+                                        <p>在这一阶段，王安石推进了一系列重要的水利系统建设项目，旨在通过完善水利基础设施来有效治理黄河水患。王安石加强了堤防的建设和加固工作，特别是在黄河上游、中游及下游地区，他重点修建了多条堤坝，并强化了河道的疏通工作。
+                                            <br>
+                                            他认为，黄河的堤防是防止洪水泛滥的关键，因此必须加大堤防建设力度，确保黄河流域不再因堤坝失修而引发灾难。同时，王安石还着手修建灌溉渠和水库，以增强农业灌溉能力和水源调度能力，保证农业生产的稳定进行。通过这些工程，王安石逐步将治水工作从理论阶段转化为实践，推动了黄河流域的水利系统建设，并为后期的大规模治水工程打下了基础。
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="product-tab-content-single" id="pReview">
+                                    <div class="content">
+
+                                        <p>随着治水思想的深化，王安石的治水工程开始全面实施。此时，治水工作不仅仅是应急措施，而是变成了全国范围内的大规模治理工程。他开始通过全方位、多层次的治水措施，着手解决黄河流域的水患问题。
+                                        </p>
+                                        <h4>堤防与水利设施的建设</h4>
+                                        <p>
+
+                                            在王安石的治水政策下，堤防建设和水利设施的完善成为治水工作中的重要组成部分。王安石认为，堤防建设是防洪的基础和关键，特别是在黄河流域，堤防的修建和加固工作至关重要。
+                                            <br>
+                                            为此，他大力推动了黄河上游、中游和下游地区堤防的修建，特别是对那些易于决口的河段进行加固，确保黄河流域的堤防能够有效防止洪水泛滥。此外，王安石还提出建设水利设施，包括水库、灌溉渠等，以便在干旱季节进行水源调配，保障农业灌溉的稳定性。通过这些举措，王安石加强了水利设施建设，形成了防洪与灌溉并重的治水格局，为治水工程的全面实施奠定了坚实的基础。
+                                        </p>
+                                        <h4>河道疏浚与洪水调控</h4>
+                                        <p>
+                                            在全面实施治水政策的过程中，王安石特别重视河道的疏浚工作。他认识到，黄河水患的原因之一在于河道淤积的泥沙影响了水流通畅性，因此，他实施了大规模的河道疏浚工程。
+                                            <br>
+                                            这一举措旨在减少黄河上游和中游的泥沙淤积，确保水流能够顺畅流动，减轻洪水对下游地区的威胁。同时，王安石加强了洪水季节的水流调控，通过合理的水流分配和调度，确保洪水能够在一定范围内分流，避免过多水量集中在某些区域造成严重的洪水灾害。通过这些措施，黄河流域的水患得到了有效控制，洪水频率得到了显著减少，治水工作的成效逐步显现。
+                                        </p>
+                                        <h4>治水与社会管理的结合</h4>
+                                        <p>
+                                            在这一阶段，王安石强调水利建设必须与社会管理相结合。他提出官民共同治水的理念，认为治水不仅是政府的责任，民众也应积极参与其中。因此，他加强了治水管理的社会化，鼓励地方政府和百姓共同参与堤坝修复、水源治理等工作。
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="product-tab-content-single" id="pfaq">
+                                    <div class="content">
+                                        <p>随着治水工作的深入，王安石的治水政策逐渐完善并产生了深远影响。他的治水思想不仅影响了当时的治水工作，也为后代的水利治理提供了宝贵的经验。
+                                        </p>
+                                        <h4>治水成果的巩固
+                                        </h4>
+                                        <p>
+                                            在公元1060年后，王安石的治水工程逐渐显示其显著成效，特别是在黄河流域，水患得到了有效控制，民众的生活逐步恢复，农业生产也开始恢复正常。通过河道疏通、堤防加固等措施，黄河的洪水威胁得到了显著减缓，这一切为社会的长远稳定奠定了基础。
+                                            <br>
+                                            王安石通过大规模的水利建设，成功改善了黄河流域的水利状况，使得黄河不再频繁泛滥，并为当地农业提供了稳定的灌溉水源。治水成果不仅保障了民生，还为宋代社会的经济发展创造了良好的环境。随着治水工程的完善，黄河流域的自然灾害频率显著下降，社会也因此得以稳定，王安石的治水思想在这一时期得到了体现并取得了可见的效果，进一步证明了其治水政策的成功。
+                                        </p>
+                                        <h4>治水思想的传承</h4>
+                                        <p>
+                                            王安石的治水思想不仅在当时取得了显著成果，还为后代水利政策提供了宝贵的经验和理论基础。特别是他提出的“水旱相济”和“淤田固本”理念，在后来的治水工作中得到进一步发展和完善。宋代的其他水利专家在继承王安石治水思想的基础上，不断探索和改进，推动了水利事业的发展。王安石强调综合治理和社会化参与的治水思想，也成为中国古代治水史上的经典之一。
+                                            <br>
+                                            通过这些理念的传承，治水不再局限于单纯的防洪，而是转向了更加综合和可持续的治水方法，影响了水利政策的长远发展。这些思想对后代的水利管理和技术发展起到了重要的启示作用，进一步巩固了其历史地位。
+                                        </p>
+                                        <h4>对后代水利工程的影响</h4>
+                                        <p>
+                                            王安石的治水政策和实践为当时的黄河流域带来了稳定，也对后代水利工程产生了深远的影响。他的治水理念，特别是“水旱相济”和“淤田固本”，不仅在宋代得到了应用，也成为清代和民国时期治水策略的重要理论基础。随着时间的推移，王安石的综合治理理念在后世水利工程中不断得到应用和发展，尤其是在防洪与灌溉水资源调度的结合上，影响深远。尤其在清代，许多治水工程师借鉴了王安石的思想，强调治理河道和灌溉系统的综合性与系统性。他的社会化参与理念也为后代的水利建设提供了重要的管理模式，推动了公众参与的治水模式，成为中国水利事业中的一项重要遗产。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ==== / product details tab section end ==== -->
+
+        <!-- ==== custom cursor start ==== -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+        <!-- ==== / custom cursor end ==== -->
+        <!-- ==== scroll to top start ==== -->
+        <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+            <span></span>
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </button>
+        <!-- ==== / scroll to top end ==== -->
+    </div>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- swiper slider js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- viewport js -->
+    <script src="assets/js/viewport.jquery.js"></script>
+    <!-- odometer js -->
+    <script src="assets/js/odometer.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="assets/js/vanilla-tilt.min.js"></script>
+    <!-- aos js -->
+    <script src="assets/js/aos.js"></script>
+
+    <!-- splittext js -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- scrollto js -->
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- template settings js -->
+    <script src="assets/js/template-settings.js"></script>
+    <!-- main js -->
+    <script src="assets/js/custom.js"></script>
+<!--    <script src="utils.js"></script>-->
+<!--    <script>-->
+<!--        document.addEventListener('DOMContentLoaded', function () {-->
+<!--            checkLogin();-->
+<!--        });-->
+<!--    </script>-->
+</body>
+
+</html>

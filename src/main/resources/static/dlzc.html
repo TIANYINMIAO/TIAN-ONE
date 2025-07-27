@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录注册</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- 导入字体图标 -->
+    <!--    <link rel="stylesheet" href="./font_mw3z7ts489g/iconfont.css">-->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* 字体无法选中 */
+            user-select: none;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            background-color: #ecf0f3;
+            /* 如果视频加载失败，可以使用一个背景色 */
+            color: #a0a5a8;
+            position: relative;
+            /* 使视频位于背景 */
+
+        }
+
+        #background-video {
+            position: absolute;
+            /* 让视频定位到最底层 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 保持视频比例，填充整个屏幕 */
+            z-index: -1;
+            /* 确保视频在其他元素下面 */
+        }
+
+        .shell {
+            position: relative;
+            width: 1000px;
+            min-width: 1000px;
+            min-height: 600px;
+            height: 600px;
+            padding: 25px;
+            background-color: #ecf0f3;
+            box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* 设置响应式 */
+        @media (max-width: 1200px) {
+            .shell {
+                transform: scale(0.7);
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .shell {
+                transform: scale(0.6);
+            }
+        }
+
+        @media (max-width: 800px) {
+            .shell {
+                transform: scale(0.5);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .shell {
+                transform: scale(0.4);
+            }
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            width: 600px;
+            height: 100%;
+            padding: 25px;
+            background-color: #ecf0f3;
+            transition: 1.25s;
+        }
+
+        .form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+
+        .iconfont {
+            margin: 0 5px;
+            border: rgba(0, 0, 0, 0.5) 2px solid;
+            border-radius: 50%;
+            font-size: 25px;
+            padding: 3px;
+            opacity: 0.5;
+            transition: 0.1s;
+        }
+
+        .iconfont:hover {
+            opacity: 1;
+            transition: 0.15s;
+            cursor: pointer;
+        }
+
+        .form_input {
+            width: 350px;
+            height: 40px;
+            margin: 4px 0;
+            padding-left: 25px;
+            font-size: 13px;
+            letter-spacing: 0.15px;
+            border: none;
+            outline: none;
+            /* background-color: #ecf0f3; */
+            background-color: #ecf0f3;
+            /* 浅灰蓝色 */
+            color: #333333;
+            /* 深色文字 */
+            transition: 0.25s ease;
+            border-radius: 8px;
+            box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px #f9f9f9;
+        }
+
+        .form_input:focus {
+            box-shadow: inset 4px 4px 4px #d1d9e6, inset -4px -4px 4px #f9f9f9;
+        }
+
+        .form_span {
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+
+        .form_link {
+            color: #181818;
+            font-size: 15px;
+            margin-top: 25px;
+            border-bottom: 1px solid #a0a5a8;
+            line-height: 2;
+        }
+
+        .title {
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 3;
+            color: #181818;
+            letter-spacing: 10px;
+        }
+
+        .description {
+            font-size: 14px;
+            letter-spacing: 0.25px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .button {
+            width: 180px;
+            height: 50px;
+            border-radius: 25px;
+            margin-top: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1.15px;
+            background-color: #C19A6B;
+            /* 深金色按钮 */
+            color: #ffffff;
+            box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #f9f9f9;
+            border: none;
+            outline: none;
+        }
+
+        .a-container {
+            z-index: 100;
+            left: calc(100% - 600px);
+        }
+
+        .b-container {
+            left: calc(100% - 600px);
+            z-index: 0;
+        }
+
+        .switch {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 400px;
+            padding: 50px;
+            z-index: 200;
+            transition: 1.25s;
+            background-color: #ecf0f3;
+            overflow: hidden;
+            box-shadow: 4px 4px 10px #d1d9e6, -4px -4px 10px #d1d9e6;
+        }
+
+        .switch_circle {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background-color: #ecf0f3;
+            box-shadow: inset 8px 8px 12px #b8bec7, inset -8px -8px 12px #fff;
+            bottom: -60%;
+            left: -60%;
+            transition: 1.25s;
+        }
+
+        .switch_circle-t {
+            top: -30%;
+            left: 60%;
+            width: 300px;
+            height: 300px;
+        }
+
+        .switch_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            width: 400px;
+            padding: 50px 55px;
+            transition: 1.25s;
+        }
+
+        .switch_button {
+            cursor: pointer;
+        }
+
+        .switch_button:hover,
+        .submit:hover {
+            box-shadow: 6px 6px 10px #d1d9e6, -6px -6px 10px #f9f9f9;
+            transform: scale(0.985);
+            transition: 0.25s;
+        }
+
+        .switch_button:active,
+        .switch_button:focus {
+            box-shadow: 2px 2px 6px #d1d9e6, -2px -2px 6px #f9f9f9;
+            transform: scale(0.97);
+            transition: 0.25s;
+        }
+
+        .is-txr {
+            left: calc(100% - 400px);
+            transition: 1.25s;
+            transform-origin: left;
+        }
+
+        .is-txl {
+            left: 0;
+            transition: 1.25s;
+            transform-origin: right;
+        }
+
+        .is-z {
+            z-index: 200;
+            transition: 1.25s;
+        }
+
+        .is-hidden {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            transition: 1.25s;
+        }
+
+        .is-gx {
+            animation: is-gx 1.25s;
+        }
+
+        @keyframes is-gx {
+
+            0%,
+            10%,
+            100% {
+                width: 400px;
+            }
+
+            30%,
+            50% {
+                width: 500px;
+            }
+        }
+
+        body {
+            background: radial-gradient(circle at center, #2b1a0f 0%, #0c0805 100%);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .shell {
+            background: rgba(15, 12, 10, 0.95);
+            box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5),
+                -10px -10px 20px rgba(90, 70, 50, 0.2);
+            border: 1px solid rgba(193, 154, 107, 0.2);
+            position: relative;
+            overflow: visible;
+        }
+
+        .shell::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background:
+                linear-gradient(45deg,
+                    transparent 48%,
+                    rgba(193, 154, 107, 0.08) 50%,
+                    transparent 52%),
+                repeating-linear-gradient(-45deg,
+                    rgba(193, 154, 107, 0.05) 0 1px,
+                    transparent 1px 3px);
+            z-index: -1;
+            filter: blur(2px);
+        }
+
+        .container {
+            background: rgba(30, 25, 20, 1.0);
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .form_input {
+            background: rgba(50, 40, 35, 0.8);
+            color: #E6D5B8;
+            box-shadow:
+                inset 3px 3px 5px rgba(0, 0, 0, 0.5),
+                inset -2px -2px 4px rgba(140, 110, 80, 0.2);
+            border: 1px solid rgba(193, 154, 107, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .form_input::placeholder {
+            color: rgba(193, 154, 107, 0.6);
+        }
+
+        .form_input:focus {
+            box-shadow:
+                inset 5px 5px 8px rgba(0, 0, 0, 0.5),
+                inset -4px -4px 6px rgba(140, 110, 80, 0.3);
+            border-color: #C19A6B;
+        }
+
+        .title {
+            color: #E6D5B8;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            font-family: 'KaiTi', 'SimSun', 'FangSong', serif;
+            /* 设置传统中文字体 */
+            font-size: 38px;
+        }
+
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #C19A6B, transparent);
+        }
+
+        .button {
+            background: linear-gradient(135deg,
+                    rgba(193, 154, 107, 0.9) 0%,
+                    rgba(139, 105, 20, 0.9) 100%);
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(193, 154, 107, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent 25%,
+                    rgba(255, 255, 255, 0.2) 50%,
+                    transparent 75%);
+            animation: buttonFlow 3s infinite linear;
+        }
+
+        @keyframes buttonFlow {
+            100% {
+                left: 100%;
+            }
+        }
+
+        .switch {
+            background: rgba(40, 32, 28, 0.95);
+            box-shadow:
+                5px 5px 15px rgba(0, 0, 0, 0.3),
+                -3px -3px 10px rgba(90, 70, 50, 0.2);
+        }
+
+        .switch_circle {
+            background: rgba(60, 50, 45, 0.9);
+            box-shadow:
+                inset 6px 6px 10px rgba(0, 0, 0, 0.5),
+                inset -4px -4px 8px rgba(140, 110, 80, 0.3);
+        }
+
+        .iconfont {
+            border-color: rgba(193, 154, 107, 0.5);
+            color: #C19A6B;
+            transition: all 0.3s;
+            background: rgba(193, 154, 107, 0.05);
+        }
+
+        .iconfont:hover {
+            border-color: #C19A6B;
+            background: rgba(193, 154, 107, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(193, 154, 107, 0.3);
+        }
+
+        .form_link {
+            color: #C19A6B;
+            border-color: rgba(193, 154, 107, 0.3);
+            transition: all 0.3s;
+        }
+
+        .form_link:hover {
+            border-color: #C19A6B;
+            letter-spacing: 1px;
+        }
+
+
+
+        /* 在原有样式基础上添加 */
+        .form-group {
+            display: flex;
+            gap: 15px;
+            width: 350px;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .form_input1 {
+            flex: 1;
+            height: 40px;
+            padding-left: 25px;
+            font-size: 13px;
+            background: rgba(50, 40, 35, 0.8);
+            color: #E6D5B8;
+            border: 1px solid rgba(193, 154, 107, 0.3);
+            border-radius: 8px;
+            box-shadow:
+                inset 3px 3px 5px rgba(0, 0, 0, 0.5),
+                inset -2px -2px 4px rgba(140, 110, 80, 0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #getCodeBtn {
+            width: 120px;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg,
+                    rgba(150, 120, 90, 0.9) 0%,
+                    rgba(110, 85, 50, 0.9) 100%);
+            color: #E6D5B8;
+            font-size: 12px;
+            cursor: pointer;
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.2),
+                0 0 10px rgba(193, 154, 107, 0.1);
+            transition: all 0.3s;
+        }
+
+        #getCodeBtn:hover {
+            background: linear-gradient(135deg,
+                    rgba(193, 154, 107, 0.9) 0%,
+                    rgba(150, 120, 90, 0.9) 100%);
+            box-shadow:
+                0 3px 12px rgba(0, 0, 0, 0.3),
+                0 0 15px rgba(193, 154, 107, 0.2);
+            transform: translateY(-1px);
+        }
+
+        #getCodeBtn:active {
+            transform: translateY(1px);
+            box-shadow:
+                0 1px 4px rgba(0, 0, 0, 0.2),
+                inset 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 倒计时样式 */
+        #getCodeBtn.countdown {
+            background: rgba(80, 70, 60, 0.8);
+            color: rgba(230, 213, 184, 0.6);
+            cursor: not-allowed;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.8;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+        /* 默认隐藏选择界面 */
+.choice-container {
+    display: none;
+}
+/* 手机端适配 */
+@media (max-width: 768px) {
+    .shell {
+        width: 95%;
+        min-width: unset;
+        height: auto;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .container, .switch {
+        display: none;
+    }
+
+    .choice-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+    }
+
+    .choice-container .button {
+        width: 140px;
+        height: 45px;
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    #background-video {
+        display: none;
+    }
+
+    .form_input, .form_input1, #getCodeBtn {
+      
+        font-size: 15px;
+        height: 45px;
+        margin: 10px 0;
+    }
+
+    .button.submit {
+        width: 50%;
+    }
+
+    .form_icons, .switch {
+        display: none !important;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .description {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+/* 只在小屏（手机）显示返回按钮 */
+@media (min-width: 769px) {
+    .back-button {
+        display: none;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/1745481460743_2e16cf5f-517f-4cd3-9aeb-8a83917fdca7_6.mp4?Expires=1777017463&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=cPMI2yKpY9YtRE98qj5wAv1BR4s%3D" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="shell">
+        <div class="choice-container" id="choice-container">
+            <h2 class="title">黄河文化</h2>
+            <p class="description">请选择操作</p>
+            <div style="margin-top: 30px;">
+                <button class="button" id="go-login">登录</button>
+                <button class="button" id="go-register" style="margin-left: 20px;">注册</button>
+            </div>
+        </div>
+
+        <div class="container a-container" id="a-container">
+            <form action="" method="" class="form" id="a-form">
+                <h2 class="form_title title">创建账号</h2>
+                <div class="form_icons">
+                    <i class="iconfont icon-QQ"></i>
+                    <i class="iconfont icon-weixin"></i>
+                    <i class="iconfont icon-bilibili-line"></i>
+                    <i class="iconfont icon-bilibili-line"></i>
+                    <i class="iconfont icon-bilibili-line"></i>
+                </div>
+                <span class="form_span">文化遗产活起来，黄河故事传出去</span>
+                <input type="text" class="form_input" placeholder="用户名">
+                <input type="text" class="form_input" placeholder="邮箱">
+                <input type="password" class="form_input" placeholder="密码">
+                <input type="password" class="form_input" placeholder="确认密码">
+
+                <div class="form-group">
+                    <input type="text" class="form_input1" id="verificationcode" placeholder="验证码" required>
+                    <button type="button" class="form_button" id="getCodeBtn">获取验证码</button>
+                </div>
+
+                <button class="form_button button submit">注 册</button>
+                <button type="button" class="button back-button">返回</button>
+
+            </form>
+        </div>
+
+        <div class="container b-container" id="b-container">
+            <form action="" method="" class="form" id="b-form">
+                <h2 class="form_title title">登入账号</h2>
+                <div class="form_icons">
+                    <i class="iconfont icon-QQ"></i>
+                    <i class="iconfont icon-weixin"></i>
+                    <i class="iconfont icon-bilibili-line"></i>
+                    <i class="iconfont icon-bilibili-line"></i>
+                    <i class="iconfont icon-bilibili-line"></i>
+                </div>
+                <span class="form_span">文化遗产活起来，黄河故事传出去</span>
+                <input type="text" class="form_input" placeholder="用户名">
+                <input type="password" class="form_input" placeholder="密码">
+
+                <a class="form_link">忘记密码？</a>
+                <button class="form_button button submit">登 录</button>
+                <button type="button" class="button back-button">返回</button>
+
+            </form>
+        </div>
+
+        <div class="switch" id="switch-cnt">
+            <div class="switch_circle"></div>
+            <div class="switch_circle switch_circle-t"></div>
+            <div class="switch_container" id="switch-c1">
+                <h2 class="switch_title title" style="letter-spacing: 0;">黄 河 文 化</h2>
+                <p class="switch_description description">黄河流域，文化的发源地之一。您准备好加入我们的文化探险了吗？</p>
+                <button class="switch_button button switch-btn">登 录</button>
+            </div>
+
+            <div class="switch_container is-hidden" id="switch-c2">
+                <h2 class="switch_title title" style="letter-spacing: 0;">黄 河 文 化</h2>
+                <p class="switch_description description">“在黄河的滋养下，您将走进一段古老的文明旅程，开启属于您的文化篇章。</p>
+                <button class="switch_button button switch-btn">注 册</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const choiceContainer = document.getElementById('choice-container');
+    const aContainer = document.getElementById('a-container'); // 注册表单
+    const bContainer = document.getElementById('b-container'); // 登录表单
+
+    const goLoginBtn = document.getElementById('go-login');
+    const goRegisterBtn = document.getElementById('go-register');
+
+    // 点击“登录”
+    goLoginBtn.addEventListener('click', function () {
+        choiceContainer.style.display = 'none';
+        bContainer.style.display = 'flex';
+        aContainer.style.display = 'none';
+    });
+
+    // 点击“注册”
+    goRegisterBtn.addEventListener('click', function () {
+        choiceContainer.style.display = 'none';
+        aContainer.style.display = 'flex';
+        bContainer.style.display = 'none';
+    });
+});
+
+    let switchCtn = document.querySelector("#switch-cnt");
+    let switchC1 = document.querySelector("#switch-c1");
+    let switchC2 = document.querySelector("#switch-c2");
+    let switchCircle = document.querySelectorAll(".switch_circle");
+    let switchBtn = document.querySelectorAll(".switch-btn");
+    let aContainer = document.querySelector("#a-container");
+    let bContainer = document.querySelector("#b-container");
+    let allButtons = document.querySelectorAll(".submit");
+
+    let getButtons = (e) => e.preventDefault()
+    let changeForm = (e) => {
+        // 修改类名
+        switchCtn.classList.add("is-gx");
+        setTimeout(function () {
+            switchCtn.classList.remove("is-gx");
+        }, 1500)
+        switchCtn.classList.toggle("is-txr");
+        switchCircle[0].classList.toggle("is-txr");
+        switchCircle[1].classList.toggle("is-txr");
+
+        switchC1.classList.toggle("is-hidden");
+        switchC2.classList.toggle("is-hidden");
+        aContainer.classList.toggle("is-txl");
+        bContainer.classList.toggle("is-txl");
+        bContainer.classList.toggle("is-z");
+    }
+    // 点击切换
+    let shell = (e) => {
+        // for (var i = 0; i < allButtons.length; i++)
+        //     allButtons[i].addEventListener("click", getButtons);
+        for (var i = 0; i < switchBtn.length; i++)
+            switchBtn[i].addEventListener("click", changeForm)
+    }
+    window.addEventListener("load", shell);
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        // 获取页面元素（保持原有HTML结构不变）
+        const loginForm = document.getElementById('b-form');
+        const registerForm = document.getElementById('a-form');
+        const getCodeBtn = document.getElementById('getCodeBtn');
+        const loginError = document.createElement('div');
+        const registerError = document.createElement('div');
+// 错误提示消失时间
+        const ERROR_DISPLAY_TIME = 2500; // 5秒后消失
+
+        const errorStyle = {
+            position: 'absolute',
+            bottom: '5px',  // 调整错误提示框的位置
+            left: '0',
+            color: '#FF4C4C',  // 更改为更鲜艳的红色
+            fontSize: '14px',  // 增加字体大小，使其更加突出
+            backgroundColor: 'rgba(255, 76, 76, 0.1)',  // 添加背景颜色，使错误信息更加显眼
+            padding: '8px 15px',  // 增加内边距，使文本不贴近边框
+            borderRadius: '6px',  // 圆角效果，视觉上更柔和
+
+
+            textAlign: 'center',  // 文本居中显示
+            display: 'none',  // 默认隐藏
+            transition: 'all 0.3s ease',  // 平滑的过渡效果
+        };
+
+
+        // 为表单添加错误容器
+        loginForm.querySelector('.form_span').after(loginError);
+        registerForm.querySelector('.form_span').after(registerError);
+        Object.assign(loginError.style, errorStyle);
+        Object.assign(registerError.style, errorStyle);
+// 显示错误提示并自动隐藏
+        function showError(errorElement, message) {
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+
+            // 设置定时器，错误提示显示后5秒消失
+            setTimeout(() => {
+                errorElement.style.display = 'none';
+            }, ERROR_DISPLAY_TIME);
+        }
+        // 正则表达式验证
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+        // 安全过滤函数
+        function sanitizeInput(input) {
+            return input.replace(/[<>&"']/g, char => ({
+                '<': '&lt;',
+                '>': '&gt;',
+                '&': '&amp;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[char] || char));
+        }
+
+        // 验证码倒计时
+        function startCountdown() {
+            let countdown = 60;
+            getCodeBtn.disabled = true;
+            getCodeBtn.classList.add('countdown');
+
+            const timer = setInterval(() => {
+                getCodeBtn.textContent = `${countdown}s后重试`;
+                if (countdown-- <= 0) {
+                    clearInterval(timer);
+                    getCodeBtn.disabled = false;
+                    getCodeBtn.textContent = '获取验证码';
+                    getCodeBtn.classList.remove('countdown');
+                }
+            }, 1000);
+        }
+
+        // 注册表单处理
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const inputs = registerForm.querySelectorAll('.form_input, .form_input1');
+            const [username, email, password, confirmPassword, verificationcode] =
+                Array.from(inputs).map(input => sanitizeInput(input.value.trim()));
+
+            // 清空错误提示
+            registerError.style.display = 'none';
+
+            // 验证逻辑
+            if (!username || !email || !password || !confirmPassword || !verificationcode) {
+                showError(registerError, '请填写所有必填字段');
+                return;
+            }
+
+            if (!emailRegex.test(email)) {
+                showError(registerError, '邮箱格式不正确');
+                return;
+            }
+
+            if (!passwordRegex.test(password)) {
+                showError(registerError, '密码需8位以上，包含大小写字母和数字');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                showError(registerError, '两次密码输入不一致');
+                return;
+            }
+
+            // 提交注册
+            try {//8.140.25.18
+                const response = await fetch('http://8.140.25.18:8081/huanghe/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, email, password, verificationcode })
+                });
+
+                const result = await response.json();
+                if (result.code === 1) {
+                    alert('注册成功！');
+                    switchBtn[0].click(); // 切换到登录界面
+                } else {
+                    showError(registerError, result.msg || '注册失败');
+                }
+            } catch (error) {
+                showError(registerError, '网络错误，请稍后重试');
+            }
+        });
+
+        // 登录表单处理
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const inputs = loginForm.querySelectorAll('.form_input');
+            const [username, password] = Array.from(inputs).map(input => sanitizeInput(input.value.trim()));
+
+            // 清空错误提示
+            loginError.style.display = 'none';
+
+            if (!username || !password) {
+                showError(loginError, '请填写所有必填字段');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://8.140.25.18:8081/huanghe/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const result = await response.json();
+                if (result.code === 1) {
+                    localStorage.setItem('token', result.data.token);
+                    localStorage.setItem('isLoggedIn', 'true');  // 新增登录状态标记
+                    window.location.href = 'index copy.html';       // 修正正式首页路径
+                } else {
+                    showError(loginError, result.msg || '登录失败');
+                }
+            } catch (error) {
+                showError(loginError, '网络错误，请稍后重试');
+            }
+        });
+
+        // 获取验证码
+        getCodeBtn.addEventListener('click', async () => {
+            const emailInput = registerForm.querySelector('.form_input:nth-of-type(2)');
+            const email = sanitizeInput(emailInput.value.trim());
+
+            if (!emailRegex.test(email)) {
+                showError(registerError, '请输入有效邮箱地址');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://8.140.25.18:8081/huanghe/sendVerificationCode', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                const result = await response.json();
+                if (result.code === 1) {
+                    startCountdown();
+                } else {
+                    showError(registerError, result.msg || '验证码发送失败');
+                }
+            } catch (error) {
+                showError(registerError, '网络错误，请稍后重试');
+            }
+        });
+    });
+    const errorStyle = {
+            marginTop: '10px',
+            color: '#FF6B6B',    // 柔和一点的错误红
+            fontSize: '13px',
+            background: 'rgba(255, 107, 107, 0.1)',  // 微微带红色背景
+            padding: '5px 10px',
+            border: '1px solid rgba(255, 107, 107, 0.5)',
+            borderRadius: '6px',
+            textAlign: 'center',
+            display: 'none',
+            transition: 'all 0.3s ease',
+        };
+     // 处理返回按钮
+        const backButtons = document.querySelectorAll('.back-button');
+        backButtons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.getElementById('choice-container').style.display = 'flex';
+                document.getElementById('a-container').style.display = 'none';
+                document.getElementById('b-container').style.display = 'none';
+            });
+        });
+
+</script>
+</body>
+
+</html>

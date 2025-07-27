@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- required meta -->
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- #favicon -->
+   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+   <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+   <title>文化篇 | 川剧</title>
+   <!-- #keywords -->
+   <meta name="keywords" content="charity, nonprofit, fundraising, donation, html, bootstrap, scss">
+   <!-- #description -->
+   <meta name="description" content="Nonprofit NGO Fundraising HTML5 Template">
+   <!-- google fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com/">
+   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet">
+   <!-- main css -->
+   <link rel="stylesheet" href="assets/css/main.css">
+   <!-- responsive css -->
+   <link rel="stylesheet" href="assets/css/responsive.css">
+   <!-- color themes -->
+   <link rel="stylesheet" href="assets/css/default-theme.css" id="switch-color">
+   <!-- want sticky header -->
+   <link rel="stylesheet" href="assets/css/sticky-header.css">
+   <!-- box layout css -->
+   <link rel="stylesheet" href="assets/css/box-layout.css">
+   <!-- dark mode css -->
+   <link rel="stylesheet" href="assets/css/dark-mode.css">
+   <!-- rtl css -->
+   <link rel="stylesheet" href="assets/css/rtl.css">
+   <link rel="stylesheet" href="assets/css/daohang.css">
+   <style>
+      .video-poster {
+         width: 100%;
+         /* max-width: 800px; */
+         /* 控制最大宽度，避免太大 */
+         height: auto;
+         border-radius: 10px;
+         /* 圆角，使视频更有质感 */
+         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+         /* 添加阴影，增加层次感 */
+         object-fit: cover;
+         /* 确保视频内容充满容器 */
+         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      /* 鼠标悬停时，稍微放大并增强阴影 */
+      .video-poster:hover {
+         transform: scale(1.05);
+         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      }
+
+      /* 适应移动端 */
+      @media (max-width: 768px) {
+         .video-poster {
+            max-width: 100%;
+            border-radius: 5px;
+         }
+      }
+   </style>
+</head>
+
+<body>
+
+   <div class="page-wrapper">
+      <!-- ==== 进入动画 ==== -->
+      <div class="preloader">
+         <i class="icon-donation"></i>
+         <p>黄河文化</p>
+      </div>
+   <div class="daohang">
+      <!-- logo 部分，设置为左侧 -->
+      <div class="logo">
+         <img src="assets/image/logo2.png" alt="Logo">
+      </div>
+      <!-- 导航栏部分 -->
+      <button class="mobile-menu-btn">☰</button>
+      <nav>
+         <ul class="main-nav">
+            <li class="nav-item">
+               <a href="index%20copy.html">首页</a>
+               <!-- <ul class="sub-menu">
+                                                        <li><a href="#">子菜单1</a></li>
+                                                        <li><a href="#">子菜单2</a></li>
+                                                        <li><a href="#">子菜单3</a></li>
+                                                     </ul> -->
+            </li>
+            <li class="nav-item">
+               <a href="3.1wenhua.html">文化篇</a>
+               <ul class="sub-menu">
+                  <li><a href="3.1wenhua.html">传统戏剧</a></li>
+                  <li><a href="3.1wenhua.html">传统技艺</a></li>
+                  <li><a href="3.1wenhua.html">民俗节庆</a></li>
+                  <li><a href="3.1wenhua.html">传统音乐</a></li>
+                  <li><a href="3.1wenhua.html">传统体育</a></li>
+               </ul>
+            </li>
+            <li class="nav-item">
+               <a href="renwu.html">治水篇</a>
+               <ul class="sub-menu">
+                  <li><a href="renwu.html">治水英雄颂</a></li>
+                  <li><a href="zsjy.html">治水技奇谈</a></li>
+               </ul>
+            </li>
+            <li class="nav-item">
+               <a href="shenhua.html">神话篇</a>
+               <ul class="sub-menu">
+                  <li><a href="shenhua.html">大禹治水</a></li>
+                  <li><a href="shenhua.html">黄河母亲</a></li>
+                  <li><a href="shenhua.html">女娲补天</a></li>
+                  <li><a href="shenhua.html">伏羲创世</a></li>
+                  <li><a href="shenhua.html">黄帝蚩尤</a></li>
+               </ul>
+            </li>
+            <li class="nav-item">
+               <a href="zhengce.html">政策篇</a>
+               <ul class="sub-menu">
+                  <li><a href="zhengce.html">要闻</a></li>
+                  <li><a href="zhengce.html">地方新闻</a></li>
+               </ul>
+            </li>
+            <li class="nav-item">
+               <a href="rhudong.html">趣味黄河</a>
+               <!-- <ul class="sub-menu">
+                                                        <li><a href="#">互动答题</a></li>
+                                                     </ul> -->
+            </li>
+            <li class="nav-item">
+               <a href="chat.html">智慧AI</a>
+               <!-- <ul class="sub-menu">
+                                                                          <li><a href="# ">互动答题</a></li>
+                                                                       </ul> -->
+            </li>
+         </ul>
+      </nav>
+      <div class="dengluzc">
+         <a href="shijianshu.html">黄河
+            史书</a>
+         <a href="dlzc.html">登录</a>
+         <a href="dlzc.html">注册</a>
+   
+      </div>
+   </div>
+      <script>
+         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('active');
+         });
+      </script>
+
+      <!-- ==== 主体部分 ==== -->
+      <section class="common-banner">
+
+         <div class="container">
+            <div class="row">
+               <div class="common-banner__content text-center">
+                  <!-- <span class="sub-title"><i class="icon-donation"></i>Start donating poor people</span> -->
+                  <!-- <h2 class="title-animation">【非遗小课堂之--川剧】
+                  </h2> -->
+               </div>
+            </div>
+         </div>
+         <div class="banner-bg">
+            <video class="banner-video" autoplay muted loop playsinline>
+               <source
+                  src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/31.mp4?Expires=1776497019&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=OLAGHbeYYu8tN2Cyh98%2F%2FKe94Hc%3D"
+                  type="video/mp4">
+               <source src="assets/videos/banner-video.webm" type="video/webm">
+               Your browser does not support the video tag.
+            </video>
+         </div>
+         <div class="shape">
+            <!-- <img src="assets/images/shape.png" alt="Image"> -->
+         </div>
+         <div class="sprade" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="assets/images/sprade-base.png" alt="Image" class="base-img">
+         </div>
+      </section>
+      <!-- ==== / banner section end ==== -->
+      <!-- ==== faq section start ==== -->
+      <section class="faq">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-12 col-lg-8 col-xl-6">
+                  <div class="faq__content">
+                     <div class="section__content" data-aos="fade-up" data-aos-duration="1000">
+                        <span class="sub-title"><i
+                              class="icon-donation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;川剧，作为四川地区的文化瑰宝，与黄河文化有着千丝万缕的联系。黄河作为中华民族的母亲河，孕育了丰富多彩的文化，而川剧则是四川人民在黄河文化影响下，结合本地特色创造出的独特戏曲形式。两者共同展现了中华文化的博大精深。</span>
+                        <h2 class="title-animation">川 剧 的 <span>历 史 长 河</span>
+
+                        </h2>
+                     </div>
+                     <div class="faq__content-inner cta" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-delay="100">
+                        <div class="accordion" id="accordion">
+                           <div class="accordion-item">
+                              <h6 class="accordion-header" id="headingOne">
+                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    川剧的历史起源可以追溯到哪个时期？
+                                 </button>
+                              </h6>
+                              <div id="collapseOne" class="accordion-collapse collapse show"
+                                 aria-labelledby="headingOne" data-bs-parent="#accordion">
+                                 <div class="accordion-body">
+                                    <p>
+                                       川剧的历史起源可以追溯到先秦乃至更早的时期。据《太平广记》及《稗史汇编》等文献记载，自蜀郡守李冰起，便有《斗牛》之戏。而后两汉的角抵百戏，为早期的川剧奠定了基础。有人认为川剧可以追溯到晚唐“杂剧”、南宋“川杂剧”，甚至有川剧高腔尚早于江西“弋阳腔”、清代蜀伶魏长生所唱秦腔系四川之“秦腔”种种不同的说法。三国时期，更是出现了四川第一曲讽刺喜剧《忿争》，可谓川剧喜剧的鼻祖。
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="accordion-item">
+                              <h6 class="accordion-header" id="headingTwo">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    川剧在发展历程中形成了哪些独特的艺术特征？
+                                 </button>
+                              </h6>
+                              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                 data-bs-parent="#accordion">
+                                 <div class="accordion-body">
+                                    <p>
+                                       川剧在发展历程中形成了独特的艺术特征。它融合了高腔、昆曲、胡琴、弹戏和四川民间灯戏等五种艺术，是中国戏曲的缩影。川剧的艺术特征倾向于写意艺术，不仅根据生活的本来面貌反映生活，还通过艺术家的认识、领悟与想象，以艺术变形的方式展现生活的神髓。这种写意与写实相结合的艺术手法，使得川剧在人们心中占据了重要的地位。此外，川剧还以生动活泼、风趣幽默的语言风格，以及丰富多彩的剧目和精湛的表演艺术而著称。
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="accordion-item">
+                              <h6 class="accordion-header" id="headingThree">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    川剧在清代有哪些重要的发展？
+                                 </button>
+                              </h6>
+                              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                 data-bs-parent="#accordion">
+                                 <div class="accordion-body">
+                                    <p>
+                                       在清代，川剧经历了重要的发展阶段。清代乾隆年间，川剧在本地车灯戏的基础上，进一步融合了苏、赣、皖、鄂、陕、甘等地的声腔艺术，逐渐演变出高腔、胡琴、昆腔、灯戏和弹戏五种独具特色的声腔。其中，川剧高腔以其丰富的曲牌和美妙的唱腔脱颖而出，成为川剧最主要的演唱形式。晚清时期，川剧更是出现了五腔共和的新局面，使川剧面目为之一新，各类声腔的特色剧目和保留剧目开始形成。
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="accordion-item">
+                              <h6 class="accordion-header" id="headingFour">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    川剧在现代社会面临着哪些挑战？
+                                 </button>
+                              </h6>
+                              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                 data-bs-parent="#accordion">
+                                 <div class="accordion-body">
+                                    <p>
+                                       川剧在现代社会面临着诸多挑战。尽管这门艺术正逐渐受到大众的喜爱和追捧，但学习川剧的过程异常艰辛，需要传承者付出巨大的努力和汗水。这导致川剧团的人员接替问题变得愈发严峻，尽管川剧的知名度在不断提升，但真正深入学习和传承这门艺术的人却越来越少。长此以往，川剧这门宝贵的艺术形式可能将面临失传的危机。此外，随着媒介的大众化与娱乐方式的多元化，曾经雅俗共赏的川剧变得越来越“小众”，逐渐面临着资金短缺、人才流失和表演技巧消失等困境。如何走出这些困境，保护身边的这笔宝贵文化遗产是我们亟需解决的问题。
+                                    </p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-12 col-lg-4 col-xl-5 offset-xl-1">
+                  <div class="faq__thumb d-none d-lg-block">
+                     <div class="faq__thumb-inner">
+                        <div class="thumb-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                           <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3d0f61712-76ec-46aa-bfda-8b5885bdc138_8.png?Expires=1776530919&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=10vjoNiCS3gZ%2F1asqXYdXdfjmdc%3D" alt="Image">
+                        </div>
+                        <div class="thumb-sm" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                           <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/36e5e0270-8b0c-4207-a24a-c1ed291e2300_1..png?Expires=1776530953&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=fG54mADxwpuBnZakDAZcAR4BEBc%3D" alt="Image">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="shape d-none d-lg-block">
+            <!-- <img src="assets/images/faq/shape.png" alt="Image"> -->
+         </div>
+      </section>
+      <!-- ==== / faq section end ==== -->
+      <section class="blog-main cm-details">
+         <div class="container">
+            <div class="row gutter-60">
+               <div class="col-12 col-xl-8">
+                  <div class="blog__single" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="blog__single-thumb">
+                        <a href="kunqv1.html">
+                           <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/302b12bf9-a936-466f-96b0-bfc31e645e01_10.png?Expires=1776530980&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=lQGwMxNP8rzoADGVY2HNdHS3o%2BU%3D" alt="Image">
+                        </a>
+                        <div class="tag">
+                           <a href="kunqv1.html"><i class="fa-solid fa-tags"></i>声腔</a>
+                        </div>
+                     </div>
+                     <div class="blog__single-inner">
+
+                        <div class="blog__single-content">
+                           <h4><a href="kunqv1.html">川剧融合的五种声腔艺术 </a></h4>
+                           <p>川剧，也称川戏，是中国西南地区独具特色的戏曲剧种，主要流行于四川、重庆、云南、贵州等地的汉族地区。其最大的艺术特色在于融汇了 高腔、昆腔、胡琴（皮黄）、弹戏（梆子）和四川民间灯戏
+                              五种声腔，使其成为中国戏曲中少见的多声腔剧种。
+                           </p>
+                        </div>
+                        <div class="blog__single-cta">
+                           <a href="kunqv1.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                 class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="blog__single-thumb">
+                        <a href="hangdang.html">
+                           <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32b74b7fd-2499-41d4-a168-7db80289d776_11.png?Expires=1776531011&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=izKxeC6hVtJvTzDUeT%2BUy8SDM6c%3D" alt="Image">
+                        </a>
+                        <div class="tag">
+                           <a href="hangdang.html"><i class="fa-solid fa-tags"></i>行当</a>
+                        </div>
+                     </div>
+                     <div class="blog__single-inner">
+                        <!-- <div class="blog__single-meta">
+                           <p><i class="icon-user"></i>Robert Fox</p>
+                           <p><i class="icon-message"></i>Comments (03)</p>
+                        </div> -->
+                        <div class="blog__single-content">
+                           <h4><a href="hangdang.html">川剧的五大行当 </a></h4>
+                           <p>川剧作为中国西南地区的代表性剧种，承袭了中国戏曲传统的行当体系，划分为小生、须生、旦角、花脸、丑角五大类。各行当不仅角色定位不同，且在表演技法、程式化动作上自成体系，尤以“三小”——小丑、小生、小旦最具特色，被誉为川剧表演艺术的精髓。
+                           </p>
+                        </div>
+                        <div class="blog__single-cta">
+                           <a href="hangdang.html" aria-label="blog details" title="blog details">🌍 了解更多<i
+                                 class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="blog__single cta" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <div class="blog__single-thumb">
+                        <a href="lianpu.html">
+                           <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/32d755a25-cbe4-4b4b-ab0a-9a7602f9bb14_12.png?Expires=1776531037&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=g96RAONEU%2BwnOqaV2noyhMTDpWE%3D" alt="Image">
+                        </a>
+                        <div class="tag">
+                           <a href="lianpu.html"><i class="fa-solid fa-tags"></i>脸谱</a>
+                        </div>
+                     </div>
+                     <div class="blog__single-inner">
+                        <!-- <div class="blog__single-meta">
+                           <p><i class="icon-user"></i>Robert Fox</p>
+                           <p><i class="icon-message"></i>Comments (03)</p>
+                        </div> -->
+                        <div class="blog__single-content">
+                           <h4><a href="lianpu.html">川剧脸谱：巴蜀戏曲的瑰丽符号 </a></h4>
+                           <p>
+                              川剧脸谱是川剧表演艺术中不可或缺的重要组成部分，它不仅是塑造角色的视觉语言，更是历代川剧艺人共同创造并传承下来的艺术瑰宝。脸谱通过色彩、图案、线条的变化，展现人物的性格特征、身份地位和情感表达，使观众一眼便能识别角色的性格与定位。
+                           </p>
+                        </div>
+                        <div class="blog__single-cta">
+                           <a href="lianpu.html" aria-label="blog details" title="blog details">🌍 脸谱欣赏<i
+                                 class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+               <div class="col-12 col-xl-4">
+                  <div class="blog-main__sidebar">
+                     <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-delay="100">
+                        <div class="author-thumb">
+                           <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/36a2c5762-5c4c-4bd4-a31d-3154dee628e3_15.png?Expires=1776531072&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=AayYVtGwVh2JCRxYYjIOxBLh%2BSY%3D" alt="Image">
+                        </div>
+                        <div class="author-meta">
+                           <h6>传奇故事：戏台上的五种声音</h6>
+                           <p>传说，在古代四川的一座戏台上，五位戏曲大师相遇，他们各自擅长不同的腔调。
+
+
+                           </p>
+                           <p>高腔大师，激昂的唱腔，诉尽世间悲欢。<br>
+                              昆腔艺人，柔美婉转，吟唱离别与相思。<br>
+                              胡琴演奏者，音色悠扬，诉说英雄豪情。<br>
+                              弹戏艺人，节奏鲜明，展现人间冷暖。<br>
+                              灯戏传人，活泼轻快，带来百姓喜乐。
+                           </p>
+                        </div>
+                     </div>
+                     <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-delay="100">
+                        <div class="author-thumb">
+                           <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3a0e118e9-d6b9-420f-b209-ca37930df13f_16.png?Expires=1776531092&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=jRPwHtrWH0Ard%2BewpRMISc9E1KM%3D" alt="Image">
+                        </div>
+                        <div class="author-meta">
+                           <h6>川剧的五大行当如何诞生？</h6>
+                           <p>相传，在古老的巴蜀大地上，有一座神秘的戏台，每当夜幕降临，便会有人影浮现，他们在台上吟唱、舞动，展现着千姿百态的戏曲艺术。这五位戏曲大师，各自擅长不同的表演风格，他们的技艺流传至今，最终形成了川剧的五大行当。
+
+
+                           </p>
+                           <p>👑 须生大师，身姿挺拔，嗓音浑厚，每一句台词都仿佛承载着千年的风霜。他扮演王侯将相，演绎家国大义，唱尽英雄迟暮的悲壮。<br>
+
+                              🎩 小生艺人，风度翩翩，步履轻盈，举手投足皆透着儒雅气息。他饰演才子侠士，在舞台上诉说风花雪月、忠义豪情。<br>
+
+                              🌸 旦角佳人，水袖轻挥，眉目流转，舞步间尽显温婉柔美。她既是深闺思君的女子，也是巾帼不让须眉的英豪，展现女性的千般风情。<br>
+
+                              🐯 花脸豪杰，满脸油彩，声音如雷，手持大刀，一招一式气势如虹。他是忠臣良将，是桀骜枭雄，每一次亮相都让观众热血沸腾。<br>
+
+                              🎭 丑角奇人，步履诙谐，妙语连珠，他是舞台上的笑点担当，扮演聪慧机警的小人物，在嬉笑怒骂间道尽世态炎凉。<br>
+                           </p>
+                        </div>
+                     </div>
+                     <div class="cm-details-author cm-sidebar-widget" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-delay="100">
+                        <div class="author-thumb">
+                           <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3f3aff61a-6d12-416d-881e-26ed7f4b39cc_17.png?Expires=1776531133&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=ibod1lyHNzlt72yUwJpXqsVQK9U%3D" alt="Image">
+                        </div>
+                        <div class="author-meta">
+                           <h6>传奇故事：戏台上的千面变幻</h6>
+                           <p>相传，在川剧的戏台 上，隐藏着一面神奇的铜镜。凡是踏上舞台的戏曲艺人，只要对着镜子一照，便能幻化出不同的脸谱，而这些脸谱不仅是外在的妆容，更是角色性格与命运的映照。
+
+                           </p>
+                           <p>川剧的脸谱，色彩斑斓，寓意深远，每一种颜色、每一笔勾画，皆承载着巴蜀文化的厚重底蕴。<br>
+                              🔴 红色：忠义无双，热血豪情<br>
+                              ⚫ 黑色：刚直不阿，威武果断<br>
+                              ⚪ 白色：阴险狡诈，诡计多端<br>
+                              🔵🟢蓝色/绿色：桀骜不驯，英勇善战<br>
+                              🟡⚪金色/银色：神秘莫测，超凡脱俗<br>
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+
+
+               </div>
+            </div>
+         </div>
+   </div>
+   </section>
+   <!-- ==== event details section start ==== -->
+   <div class="cm-details">
+      <div class="container">
+         <div class="row gutter-60">
+            <div class="">
+               <div class="cm-details__content">
+                  <div class="cm-details__poster" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                     <video id="eventVideo" class="video-poster" autoplay muted loop playsinline controls>
+                        <source
+                           src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/exampledir/327.mp4?Expires=1776496768&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=VP1OLr9gLG7OcO5AsxLYl13Xj0k%3D"
+                           type="video/mp4">
+                        您的浏览器不支持视频播放。
+                     </video>
+                  </div>
+                  <div class="cm-details-meta">
+                     <!-- <p><i class="fa-solid fa-calendar-days"></i>02 Apr 2021</p> -->
+                     <!-- <p><i class="fa-solid fa-location-dot"></i></p> -->
+                  </div>
+                  <div class="cm-group cta">
+                     <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;川 剧 变 脸 的 历 史 起 源</h3>
+                     <p>谈及川剧，变脸技艺是其不可或缺的一部分。相较于川剧艺术本身的渊源和博大，变脸的技艺成形则还要归属于二十世纪。在这期间，变脸在戏班的对台戏中不断摸索、演变、精化，渐渐成为川剧的一大特色。川剧的悲剧极有特色，喜剧独树一帜，凡是情感波折、内心激变之处，变脸皆有用武之地，它以其怪诞狰狞的面相变化表现出人物内心不可名状之律动，作为一种对人物内心非常独特的表现手法，无疑大大增加了川剧本身的表现力，每及名角表演变脸，就常常酿成爆棚之患。可见，老百姓对这种极端好看的耍活儿是打心眼地认可的。
+                     </p>
+                  </div>
+
+                  <div class="cm-group cta">
+                     <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;川 剧 变 脸 的 艺 术 特 色</h3>
+                     <p>变脸，这一运用在川剧艺术中塑造人物的特技，不仅是对剧中人物内心思想感情的一种深刻揭示，更是浪漫主义艺术手法的典范。它不仅仅是一种表演技巧，更承载着丰富的文化内涵和历史底蕴。
+                     </p>
+                     <p>
+                        相传，变脸的起源可以追溯到古代人类面对凶猛野兽时的生存智慧。为了吓跑入侵的野兽，人们会用不同的方式勾画出自己脸部的不同形态。这种原始的生存技能，经过岁月的沉淀和艺术的加工，最终在川剧舞台上得以重生，成为了一门独特的艺术。川剧艺术家们通过绝妙的技巧，将变脸这一古老技艺演绎得淋漓尽致，使其成为了川剧艺术中不可或缺的一部分。
+                     </p>
+                  </div>
+
+                  <div class="cm-group cta">
+                     <h3 class="title-animation"><i class="fa-solid fa-location-dot"></i>&nbsp;川 剧 变 脸 的 手 法 与 技 巧 解 析
+                     </h3>
+                     <p>川剧变脸的手法多种多样，大体上可以分为“抹脸”、“吹脸”、“扯脸”以及传说中的“运气变脸”四种。每种手法都有其独特的技巧和要求，共同构成了川剧变脸的丰富艺术体系。
+                     </p>
+                     <p>
+                        “扯脸”是川剧变脸中最为复杂和精细的手法之一。它需要在事先准备好的脸谱上涂抹粘合剂，并将其粘贴在演员的面部。在表演过程中，演员需要在舞蹈动作的掩护下，一张一张地将脸谱扯下来，以展现出不同的脸谱形象。这种手法要求演员具备高超的技巧和默契的配合，以确保变脸的顺利进行。
+
+                     </p>
+                     <p>
+                        “抹脸”是通过在脸部涂抹特制的油彩，利用手部的快速动作来改变脸谱的颜色和形态。而“吹脸”则适用于粉末状的化妆品，如金粉、墨粉等，通过口吹的方式将粉末附着在脸部，实现快速变脸的效果。
+                     </p>
+                     <p>
+                        至于传说中的“运气变脸”，则是一种更为神秘和难以掌握的技巧。它要求演员通过运用气功等内在力量，来改变脸部的颜色和形态。虽然这种手法在实际表演中较为罕见，但它却为川剧变脸增添了一抹神秘色彩，也体现了川剧艺术对内在力量和精神追求的重视。
+                     </p>
+
+                  </div>
+                  <div class="cm-img-group cta">
+                     <div class="cm-img-single">
+                        <img src=" https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/3ac988c3c-3772-4f5d-a3d4-f55c58903261_28.png?Expires=1776531164&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=2cl4BFWYQlfwR5NkHlDB8uooSW0%3D" alt="Image">
+                     </div>
+                     <div class="cm-img-single">
+                        <img src="https://chuangheshiyi.oss-cn-beijing.aliyuncs.com/huanghe/39e4e5183-0fc3-4c06-ac38-6903acb77a38_29.png?Expires=1776531185&OSSAccessKeyId=LTAI5tAStvbndeHYVGw1Z5EY&Signature=7apDI9tr2vdiq4nuwTeY%2B%2FZVR8c%3D" alt=" Image">
+                     </div>
+                  </div>
+                  <!-- ==== custom cursor start ==== -->
+                  <div class="mouseCursor cursor-outer"></div>
+                  <div class="mouseCursor cursor-inner"></div>
+                  <!-- ==== / custom cursor end ==== -->
+                  <!-- ==== scroll to top start ==== -->
+                  <button class="progress-wrap" aria-label="scroll indicator" title="back to top">
+                     <span></span>
+                     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                     </svg>
+                  </button>
+
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </div>
+
+   <div class="mouseCursor cursor-outer"></div>
+   <div class="mouseCursor cursor-inner"></div>
+
+   </div>
+   <!-- ==== js dependencies start ==== -->
+   <!-- jquery -->
+   <script src="assets/js/jquery-3.7.1.min.js"></script>
+   <!-- bootstrap five js -->
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <!-- nice select js -->
+   <script src="assets/js/jquery.nice-select.min.js"></script>
+   <!-- magnific popup js -->
+   <script src="assets/js/jquery.magnific-popup.min.js"></script>
+   <!-- swiper slider js -->
+   <script src="assets/js/swiper-bundle.min.js"></script>
+   <!-- viewport js -->
+   <script src="assets/js/viewport.jquery.js"></script>
+   <!-- odometer js -->
+   <script src="assets/js/odometer.min.js"></script>
+   <!-- vanilla tilt js -->
+   <script src="assets/js/vanilla-tilt.min.js"></script>
+   <!-- aos js -->
+   <script src="assets/js/aos.js"></script>
+
+   <!-- splittext js -->
+   <script src="assets/js/SplitText.min.js"></script>
+   <!-- scrollto js -->
+   <script src="assets/js/ScrollToPlugin.min.js"></script>
+   <!-- scrolltrigger js -->
+   <script src="assets/js/ScrollTrigger.min.js"></script>
+   <!-- gsap js -->
+   <script src="assets/js/gsap.min.js"></script>
+   <!-- ==== / js dependencies end ==== -->
+   <!-- template settings js -->
+   <script src="assets/js/template-settings.js"></script>
+   <!-- main js -->
+   <script src="assets/js/custom.js"></script>
+<!--    <script src="utils.js"></script>-->
+<!--   <script>-->
+<!--      document.addEventListener('DOMContentLoaded', function () {-->
+<!--         checkLogin();-->
+<!--      });-->
+<!--   </script>-->
+</body>
+
+</html>
