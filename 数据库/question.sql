@@ -1,0 +1,10 @@
+INSERT INTO `question` (`id`, `content`, `option_a`, `option_b`, `option_c`, `option_d`, `correct_answer`, `created_at`) VALUES (1, '以下哪个是中国的首都？', '上海', '北京', '广州', '深圳', 'B', '2025-02-27 19:39:09');
+INSERT INTO `question` (`id`, `content`, `option_a`, `option_b`, `option_c`, `option_d`, `correct_answer`, `created_at`) VALUES (2, '太阳系中最大的行星是？', '地球', '木星', '火星', '金星', 'B', '2025-02-27 19:39:09');
+INSERT INTO `question` (`id`, `content`, `option_a`, `option_b`, `option_c`, `option_d`, `correct_answer`, `created_at`) VALUES (3, '水的化学式是？', 'H2O', 'CO2', 'O2', 'H2', 'A', '2025-02-27 19:39:09');
+INSERT INTO `question` (`id`, `content`, `option_a`, `option_b`, `option_c`, `option_d`, `correct_answer`, `created_at`) VALUES (4, '以下哪个是编程语言？', 'HTML', 'CSS', 'Python', 'JSON', 'C', '2025-02-27 19:39:09');
+INSERT INTO `question` (`id`, `content`, `option_a`, `option_b`, `option_c`, `option_d`, `correct_answer`, `created_at`) VALUES (5, '《红楼梦》的作者是？', '曹雪芹', '罗贯中', '吴承恩', '施耐庵', 'A', '2025-02-27 19:39:09');
+INSERT INTO `question` (`id`, `content`, `option_a`, `option_b`, `option_c`, `option_d`, `correct_answer`, `created_at`) VALUES (6, '以下哪个是最大的海洋？', '大西洋', '印度洋', '北冰洋', '太平洋', 'D', '2025-02-27 19:39:09');
+INSERT INTO `question` (`id`, `content`, `option_a`, `option_b`, `option_c`, `option_d`, `correct_answer`, `created_at`) VALUES (7, '1 + 1 = ?', '1', '2', '3', '4', 'B', '2025-02-27 19:39:09');
+INSERT INTO `question` (`id`, `content`, `option_a`, `option_b`, `option_c`, `option_d`, `correct_answer`, `created_at`) VALUES (8, '以下哪个是水果？', '土豆', '番茄', '胡萝卜', '西瓜', 'D', '2025-02-27 19:39:09');
+INSERT INTO `question` (`id`, `content`, `option_a`, `option_b`, `option_c`, `option_d`, `correct_answer`, `created_at`) VALUES (9, '以下哪个是操作系统？', 'Windows', 'Photoshop', 'Chrome', 'Word', 'A', '2025-02-27 19:39:09');
+INSERT INTO `question` (`id`, `content`, `option_a`, `option_b`, `option_c`, `option_d`, `correct_answer`, `created_at`) VALUES (10, '以下哪个是中国的传统节日？', '圣诞节', '感恩节', '春节', '万圣节', 'C', '2025-02-27 19:39:09');
